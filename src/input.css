@@ -48,6 +48,9 @@
     .mobile__menu--open{
         @apply right-0
     }
+    .navigation__item--active{
+        @apply flex-center border-2 border-gray-500 bg-primary
+    }
 }
 
 @layer utilities{

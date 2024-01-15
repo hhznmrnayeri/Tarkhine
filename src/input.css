@@ -22,6 +22,15 @@
 
 }
 
+@layer components{
+    .nav__item--active{
+        @apply relative text-primary font-estedadBold py-0
+    }
+    .nav__item--active::after{
+        content: '';
+        @apply absolute bg-primary left-0 right-0 h-px w-full -bottom-1
+    }
+}
 
 @layer utilities{
     .flex-center{

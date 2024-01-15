@@ -151,7 +151,207 @@
             <path d="M8 0.404509L9.67723 5.56649L9.70529 5.65286H9.79611H15.2237L10.8327 8.84315L10.7592 8.89653L10.7873 8.9829L12.4645 14.1449L8.07347 10.9546L8 10.9012L7.92653 10.9546L3.53548 14.1449L5.21271 8.9829L5.24078 8.89653L5.1673 8.84315L0.776258 5.65286H6.20389H6.29471L6.32277 5.56649L8 0.404509Z" fill="#F4B740" stroke="#CBCBCB" stroke-width="0.25"/>
         </symbol>
     </svg>
-    <h1 class=" text-center font-estedadBold">start</h1>
+    <header>
+        <!-- container -->
+        <div class="container">
+            <!-- nav -->
+            <nav class="py-4 md:py-8 flex items-center justify-between">
+                <!-- mobile menu -->
+                <div class="mobile__menu fixed bg-white top-0 bottom-0 w-64 right-0 z-10 md:hidden">
+                    <!-- top box -->
+                    <div class="bg-mobileMenu h-24 bg-cover p-4 flex items-start justify-between text-white">
+                        <!-- logo -->
+                        <a href="index.html" class="my-4">
+                            <img src="images/home/Logo2.png" alt="logo">
+                        </a>
+                        <!-- close menu btn -->
+                        <button>
+                            <svg class="w-4 h-4">
+                                <use href="#close"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- menu list -->
+                    <ul class="px-4 flex flex-col items-start child:w-full divide-y text-2xs child:py-2">
+                        <!-- menu item -->
+                        <li>
+                            <!-- menu link -->
+                            <a href="#" class="flex items-center gap-1">
+                                <svg class="w-3 h-3">
+                                    <use href="#home"></use>
+                                </svg>صفحه اصلی
+                            </a>
+                        </li>
+                        <!-- menu item -->
+                        <li class="flex items-center justify-between">
+                            <!-- menu link -->
+                            <a href="#" class="flex items-center gap-1">
+                                <svg class="w-3 h-3">
+                                    <use href="#menu-board"></use>
+                                </svg>منو
+                            </a>
+                            <svg class="w-4 h-4">
+                                <use href="#arrow-down"></use>
+                            </svg>
+                        </li>
+                        <!-- menu item -->
+                        <li class="flex items-center justify-between">
+                            <!-- menu link -->
+                            <a href="#" class="flex items-center gap-1">
+                                <svg class="w-3 h-3">
+                                    <use href="#home-hashtag"></use>
+                                </svg>شعبه
+                            </a>
+                            <svg class="w-4 h-4">
+                                <use href="#arrow-down"></use>
+                            </svg>
+                        </li>
+                        <!-- menu item -->
+                        <li>
+                            <!-- menu link -->
+                            <a href="#" class="flex items-center gap-1">
+                                <svg class="w-3 h-3">
+                                    <use href="#2user"></use>
+                                </svg>درباره ما
+                            </a>
+                        </li>
+                        <!-- menu item -->
+                        <li>
+                            <!-- menu link -->
+                            <a href="#" class="flex items-center gap-1">
+                                <svg class="w-3 h-3">
+                                    <use href="#calling"></use>
+                                </svg>تماس با ما
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- mobile menu btn -->
+                <button class="md:hidden">
+                    <!-- mobile menu icon -->
+                    <svg class="w-6 h-6">
+                        <use href="#menu"></use>
+                    </svg>
+                </button>
+                <!-- logo -->
+                <a href="index.html">
+                    <img src="images/home/Logo.png" alt="logo" class="">
+                </a>
+                <!-- nav menu -->
+                <ul class="text-gray-700 lg:text-xl hidden md:flex items-center gap-2 lg:gap-6 ">
+                    <!-- nav item -->
+                    <li class="nav__item--active">
+                        <!-- nav link -->
+                        <a href="index.html">صفحه اصلی</a>
+                    </li>
+                    <!-- nav item -->
+                    <li class="flex items-center gap-1 relative py-3 group">
+                        <!-- nav link -->
+                        <a href="#">شعبه</a>
+                        <!-- nav submenu icon -->
+                        <svg class="w-4 h-4">
+                            <use href="#arrow-down"></use>
+                        </svg>
+                        <!-- sub menu -->
+                        <ul class="bg-white rounded p-2 flex flex-col items-start child:w-full gap-2 text-sm absolute left-0 -bottom-3 shadow-subMenu top-full h-max w-36 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300">
+                            <!-- sub menu item -->
+                                <a href="#">اکباتان</a>
+                                <hr>
+                            <!-- sub menu item -->
+                                <a href="#">چالوس</a>
+                                <hr>
+                            <!-- sub menu item -->
+                                <a href="#">اقدسیه</a>
+                                <hr>
+                            <!-- sub menu item -->
+                                <a href="#">ونک</a>
+                        </ul>
+                    </li>
+                    <!-- nav item -->
+                    <li class="flex items-center gap-1 relative py-3 group">
+                        <!-- nav link -->
+                        <a href="#">منو</a>
+                        <!-- nav submenu icon -->
+                        <svg class="w-4 h-4">
+                            <use href="#arrow-down"></use>
+                        </svg>
+                        <!-- sub menu -->
+                        <ul class="bg-white rounded p-2 flex flex-col items-start child:w-full gap-2 text-sm absolute right-0 -bottom-3 shadow-subMenu top-full h-max w-36 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300">
+                            <!-- sub menu item -->
+                                <a href="#">غذای اصلی</a>
+                                <hr>
+                            <!-- sub menu item -->
+                                <a href="#">پیش غذا</a>
+                                <hr>
+                            <!-- sub menu item -->
+                                <a href="#">دسر</a>
+                                <hr>
+                            <!-- sub menu item -->
+                                <a href="#">نوشیدنی</a>
+                        </ul>
+                    </li>
+                    <!-- nav item -->
+                    <li>
+                        <!-- nav link -->
+                        <a href="#">اعطای نمایندگی</a>
+                    </li>
+                    <!-- nav item -->
+                    <li>
+                        <!-- nav link -->
+                        <a href="#">درباره ما</a>
+                    </li>
+                    <!-- nav item -->
+                    <li>
+                        <!-- nav link -->
+                        <a href="#">تماس با ما</a>
+                    </li>
+                </ul>
+                <!-- nav icon wrapper -->
+                <div class="flex items-center gap-1 lg:gap-2 text-primary">
+                    <!-- nav icon item -->
+                    <button class="flex-center bg-tint-100 rounded p-2 hidden md:flex">
+                        <svg class="w-4 h-4 md:w-6 md:h-6">
+                            <use href="#search"></use>
+                        </svg>
+                    </button>
+                    <!-- nav icon item -->
+                    <button class="flex-center bg-tint-100 rounded p-2">
+                        <svg class="w-4 h-4 md:w-6 md:h-6">
+                            <use href="#shopping-cart"></use>
+                        </svg>
+                    </button>
+                    <!-- nav icon item -->
+                    <button class="flex items-end gap-0.5 bg-tint-100 rounded p-2 relative group">
+                        <svg class="w-4 h-4 md:w-6 md:h-6">
+                            <use href="#user"></use>
+                        </svg>
+                        <svg class="w-4 h-4 hidden ">
+                            <use href="#arrow-down"></use>
+                        </svg>
+                        <!-- sub menu -->
+                        <ul class="bg-white text-gray-800 rounded p-2 hidden flex-col items-start child:w-full gap-2 text-sm absolute left-0 -bottom-3 shadow-subMenu top-full h-max w-36 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300">
+                            <!-- sub menu item -->
+                                <a href="#" class="flex items-center gap-1"><svg class="w-4 h-4"><use href="#user"></use></svg>پروفایل</a>
+                                <hr>
+                            <!-- sub menu item -->
+                                <a href="#" class="flex items-center gap-1"><svg class="w-4 h-4"><use href="#wallet"></use></svg>پیگیری سفارش</a>
+                                <hr>
+                            <!-- sub menu item -->
+                                <a href="#" class="flex items-center gap-1"><svg class="w-4 h-4"><use href="#heart"></use></svg>علاقه‌مندی‌ها</a>
+                                <hr>
+                            <!-- sub menu item -->
+                                <a href="#" class="flex items-center gap-1"><svg class="w-4 h-4"><use href="#location"></use></svg>آدرس‌های من</a>
+                                <hr>
+                            <!-- sub menu item -->
+                                <a href="#" class="flex items-center gap-1"><svg class="w-4 h-4"><use href="#logout"></use></svg>خروج از حساب</a>
+                        </ul>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- overlay -->
+    <div class="overlay fixed filter blur-sm top-0 bottom-0 right-0 left-0 bg-black/40"></div>
     <script src="scripts/app.js"></script>
 </body>
 </html>

@@ -50,6 +50,9 @@ module.exports = {
           200:"#FFF8E1"
         },
       },
+      backgroundImage:{
+        "mobileMenu":"linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url(../images/home/menu.jpg)"
+      },
       fontFamily:{
         "estedad":"Estedad",
         "estedadMedium":"EstedadMedium",
@@ -66,11 +69,12 @@ module.exports = {
         "8":"0px 8px 8px 0px rgba(0, 0, 0, 0.25)",
         "12":"0px 12px 12px 0px rgba(0, 0, 0, 0.25)",
         "16":"0px 16px 16px 0px rgba(0, 0, 0, 0.25)",
+        "subMenu":"0px 0px 6px 0px rgba(0, 0, 0, 0.15)",
         "card":"0px 0px 0px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0, 0.10), 0px 4px 4px 0px rgba(0, 0, 0, 0.09), 0px 9px 5px 0px rgba(0, 0, 0, 0.05), 0px 16px 6px 0px rgba(0, 0, 0, 0.01), 0px 25px 7px 0px rgba(0, 0, 0, 0.00)",
         "content":"0px 0px 0px 0px rgba(0, 0, 0, 0.10), 0px 3px 6px 0px rgba(0, 0, 0, 0.10), 0px 11px 11px 0px rgba(0, 0, 0, 0.09), 0px 24px 14px 0px rgba(0, 0, 0, 0.05), 0px 42px 17px 0px rgba(0, 0, 0, 0.01), 0px 66px 18px 0px rgba(0, 0, 0, 0.00)",
       },
       fontSize: {
-        xxs: ['10px', {
+        "2xs": ['10px', {
           lineHeight: '14px',
         }],
       },

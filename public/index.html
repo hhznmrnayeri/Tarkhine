@@ -157,7 +157,7 @@
             <!-- nav -->
             <nav class="py-4 md:py-8 flex items-center justify-between">
                 <!-- mobile menu -->
-                <div class="mobile__menu fixed bg-white top-0 bottom-0 w-64 right-0 z-10 md:hidden">
+                <div class="mobile__menu fixed bg-white top-0 bottom-0 w-64 z-10 md:hidden transition-all duration-300">
                     <!-- top box -->
                     <div class="bg-mobileMenu h-24 bg-cover p-4 flex items-start justify-between text-white">
                         <!-- logo -->
@@ -165,7 +165,7 @@
                             <img src="images/home/Logo2.png" alt="logo">
                         </a>
                         <!-- close menu btn -->
-                        <button>
+                        <button id="close__menu--btn">
                             <svg class="w-4 h-4">
                                 <use href="#close"></use>
                             </svg>
@@ -174,9 +174,9 @@
                     <!-- menu list -->
                     <ul class="px-4 flex flex-col items-start child:w-full divide-y text-2xs child:py-2">
                         <!-- menu item -->
-                        <li>
+                        <li class="mobile__menu--active">
                             <!-- menu link -->
-                            <a href="#" class="flex items-center gap-1">
+                            <a href="index.html" class="flex items-center gap-1">
                                 <svg class="w-3 h-3">
                                     <use href="#home"></use>
                                 </svg>صفحه اصلی
@@ -227,7 +227,7 @@
                     </ul>
                 </div>
                 <!-- mobile menu btn -->
-                <button class="md:hidden">
+                <button class="mobile__menu--btn md:hidden">
                     <!-- mobile menu icon -->
                     <svg class="w-6 h-6">
                         <use href="#menu"></use>
@@ -351,7 +351,7 @@
         </div>
     </header>
     <!-- overlay -->
-    <div class="overlay fixed filter blur-sm top-0 bottom-0 right-0 left-0 bg-black/40"></div>
+    <div class="overlay fixed top-0 bottom-0 right-0 left-0 transition-all duration-300"></div>
     <script src="scripts/app.js"></script>
 </body>
 </html>

@@ -30,6 +30,24 @@
         content: '';
         @apply absolute bg-primary left-0 right-0 h-px w-full -bottom-1
     }
+    .mobile__menu--active{
+        @apply text-primary text-xs
+    }
+    .mobile__menu--active svg{
+        @apply w-4 h-4
+    }
+    .overlay{
+        @apply invisible opacity-0
+    }
+    .overlay__active{
+        @apply visible opacity-100 backdrop-blur-sm bg-black/40
+    }
+    .mobile__menu{
+        @apply -right-64
+    }
+    .mobile__menu--open{
+        @apply right-0
+    }
 }
 
 @layer utilities{

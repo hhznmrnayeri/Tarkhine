@@ -312,7 +312,7 @@
                 <!-- nav icon wrapper -->
                 <div class="flex items-center gap-1 lg:gap-2 text-primary">
                     <!-- nav icon item -->
-                    <button class="flex-center bg-tint-100 rounded p-2 hidden md:flex">
+                    <button class="search__btn flex-center bg-tint-100 rounded p-2 hidden md:flex">
                         <svg class="w-4 h-4 md:w-6 md:h-6">
                             <use href="#search"></use>
                         </svg>
@@ -716,8 +716,38 @@
             </div>
         </div>
     </footer>
+    <!-- search modal -->
+    <div class="search__modal hidden md:block fixed rounded-lg overflow-hidden bg-white pb-12 w-5/12 h-64 inset-0 m-auto z-30">
+        <!-- top box -->
+        <div class="bg-gray-300 flex items-center justify-between  p-6 font-estedadSemiBold text-xl">
+            <!-- search title -->
+            <h3 class="text-center self-center mx-auto">جستجو</h3>
+            <!-- close search -->
+            <button class="text-gray-800 self-end">
+                <svg class="w-10 h-10">
+                    <use href="#close"></use>
+                </svg>
+            </button>
+        </div>
+        <!-- bottom box -->
+        <div class="mt-10 px-4 lg:px-12 xl:px-24">
+            <!-- search description -->
+            <p class="text-center">لطفا متن خود را تایپ و سپس دکمه Enter را بزنید.</p>
+            <!-- search form -->
+            <form class="flex items-center justify-between border border-gray-400 mt-3 rounded-lg text-xs py-2 px-4">
+                <!-- input -->
+                <input type="text" class="outline-none border-none flex-grow" placeholder="جستجو">
+                <!-- submit search btn -->
+                <button class="submit__search--btn">
+                    <svg class="w-6 h-6">
+                        <use href="#search"></use>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
     <!-- overlay -->
-    <div class="overlay fixed top-0 bottom-0 right-0 left-0 transition-all duration-300"></div>
+    <div class="overlay fixed top-0 bottom-0 right-0 left-0 transition-all duration-300 z-20"></div>
     <script src="scripts/app.js"></script>
 </body>
 </html>

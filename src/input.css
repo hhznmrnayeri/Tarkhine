@@ -51,6 +51,12 @@
     .navigation__item--active{
         @apply flex-center border-2 border-gray-500 bg-primary
     }
+    .search__modal{
+        @apply invisible opacity-0 transition-all duration-300
+    }
+    .search__modal--active{
+        @apply visible opacity-100
+    }
 }
 
 @layer utilities{

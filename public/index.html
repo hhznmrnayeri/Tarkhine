@@ -125,7 +125,7 @@
             <path d="M16.5 4.00006C18.0759 4.00006 19.6363 4.31045 21.0922 4.91351C22.5481 5.51656 23.871 6.40048 24.9853 7.51478C26.0996 8.62908 26.9835 9.95195 27.5865 11.4079C28.1896 12.8638 28.5 14.4242 28.5 16.0001H26.82C26.82 14.6448 26.5531 13.3028 26.0344 12.0508C25.5158 10.7987 24.7556 9.66102 23.7973 8.70272C22.839 7.74442 21.7014 6.98425 20.4493 6.46562C19.1972 5.947 17.8552 5.68006 16.5 5.68006V4.00006Z" fill="#C30000"/>
         </symbol>
         <symbol id="expand" enable-background="new 0 0 64 64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <g fill="#1d1d1b"><path d="m62 45c-1.105 0-2 .896-2 2v13h-13c-1.105 0-2 .895-2 2s.895 2 2 2h15c1.105 0 2-.895 2-2v-15c0-1.104-.895-2-2-2z"/><path d="m17 60h-13v-13c0-1.104-.895-2-2-2s-2 .896-2 2v15c0 1.105.895 2 2 2h15c1.105 0 2-.895 2-2s-.895-2-2-2z"/><path d="m17-.001h-15c-1.105 0-2 .896-2 2v15c0 1.104.895 2 2 2s2-.896 2-2v-13h13c1.105 0 2-.896 2-2s-.895-2-2-2z"/><path d="m62-.001h-15c-1.105 0-2 .896-2 2s.895 2 2 2h13v13c0 1.104.895 2 2 2s2-.896 2-2v-15c0-1.104-.895-2-2-2z"/></g>
+            <g fill="currentColor"><path d="m62 45c-1.105 0-2 .896-2 2v13h-13c-1.105 0-2 .895-2 2s.895 2 2 2h15c1.105 0 2-.895 2-2v-15c0-1.104-.895-2-2-2z"/><path d="m17 60h-13v-13c0-1.104-.895-2-2-2s-2 .896-2 2v15c0 1.105.895 2 2 2h15c1.105 0 2-.895 2-2s-.895-2-2-2z"/><path d="m17-.001h-15c-1.105 0-2 .896-2 2v15c0 1.104.895 2 2 2s2-.896 2-2v-13h13c1.105 0 2-.896 2-2s-.895-2-2-2z"/><path d="m62-.001h-15c-1.105 0-2 .896-2 2s.895 2 2 2h13v13c0 1.104.895 2 2 2s2-.896 2-2v-15c0-1.104-.895-2-2-2z"/></g>
         </symbol>
         <symbol id="gallery" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
             <path d="M20.0003 30.3337H12.0003C4.76033 30.3337 1.66699 27.2403 1.66699 20.0003V12.0003C1.66699 4.76033 4.76033 1.66699 12.0003 1.66699H20.0003C27.2403 1.66699 30.3337 4.76033 30.3337 12.0003V20.0003C30.3337 27.2403 27.2403 30.3337 20.0003 30.3337ZM12.0003 3.66699C5.85366 3.66699 3.66699 5.85366 3.66699 12.0003V20.0003C3.66699 26.147 5.85366 28.3337 12.0003 28.3337H20.0003C26.147 28.3337 28.3337 26.147 28.3337 20.0003V12.0003C28.3337 5.85366 26.147 3.66699 20.0003 3.66699H12.0003Z" fill="#F9F9F9"/>
@@ -401,7 +401,7 @@
                 <!-- search bar -->
                 <form class="mt-4 flex items-center justify-between px-4 py-2 border border-gray-400 rounded md:hidden ">
                     <!-- search input -->
-                    <input type="text" class="border-none outline-none text-2xs" placeholder="جستجو">
+                    <input type="text" class="border-none outline-none text-2xs flex-grow" placeholder="جستجو">
                     <!-- search icon -->
                     <svg class="w-4 h-4">
                         <use href="#search"></use>
@@ -497,6 +497,140 @@
                             </svg>
                             <!-- about title -->
                             <h4 class="text-xs md:text-lg">منوی متنوع</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- branch -->
+        <section>
+            <div class="container">
+                <!-- section title -->
+                <h2 class="text-center font-estedadBold mt-6 md:mt-12 md:text-2xl">ترخینه گردی</h2>
+                <!-- branch wrapper -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-6 mt-3 md:mt-6">
+                    <!-- branch item -->
+                    <div class="col-span-1 md:col-span-3 flex md:flex-col items-start md:items-center gap-2  border border-primary md:border-gray-400 rounded md:rounded-lg group relative overflow-hidden">
+                        <!-- overlay -->
+                        <div class="hidden md:flex flex-center bg-black/40 w-full h-36 lg:h-64 xl:h-80 rounded-lg absolute top-0 right-0 left-0  opacity-0 md:group-hover:opacity-100 transition-all duration-300">
+                            <!-- gallery icon -->
+                            <a href="#">
+                                <svg class="w-14 h-14">
+                                    <use href="#gallery"></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <!-- branch img -->
+                        <img src="images/home/branch.png" alt="branch" class="w-36 md:w-full object-cover">
+                        <!-- branch content -->
+                        <div class="flex flex-col items-center gap-1 px-3 md:-translate-y-2 md:group-hover:-translate-y-10 pb-4 transition-all duration-300 w-full bg-white z-10 text-center">
+                            <!-- brach title -->
+                            <h4 class="text-sm md:text-lg lg:text-2xl  font-estedadMedium md:font-estedadSemiBold">شعبه اکباتان</h4>
+                            <!-- branch caption -->
+                            <p class="text-2xs text-gray-700 md:text-sm md:font-estedadMedium ">شهرک اکباتان، فاز ۳، مجتمع تجاری کوروش، طبقه سوم</p>
+                            <!-- branch btn -->
+                            <button class="flex-center gap-1 text-white md:text-primary text-xs md:p-2 md:rounded md:border md:border-primary absolute md:h-8 md:w-32 right-1 bottom-1 md:left-0 md:right-0 md:mx-auto md:-bottom-8 md:group-hover:-bottom-8 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300">
+                                <span class="hidden md:block">صفحه شعبه</span>
+                                <svg class="w-4 h-4 hidden md:block">
+                                    <use href="#arrow-left"></use>
+                                </svg>
+                                <svg class="w-4 h-4 md:hidden">
+                                    <use href="#expand"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- branch item -->
+                    <div class="col-span-1 md:col-span-3 flex md:flex-col items-start md:items-center gap-2  border border-primary md:border-gray-400 rounded md:rounded-lg group relative overflow-hidden">
+                        <!-- overlay -->
+                        <div class="hidden md:flex flex-center bg-black/40 w-full h-36 lg:h-64 xl:h-80 rounded-lg absolute top-0 right-0 left-0  opacity-0 md:group-hover:opacity-100 transition-all duration-300">
+                            <!-- gallery icon -->
+                            <a href="#">
+                                <svg class="w-14 h-14">
+                                    <use href="#gallery"></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <!-- branch img -->
+                        <img src="images/home/branch1.png" alt="branch" class="w-36 md:w-full object-cover">
+                        <!-- branch content -->
+                        <div class="flex flex-col items-center gap-1 px-3 md:-translate-y-2 md:group-hover:-translate-y-10 pb-4 transition-all duration-300 w-full bg-white z-10 text-center">
+                            <!-- brach title -->
+                            <h4 class="text-sm md:text-lg lg:text-2xl  font-estedadMedium md:font-estedadSemiBold">شعبه چالوس</h4>
+                            <!-- branch caption -->
+                            <p class="text-2xs text-gray-700 md:text-sm md:font-estedadMedium ">چالوس، خیابان ۱۷ شهریور، بعد کوچه کوروش، جنب داروخانه دکتر میلانی</p>
+                            <!-- branch btn -->
+                            <button class="flex-center gap-1 text-white md:text-primary text-xs md:p-2 md:rounded md:border md:border-primary absolute md:h-8 md:w-32 right-1 bottom-1 md:left-0 md:right-0 md:mx-auto md:-bottom-8 md:group-hover:-bottom-8 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300">
+                                <span class="hidden md:block">صفحه شعبه</span>
+                                <svg class="w-4 h-4 hidden md:block">
+                                    <use href="#arrow-left"></use>
+                                </svg>
+                                <svg class="w-4 h-4 md:hidden">
+                                    <use href="#expand"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- branch item -->
+                    <div class="col-span-1 md:col-span-3 flex md:flex-col items-start md:items-center gap-2  border border-primary md:border-gray-400 rounded md:rounded-lg group relative overflow-hidden">
+                        <!-- overlay -->
+                        <div class="hidden md:flex flex-center bg-black/40 w-full h-36 lg:h-64 xl:h-80 rounded-lg absolute top-0 right-0 left-0  opacity-0 md:group-hover:opacity-100 transition-all duration-300">
+                            <!-- gallery icon -->
+                            <a href="#">
+                                <svg class="w-14 h-14">
+                                    <use href="#gallery"></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <!-- branch img -->
+                        <img src="images/home/branch2.png" alt="branch" class="w-36 md:w-full object-cover">
+                        <!-- branch content -->
+                        <div class="flex flex-col items-center gap-1 px-3 md:-translate-y-2 md:group-hover:-translate-y-10 pb-4 transition-all duration-300 w-full bg-white z-10 text-center">
+                            <!-- brach title -->
+                            <h4 class="text-sm md:text-lg lg:text-2xl font-estedadMedium md:font-estedadSemiBold">شعبه اقدسیه</h4>
+                            <!-- branch caption -->
+                            <p class="text-2xs text-gray-700 md:text-sm md:font-estedadMedium ">خیابان اقدسیه ، نرسیده به میدان خیام، پلاک ۸</p>
+                            <!-- branch btn -->
+                            <button class="flex-center gap-1 text-white md:text-primary text-xs md:p-2 md:rounded md:border md:border-primary absolute md:h-8 md:w-32 right-1 bottom-1 md:left-0 md:right-0 md:mx-auto md:-bottom-8 md:group-hover:-bottom-8 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300">
+                                <span class="hidden md:block">صفحه شعبه</span>
+                                <svg class="w-4 h-4 hidden md:block">
+                                    <use href="#arrow-left"></use>
+                                </svg>
+                                <svg class="w-4 h-4 md:hidden">
+                                    <use href="#expand"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- branch item -->
+                    <div class="col-span-1 md:col-span-3 flex md:flex-col items-start md:items-center gap-2  border border-primary md:border-gray-400 rounded md:rounded-lg group relative overflow-hidden">
+                        <!-- overlay -->
+                        <div class="hidden md:flex flex-center bg-black/40 w-full h-36 lg:h-64 xl:h-80 rounded-lg absolute top-0 right-0 left-0  opacity-0 md:group-hover:opacity-100 transition-all duration-300">
+                            <!-- gallery icon -->
+                            <a href="#">
+                                <svg class="w-14 h-14">
+                                    <use href="#gallery"></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <!-- branch img -->
+                        <img src="images/home/branch3.png" alt="branch" class="w-36 md:w-full object-cover">
+                        <!-- branch content -->
+                        <div class="flex flex-col items-center gap-1 px-3 md:-translate-y-2 md:group-hover:-translate-y-10 pb-4 transition-all duration-300 w-full bg-white z-10 text-center">
+                            <!-- brach title -->
+                            <h4 class="text-sm md:text-lg lg:text-2xl  font-estedadMedium md:font-estedadSemiBold">شعبه ونک</h4>
+                            <!-- branch caption -->
+                            <p class="text-2xs text-gray-700 md:text-sm md:font-estedadMedium ">میدان ونک، خیابان فردوسی، نبش کوچه نیلوفر، پلاک ۲۶</p>
+                            <!-- branch btn -->
+                            <button class="flex-center gap-1 text-white md:text-primary text-xs md:p-2 md:rounded md:border md:border-primary absolute md:h-8 md:w-32 right-1 bottom-1 md:left-0 md:right-0 md:mx-auto md:-bottom-8 md:group-hover:-bottom-8 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300">
+                                <span class="hidden md:block">صفحه شعبه</span>
+                                <svg class="w-4 h-4 hidden md:block">
+                                    <use href="#arrow-left"></use>
+                                </svg>
+                                <svg class="w-4 h-4 md:hidden">
+                                    <use href="#expand"></use>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                 </div>

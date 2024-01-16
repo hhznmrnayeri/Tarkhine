@@ -754,10 +754,6 @@ video {
   z-index: 10;
 }
 
-.col-span-3 {
-  grid-column: span 3 / span 3;
-}
-
 .col-span-1 {
   grid-column: span 1 / span 1;
 }
@@ -881,6 +877,10 @@ video {
   height: 1px;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
 .w-1 {
   width: 0.25rem;
 }
@@ -929,6 +929,18 @@ video {
   width: 100%;
 }
 
+.w-44 {
+  width: 11rem;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+.flex-shrink {
+  flex-shrink: 1;
+}
+
 .shrink {
   flex-shrink: 1;
 }
@@ -965,6 +977,10 @@ video {
   align-items: center;
 }
 
+.items-stretch {
+  align-items: stretch;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -995,6 +1011,10 @@ video {
 
 .gap-6 {
   gap: 1.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
 }
 
 .gap-x-16 {
@@ -1078,6 +1098,11 @@ video {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
+.border-gray-700 {
+  --tw-border-opacity: 1;
+  border-color: rgb(113 113 113 / var(--tw-border-opacity));
+}
+
 .bg-black\/40 {
   background-color: rgb(12 12 12 / 0.4);
 }
@@ -1107,6 +1132,10 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-transparent {
+  background-color: transparent;
+}
+
 .bg-header {
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%), linear-gradient(0deg, rgba(33, 64, 43, 0.50) 0%, rgba(33, 64, 43, 0.50) 100%), url(../images/home/home.jpg);
 }
@@ -1117,6 +1146,10 @@ video {
 
 .bg-section {
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url(../images/home/section.jpg);
+}
+
+.bg-footer {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url(../images/home/footer.jpg);
 }
 
 .bg-cover {
@@ -1177,6 +1210,11 @@ video {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .pb-4 {
@@ -1245,6 +1283,11 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-gray-300 {
+  --tw-text-opacity: 1;
+  color: rgb(237 237 237 / var(--tw-text-opacity));
 }
 
 .opacity-0 {
@@ -1598,6 +1641,10 @@ video {
 }
 
 @media (min-width: 1024px) {
+  .lg\:flex {
+    display: flex;
+  }
+
   .lg\:h-64 {
     height: 16rem;
   }
@@ -1615,14 +1662,14 @@ video {
          column-gap: 12rem;
   }
 
-  .lg\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-
   .lg\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .lg\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
 

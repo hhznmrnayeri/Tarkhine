@@ -637,7 +637,85 @@
             </div>
         </section>
     </main>
-    <footer class="mt-6"></footer>
+    <footer class="mt-6 md:mt-12 bg-footer bg-center bg-cover text-gray-300 py-5 md:py-8">
+        <div class="container">
+            <!-- footer wrapper -->
+            <div class="flex items-start justify-between gap-4 flex-wrap">
+                <!-- right box -->
+                <div class="flex flex-col items-start gap-1 md:gap-4 flex-shrink-0">
+                    <!-- title box -->
+                    <h6 class="text-white text-xs md:text-xl md:font-estedadBold">دسترسی آسان</h6>
+                    <!-- list box -->
+                    <ul class="flex flex-col items-start gap-1 md:gap-4 text-xs md:text-sm md:font-estedadMedium">
+                        <!-- list item -->
+                        <a href="#">پرسش‌های متداول</a>
+                        <!-- list item -->
+                        <a href="#">قوانین ترخینه</a>
+                        <!-- list item -->
+                        <a href="#">حریم خصوصی</a>
+                    </ul>
+                    <!-- icon wrapper -->
+                    <div class="flex items-center gap-2 md:gap-4">
+                        <!-- media icon -->
+                        <a href="#">
+                            <svg class="w-4 h-4 md:w-6 md:h-6">
+                                <use href="#twitter"></use>
+                            </svg>
+                        </a>
+                        <!-- media icon -->
+                        <a href="#">
+                            <svg class="w-4 h-4 md:w-6 md:h-6">
+                                <use href="#instagram"></use>
+                            </svg>
+                        </a>
+                        <!-- media icon -->
+                        <a href="#">
+                            <svg class="w-4 h-4 md:w-6 md:h-6">
+                                <use href="#telegram"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- center box -->
+                <div class="flex flex-col items-start gap-1 md:gap-4 flex-shrink-0">
+                    <!-- title box -->
+                    <h6 class="text-white text-xs md:text-xl md:font-estedadBold">شعبه‌های ترخینه</h6>
+                    <!-- list box -->
+                    <ul class="flex flex-col items-start gap-1 md:gap-4 text-xs md:text-sm md:font-estedadMedium">
+                        <!-- list item -->
+                        <a href="#">شعبه اکباتان</a>
+                        <!-- list item -->
+                        <a href="#">شعبه چالوس</a>
+                        <!-- list item -->
+                        <a href="#">شعبه اقدسیه</a>
+                        <!-- list item -->
+                        <a href="#">شعبه ونک</a>
+                    </ul>
+                </div>
+                <!-- left box -->
+                <form class="hidden lg:flex flex-col items-start gap-4">
+                    <!-- form title -->
+                    <h6 class="text-white text-xs md:text-xl md:font-estedadBold">پیام به ترخینه</h6>
+                    <!-- form wrapper -->
+                    <div class="flex items-stretch gap-6 text-sm">
+                        <!-- input wrapper -->
+                        <div class="flex flex-col gap-3">
+                            <!-- input -->
+                            <input type="text" class="py-3 px-4 border outline-none border-gray-700 rounded bg-transparent" placeholder="نام و نام خانوادگی">
+                            <!-- input -->
+                            <input type="text" class="py-3 px-4 border outline-none border-gray-700 rounded bg-transparent" placeholder="شماره تماس">
+                            <!-- input -->
+                            <input type="text" class="py-3 px-4 border outline-none border-gray-700 rounded bg-transparent" placeholder="آدرس ایمیل (اختیاری)">
+                        </div>
+                        <!-- textarea -->
+                        <textarea class="py-3 px-4 border outline-none border-gray-700 rounded bg-transparent" cols="30" rows="6" placeholder="پیام شما"></textarea>
+                    </div>
+                    <!-- form btn -->
+                    <button class="text-sm font-estedadMedium px-4 py-2 flex-center rounded border border-gray-700 self-end h-10 w-44">ارسال پیام</button>
+                </form>
+            </div>
+        </div>
+    </footer>
     <!-- overlay -->
     <div class="overlay fixed top-0 bottom-0 right-0 left-0 transition-all duration-300"></div>
     <script src="scripts/app.js"></script>

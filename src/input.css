@@ -57,6 +57,12 @@
     .search__modal--active{
         @apply visible opacity-100
     }
+    .choose__branchModal{
+        @apply invisible opacity-0 transition-all duration-300
+    }
+    .choose__branchModal--active{
+        @apply visible opacity-100
+    }
 }
 
 @layer utilities{

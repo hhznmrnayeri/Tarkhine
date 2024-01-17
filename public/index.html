@@ -840,10 +840,10 @@
                 <!-- form section -->
                 <form class="form__phoneNumber h-10 w-full border border-current rounded-lg py-2 px-4">
                     <!-- input phone number -->
-                    <input type="text" class="w-full h-full border-none outline-none" dir="ltr">
+                    <input type="text" class="input__phoneNumber w-full h-full border-none outline-none" dir="ltr" maxlength="11">
                 </form>
                 <!-- message form -->
-                <div class="flex items-center gap-1 text-error text-2xs mt-1 self-start">
+                <div class="message__box hidden items-center gap-1 text-error text-2xs mt-1 self-start">
                     <!-- message icon -->
                     <svg class="w-4 h-4">
                         <use href="#info-circle"></use>
@@ -852,7 +852,7 @@
                     <span class="message__text">پر کردن این فیلد الزامی است!</span>
                 </div>
                 <!-- form btn -->
-                <button class="text-gray-400 font-estedadMedium flex-center py-2 px-4 bg-gray-300 rounded w-full mt-4">ادامه</button>
+                <button class="send__code text-gray-400 font-estedadMedium flex-center py-2 px-4 bg-gray-300 rounded w-full mt-4">ادامه</button>
                 <!-- section description -->
                 <p class="text-2xs mt-2 md:mt-4">ورود و عضویت در ترخینه به منزله قبول <a href="#" class="text-success">قوانین و مقررات</a> است.</p>
             </div>
@@ -885,15 +885,15 @@
                 <!-- form section -->
                 <form class="flex-center gap-1 xs:gap-4 h-10 w-full text-xs text-gray-700" dir="ltr">
                     <!-- input code -->
-                    <input type="text" class="input__code input__code--active py-1 rounded border border-gray-700 h-8 md:h-10 w-12 md:w-14 text-center outline-none">
+                    <input id="input__code1" type="text" class="input__code input__code--active py-1 rounded border border-gray-700 h-8 md:h-10 w-12 md:w-14 text-center outline-none" maxlength="1">
                     <!-- input code -->
-                    <input type="text" class="input__code py-1 rounded border border-gray-700 h-8 md:h-10 w-12 md:w-14 text-center outline-none">
+                    <input id="input__code2" type="text" class="input__code py-1 rounded border border-gray-700 h-8 md:h-10 w-12 md:w-14 text-center outline-none" maxlength="1">
                     <!-- input code -->
-                    <input type="text" class="input__code py-1 rounded border border-gray-700 h-8 md:h-10 w-12 md:w-14 text-center outline-none">
+                    <input id="input__code3" type="text" class="input__code py-1 rounded border border-gray-700 h-8 md:h-10 w-12 md:w-14 text-center outline-none" maxlength="1">
                     <!-- input code -->
-                    <input type="text" class="input__code py-1 rounded border border-gray-700 h-8 md:h-10 w-12 md:w-14 text-center outline-none">
+                    <input id="input__code4" type="text" class="input__code py-1 rounded border border-gray-700 h-8 md:h-10 w-12 md:w-14 text-center outline-none" maxlength="1">
                     <!-- input code -->
-                    <input type="text" class="input__code py-1 rounded border border-gray-700 h-8 md:h-10 w-12 md:w-14 text-center outline-none">
+                    <input id="input__code5" type="text" class="input__code py-1 rounded border border-gray-700 h-8 md:h-10 w-12 md:w-14 text-center outline-none" maxlength="1">
                 </form>
                 <!-- time & edit wrapper -->
                 <div class="flex items-center justify-between w-full mt-2 mb-4 text-2xs md:text-xs">
@@ -904,7 +904,7 @@
                             <use href="#clock"></use>
                         </svg>
                         <!-- time wrapper -->
-                        <span class="flex items-center" dir="ltr"><span class="minute__value">۱</span>:<span class="secound__value">۴۳</span></span>
+                        <span class="flex items-center" dir="ltr"><span class="minute__value">۱</span>:<span class="second__value">۴۳</span></span>
                         <!-- time text -->
                         <p>تا دریافت مجدد کد</p>
                     </div>
@@ -916,7 +916,7 @@
                 <!-- form btn -->
                 <button class="text-gray-400 font-estedadMedium flex-center py-2 px-4 bg-gray-300 rounded w-full">تائید</button>
                 <!-- error box -->
-                <div class="error__box flex-center shadow-2 p-2 gap-2.5 text-error bg-error-200 rounded mt-6 md:mt-0.5">
+                <div class="error__box hidden shadow-2 p-2 gap-2.5 text-error bg-error-200 rounded mt-6 md:mt-0.5">
                     <!-- error text -->
                     <p class="text-sm font-estedadMedium">کد تایید نامعتبر!</p>
                     <!-- close error -->

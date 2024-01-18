@@ -109,6 +109,12 @@
     .mySwiper .swiper-slide-thumb-active {
         @apply opacity-100
     }
+    .undefined .result__title,.undefined .result__wrapper{
+        @apply hidden
+    }
+    .defined .undefined__caption,.defined .undefined__img{
+        @apply hidden
+    }
 }
 
 @layer utilities{

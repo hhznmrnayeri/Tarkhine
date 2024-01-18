@@ -27,8 +27,10 @@ const resendBtn=document.querySelector('.resend__btn')
 const editPhoneNumber=document.querySelector('.edit__phoneNumber')
 const errorBox=document.querySelector('.error__box')
 const closeError=document.querySelector('.close__error')
+const submitCode=document.querySelector('.submit__code')
 const closeModalBtnArray=document.querySelectorAll('.close__modal')
 const inputCodeArray=document.querySelectorAll('.input__code')
+const pattern = /^09[0|1|2|3][0-9]{8}$/;
 function closeMenu(){
     overlay.classList.remove('overlay__active')
     mobileMenu.classList.remove('mobile__menu--open')
@@ -36,12 +38,6 @@ function closeMenu(){
 function closeSearchModal(){
     overlay.classList.remove('overlay__active')
     searchModal.classList.remove('search__modal--active')
-}
-function closeSignupModal(){
-    overlay.classList.remove('overlay__active')
-    signupModal.classList.remove('signup__modal--active')
-    inputPhoneNumber.value=''
-    closeMessageBox()
 }
 function openMenu(){
     overlay.classList.add('overlay__active')
@@ -51,9 +47,42 @@ function openSearchModal(){
     overlay.classList.add('overlay__active')
     searchModal.classList.add('search__modal--active')
 }
+mobileMenuBtn.addEventListener('click',()=>{
+    openMenu()
+})
+searchBtn.addEventListener('click',()=>{
+    openSearchModal()
+})
+closeMenuBtn.addEventListener('click',()=>{
+    closeMenu()
+})
+closeSearchBtn.addEventListener('click',()=>{
+    closeSearchModal()
+})
+overlay.addEventListener('click',(e)=>{
+    e.preventDefault()
+    if(e.target.parentElement.tagName=='BODY'){
+        closeMenu()
+        closeSearchModal()
+        closeSignupModal()
+    }
+})
+
+function closeSignupModal(){
+    overlay.classList.remove('overlay__active')
+    signupModal.classList.remove('signup__modal--active')
+    inputPhoneNumber.value=''
+    inputCodeArray.forEach(item=>{
+        item.value=''
+    })
+    closeMessageBox()
+    openSectionSignup(sectionPhoneNumber)
+    closeSectionSignup(sectionCode)
+}
 function openSignupModal(){
     overlay.classList.add('overlay__active')
     signupModal.classList.add('signup__modal--active')
+    inputPhoneNumber.focus()
 }
 function openSectionSignup(section){
     section.classList.add('flex')
@@ -82,12 +111,50 @@ function closeMessageBox(){
     messageBox.classList.remove('flex')
     messageBox.classList.add('hidden')
 }
-function activeInput(inputOne,inputTwo){
-    // inputOne.addEventListener('keydown',()=>{
-    //     inputOne.classList.remove('input__code--active')
-    //     inputTwo.classList.add('input__code--active')
-    //     inputTwo.focus()
-    // })
+function codeValidation(){
+    let emptyInput=0
+    inputCodeArray.forEach(item=>{
+        if(item.value==''||isNaN(Number(item.value))){
+            emptyInput++
+        }
+    })
+    if(emptyInput){
+        openErrorBox()
+    }else{
+        closeErrorBox()
+    }
+}
+function startTime(){
+    minuteValue.innerHTML=1
+    secondValue.innerHTML=59
+    checkTime()
+}
+function stopTime(){
+    minuteValue.innerHTML=0
+    secondValue.innerHTML=0
+}
+function checkTime(){
+    let checkSecond= setInterval(() => {
+        secondValue.innerHTML--
+        if(secondValue.innerHTML==0){
+            if(minuteValue.innerHTML==0&&secondValue.innerHTML==0){
+                showResendCode()
+                codeValidation()
+                clearInterval(checkSecond)
+            }else{
+                minuteValue.innerHTML--
+                secondValue.innerHTML=59
+            }
+        }
+    }, 1000);
+}
+function showResendCode(){
+    timeWrapper.classList.add('hidden')
+    resendBtn.classList.remove('hidden')
+}
+function HideResendCode(){
+    timeWrapper.classList.remove('hidden')
+    resendBtn.classList.add('hidden')
 }
 function sendCodeMethod(){
     let phoneNumberValue=inputPhoneNumber.value
@@ -99,18 +166,58 @@ function sendCodeMethod(){
         openMessageBox()
     }
     inputCode1.focus()
+    inputCode1.addEventListener('keyup',()=>{
+        inputCode2.focus()
+        inputCode1.classList.remove('input__code--active')
+        inputCode2.classList.add('input__code--active')
+    })
+    inputCode2.addEventListener('keyup',()=>{
+        inputCode3.focus()
+        inputCode2.classList.remove('input__code--active')
+        inputCode3.classList.add('input__code--active')
+    })
+    inputCode3.addEventListener('keyup',()=>{
+        inputCode4.focus()
+        inputCode3.classList.remove('input__code--active')
+        inputCode4.classList.add('input__code--active')
+    })
+    inputCode4.addEventListener('keyup',()=>{
+        inputCode5.focus()
+        inputCode4.classList.remove('input__code--active')
+        inputCode5.classList.add('input__code--active')
+    })
+    inputCode5.addEventListener('keydown',()=>{
+        inputCode5.classList.remove('input__code--active')
+    })
+    startTime()
 }
+resendBtn.addEventListener('click',()=>{
+    startTime()
+    HideResendCode()
+    closeErrorBox()
+})
+submitCode.addEventListener('click',()=>{
+    codeValidation()
+})
 formPhoneNumber.addEventListener('submit',(e)=>{
     e.preventDefault()
 })
-const pattern = /^09[0|1|2|3][0-9]{8}$/;
+closeModalBtnArray.forEach(item=>{
+    item.addEventListener('click',()=>{
+        closeSignupModal()
+    })
+})
+signupBtn.addEventListener('click',()=>{
+    openSignupModal()
+    inputPhoneNumber.focus()
+})
 closeError.addEventListener('click',()=>{
     closeErrorBox()
 })
 sendCode.addEventListener('click',()=>{
     sendCodeMethod()
 })
-inputPhoneNumber.addEventListener('keydown',(e)=>{
+inputPhoneNumber.addEventListener('keyup',(e)=>{
     if(e.keyCode==13){
         sendCodeMethod()
     }
@@ -118,37 +225,18 @@ inputPhoneNumber.addEventListener('keydown',(e)=>{
 editPhoneNumber.addEventListener('click',()=>{
     openSectionSignup(sectionPhoneNumber)
     closeSectionSignup(sectionCode)
+    inputPhoneNumber.select()
+    inputCodeArray.forEach(item=>{
+        item.value=''
+    })
+    HideResendCode()
 })
 backSection.addEventListener('click',()=>{
     openSectionSignup(sectionPhoneNumber)
     closeSectionSignup(sectionCode)
     inputPhoneNumber.select()
-})
-closeModalBtnArray.forEach(item=>{
-    item.addEventListener('click',()=>{
-        closeSignupModal()
+    inputCodeArray.forEach(item=>{
+        item.value=''
     })
-})
-mobileMenuBtn.addEventListener('click',()=>{
-    openMenu()
-})
-searchBtn.addEventListener('click',()=>{
-    openSearchModal()
-})
-signupBtn.addEventListener('click',()=>{
-    openSignupModal()
-})
-closeMenuBtn.addEventListener('click',()=>{
-    closeMenu()
-})
-closeSearchBtn.addEventListener('click',()=>{
-    closeSearchModal()
-})
-overlay.addEventListener('click',(e)=>{
-    e.preventDefault()
-    if(e.target.parentElement.tagName=='BODY'){
-        closeMenu()
-        closeSearchModal()
-        closeSignupModal()
-    }
+    HideResendCode()
 })

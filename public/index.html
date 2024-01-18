@@ -789,46 +789,76 @@
     </div>
     <!-- gallery branch -->
     <div class="gallery__branch fixed rounded-lg overflow-hidden w-11/12 md:w-7/12 h-5/6 md:h-3/4 inset-0 m-auto z-30">
-        <div class="swiper mySwiper w-full h-full">
-            <div class="swiper-wrapper">
-                
-              <div class="swiper-slide">
-                <!-- background image -->
-                <img src="images/home/gallery1.jpg" alt="branch" class="w-full h-full bg-center bg-cover object-cover">
-              </div>
-              <div class="swiper-slide">
-                <!-- background image -->
-                <img src="images/home/gallery2.jpg" alt="branch" class="w-full h-full bg-center bg-cover object-cover">
-              </div>
-              <div class="swiper-slide">
-                <!-- background image -->
-                <img src="images/home/gallery3.jpg" alt="branch" class="w-full h-full bg-center bg-cover object-cover">
-              </div>
-              <div class="swiper-slide">
-                <!-- background image -->
-                <img src="images/home/gallery4.jpg" alt="branch" class="w-full h-full bg-center bg-cover object-cover">
-              </div>
-              <div class="swiper-slide">
-                <!-- background image -->
-                <img src="images/home/gallery5.jpg" alt="branch" class="w-full h-full bg-center bg-cover object-cover">
-              </div>
-              <div class="swiper-slide">
-                <!-- background image -->
-                <img src="images/home/gallery6.jpg" alt="branch" class="w-full h-full bg-center bg-cover object-cover">
-              </div>
-              <div class="swiper-slide">
-                <!-- background image -->
-                <img src="images/home/gallery7.jpg" alt="branch" class="w-full h-full bg-center bg-cover object-cover">
-              </div>
+            <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2 overflow-hidden">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <!-- background image -->
+                        <img src="images/home/gallery1.jpg" alt="branch">
+                    </div>
+                    <div class="swiper-slide">
+                        <!-- background image -->
+                        <img src="images/home/gallery2.jpg" alt="branch">
+                    </div>
+                    <div class="swiper-slide">
+                        <!-- background image -->
+                        <img src="images/home/gallery3.jpg" alt="branch">
+                    </div>
+                    <div class="swiper-slide">
+                        <!-- background image -->
+                        <img src="images/home/gallery4.jpg" alt="branch">
+                    </div>
+                    <div class="swiper-slide">
+                        <!-- background image -->
+                        <img src="images/home/gallery5.jpg" alt="branch">
+                    </div>
+                    <div class="swiper-slide">
+                        <!-- background image -->
+                        <img src="images/home/gallery6.jpg" alt="branch">
+                    </div>
+                    <div class="swiper-slide">
+                        <!-- background image -->
+                        <img src="images/home/gallery7.jpg" alt="branch">
+                    </div>
+                </div>
+                <!-- close gallery btn -->
+                <button class="close__gallery absolute top-1 left-1 z-40 text-white">
+                    <svg class="w-10 h-10">
+                        <use href="#close"></use>
+                    </svg>
+                </button>
             </div>
-            <!-- close gallery btn -->
-            <button class="close__gallery absolute top-1 left-1 z-40 text-white">
-              <svg class="w-10 h-10">
-                  <use href="#close"></use>
-              </svg>
-            </button>
-            <div class="swiper-pagination"></div>
-        </div>
+            <div thumbsSlider="" class="swiper mySwiper absolute bottom-24 left-0 right-0 h-20 w-10/12 overflow-hidden">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide rounded border border-white">
+                        <!-- background image -->
+                        <img src="images/home/gallery1.jpg">
+                    </div>
+                    <div class="swiper-slide rounded border border-white">
+                        <!-- background image -->
+                        <img src="images/home/gallery2.jpg">
+                    </div>
+                    <div class="swiper-slide rounded border border-white">
+                        <!-- background image -->
+                        <img src="images/home/gallery3.jpg">
+                    </div>
+                    <div class="swiper-slide rounded border border-white">
+                        <!-- background image -->
+                        <img src="images/home/gallery4.jpg">
+                    </div>
+                    <div class="swiper-slide rounded border border-white">
+                        <!-- background image -->
+                        <img src="images/home/gallery5.jpg">
+                    </div>
+                    <div class="swiper-slide rounded border border-white">
+                        <!-- background image -->
+                        <img src="images/home/gallery6.jpg">
+                    </div>
+                    <div class="swiper-slide rounded border border-white">
+                        <!-- background image -->
+                        <img src="images/home/gallery7.jpg">
+                    </div>
+                </div>
+            </div>
     </div>
     <!-- search modal -->
     <div class="search__modal hidden md:block fixed rounded-lg overflow-hidden bg-white pb-12 w-5/12 h-64 inset-0 m-auto z-30">
@@ -980,15 +1010,33 @@
     <script src="scripts/swiper-bundle.min.js"></script>
     <script>
         let swiper = new Swiper(".mySwiper", {
-            pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-            loop:true,
-            renderBullet: function (index, className) {
-            //   return `<span class="${className}"><img src="images/home/gallery${index+1}.jpg" alt="branch" class="w-16 h-16 md:w-20 md:h-20 rounded md:border md:border-white"></span>`;
-              return `<img src="images/home/gallery${index+1}.jpg" alt="branch" class="${className} w-16 h-16 md:w-20 md:h-20 rounded md:border md:border-white">`;
-            // return `<span class="${className} bg-gallery${index+1} w-16 h-16 md:w-20 md:h-20 rounded md:border md:border-white"></span>`;
-            },
+            spaceBetween: 10,
+            slidesPerView: 3,
+            freeMode: true,
+            watchSlidesProgress: true,
+            breakpoints:{
+                480:{
+                    slidesPerView:4,
+                    spaceBetween:10
+                },
+                768:{
+                    slidesPerView:4,
+                    spaceBetween:10
+                },
+                1024:{
+                    slidesPerView:6,
+                    spaceBetween:10
+                },
+                1280:{
+                    slidesPerView:6,
+                    spaceBetween:32
+                },
+            }
+        });
+        let swiper2 = new Swiper(".mySwiper2", {
+            spaceBetween: 10,
+            thumbs: {
+                swiper: swiper,
             },
         });
     </script>

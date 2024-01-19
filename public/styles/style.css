@@ -891,6 +891,18 @@ video {
   right: 0.75rem;
 }
 
+.-top-3 {
+  top: -0.75rem;
+}
+
+.-top-4 {
+  top: -1rem;
+}
+
+.-top-8 {
+  top: -2rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -1078,6 +1090,14 @@ video {
   height: 1px;
 }
 
+.h-11 {
+  height: 2.75rem;
+}
+
+.h-16 {
+  height: 4rem;
+}
+
 .w-1 {
   width: 0.25rem;
 }
@@ -1148,6 +1168,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
 }
 
 .flex-shrink-0 {
@@ -1267,6 +1291,10 @@ video {
 
 .gap-y-8 {
   row-gap: 2rem;
+}
+
+.gap-y-2 {
+  row-gap: 0.5rem;
 }
 
 .divide-y > :not([hidden]) ~ :not([hidden]) {
@@ -1774,6 +1802,14 @@ video {
     right: 1.5rem;
   }
 
+  .md\:order-1 {
+    order: 1;
+  }
+
+  .md\:order-2 {
+    order: 2;
+  }
+
   .md\:col-span-3 {
     grid-column: span 3 / span 3;
   }
@@ -1879,6 +1915,10 @@ video {
     height: 20rem;
   }
 
+  .md\:h-32 {
+    height: 8rem;
+  }
+
   .md\:w-10 {
     width: 2.5rem;
   }
@@ -1927,6 +1967,18 @@ video {
     width: 100%;
   }
 
+  .md\:w-8 {
+    width: 2rem;
+  }
+
+  .md\:w-11\/12 {
+    width: 91.666667%;
+  }
+
+  .md\:flex-1 {
+    flex: 1 1 0%;
+  }
+
   .md\:flex-shrink-0 {
     flex-shrink: 0;
   }
@@ -1968,6 +2020,10 @@ video {
     gap: 1.5rem;
   }
 
+  .md\:gap-2 {
+    gap: 0.5rem;
+  }
+
   .md\:gap-x-6 {
     -moz-column-gap: 1.5rem;
          column-gap: 1.5rem;
@@ -1991,6 +2047,10 @@ video {
 
   .md\:border {
     border-width: 1px;
+  }
+
+  .md\:border-4 {
+    border-width: 4px;
   }
 
   .md\:border-gray-400 {
@@ -2029,6 +2089,16 @@ video {
   .md\:py-8 {
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
+
+  .md\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .md\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   .md\:pt-32 {
@@ -2124,6 +2194,10 @@ video {
     height: 16rem;
   }
 
+  .lg\:w-7\/12 {
+    width: 58.333333%;
+  }
+
   .lg\:gap-2 {
     gap: 0.5rem;
   }
@@ -2184,5 +2258,10 @@ video {
   .xl\:px-24 {
     padding-left: 6rem;
     padding-right: 6rem;
+  }
+
+  .xl\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }

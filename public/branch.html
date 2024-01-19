@@ -125,6 +125,12 @@
         <symbol id="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
             <path d="M8 0.404509L9.67723 5.56649L9.70529 5.65286H9.79611H15.2237L10.8327 8.84315L10.7592 8.89653L10.7873 8.9829L12.4645 14.1449L8.07347 10.9546L8 10.9012L7.92653 10.9546L3.53548 14.1449L5.21271 8.9829L5.24078 8.89653L5.1673 8.84315L0.776258 5.65286H6.20389H6.29471L6.32277 5.56649L8 0.404509Z" fill="#F4B740" stroke="#CBCBCB" stroke-width="0.25"/>
         </symbol>
+        <symbol id="note" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+            <path d="M16 22.75H8C4.98 22.75 3.25 21.02 3.25 18V8.25C3.25 5.1 4.85 3.5 8 3.5C8.41 3.5 8.75 3.84 8.75 4.25C8.75 4.65 8.91 5.03 9.19 5.31C9.47 5.59 9.85 5.75 10.25 5.75H13.75C14.58 5.75 15.25 5.08 15.25 4.25C15.25 3.84 15.59 3.5 16 3.5C19.15 3.5 20.75 5.1 20.75 8.25V18C20.75 21.02 19.02 22.75 16 22.75ZM7.34998 5.02C5.76998 5.15 4.75 5.86 4.75 8.25V18C4.75 20.22 5.78 21.25 8 21.25H16C18.22 21.25 19.25 20.22 19.25 18V8.25C19.25 5.86 18.23 5.16 16.65 5.02C16.31 6.3 15.14 7.25 13.75 7.25H10.25C9.45 7.25 8.70001 6.94 8.13 6.37C7.75 5.99 7.48998 5.53 7.34998 5.02Z" fill="#417F56"/>
+            <path d="M13.75 7.25H10.25C9.45 7.25 8.7 6.94 8.13 6.37C7.56 5.79999 7.25 5.05 7.25 4.25C7.25 2.6 8.6 1.25 10.25 1.25H13.75C14.55 1.25 15.3 1.56 15.87 2.13C16.44 2.7 16.75 3.45 16.75 4.25C16.75 5.9 15.4 7.25 13.75 7.25ZM10.25 2.75C9.42 2.75 8.75 3.42 8.75 4.25C8.75 4.65 8.91 5.03 9.19 5.31C9.47 5.59 9.85 5.75 10.25 5.75H13.75C14.58 5.75 15.25 5.08 15.25 4.25C15.25 3.85 15.09 3.47 14.81 3.19C14.53 2.91 14.15 2.75 13.75 2.75H10.25Z" fill="#417F56"/>
+            <path d="M12 13.75H8C7.59 13.75 7.25 13.41 7.25 13C7.25 12.59 7.59 12.25 8 12.25H12C12.41 12.25 12.75 12.59 12.75 13C12.75 13.41 12.41 13.75 12 13.75Z" fill="#417F56"/>
+            <path d="M16 17.75H8C7.59 17.75 7.25 17.41 7.25 17C7.25 16.59 7.59 16.25 8 16.25H16C16.41 16.25 16.75 16.59 16.75 17C16.75 17.41 16.41 17.75 16 17.75Z" fill="#417F56"/>
+        </symbol>
     </svg>
     <header>
         <!-- container -->
@@ -446,6 +452,276 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- swiper slide -->
+                                    <div class="swiper-slide">
+                                        <div class="flex flex-col rounded md:rounded-lg border overflow-hidden border-gray-400">
+                                            <!-- result img -->
+                                            <img src="images/menu/food7.png" alt="food" class="food__img object-cover w-full">
+                                            <!-- result content -->
+                                            <div class="bg-white p-4 flex-center flex-col gap-4">
+                                                <!-- result name -->
+                                                <h2 class="food__name text-xs md:text-xl font-estedadSemiBold"></h2>
+                                                <!-- result content wrapper -->
+                                                <div class="flex items-start justify-between w-full">
+                                                    <!-- right box -->
+                                                    <div class="flex flex-col items-start gap-1 text-2xs text-gray-500">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- add favorite -->
+                                                            <button class="add__favorite">
+                                                                <svg class="w-4 h-4">
+                                                                    <use href="#heart"></use>
+                                                                </svg>
+                                                            </button>
+                                                            <!-- text favorite -->
+                                                            <span class="hidden md:block">افزودن به علاقمندی‌ها</span>
+                                                        </div>
+                                                        <!-- bottom box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- star -->
+                                                            <svg class="w-4 h-4">
+                                                                <use href="#star"></use>
+                                                            </svg>
+                                                            <!-- rate number -->
+                                                            <span class="rate__number text-2xs md:text-sm text-gray-800 font-estedadMedium">۳</span>
+                                                            <!-- points -->
+                                                            <span class="hidden md:flex">(<span class="points">۴۰</span> امتیاز)</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- left box -->
+                                                    <div class="flex flex-col items-end gap-1">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-2 text-2xs">
+                                                            <!-- main price -->
+                                                            <span class="main__price text-gray-500 line-through"></span>
+                                                            <!-- count offer -->
+                                                            <span class="count__offer text-error px-1.5 rounded-lg bg-error-200"></span>
+                                                        </div>
+                                                        <!-- offer price -->
+                                                        <span class="text-2xs md:text-base"><span class="offer__price"></span>تومان</span>
+                                                    </div>
+                                                </div>
+                                                <!-- btn result -->
+                                                <button class="text-2xs md:text-base md:font-estedadMedium text-white px-4 py-2 w-full bg-primary flex-center rounded">افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- swiper slide -->
+                                    <div class="swiper-slide">
+                                        <div class="flex flex-col rounded md:rounded-lg border overflow-hidden border-gray-400">
+                                            <!-- result img -->
+                                            <img src="images/menu/food7.png" alt="food" class="food__img object-cover w-full">
+                                            <!-- result content -->
+                                            <div class="bg-white p-4 flex-center flex-col gap-4">
+                                                <!-- result name -->
+                                                <h2 class="food__name text-xs md:text-xl font-estedadSemiBold"></h2>
+                                                <!-- result content wrapper -->
+                                                <div class="flex items-start justify-between w-full">
+                                                    <!-- right box -->
+                                                    <div class="flex flex-col items-start gap-1 text-2xs text-gray-500">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- add favorite -->
+                                                            <button class="add__favorite">
+                                                                <svg class="w-4 h-4">
+                                                                    <use href="#heart"></use>
+                                                                </svg>
+                                                            </button>
+                                                            <!-- text favorite -->
+                                                            <span class="hidden md:block">افزودن به علاقمندی‌ها</span>
+                                                        </div>
+                                                        <!-- bottom box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- star -->
+                                                            <svg class="w-4 h-4">
+                                                                <use href="#star"></use>
+                                                            </svg>
+                                                            <!-- rate number -->
+                                                            <span class="rate__number text-2xs md:text-sm text-gray-800 font-estedadMedium">۳</span>
+                                                            <!-- points -->
+                                                            <span class="hidden md:flex">(<span class="points">۴۰</span> امتیاز)</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- left box -->
+                                                    <div class="flex flex-col items-end gap-1">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-2 text-2xs">
+                                                            <!-- main price -->
+                                                            <span class="main__price text-gray-500 line-through"></span>
+                                                            <!-- count offer -->
+                                                            <span class="count__offer text-error px-1.5 rounded-lg bg-error-200"></span>
+                                                        </div>
+                                                        <!-- offer price -->
+                                                        <span class="text-2xs md:text-base"><span class="offer__price"></span>تومان</span>
+                                                    </div>
+                                                </div>
+                                                <!-- btn result -->
+                                                <button class="text-2xs md:text-base md:font-estedadMedium text-white px-4 py-2 w-full bg-primary flex-center rounded">افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- swiper slide -->
+                                    <div class="swiper-slide">
+                                        <div class="flex flex-col rounded md:rounded-lg border overflow-hidden border-gray-400">
+                                            <!-- result img -->
+                                            <img src="images/menu/food7.png" alt="food" class="food__img object-cover w-full">
+                                            <!-- result content -->
+                                            <div class="bg-white p-4 flex-center flex-col gap-4">
+                                                <!-- result name -->
+                                                <h2 class="food__name text-xs md:text-xl font-estedadSemiBold"></h2>
+                                                <!-- result content wrapper -->
+                                                <div class="flex items-start justify-between w-full">
+                                                    <!-- right box -->
+                                                    <div class="flex flex-col items-start gap-1 text-2xs text-gray-500">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- add favorite -->
+                                                            <button class="add__favorite">
+                                                                <svg class="w-4 h-4">
+                                                                    <use href="#heart"></use>
+                                                                </svg>
+                                                            </button>
+                                                            <!-- text favorite -->
+                                                            <span class="hidden md:block">افزودن به علاقمندی‌ها</span>
+                                                        </div>
+                                                        <!-- bottom box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- star -->
+                                                            <svg class="w-4 h-4">
+                                                                <use href="#star"></use>
+                                                            </svg>
+                                                            <!-- rate number -->
+                                                            <span class="rate__number text-2xs md:text-sm text-gray-800 font-estedadMedium">۳</span>
+                                                            <!-- points -->
+                                                            <span class="hidden md:flex">(<span class="points">۴۰</span> امتیاز)</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- left box -->
+                                                    <div class="flex flex-col items-end gap-1">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-2 text-2xs">
+                                                            <!-- main price -->
+                                                            <span class="main__price text-gray-500 line-through"></span>
+                                                            <!-- count offer -->
+                                                            <span class="count__offer text-error px-1.5 rounded-lg bg-error-200"></span>
+                                                        </div>
+                                                        <!-- offer price -->
+                                                        <span class="text-2xs md:text-base"><span class="offer__price"></span>تومان</span>
+                                                    </div>
+                                                </div>
+                                                <!-- btn result -->
+                                                <button class="text-2xs md:text-base md:font-estedadMedium text-white px-4 py-2 w-full bg-primary flex-center rounded">افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- swiper slide -->
+                                    <div class="swiper-slide">
+                                        <div class="flex flex-col rounded md:rounded-lg border overflow-hidden border-gray-400">
+                                            <!-- result img -->
+                                            <img src="images/menu/food7.png" alt="food" class="food__img object-cover w-full">
+                                            <!-- result content -->
+                                            <div class="bg-white p-4 flex-center flex-col gap-4">
+                                                <!-- result name -->
+                                                <h2 class="food__name text-xs md:text-xl font-estedadSemiBold"></h2>
+                                                <!-- result content wrapper -->
+                                                <div class="flex items-start justify-between w-full">
+                                                    <!-- right box -->
+                                                    <div class="flex flex-col items-start gap-1 text-2xs text-gray-500">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- add favorite -->
+                                                            <button class="add__favorite">
+                                                                <svg class="w-4 h-4">
+                                                                    <use href="#heart"></use>
+                                                                </svg>
+                                                            </button>
+                                                            <!-- text favorite -->
+                                                            <span class="hidden md:block">افزودن به علاقمندی‌ها</span>
+                                                        </div>
+                                                        <!-- bottom box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- star -->
+                                                            <svg class="w-4 h-4">
+                                                                <use href="#star"></use>
+                                                            </svg>
+                                                            <!-- rate number -->
+                                                            <span class="rate__number text-2xs md:text-sm text-gray-800 font-estedadMedium">۳</span>
+                                                            <!-- points -->
+                                                            <span class="hidden md:flex">(<span class="points">۴۰</span> امتیاز)</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- left box -->
+                                                    <div class="flex flex-col items-end gap-1">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-2 text-2xs">
+                                                            <!-- main price -->
+                                                            <span class="main__price text-gray-500 line-through"></span>
+                                                            <!-- count offer -->
+                                                            <span class="count__offer text-error px-1.5 rounded-lg bg-error-200"></span>
+                                                        </div>
+                                                        <!-- offer price -->
+                                                        <span class="text-2xs md:text-base"><span class="offer__price"></span>تومان</span>
+                                                    </div>
+                                                </div>
+                                                <!-- btn result -->
+                                                <button class="text-2xs md:text-base md:font-estedadMedium text-white px-4 py-2 w-full bg-primary flex-center rounded">افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- swiper slide -->
+                                    <div class="swiper-slide">
+                                        <div class="flex flex-col rounded md:rounded-lg border overflow-hidden border-gray-400">
+                                            <!-- result img -->
+                                            <img src="images/menu/food7.png" alt="food" class="food__img object-cover w-full">
+                                            <!-- result content -->
+                                            <div class="bg-white p-4 flex-center flex-col gap-4">
+                                                <!-- result name -->
+                                                <h2 class="food__name text-xs md:text-xl font-estedadSemiBold"></h2>
+                                                <!-- result content wrapper -->
+                                                <div class="flex items-start justify-between w-full">
+                                                    <!-- right box -->
+                                                    <div class="flex flex-col items-start gap-1 text-2xs text-gray-500">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- add favorite -->
+                                                            <button class="add__favorite">
+                                                                <svg class="w-4 h-4">
+                                                                    <use href="#heart"></use>
+                                                                </svg>
+                                                            </button>
+                                                            <!-- text favorite -->
+                                                            <span class="hidden md:block">افزودن به علاقمندی‌ها</span>
+                                                        </div>
+                                                        <!-- bottom box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- star -->
+                                                            <svg class="w-4 h-4">
+                                                                <use href="#star"></use>
+                                                            </svg>
+                                                            <!-- rate number -->
+                                                            <span class="rate__number text-2xs md:text-sm text-gray-800 font-estedadMedium">۳</span>
+                                                            <!-- points -->
+                                                            <span class="hidden md:flex">(<span class="points">۴۰</span> امتیاز)</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- left box -->
+                                                    <div class="flex flex-col items-end gap-1">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-2 text-2xs">
+                                                            <!-- main price -->
+                                                            <span class="main__price text-gray-500 line-through"></span>
+                                                            <!-- count offer -->
+                                                            <span class="count__offer text-error px-1.5 rounded-lg bg-error-200"></span>
+                                                        </div>
+                                                        <!-- offer price -->
+                                                        <span class="text-2xs md:text-base"><span class="offer__price"></span>تومان</span>
+                                                    </div>
+                                                </div>
+                                                <!-- btn result -->
+                                                <button class="text-2xs md:text-base md:font-estedadMedium text-white px-4 py-2 w-full bg-primary flex-center rounded">افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <button class="next__btn--swiper1 absolute top-0 bottom-0 left-12 bg-white w-10 h-10 m-auto z-10 hidden md:flex p-1 rounded-lg border border-gray-400 text-gray-600">
@@ -461,6 +737,709 @@
                     </div>
             </div>
         </section>
+        <!-- popular -->
+        <section class="mt-6 md:mt-12 py-6 bg-primary">
+            <div class="container">
+                <!-- section title -->
+                <h2 class="font-estedadBold md:text-2xl text-white">غذاهای محبوب</h2>
+                <!-- swiper -->
+                    <div class="mt-3 md:mt-6 relative">
+                            <div class="swiper swiper2">
+                                <div class="swiper-wrapper">
+                                    <!-- swiper slide -->
+                                    <div class="swiper-slide">
+                                        <div class="flex flex-col rounded md:rounded-lg border overflow-hidden border-gray-400">
+                                            <!-- result img -->
+                                            <img src="images/menu/food7.png" alt="food" class="food__img object-cover w-full">
+                                            <!-- result content -->
+                                            <div class="bg-white p-4 flex-center flex-col gap-4">
+                                                <!-- result name -->
+                                                <h2 class="food__name text-xs md:text-xl font-estedadSemiBold"></h2>
+                                                <!-- result content wrapper -->
+                                                <div class="flex items-start justify-between w-full">
+                                                    <!-- right box -->
+                                                    <div class="flex flex-col items-start gap-1 text-2xs text-gray-500">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- add favorite -->
+                                                            <button class="add__favorite">
+                                                                <svg class="w-4 h-4">
+                                                                    <use href="#heart"></use>
+                                                                </svg>
+                                                            </button>
+                                                            <!-- text favorite -->
+                                                            <span class="hidden md:block">افزودن به علاقمندی‌ها</span>
+                                                        </div>
+                                                        <!-- bottom box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- star -->
+                                                            <svg class="w-4 h-4">
+                                                                <use href="#star"></use>
+                                                            </svg>
+                                                            <!-- rate number -->
+                                                            <span class="rate__number text-2xs md:text-sm text-gray-800 font-estedadMedium">۳</span>
+                                                            <!-- points -->
+                                                            <span class="hidden md:flex">(<span class="points">۴۰</span> امتیاز)</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- left box -->
+                                                    <div class="flex flex-col items-end gap-1">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-2 text-2xs">
+                                                            <!-- main price -->
+                                                            <span class="main__price text-gray-500 line-through"></span>
+                                                            <!-- count offer -->
+                                                            <span class="count__offer text-error px-1.5 rounded-lg bg-error-200"></span>
+                                                        </div>
+                                                        <!-- offer price -->
+                                                        <span class="text-2xs md:text-base"><span class="offer__price"></span>تومان</span>
+                                                    </div>
+                                                </div>
+                                                <!-- btn result -->
+                                                <button class="text-2xs md:text-base md:font-estedadMedium text-white px-4 py-2 w-full bg-primary flex-center rounded">افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- swiper slide -->
+                                    <div class="swiper-slide">
+                                        <div class="flex flex-col rounded md:rounded-lg border overflow-hidden border-gray-400">
+                                            <!-- result img -->
+                                            <img src="images/menu/food7.png" alt="food" class="food__img object-cover w-full">
+                                            <!-- result content -->
+                                            <div class="bg-white p-4 flex-center flex-col gap-4">
+                                                <!-- result name -->
+                                                <h2 class="food__name text-xs md:text-xl font-estedadSemiBold"></h2>
+                                                <!-- result content wrapper -->
+                                                <div class="flex items-start justify-between w-full">
+                                                    <!-- right box -->
+                                                    <div class="flex flex-col items-start gap-1 text-2xs text-gray-500">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- add favorite -->
+                                                            <button class="add__favorite">
+                                                                <svg class="w-4 h-4">
+                                                                    <use href="#heart"></use>
+                                                                </svg>
+                                                            </button>
+                                                            <!-- text favorite -->
+                                                            <span class="hidden md:block">افزودن به علاقمندی‌ها</span>
+                                                        </div>
+                                                        <!-- bottom box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- star -->
+                                                            <svg class="w-4 h-4">
+                                                                <use href="#star"></use>
+                                                            </svg>
+                                                            <!-- rate number -->
+                                                            <span class="rate__number text-2xs md:text-sm text-gray-800 font-estedadMedium">۳</span>
+                                                            <!-- points -->
+                                                            <span class="hidden md:flex">(<span class="points">۴۰</span> امتیاز)</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- left box -->
+                                                    <div class="flex flex-col items-end gap-1">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-2 text-2xs">
+                                                            <!-- main price -->
+                                                            <span class="main__price text-gray-500 line-through"></span>
+                                                            <!-- count offer -->
+                                                            <span class="count__offer text-error px-1.5 rounded-lg bg-error-200"></span>
+                                                        </div>
+                                                        <!-- offer price -->
+                                                        <span class="text-2xs md:text-base"><span class="offer__price"></span>تومان</span>
+                                                    </div>
+                                                </div>
+                                                <!-- btn result -->
+                                                <button class="text-2xs md:text-base md:font-estedadMedium text-white px-4 py-2 w-full bg-primary flex-center rounded">افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- swiper slide -->
+                                    <div class="swiper-slide">
+                                        <div class="flex flex-col rounded md:rounded-lg border overflow-hidden border-gray-400">
+                                            <!-- result img -->
+                                            <img src="images/menu/food7.png" alt="food" class="food__img object-cover w-full">
+                                            <!-- result content -->
+                                            <div class="bg-white p-4 flex-center flex-col gap-4">
+                                                <!-- result name -->
+                                                <h2 class="food__name text-xs md:text-xl font-estedadSemiBold"></h2>
+                                                <!-- result content wrapper -->
+                                                <div class="flex items-start justify-between w-full">
+                                                    <!-- right box -->
+                                                    <div class="flex flex-col items-start gap-1 text-2xs text-gray-500">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- add favorite -->
+                                                            <button class="add__favorite">
+                                                                <svg class="w-4 h-4">
+                                                                    <use href="#heart"></use>
+                                                                </svg>
+                                                            </button>
+                                                            <!-- text favorite -->
+                                                            <span class="hidden md:block">افزودن به علاقمندی‌ها</span>
+                                                        </div>
+                                                        <!-- bottom box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- star -->
+                                                            <svg class="w-4 h-4">
+                                                                <use href="#star"></use>
+                                                            </svg>
+                                                            <!-- rate number -->
+                                                            <span class="rate__number text-2xs md:text-sm text-gray-800 font-estedadMedium">۳</span>
+                                                            <!-- points -->
+                                                            <span class="hidden md:flex">(<span class="points">۴۰</span> امتیاز)</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- left box -->
+                                                    <div class="flex flex-col items-end gap-1">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-2 text-2xs">
+                                                            <!-- main price -->
+                                                            <span class="main__price text-gray-500 line-through"></span>
+                                                            <!-- count offer -->
+                                                            <span class="count__offer text-error px-1.5 rounded-lg bg-error-200"></span>
+                                                        </div>
+                                                        <!-- offer price -->
+                                                        <span class="text-2xs md:text-base"><span class="offer__price"></span>تومان</span>
+                                                    </div>
+                                                </div>
+                                                <!-- btn result -->
+                                                <button class="text-2xs md:text-base md:font-estedadMedium text-white px-4 py-2 w-full bg-primary flex-center rounded">افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- swiper slide -->
+                                    <div class="swiper-slide">
+                                        <div class="flex flex-col rounded md:rounded-lg border overflow-hidden border-gray-400">
+                                            <!-- result img -->
+                                            <img src="images/menu/food7.png" alt="food" class="food__img object-cover w-full">
+                                            <!-- result content -->
+                                            <div class="bg-white p-4 flex-center flex-col gap-4">
+                                                <!-- result name -->
+                                                <h2 class="food__name text-xs md:text-xl font-estedadSemiBold"></h2>
+                                                <!-- result content wrapper -->
+                                                <div class="flex items-start justify-between w-full">
+                                                    <!-- right box -->
+                                                    <div class="flex flex-col items-start gap-1 text-2xs text-gray-500">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- add favorite -->
+                                                            <button class="add__favorite">
+                                                                <svg class="w-4 h-4">
+                                                                    <use href="#heart"></use>
+                                                                </svg>
+                                                            </button>
+                                                            <!-- text favorite -->
+                                                            <span class="hidden md:block">افزودن به علاقمندی‌ها</span>
+                                                        </div>
+                                                        <!-- bottom box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- star -->
+                                                            <svg class="w-4 h-4">
+                                                                <use href="#star"></use>
+                                                            </svg>
+                                                            <!-- rate number -->
+                                                            <span class="rate__number text-2xs md:text-sm text-gray-800 font-estedadMedium">۳</span>
+                                                            <!-- points -->
+                                                            <span class="hidden md:flex">(<span class="points">۴۰</span> امتیاز)</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- left box -->
+                                                    <div class="flex flex-col items-end gap-1">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-2 text-2xs">
+                                                            <!-- main price -->
+                                                            <span class="main__price text-gray-500 line-through"></span>
+                                                            <!-- count offer -->
+                                                            <span class="count__offer text-error px-1.5 rounded-lg bg-error-200"></span>
+                                                        </div>
+                                                        <!-- offer price -->
+                                                        <span class="text-2xs md:text-base"><span class="offer__price"></span>تومان</span>
+                                                    </div>
+                                                </div>
+                                                <!-- btn result -->
+                                                <button class="text-2xs md:text-base md:font-estedadMedium text-white px-4 py-2 w-full bg-primary flex-center rounded">افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- swiper slide -->
+                                    <div class="swiper-slide">
+                                        <div class="flex flex-col rounded md:rounded-lg border overflow-hidden border-gray-400">
+                                            <!-- result img -->
+                                            <img src="images/menu/food7.png" alt="food" class="food__img object-cover w-full">
+                                            <!-- result content -->
+                                            <div class="bg-white p-4 flex-center flex-col gap-4">
+                                                <!-- result name -->
+                                                <h2 class="food__name text-xs md:text-xl font-estedadSemiBold"></h2>
+                                                <!-- result content wrapper -->
+                                                <div class="flex items-start justify-between w-full">
+                                                    <!-- right box -->
+                                                    <div class="flex flex-col items-start gap-1 text-2xs text-gray-500">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- add favorite -->
+                                                            <button class="add__favorite">
+                                                                <svg class="w-4 h-4">
+                                                                    <use href="#heart"></use>
+                                                                </svg>
+                                                            </button>
+                                                            <!-- text favorite -->
+                                                            <span class="hidden md:block">افزودن به علاقمندی‌ها</span>
+                                                        </div>
+                                                        <!-- bottom box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- star -->
+                                                            <svg class="w-4 h-4">
+                                                                <use href="#star"></use>
+                                                            </svg>
+                                                            <!-- rate number -->
+                                                            <span class="rate__number text-2xs md:text-sm text-gray-800 font-estedadMedium">۳</span>
+                                                            <!-- points -->
+                                                            <span class="hidden md:flex">(<span class="points">۴۰</span> امتیاز)</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- left box -->
+                                                    <div class="flex flex-col items-end gap-1">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-2 text-2xs">
+                                                            <!-- main price -->
+                                                            <span class="main__price text-gray-500 line-through"></span>
+                                                            <!-- count offer -->
+                                                            <span class="count__offer text-error px-1.5 rounded-lg bg-error-200"></span>
+                                                        </div>
+                                                        <!-- offer price -->
+                                                        <span class="text-2xs md:text-base"><span class="offer__price"></span>تومان</span>
+                                                    </div>
+                                                </div>
+                                                <!-- btn result -->
+                                                <button class="text-2xs md:text-base md:font-estedadMedium text-white px-4 py-2 w-full bg-primary flex-center rounded">افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- swiper slide -->
+                                    <div class="swiper-slide">
+                                        <div class="flex flex-col rounded md:rounded-lg border overflow-hidden border-gray-400">
+                                            <!-- result img -->
+                                            <img src="images/menu/food7.png" alt="food" class="food__img object-cover w-full">
+                                            <!-- result content -->
+                                            <div class="bg-white p-4 flex-center flex-col gap-4">
+                                                <!-- result name -->
+                                                <h2 class="food__name text-xs md:text-xl font-estedadSemiBold"></h2>
+                                                <!-- result content wrapper -->
+                                                <div class="flex items-start justify-between w-full">
+                                                    <!-- right box -->
+                                                    <div class="flex flex-col items-start gap-1 text-2xs text-gray-500">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- add favorite -->
+                                                            <button class="add__favorite">
+                                                                <svg class="w-4 h-4">
+                                                                    <use href="#heart"></use>
+                                                                </svg>
+                                                            </button>
+                                                            <!-- text favorite -->
+                                                            <span class="hidden md:block">افزودن به علاقمندی‌ها</span>
+                                                        </div>
+                                                        <!-- bottom box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- star -->
+                                                            <svg class="w-4 h-4">
+                                                                <use href="#star"></use>
+                                                            </svg>
+                                                            <!-- rate number -->
+                                                            <span class="rate__number text-2xs md:text-sm text-gray-800 font-estedadMedium">۳</span>
+                                                            <!-- points -->
+                                                            <span class="hidden md:flex">(<span class="points">۴۰</span> امتیاز)</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- left box -->
+                                                    <div class="flex flex-col items-end gap-1">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-2 text-2xs">
+                                                            <!-- main price -->
+                                                            <span class="main__price text-gray-500 line-through"></span>
+                                                            <!-- count offer -->
+                                                            <span class="count__offer text-error px-1.5 rounded-lg bg-error-200"></span>
+                                                        </div>
+                                                        <!-- offer price -->
+                                                        <span class="text-2xs md:text-base"><span class="offer__price"></span>تومان</span>
+                                                    </div>
+                                                </div>
+                                                <!-- btn result -->
+                                                <button class="text-2xs md:text-base md:font-estedadMedium text-white px-4 py-2 w-full bg-primary flex-center rounded">افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="next__btn--swiper2 absolute top-0 bottom-0 left-12 bg-white w-10 h-10 m-auto z-10 hidden md:flex p-1 rounded-lg border border-gray-400 text-gray-600">
+                                <svg class="w-8 h-8">
+                                    <use href="#arrow-left"></use>
+                                </svg>
+                            </button>
+                            <button class="prev__btn--swiper2 absolute top-0 bottom-0 right-12 bg-white w-10 h-10 m-auto z-10 hidden md:flex p-1 rounded-lg border border-gray-400 text-gray-600">
+                                <svg class="w-8 h-8">
+                                    <use href="#arrow-right"></use>
+                                </svg>
+                            </button>
+                    </div>
+            </div>
+        </section>
+        <!-- foreign -->
+        <section class="mt-6 md:mt-12">
+            <div class="container">
+                <!-- section title -->
+                <h2 class="font-estedadBold md:text-2xl">غذاهای غیر ایرانی</h2>
+                <!-- swiper -->
+                    <div class="mt-3 md:mt-6 relative">
+                            <div class="swiper swiper3">
+                                <div class="swiper-wrapper">
+                                    <!-- swiper slide -->
+                                    <div class="swiper-slide">
+                                        <div class="flex flex-col rounded md:rounded-lg border overflow-hidden border-gray-400">
+                                            <!-- result img -->
+                                            <img src="images/menu/food7.png" alt="food" class="food__img object-cover w-full">
+                                            <!-- result content -->
+                                            <div class="bg-white p-4 flex-center flex-col gap-4">
+                                                <!-- result name -->
+                                                <h2 class="food__name text-xs md:text-xl font-estedadSemiBold"></h2>
+                                                <!-- result content wrapper -->
+                                                <div class="flex items-start justify-between w-full">
+                                                    <!-- right box -->
+                                                    <div class="flex flex-col items-start gap-1 text-2xs text-gray-500">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- add favorite -->
+                                                            <button class="add__favorite">
+                                                                <svg class="w-4 h-4">
+                                                                    <use href="#heart"></use>
+                                                                </svg>
+                                                            </button>
+                                                            <!-- text favorite -->
+                                                            <span class="hidden md:block">افزودن به علاقمندی‌ها</span>
+                                                        </div>
+                                                        <!-- bottom box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- star -->
+                                                            <svg class="w-4 h-4">
+                                                                <use href="#star"></use>
+                                                            </svg>
+                                                            <!-- rate number -->
+                                                            <span class="rate__number text-2xs md:text-sm text-gray-800 font-estedadMedium">۳</span>
+                                                            <!-- points -->
+                                                            <span class="hidden md:flex">(<span class="points">۴۰</span> امتیاز)</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- left box -->
+                                                    <div class="flex flex-col items-end gap-1">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-2 text-2xs">
+                                                            <!-- main price -->
+                                                            <span class="main__price text-gray-500 line-through"></span>
+                                                            <!-- count offer -->
+                                                            <span class="count__offer text-error px-1.5 rounded-lg bg-error-200"></span>
+                                                        </div>
+                                                        <!-- offer price -->
+                                                        <span class="text-2xs md:text-base"><span class="offer__price"></span>تومان</span>
+                                                    </div>
+                                                </div>
+                                                <!-- btn result -->
+                                                <button class="text-2xs md:text-base md:font-estedadMedium text-white px-4 py-2 w-full bg-primary flex-center rounded">افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- swiper slide -->
+                                    <div class="swiper-slide">
+                                        <div class="flex flex-col rounded md:rounded-lg border overflow-hidden border-gray-400">
+                                            <!-- result img -->
+                                            <img src="images/menu/food7.png" alt="food" class="food__img object-cover w-full">
+                                            <!-- result content -->
+                                            <div class="bg-white p-4 flex-center flex-col gap-4">
+                                                <!-- result name -->
+                                                <h2 class="food__name text-xs md:text-xl font-estedadSemiBold"></h2>
+                                                <!-- result content wrapper -->
+                                                <div class="flex items-start justify-between w-full">
+                                                    <!-- right box -->
+                                                    <div class="flex flex-col items-start gap-1 text-2xs text-gray-500">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- add favorite -->
+                                                            <button class="add__favorite">
+                                                                <svg class="w-4 h-4">
+                                                                    <use href="#heart"></use>
+                                                                </svg>
+                                                            </button>
+                                                            <!-- text favorite -->
+                                                            <span class="hidden md:block">افزودن به علاقمندی‌ها</span>
+                                                        </div>
+                                                        <!-- bottom box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- star -->
+                                                            <svg class="w-4 h-4">
+                                                                <use href="#star"></use>
+                                                            </svg>
+                                                            <!-- rate number -->
+                                                            <span class="rate__number text-2xs md:text-sm text-gray-800 font-estedadMedium">۳</span>
+                                                            <!-- points -->
+                                                            <span class="hidden md:flex">(<span class="points">۴۰</span> امتیاز)</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- left box -->
+                                                    <div class="flex flex-col items-end gap-1">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-2 text-2xs">
+                                                            <!-- main price -->
+                                                            <span class="main__price text-gray-500 line-through"></span>
+                                                            <!-- count offer -->
+                                                            <span class="count__offer text-error px-1.5 rounded-lg bg-error-200"></span>
+                                                        </div>
+                                                        <!-- offer price -->
+                                                        <span class="text-2xs md:text-base"><span class="offer__price"></span>تومان</span>
+                                                    </div>
+                                                </div>
+                                                <!-- btn result -->
+                                                <button class="text-2xs md:text-base md:font-estedadMedium text-white px-4 py-2 w-full bg-primary flex-center rounded">افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- swiper slide -->
+                                    <div class="swiper-slide">
+                                        <div class="flex flex-col rounded md:rounded-lg border overflow-hidden border-gray-400">
+                                            <!-- result img -->
+                                            <img src="images/menu/food7.png" alt="food" class="food__img object-cover w-full">
+                                            <!-- result content -->
+                                            <div class="bg-white p-4 flex-center flex-col gap-4">
+                                                <!-- result name -->
+                                                <h2 class="food__name text-xs md:text-xl font-estedadSemiBold"></h2>
+                                                <!-- result content wrapper -->
+                                                <div class="flex items-start justify-between w-full">
+                                                    <!-- right box -->
+                                                    <div class="flex flex-col items-start gap-1 text-2xs text-gray-500">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- add favorite -->
+                                                            <button class="add__favorite">
+                                                                <svg class="w-4 h-4">
+                                                                    <use href="#heart"></use>
+                                                                </svg>
+                                                            </button>
+                                                            <!-- text favorite -->
+                                                            <span class="hidden md:block">افزودن به علاقمندی‌ها</span>
+                                                        </div>
+                                                        <!-- bottom box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- star -->
+                                                            <svg class="w-4 h-4">
+                                                                <use href="#star"></use>
+                                                            </svg>
+                                                            <!-- rate number -->
+                                                            <span class="rate__number text-2xs md:text-sm text-gray-800 font-estedadMedium">۳</span>
+                                                            <!-- points -->
+                                                            <span class="hidden md:flex">(<span class="points">۴۰</span> امتیاز)</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- left box -->
+                                                    <div class="flex flex-col items-end gap-1">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-2 text-2xs">
+                                                            <!-- main price -->
+                                                            <span class="main__price text-gray-500 line-through"></span>
+                                                            <!-- count offer -->
+                                                            <span class="count__offer text-error px-1.5 rounded-lg bg-error-200"></span>
+                                                        </div>
+                                                        <!-- offer price -->
+                                                        <span class="text-2xs md:text-base"><span class="offer__price"></span>تومان</span>
+                                                    </div>
+                                                </div>
+                                                <!-- btn result -->
+                                                <button class="text-2xs md:text-base md:font-estedadMedium text-white px-4 py-2 w-full bg-primary flex-center rounded">افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- swiper slide -->
+                                    <div class="swiper-slide">
+                                        <div class="flex flex-col rounded md:rounded-lg border overflow-hidden border-gray-400">
+                                            <!-- result img -->
+                                            <img src="images/menu/food7.png" alt="food" class="food__img object-cover w-full">
+                                            <!-- result content -->
+                                            <div class="bg-white p-4 flex-center flex-col gap-4">
+                                                <!-- result name -->
+                                                <h2 class="food__name text-xs md:text-xl font-estedadSemiBold"></h2>
+                                                <!-- result content wrapper -->
+                                                <div class="flex items-start justify-between w-full">
+                                                    <!-- right box -->
+                                                    <div class="flex flex-col items-start gap-1 text-2xs text-gray-500">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- add favorite -->
+                                                            <button class="add__favorite">
+                                                                <svg class="w-4 h-4">
+                                                                    <use href="#heart"></use>
+                                                                </svg>
+                                                            </button>
+                                                            <!-- text favorite -->
+                                                            <span class="hidden md:block">افزودن به علاقمندی‌ها</span>
+                                                        </div>
+                                                        <!-- bottom box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- star -->
+                                                            <svg class="w-4 h-4">
+                                                                <use href="#star"></use>
+                                                            </svg>
+                                                            <!-- rate number -->
+                                                            <span class="rate__number text-2xs md:text-sm text-gray-800 font-estedadMedium">۳</span>
+                                                            <!-- points -->
+                                                            <span class="hidden md:flex">(<span class="points">۴۰</span> امتیاز)</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- left box -->
+                                                    <div class="flex flex-col items-end gap-1">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-2 text-2xs">
+                                                            <!-- main price -->
+                                                            <span class="main__price text-gray-500 line-through"></span>
+                                                            <!-- count offer -->
+                                                            <span class="count__offer text-error px-1.5 rounded-lg bg-error-200"></span>
+                                                        </div>
+                                                        <!-- offer price -->
+                                                        <span class="text-2xs md:text-base"><span class="offer__price"></span>تومان</span>
+                                                    </div>
+                                                </div>
+                                                <!-- btn result -->
+                                                <button class="text-2xs md:text-base md:font-estedadMedium text-white px-4 py-2 w-full bg-primary flex-center rounded">افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- swiper slide -->
+                                    <div class="swiper-slide">
+                                        <div class="flex flex-col rounded md:rounded-lg border overflow-hidden border-gray-400">
+                                            <!-- result img -->
+                                            <img src="images/menu/food7.png" alt="food" class="food__img object-cover w-full">
+                                            <!-- result content -->
+                                            <div class="bg-white p-4 flex-center flex-col gap-4">
+                                                <!-- result name -->
+                                                <h2 class="food__name text-xs md:text-xl font-estedadSemiBold"></h2>
+                                                <!-- result content wrapper -->
+                                                <div class="flex items-start justify-between w-full">
+                                                    <!-- right box -->
+                                                    <div class="flex flex-col items-start gap-1 text-2xs text-gray-500">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- add favorite -->
+                                                            <button class="add__favorite">
+                                                                <svg class="w-4 h-4">
+                                                                    <use href="#heart"></use>
+                                                                </svg>
+                                                            </button>
+                                                            <!-- text favorite -->
+                                                            <span class="hidden md:block">افزودن به علاقمندی‌ها</span>
+                                                        </div>
+                                                        <!-- bottom box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- star -->
+                                                            <svg class="w-4 h-4">
+                                                                <use href="#star"></use>
+                                                            </svg>
+                                                            <!-- rate number -->
+                                                            <span class="rate__number text-2xs md:text-sm text-gray-800 font-estedadMedium">۳</span>
+                                                            <!-- points -->
+                                                            <span class="hidden md:flex">(<span class="points">۴۰</span> امتیاز)</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- left box -->
+                                                    <div class="flex flex-col items-end gap-1">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-2 text-2xs">
+                                                            <!-- main price -->
+                                                            <span class="main__price text-gray-500 line-through"></span>
+                                                            <!-- count offer -->
+                                                            <span class="count__offer text-error px-1.5 rounded-lg bg-error-200"></span>
+                                                        </div>
+                                                        <!-- offer price -->
+                                                        <span class="text-2xs md:text-base"><span class="offer__price"></span>تومان</span>
+                                                    </div>
+                                                </div>
+                                                <!-- btn result -->
+                                                <button class="text-2xs md:text-base md:font-estedadMedium text-white px-4 py-2 w-full bg-primary flex-center rounded">افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- swiper slide -->
+                                    <div class="swiper-slide">
+                                        <div class="flex flex-col rounded md:rounded-lg border overflow-hidden border-gray-400">
+                                            <!-- result img -->
+                                            <img src="images/menu/food7.png" alt="food" class="food__img object-cover w-full">
+                                            <!-- result content -->
+                                            <div class="bg-white p-4 flex-center flex-col gap-4">
+                                                <!-- result name -->
+                                                <h2 class="food__name text-xs md:text-xl font-estedadSemiBold"></h2>
+                                                <!-- result content wrapper -->
+                                                <div class="flex items-start justify-between w-full">
+                                                    <!-- right box -->
+                                                    <div class="flex flex-col items-start gap-1 text-2xs text-gray-500">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- add favorite -->
+                                                            <button class="add__favorite">
+                                                                <svg class="w-4 h-4">
+                                                                    <use href="#heart"></use>
+                                                                </svg>
+                                                            </button>
+                                                            <!-- text favorite -->
+                                                            <span class="hidden md:block">افزودن به علاقمندی‌ها</span>
+                                                        </div>
+                                                        <!-- bottom box -->
+                                                        <div class="flex items-center gap-1">
+                                                            <!-- star -->
+                                                            <svg class="w-4 h-4">
+                                                                <use href="#star"></use>
+                                                            </svg>
+                                                            <!-- rate number -->
+                                                            <span class="rate__number text-2xs md:text-sm text-gray-800 font-estedadMedium">۳</span>
+                                                            <!-- points -->
+                                                            <span class="hidden md:flex">(<span class="points">۴۰</span> امتیاز)</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- left box -->
+                                                    <div class="flex flex-col items-end gap-1">
+                                                        <!-- top box -->
+                                                        <div class="flex items-center gap-2 text-2xs">
+                                                            <!-- main price -->
+                                                            <span class="main__price text-gray-500 line-through"></span>
+                                                            <!-- count offer -->
+                                                            <span class="count__offer text-error px-1.5 rounded-lg bg-error-200"></span>
+                                                        </div>
+                                                        <!-- offer price -->
+                                                        <span class="text-2xs md:text-base"><span class="offer__price"></span>تومان</span>
+                                                    </div>
+                                                </div>
+                                                <!-- btn result -->
+                                                <button class="text-2xs md:text-base md:font-estedadMedium text-white px-4 py-2 w-full bg-primary flex-center rounded">افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="next__btn--swiper3 absolute top-0 bottom-0 left-12 bg-white w-10 h-10 m-auto z-10 hidden md:flex p-1 rounded-lg border border-gray-400 text-gray-600">
+                                <svg class="w-8 h-8">
+                                    <use href="#arrow-left"></use>
+                                </svg>
+                            </button>
+                            <button class="prev__btn--swiper3 absolute top-0 bottom-0 right-12 bg-white w-10 h-10 m-auto z-10 hidden md:flex p-1 rounded-lg border border-gray-400 text-gray-600">
+                                <svg class="w-8 h-8">
+                                    <use href="#arrow-right"></use>
+                                </svg>
+                            </button>
+                    </div>
+            </div>
+        </section>
+        <!-- full menu btn -->
+        <button class="full__menu--btn flex-center mx-auto border mt-3 md:mt-7 border-primary text-primary gap-2 p-2 rounded md:px-4 md:font-estedadMedium text-xs md:text-base">
+            <svg class="w-4 h-4 md:w-6 md:h-6">
+                <use href="#note"></use>
+            </svg>
+            مشاهده منوی کامل
+        </button>
     </main>
     <footer class="mt-6 md:mt-12 bg-footer bg-center bg-cover text-gray-300 py-5 md:py-8">
         <div class="container">
@@ -723,6 +1702,74 @@
                 },
             }
         });
-      </script>
+        let swiper2 = new Swiper(".swiper2", {
+            slidesPerView: 1.2,
+            spaceBetween: 16,
+            navigation: {
+                nextEl: ".next__btn--swiper2",
+                prevEl: ".prev__btn--swiper2",
+            },
+            breakpoints:{
+                350:{
+                    slidesPerView:1.4,
+                    spaceBetween:16
+                },
+                480:{
+                    slidesPerView:1.9,
+                    spaceBetween:16
+                },
+                640:{
+                    slidesPerView:2.5,
+                    spaceBetween:16
+                },
+                768:{
+                    slidesPerView:2.5,
+                    spaceBetween:24
+                },
+                1024:{
+                    slidesPerView:3.5,
+                    spaceBetween:24
+                },
+                1280:{
+                    slidesPerView:4.3,
+                    spaceBetween:24
+                },
+            }
+        });
+        let swiper3 = new Swiper(".swiper3", {
+            slidesPerView: 1.2,
+            spaceBetween: 16,
+            navigation: {
+                nextEl: ".next__btn--swiper3",
+                prevEl: ".prev__btn--swiper3",
+            },
+            breakpoints:{
+                350:{
+                    slidesPerView:1.4,
+                    spaceBetween:16
+                },
+                480:{
+                    slidesPerView:1.9,
+                    spaceBetween:16
+                },
+                640:{
+                    slidesPerView:2.5,
+                    spaceBetween:16
+                },
+                768:{
+                    slidesPerView:2.5,
+                    spaceBetween:24
+                },
+                1024:{
+                    slidesPerView:3.5,
+                    spaceBetween:24
+                },
+                1280:{
+                    slidesPerView:4.3,
+                    spaceBetween:24
+                },
+            }
+        });
+    </script>
 </body>
 </html>

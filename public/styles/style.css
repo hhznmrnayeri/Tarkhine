@@ -755,50 +755,6 @@ video {
   opacity: 1;
 }
 
-.swiper-slide {
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.swiper-slide img {
-  display: block;
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.swiper {
-  margin-left: auto;
-  margin-right: auto;
-  height: 18rem;
-  width: 100%;
-}
-
-.mySwiper2 {
-  height: 80%;
-  width: 100%;
-}
-
-.mySwiper {
-  height: 20%;
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
-}
-
-.mySwiper .swiper-slide {
-  height: 100%;
-  width: 25%;
-  opacity: 0.6;
-}
-
-.mySwiper .swiper-slide-thumb-active {
-  opacity: 1;
-}
-
 .undefined .result__title,.undefined .result__wrapper {
   display: none;
 }
@@ -1037,10 +993,6 @@ video {
   height: 0.25rem;
 }
 
-.h-1\/5 {
-  height: 20%;
-}
-
 .h-10 {
   height: 2.5rem;
 }
@@ -1069,10 +1021,6 @@ video {
   height: 1rem;
 }
 
-.h-4\/5 {
-  height: 80%;
-}
-
 .h-44 {
   height: 11rem;
 }
@@ -1091,10 +1039,6 @@ video {
 
 .h-64 {
   height: 16rem;
-}
-
-.h-72 {
-  height: 18rem;
 }
 
 .h-8 {
@@ -1120,10 +1064,6 @@ video {
 
 .w-1 {
   width: 0.25rem;
-}
-
-.w-1\/4 {
-  width: 25%;
 }
 
 .w-10 {
@@ -1520,11 +1460,6 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.py-2\.5 {
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
-}
-
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -1660,10 +1595,6 @@ video {
 
 .opacity-100 {
   opacity: 1;
-}
-
-.opacity-60 {
-  opacity: 0.6;
 }
 
 .shadow {

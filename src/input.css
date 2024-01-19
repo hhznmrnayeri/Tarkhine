@@ -91,27 +91,6 @@
     .gallery__branch--active{
         @apply visible opacity-100
     }
-    .swiper-slide {
-        @apply flex-center bg-cover bg-center
-    }
-    .swiper-slide img {
-        @apply block w-full h-full object-cover
-    }
-    .swiper {
-        @apply w-full h-72 mx-auto
-    }
-    .mySwiper2 {
-        @apply h-4/5 w-full
-    }
-    .mySwiper {
-        @apply h-1/5 py-2.5
-    }
-    .mySwiper .swiper-slide {
-        @apply w-1/4 h-full opacity-60
-    }
-    .mySwiper .swiper-slide-thumb-active {
-        @apply opacity-100
-    }
     .undefined .result__title,.undefined .result__wrapper{
         @apply hidden
     }

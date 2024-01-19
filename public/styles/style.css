@@ -612,6 +612,9 @@ video {
   position: relative;
   padding-top: 0px;
   padding-bottom: 0px;
+}
+
+.nav__item--active .nav__link ,.nav__item--active svg {
   font-family: EstedadBold;
   --tw-text-opacity: 1;
   color: rgb(65 127 86 / var(--tw-text-opacity));

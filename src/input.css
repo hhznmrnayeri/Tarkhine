@@ -23,8 +23,11 @@
 }
 
 @layer components{
-    .nav__item--active{
-        @apply relative text-primary font-estedadBold py-0
+    .nav__item--active {
+        @apply relative py-0
+    }
+    .nav__item--active .nav__link ,.nav__item--active svg{
+        @apply  text-primary font-estedadBold 
     }
     .nav__item--active::after{
         content: '';

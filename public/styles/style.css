@@ -895,10 +895,6 @@ video {
   top: 100%;
 }
 
-.-bottom-4 {
-  bottom: -1rem;
-}
-
 .z-10 {
   z-index: 10;
 }
@@ -1417,6 +1413,10 @@ video {
 
 .bg-section {
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url(../images/home/section.jpg);
+}
+
+.bg-header-menu {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%), linear-gradient(0deg, rgba(33, 64, 43, 0.50) 0%, rgba(33, 64, 43, 0.50) 100%), url(../images/menu/header.jpg);
 }
 
 .bg-cover {

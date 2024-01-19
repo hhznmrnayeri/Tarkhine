@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>منو</title>
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/swiper-bundle.min.css">
 </head>
 <body class="font-estedad text-gray-800 bg-white">
     <svg class="hidden">
@@ -45,6 +46,12 @@
         </symbol>
         <symbol id="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
             <path d="M11.8805 27.56C11.6271 27.56 11.3738 27.4667 11.1738 27.2667C10.7871 26.88 10.7871 26.24 11.1738 25.8534L19.8671 17.16C20.5071 16.52 20.5071 15.48 19.8671 14.84L11.1738 6.14669C10.7871 5.76003 10.7871 5.12003 11.1738 4.73336C11.5605 4.34669 12.2005 4.34669 12.5871 4.73336L21.2805 13.4267C21.9605 14.1067 22.3471 15.0267 22.3471 16C22.3471 16.9734 21.9738 17.8934 21.2805 18.5734L12.5871 27.2667C12.3871 27.4534 12.1338 27.56 11.8805 27.56Z" fill="currentColor"/>
+        </symbol>
+        <symbol id="arrow-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+            <path d="M20 27.56C19.7467 27.56 19.4934 27.4667 19.2934 27.2667L10.6 18.5734C9.18671 17.16 9.18671 14.84 10.6 13.4267L19.2934 4.73336C19.68 4.34669 20.32 4.34669 20.7067 4.73336C21.0934 5.12003 21.0934 5.76003 20.7067 6.14669L12.0134 14.84C11.3734 15.48 11.3734 16.52 12.0134 17.16L20.7067 25.8534C21.0934 26.24 21.0934 26.88 20.7067 27.2667C20.5067 27.4534 20.2534 27.56 20 27.56Z" fill="currentColor"/>
+        </symbol>
+        <symbol id="navigation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 154 33" fill="none">
+            <path d="M13.1492 12.9957C15.3255 5.56588 21.9046 0 29.6466 0H125.118C132.571 0 138.998 5.16164 141.261 12.2634C144.25 21.6506 148.867 33 153.711 33C161.97 33 -9.49755 33 0.41389 33C6.07606 33 10.4444 22.2302 13.1492 12.9957Z" fill="white"/>
         </symbol>
         <symbol id="twitter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25" fill="none">
             <g clip-path="url(#clip0_2716_28967)">
@@ -320,6 +327,45 @@
                 </div>
             </nav>
         </div>
+        <!-- header slide section -->
+        <div class="bg-header-menu h-44 md:h-80 bg-cover bg-center pt-14 md:pt-32 px-6 relative">
+            <!-- title wrapper -->
+            <div class="flex-center md:justify-between">
+                <!-- next slide btn -->
+                <button class="text-white hidden md:block">
+                    <svg class="w-8 h-8">
+                        <use href="#arrow-right"></use>
+                    </svg>
+                </button>
+                <!-- header title -->
+                <h1 class="text-tint-100 font-estedadBold md:text-4xl">لذت غذای سالم و گیاهی را با ترخینه تجربه کنید!</h1>
+                <!-- prev slide btn -->
+                <button class="text-white hidden md:block">
+                    <svg class="w-8 h-8">
+                        <use href="#arrow-left"></use>
+                    </svg>
+                </button>
+            </div>
+            <!-- navigation box -->
+            <svg class="h-5 md:h-8 w-24 md:w-32 absolute left-0 right-0 -bottom-0.5 mx-auto">
+                <use href="#navigation"></use>
+            </svg>
+            <!-- navigation wrapper -->
+            <div class="flex-center gap-1 absolute left-0 right-0 mx-auto bottom-1 md:bottom-2">
+                <!-- navigation item -->
+                <span class="w-1 h-1 md:w-2 md:h-2 rounded-full bg-gray-500"></span>
+                <!-- navigation item -->
+                <span class="w-1 h-1 md:w-2 md:h-2 rounded-full bg-gray-500"></span>
+                <!-- navigation item -->
+                <span class="w-1 h-1 md:w-2 md:h-2 rounded-full bg-gray-500"></span>
+                <!-- navigation item -->
+                <span class="w-1 h-1 md:w-2 md:h-2 rounded-full bg-gray-500"></span>
+                <!-- navigation item -->
+                <span class="w-1 h-1 md:w-2 md:h-2 rounded-full bg-gray-500"></span>
+                <!-- navigation item -->
+                <span class="navigation__item--active w-2 h-2 md:w-3 md:h-3 rounded-full"></span>
+            </div>
+        </div>
     </header>
     <main>
     </main>
@@ -548,5 +594,6 @@
     <!-- overlay -->
     <div class="overlay fixed top-0 bottom-0 right-0 left-0 transition-all duration-300 z-20"></div>
     <script src="scripts/app.js"></script>
+    <script src="scripts/swiper-bundle.min.js"></script>
 </body>
 </html>

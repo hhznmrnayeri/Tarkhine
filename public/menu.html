@@ -7,6 +7,41 @@
     <title>منو</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/swiper-bundle.min.css">
+    <style>
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-position: center;
+            background-size: cover;
+        }
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .swiper {
+            width: 100%;
+            height: 30rem;
+            margin: 0 auto;
+        }
+        .mySwiper2 {
+            height: 100%;
+            width: 100%;
+        }
+        .mySwiper {
+            height: 20%;
+        }
+        .mySwiper .swiper-slide {
+            width: 25%;
+            height: 100%;
+            opacity: 0.6;
+        }
+        .mySwiper .swiper-slide-thumb-active {
+            opacity: 1;
+        }
+</style>
 </head>
 <body class="font-estedad text-gray-800 bg-white">
     <svg class="hidden">
@@ -448,6 +483,118 @@
             </div>
         </div>
     </footer>
+    <!-- gallery modal -->
+    <div class="gallery__modal gallery__modal--active fixed rounded-lg bg-white inset-0 z-30 m-auto w-11/12 md:w-7/12 h-4/5 md:h-2/3 flex flex-col justify-between overflow-hidden">
+        <!-- top box -->
+        <div class="bg-gray-300 py-2 px-6 flex items-center justify-between">
+            <!-- title -->
+            <h4 class="font-estedadSemiBold text-2xl mx-auto">اطلاعات محصول</h4>
+            <!-- close gallery -->
+            <button class="close__gallery">
+                <svg class="w-10 h-10">
+                    <use href="#close"></use>
+                </svg>
+            </button>
+        </div>
+        <!-- swiper -->
+        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2 overflow-hidden">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <!-- background image -->
+                    <img src="images/home/gallery1.jpg" alt="branch">
+                </div>
+                <div class="swiper-slide">
+                    <!-- background image -->
+                    <img src="images/home/gallery2.jpg" alt="branch">
+                </div>
+                <div class="swiper-slide">
+                    <!-- background image -->
+                    <img src="images/home/gallery3.jpg" alt="branch">
+                </div>
+                <div class="swiper-slide">
+                    <!-- background image -->
+                    <img src="images/home/gallery4.jpg" alt="branch">
+                </div>
+                <div class="swiper-slide">
+                    <!-- background image -->
+                    <img src="images/home/gallery5.jpg" alt="branch">
+                </div>
+                <div class="swiper-slide">
+                    <!-- background image -->
+                    <img src="images/home/gallery6.jpg" alt="branch">
+                </div>
+                <div class="swiper-slide">
+                    <!-- background image -->
+                    <img src="images/home/gallery7.jpg" alt="branch">
+                </div>
+            </div>
+        </div>
+        <div thumbsSlider="" class="swiper mySwiper absolute bottom-24 left-0 right-0 h-20 w-10/12 overflow-hidden">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide rounded border border-white">
+                    <!-- background image -->
+                    <img src="images/home/gallery1.jpg">
+                </div>
+                <div class="swiper-slide rounded border border-white">
+                    <!-- background image -->
+                    <img src="images/home/gallery2.jpg">
+                </div>
+                <div class="swiper-slide rounded border border-white">
+                    <!-- background image -->
+                    <img src="images/home/gallery3.jpg">
+                </div>
+                <div class="swiper-slide rounded border border-white">
+                    <!-- background image -->
+                    <img src="images/home/gallery4.jpg">
+                </div>
+                <div class="swiper-slide rounded border border-white">
+                    <!-- background image -->
+                    <img src="images/home/gallery5.jpg">
+                </div>
+                <div class="swiper-slide rounded border border-white">
+                    <!-- background image -->
+                    <img src="images/home/gallery6.jpg">
+                </div>
+                <div class="swiper-slide rounded border border-white">
+                    <!-- background image -->
+                    <img src="images/home/gallery7.jpg">
+                </div>
+            </div>
+        </div>
+        <!-- bottom box -->
+        <div class="flex items-start justify-between p-4">
+            <!-- right box -->
+            <div class="flex flex-col items-start gap-1">
+                <!-- food name -->
+                <h5 class="font-estedadBold">کوفته برنجی</h5>
+                <!-- resepi -->
+                <p class="text-sm">برنج سبزی کوفته لپه آرد نخودچی، گردو و زرشک و آلو پیاز</p>
+            </div>
+            <!-- left box -->
+            <div class="flex flex-col items-end gap-1">
+                <!-- star wrapper -->
+                <div class="flex items-center">
+                    <svg class="w-6 h-6">
+                        <use href="#star"></use>
+                    </svg>
+                    <svg class="w-6 h-6">
+                        <use href="#star"></use>
+                    </svg>
+                    <svg class="w-6 h-6">
+                        <use href="#star"></use>
+                    </svg>
+                    <svg class="w-6 h-6">
+                        <use href="#star"></use>
+                    </svg>
+                    <svg class="w-6 h-6">
+                        <use href="#star"></use>
+                    </svg>
+                </div>
+                <!-- comment -->
+                <span class="text-sm text-gray-400">(<span class="comment__count">۷۵</span> نظر)</span>
+            </div>
+        </div>
+    </div>
     <!-- search modal -->
     <div class="search__modal hidden md:block fixed rounded-lg overflow-hidden bg-white pb-12 w-5/12 h-64 inset-0 m-auto z-30">
         <!-- top box -->
@@ -592,8 +739,41 @@
         </div>
     </div>
     <!-- overlay -->
-    <div class="overlay fixed top-0 bottom-0 right-0 left-0 transition-all duration-300 z-20"></div>
+    <div class="overlay__active fixed top-0 bottom-0 right-0 left-0 transition-all duration-300 z-20"></div>
     <script src="scripts/app.js"></script>
+    <script src="scripts/menu.js"></script>
     <script src="scripts/swiper-bundle.min.js"></script>
+    <script>
+        let swiper = new Swiper(".mySwiper", {
+            spaceBetween: 10,
+            slidesPerView: 3,
+            freeMode: true,
+            watchSlidesProgress: true,
+            breakpoints:{
+                480:{
+                    slidesPerView:4,
+                    spaceBetween:10
+                },
+                768:{
+                    slidesPerView:4,
+                    spaceBetween:10
+                },
+                1024:{
+                    slidesPerView:6,
+                    spaceBetween:10
+                },
+                1280:{
+                    slidesPerView:6,
+                    spaceBetween:32
+                },
+            }
+        });
+        let swiper2 = new Swiper(".mySwiper2", {
+            spaceBetween: 10,
+            thumbs: {
+                swiper: swiper,
+            },
+        });
+    </script>
 </body>
 </html>

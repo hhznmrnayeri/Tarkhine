@@ -97,6 +97,12 @@
     .defined .undefined__caption,.defined .undefined__img{
         @apply hidden
     }
+    .gallery__modal{
+        @apply invisible opacity-0 transition-all duration-300
+    }
+    .gallery__modal--active{
+        @apply visible opacity-100
+    }
 }
 
 @layer utilities{

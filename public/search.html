@@ -386,13 +386,13 @@
             <!-- result wrapper -->
             <div class="result__wrapper grid grid-cols-1 sm:grid-cols-12 gap-6 items-center justify-items-center content-center w-full justify-center mt-12">
                 <!-- result item -->
-                <div class="col-span-1 sm:col-span-6 xl:col-span-3 flex flex-col rounded-lg border border-gray-400">
+                <div class="col-span-1 sm:col-span-6 xl:col-span-3 flex flex-col rounded md:rounded-lg border border-gray-400">
                     <!-- result img -->
-                    <img src="images/home/food.png" alt="result" class="object-cover w-full">
+                    <img src="images/home/food.png" alt="result" class="result__img object-cover w-full">
                     <!-- result content -->
                     <div class="bg-white p-4 flex-center flex-col gap-4">
                         <!-- result name -->
-                        <h2 class="text-xl font-estedadSemiBold">پاستا گیاهی</h2>
+                        <h2 class="result__name text-xs md:text-xl font-estedadSemiBold">پاستا گیاهی</h2>
                         <!-- result content wrapper -->
                         <div class="flex items-start justify-between w-full">
                             <!-- right box -->
@@ -400,7 +400,7 @@
                                 <!-- top box -->
                                 <div class="flex items-center gap-1">
                                     <!-- add favorite -->
-                                    <button>
+                                    <button class="add__favorite">
                                         <svg class="w-4 h-4">
                                             <use href="#heart"></use>
                                         </svg>
@@ -415,7 +415,7 @@
                                         <use href="#star-rate5"></use>
                                     </svg>
                                     <!-- rate number -->
-                                    <span class="text-sm text-gray-800 font-estedadMedium">۴</span>
+                                    <span class="rate__number text-2xs md:text-sm text-gray-800 font-estedadMedium">۴</span>
                                     <!-- points -->
                                     <span>(<span class="points">۳۱</span> امتیاز)</span>
                                 </div>
@@ -425,26 +425,26 @@
                                 <!-- top box -->
                                 <div class="flex items-center gap-2 text-2xs">
                                     <!-- main price -->
-                                    <span class="text-gray-500 line-through">۱۵۵٬۰۰۰</span>
+                                    <span class="main__price text-gray-500 line-through">۱۵۵٬۰۰۰</span>
                                     <!-- count offer -->
-                                    <span class="text-error px-1.5 rounded-lg bg-error-200">%۱۴</span>
+                                    <span class="count__offer text-error px-1.5 rounded-lg bg-error-200">%۱۴</span>
                                 </div>
                                 <!-- offer price -->
-                                <span>۱۲۸٬۰۰۰ <span>تومان</span></span>
+                                <span class="text-2xs md:text-base"><span class="offer__price">۱۲۸٬۰۰۰ </span>تومان</span>
                             </div>
                         </div>
                         <!-- btn result -->
-                        <button class="font-estedadMedium text-white px-4 py-2 w-full bg-primary flex-center rounded">افزودن به سبد خرید</button>
+                        <button class="text-2xs md:text-base md:font-estedadMedium text-white px-4 py-2 w-full bg-primary flex-center rounded">افزودن به سبد خرید</button>
                     </div>
                 </div>
                 <!-- result item -->
-                <div class="col-span-1 sm:col-span-6 xl:col-span-3 flex flex-col rounded-lg border border-gray-400">
+                <div class="col-span-1 sm:col-span-6 xl:col-span-3 flex flex-col rounded md:rounded-lg border border-gray-400">
                     <!-- result img -->
-                    <img src="images/home/food1.png" alt="result" class="object-cover w-full">
+                    <img src="images/home/food1.png" alt="result" class="result__img object-cover w-full">
                     <!-- result content -->
                     <div class="bg-white p-4 flex-center flex-col gap-4">
                         <!-- result name -->
-                        <h2 class="text-xl font-estedadSemiBold">پاستا سبزیجات</h2>
+                        <h2 class="result__name text-xs md:text-xl font-estedadSemiBold">پاستا سبزیجات</h2>
                         <!-- result content wrapper -->
                         <div class="flex items-start justify-between w-full">
                             <!-- right box -->
@@ -452,7 +452,7 @@
                                 <!-- top box -->
                                 <div class="flex items-center gap-1">
                                     <!-- add favorite -->
-                                    <button>
+                                    <button class="add__favorite">
                                         <svg class="w-4 h-4">
                                             <use href="#heart"></use>
                                         </svg>
@@ -467,7 +467,7 @@
                                         <use href="#star-rate5"></use>
                                     </svg>
                                     <!-- rate number -->
-                                    <span class="text-sm text-gray-800 font-estedadMedium">۵</span>
+                                    <span class="rate__number text-2xs md:text-sm text-gray-800 font-estedadMedium">۵</span>
                                     <!-- points -->
                                     <span>(<span class="points">۵۹</span> امتیاز)</span>
                                 </div>
@@ -477,26 +477,26 @@
                                 <!-- top box -->
                                 <div class="flex items-center gap-2 text-2xs">
                                     <!-- main price -->
-                                    <span class="text-gray-500 line-through">۱۸۵٬۰۰۰</span>
+                                    <span class="main__price text-gray-500 line-through">۱۸۵٬۰۰۰</span>
                                     <!-- count offer -->
-                                    <span class="text-error px-1.5 rounded-lg bg-error-200">%۱۵</span>
+                                    <span class="count__offer text-error px-1.5 rounded-lg bg-error-200">%۱۵</span>
                                 </div>
                                 <!-- offer price -->
-                                <span>۱۶۵٬۰۰۰ <span>تومان</span></span>
+                                <span class="text-2xs md:text-base"><span class="offer__price">۱۶۵٬۰۰۰ </span>تومان</span>
                             </div>
                         </div>
                         <!-- btn result -->
-                        <button class="font-estedadMedium text-white px-4 py-2 w-full bg-primary flex-center rounded">افزودن به سبد خرید</button>
+                        <button class="text-2xs md:text-base md:font-estedadMedium text-white px-4 py-2 w-full bg-primary flex-center rounded">افزودن به سبد خرید</button>
                     </div>
                 </div>
                 <!-- result item -->
-                <div class="col-span-1 sm:col-span-6 xl:col-span-3 flex flex-col rounded-lg border border-gray-400">
+                <div class="col-span-1 sm:col-span-6 xl:col-span-3 flex flex-col rounded md:rounded-lg border border-gray-400">
                     <!-- result img -->
-                    <img src="images/home/food2.png" alt="result" class="object-cover w-full">
+                    <img src="images/home/food2.png" alt="result" class="result__img object-cover w-full">
                     <!-- result content -->
                     <div class="bg-white p-4 flex-center flex-col gap-4">
                         <!-- result name -->
-                        <h2 class="text-xl font-estedadSemiBold">پاستا رژیمی</h2>
+                        <h2 class="result__name text-xs md:text-xl font-estedadSemiBold">پاستا رژیمی</h2>
                         <!-- result content wrapper -->
                         <div class="flex items-start justify-between w-full">
                             <!-- right box -->
@@ -504,7 +504,7 @@
                                 <!-- top box -->
                                 <div class="flex items-center gap-1">
                                     <!-- add favorite -->
-                                    <button>
+                                    <button class="add__favorite">
                                         <svg class="w-4 h-4">
                                             <use href="#heart"></use>
                                         </svg>
@@ -519,7 +519,7 @@
                                         <use href="#star-rate5"></use>
                                     </svg>
                                     <!-- rate number -->
-                                    <span class="text-sm text-gray-800 font-estedadMedium">۳</span>
+                                    <span class="rate__number text-2xs md:text-sm text-gray-800 font-estedadMedium">۳</span>
                                     <!-- points -->
                                     <span>(<span class="points">۴۰</span> امتیاز)</span>
                                 </div>
@@ -529,16 +529,16 @@
                                 <!-- top box -->
                                 <div class="flex items-center gap-2 text-2xs">
                                     <!-- main price -->
-                                    <span class="text-gray-500 line-through">۱۸۰٬۰۰۰</span>
+                                    <span class="main__price text-gray-500 line-through">۱۸۰٬۰۰۰</span>
                                     <!-- count offer -->
-                                    <span class="text-error px-1.5 rounded-lg bg-error-200">%۱۰</span>
+                                    <span class="count__offer text-error px-1.5 rounded-lg bg-error-200">%۱۰</span>
                                 </div>
                                 <!-- offer price -->
-                                <span>۱۶۸٬۰۰۰ <span>تومان</span></span>
+                                <span class="text-2xs md:text-base"><span class="offer__price">۱۶۸٬۰۰۰ </span>تومان</span>
                             </div>
                         </div>
                         <!-- btn result -->
-                        <button class="font-estedadMedium text-white px-4 py-2 w-full bg-primary flex-center rounded">افزودن به سبد خرید</button>
+                        <button class="text-2xs md:text-base md:font-estedadMedium text-white px-4 py-2 w-full bg-primary flex-center rounded">افزودن به سبد خرید</button>
                     </div>
                 </div>
             </div>

@@ -1440,6 +1440,41 @@
             </svg>
             مشاهده منوی کامل
         </button>
+        <!-- gallery -->
+        <section class="mt-6 md:mt-12">
+            <!-- section title -->
+            <h2 class="text-center font-estedadBold md:text-2xl">شعبه اکباتان</h2>
+            <!-- swiper -->
+            <div class="swiper swiper4 h-44 md:h-80 relative mt-3 md:mt-5">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/home/gallery1.jpg" alt="gallery" class="w-full h-full bg-center bg-cover object-cover">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/home/gallery2.jpg" alt="gallery" class="w-full h-full bg-center bg-cover object-cover">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/home/gallery3.jpg" alt="gallery" class="w-full h-full bg-center bg-cover object-cover">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/home/gallery4.jpg" alt="gallery" class="w-full h-full bg-center bg-cover object-cover">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/home/gallery5.jpg" alt="gallery" class="w-full h-full bg-center bg-cover object-cover">
+                    </div>
+                </div>
+                <button class="next__btn--swiper4 absolute z-10 w-6 h-6 md:w-12 md:h-12 top-0 bottom-0 m-auto left-3 md:left-6 text-white">
+                    <svg class="w-6 h-6 md:w-12 md:h-12">
+                        <use href="#arrow-left"></use>
+                    </svg>
+                </button>
+                <button class="prev__btn--swiper4 absolute z-10 w-6 h-6 md:w-12 md:h-12 top-0 bottom-0 m-auto right-3 md:right-6 text-white">
+                    <svg class="w-6 h-6 md:w-12 md:h-12">
+                        <use href="#arrow-right"></use>
+                    </svg>
+                </button>
+            </div>
+        </section>
     </main>
     <footer class="mt-6 md:mt-12 bg-footer bg-center bg-cover text-gray-300 py-5 md:py-8">
         <div class="container">
@@ -1769,6 +1804,12 @@
                     spaceBetween:24
                 },
             }
+        });
+        var swiper4 = new Swiper(".swiper4", {
+            navigation: {
+                nextEl: ".next__btn--swiper4",
+                prevEl: ".prev__btn--swiper4",
+            },
         });
     </script>
 </body>

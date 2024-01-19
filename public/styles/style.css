@@ -883,6 +883,14 @@ video {
   top: 100%;
 }
 
+.left-3 {
+  left: 0.75rem;
+}
+
+.right-3 {
+  right: 0.75rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -1756,6 +1764,14 @@ video {
 
   .md\:top-0 {
     top: 0px;
+  }
+
+  .md\:left-6 {
+    left: 1.5rem;
+  }
+
+  .md\:right-6 {
+    right: 1.5rem;
   }
 
   .md\:col-span-3 {

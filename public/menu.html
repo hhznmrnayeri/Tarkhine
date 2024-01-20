@@ -23,15 +23,17 @@
         }
         .swiper {
             width: 100%;
-            height: 30rem;
+            height: 18rem;
             margin: 0 auto;
         }
         .mySwiper2 {
-            height: 100%;
+            height: 80%;
             width: 100%;
         }
         .mySwiper {
+            width: 80%;
             height: 20%;
+            padding: 10px 0;
         }
         .mySwiper .swiper-slide {
             width: 25%;
@@ -484,85 +486,20 @@
         </div>
     </footer>
     <!-- gallery modal -->
-    <div class="gallery__modal gallery__modal--active fixed rounded-lg bg-white inset-0 z-30 m-auto w-11/12 md:w-7/12 h-4/5 md:h-2/3 flex flex-col justify-between overflow-hidden">
+    <div class="gallery__modal fixed rounded-lg bg-white inset-0 z-30 m-auto w-11/12 md:w-7/12 h-4/5 md:h-3/4 overflow-hidden flex flex-col">
         <!-- top box -->
-        <div class="bg-gray-300 py-2 px-6 flex items-center justify-between">
+        <div class="bg-gray-300 py-2 px-6 flex items-center justify-between order-1">
             <!-- title -->
-            <h4 class="font-estedadSemiBold text-2xl mx-auto">اطلاعات محصول</h4>
+            <h4 class="font-estedadSemiBold text-sm md:text-2xl mx-auto">اطلاعات محصول</h4>
             <!-- close gallery -->
             <button class="close__gallery">
-                <svg class="w-10 h-10">
+                <svg class="w-6 md:w-10 h-6 md:h-10">
                     <use href="#close"></use>
                 </svg>
             </button>
         </div>
-        <!-- swiper -->
-        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2 overflow-hidden">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <!-- background image -->
-                    <img src="images/home/gallery1.jpg" alt="branch">
-                </div>
-                <div class="swiper-slide">
-                    <!-- background image -->
-                    <img src="images/home/gallery2.jpg" alt="branch">
-                </div>
-                <div class="swiper-slide">
-                    <!-- background image -->
-                    <img src="images/home/gallery3.jpg" alt="branch">
-                </div>
-                <div class="swiper-slide">
-                    <!-- background image -->
-                    <img src="images/home/gallery4.jpg" alt="branch">
-                </div>
-                <div class="swiper-slide">
-                    <!-- background image -->
-                    <img src="images/home/gallery5.jpg" alt="branch">
-                </div>
-                <div class="swiper-slide">
-                    <!-- background image -->
-                    <img src="images/home/gallery6.jpg" alt="branch">
-                </div>
-                <div class="swiper-slide">
-                    <!-- background image -->
-                    <img src="images/home/gallery7.jpg" alt="branch">
-                </div>
-            </div>
-        </div>
-        <div thumbsSlider="" class="swiper mySwiper absolute bottom-24 left-0 right-0 h-20 w-10/12 overflow-hidden">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide rounded border border-white">
-                    <!-- background image -->
-                    <img src="images/home/gallery1.jpg">
-                </div>
-                <div class="swiper-slide rounded border border-white">
-                    <!-- background image -->
-                    <img src="images/home/gallery2.jpg">
-                </div>
-                <div class="swiper-slide rounded border border-white">
-                    <!-- background image -->
-                    <img src="images/home/gallery3.jpg">
-                </div>
-                <div class="swiper-slide rounded border border-white">
-                    <!-- background image -->
-                    <img src="images/home/gallery4.jpg">
-                </div>
-                <div class="swiper-slide rounded border border-white">
-                    <!-- background image -->
-                    <img src="images/home/gallery5.jpg">
-                </div>
-                <div class="swiper-slide rounded border border-white">
-                    <!-- background image -->
-                    <img src="images/home/gallery6.jpg">
-                </div>
-                <div class="swiper-slide rounded border border-white">
-                    <!-- background image -->
-                    <img src="images/home/gallery7.jpg">
-                </div>
-            </div>
-        </div>
         <!-- bottom box -->
-        <div class="flex items-start justify-between p-4">
+        <div class="flex items-start justify-between p-4 order-3">
             <!-- right box -->
             <div class="flex flex-col items-start gap-1">
                 <!-- food name -->
@@ -593,6 +530,71 @@
                 <!-- comment -->
                 <span class="text-sm text-gray-400">(<span class="comment__count">۷۵</span> نظر)</span>
             </div>
+        </div>
+        <!-- swiper -->
+        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2 overflow-hidden  order-2 relative">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <!-- background image -->
+                        <img src="images/menu/food.png" alt="food">
+                    </div>
+                    <div class="swiper-slide">
+                        <!-- background image -->
+                        <img src="images/menu/food1.png" alt="food">
+                    </div>
+                    <div class="swiper-slide">
+                        <!-- background image -->
+                        <img src="images/menu/food2.png" alt="food">
+                    </div>
+                    <div class="swiper-slide">
+                        <!-- background image -->
+                        <img src="images/menu/food3.png" alt="food">
+                    </div>
+                    <div class="swiper-slide">
+                        <!-- background image -->
+                        <img src="images/menu/food4.png" alt="food">
+                    </div>
+                    <div class="swiper-slide">
+                        <!-- background image -->
+                        <img src="images/menu/food5.png" alt="food">
+                    </div>
+                    <div class="swiper-slide">
+                        <!-- background image -->
+                        <img src="images/menu/food6.png" alt="food">
+                    </div>
+                </div>
+                <div thumbsSlider="" class="swiper mySwiper absolute bottom-24 mx-auto left-0 right-0 h-20 w-10/12 overflow-hidden">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide rounded border border-white">
+                            <!-- background image -->
+                            <img src="images/menu/food.png">
+                        </div>
+                        <div class="swiper-slide rounded border border-white">
+                            <!-- background image -->
+                            <img src="images/menu/food1.png">
+                        </div>
+                        <div class="swiper-slide rounded border border-white">
+                            <!-- background image -->
+                            <img src="images/menu/food2.png">
+                        </div>
+                        <div class="swiper-slide rounded border border-white">
+                            <!-- background image -->
+                            <img src="images/menu/food3.png">
+                        </div>
+                        <div class="swiper-slide rounded border border-white">
+                            <!-- background image -->
+                            <img src="images/menu/food4.png">
+                        </div>
+                        <div class="swiper-slide rounded border border-white">
+                            <!-- background image -->
+                            <img src="images/menu/food5.png">
+                        </div>
+                        <div class="swiper-slide rounded border border-white">
+                            <!-- background image -->
+                            <img src="images/menu/food6.png">
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
     <!-- search modal -->
@@ -739,7 +741,7 @@
         </div>
     </div>
     <!-- overlay -->
-    <div class="overlay__active fixed top-0 bottom-0 right-0 left-0 transition-all duration-300 z-20"></div>
+    <div class="overlay fixed top-0 bottom-0 right-0 left-0 transition-all duration-300 z-20"></div>
     <script src="scripts/app.js"></script>
     <script src="scripts/menu.js"></script>
     <script src="scripts/swiper-bundle.min.js"></script>

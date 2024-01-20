@@ -103,6 +103,13 @@
     .gallery__modal--active{
         @apply visible opacity-100
     }
+    .topic__item--active{
+        @apply relative text-primary font-estedadMedium text-sm md:text-xl md:font-estedadBold
+    }
+    .topic__item--active::after{
+        content: '';
+        @apply absolute bg-primary h-px -bottom-1.5 left-0 right-0 w-full md:-bottom-3.5
+    }
 }
 
 @layer utilities{

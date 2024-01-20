@@ -1230,6 +1230,10 @@ video {
   width: 100%;
 }
 
+.flex-1 {
+  flex: 1 1 0%;
+}
+
 .flex-shrink-0 {
   flex-shrink: 0;
 }
@@ -2194,6 +2198,10 @@ video {
 
   .md\:rounded-lg {
     border-radius: 0.5rem;
+  }
+
+  .md\:rounded-5xl {
+    border-radius: 4rem;
   }
 
   .md\:border {

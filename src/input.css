@@ -103,6 +103,9 @@
     .gallery__modal--active{
         @apply visible opacity-100
     }
+    .gallery__slide .swiper-slide-thumb-active {
+        opacity: 1;
+    }
     .topic__item--active{
         @apply relative text-primary font-estedadMedium text-sm md:text-xl md:font-estedadBold
     }

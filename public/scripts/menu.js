@@ -1,6 +1,7 @@
 const galleryModal=document.querySelector('.gallery__modal')
 const closeGallery=document.querySelector('.close__gallery')
 const menuWrapperIrani=document.querySelector('.menu__wrapper--irani')
+const menuWrapperForeign=document.querySelector('.menu__wrapper--foreign')
 const topicItemArray=document.querySelectorAll('.topic__item')
 function closeGalleryModal(){
     overlay.classList.remove('overlay__active')
@@ -91,8 +92,9 @@ menuArraySandwich=[
 //     console.log(parentElem)
 //     item.parentStar=parentElem
 // })
-menuArrayIrani.forEach(item=>{
-    menuWrapperIrani.insertAdjacentHTML('afterbegin',`<!-- menu item -->
+function insertMenu(array,wrapper){
+    array.forEach(item=>{
+        wrapper.insertAdjacentHTML('beforeend',`<!-- menu item -->
 <div class="menu__item col-span-1 xl:col-span-6 flex gap-2 md:gap-8 rounded md:rounded-lg border border-gray-400 md:shadow-card">
     <!-- item img -->
     <img src="${item.img}" alt="food" class="w-24 md:w-40">
@@ -152,3 +154,6 @@ menuArrayIrani.forEach(item=>{
     </div>
 </div>`)
 })
+}
+insertMenu(menuArrayIrani,menuWrapperIrani)
+insertMenu(menuArrayForeign,menuWrapperForeign)

@@ -128,6 +128,9 @@
         <symbol id="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 24" fill="none">
             <path d="M12.5 0L15.1942 8.2918H23.9127L16.8593 13.4164L19.5534 21.7082L12.5 16.5836L5.44658 21.7082L8.14074 13.4164L1.08732 8.2918H9.80583L12.5 0Z" fill="#F4B740"/>
         </symbol>
+        <symbol id="star-empty" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 24" fill="none">
+            <path d="M12.5 1.61804L14.7186 8.4463L14.8309 8.7918H15.1942H22.3738L16.5654 13.0119L16.2715 13.2254L16.3837 13.5709L18.6024 20.3992L12.7939 16.1791L12.5 15.9656L12.2061 16.1791L6.39763 20.3992L8.61627 13.5709L8.72853 13.2254L8.43464 13.0119L2.62616 8.7918H9.80583H10.1691L10.2814 8.4463L12.5 1.61804Z" stroke="#F4B740"/>
+        </symbol>
     </svg>
     <header>
         <!-- container -->
@@ -479,9 +482,9 @@
                     </button>
                 </div>
                 <!-- menu wrapper -->
-                <div class="mt-3 grid grid-cols-1 xl:grid-cols-12 gap-3 md:gap-6 md:mt-6">
+                <div class="menu__wrapper--irani mt-3 grid grid-cols-1 xl:grid-cols-12 gap-3 md:gap-6 md:mt-6">
                     <!-- menu item -->
-                    <div class="col-span-1 xl:col-span-6 flex gap-2 md:gap-8 rounded md:rounded-lg border border-gray-400 md:shadow-card">
+                    <div class="menu__item col-span-1 xl:col-span-6 flex gap-2 md:gap-8 rounded md:rounded-lg border border-gray-400 md:shadow-card">
                         <!-- item img -->
                         <img src="images/menu/food.png" alt="food" class="w-24 md:w-40">
                         <!-- item content -->
@@ -498,7 +501,7 @@
                                 <!-- left box -->
                                 <div class="flex flex-col items-end gap-2 md:gap-0">
                                     <!-- offer wrapper -->
-                                    <div class="flex items-center gap-2">
+                                    <div class="offer__wrapper flex items-center gap-2">
                                         <!-- offer price -->
                                         <h6 class="text-2xs md:text-base text-gray-500 line-through">۱۸۰٬۰۰۰</h6>
                                         <!-- offer count -->
@@ -513,7 +516,7 @@
                                 <!-- star wrapper -->
                                 <div class="flex items-center">
                                     <svg class="w-4 h-4 md:w-6 md:h-6">
-                                        <use href="#star"></use>
+                                        <use href="#star-empty"></use>
                                     </svg>
                                     <svg class="w-4 h-4 md:w-6 md:h-6">
                                         <use href="#star"></use>
@@ -880,7 +883,7 @@
     <!-- overlay -->
     <div class="overlay fixed top-0 bottom-0 right-0 left-0 transition-all duration-300 z-20"></div>
     <script src="scripts/app.js"></script>
-    <script src="scripts/menu.js"></script>
+    <script src="scripts/menu.js" defer></script>
     <script src="scripts/swiper-bundle.min.js"></script>
     <script>
         let swiper = new Swiper(".gallery__slide", {

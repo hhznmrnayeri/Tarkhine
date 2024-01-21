@@ -1042,6 +1042,10 @@ video {
   margin-bottom: 1.5rem;
 }
 
+.mr-4 {
+  margin-right: 1rem;
+}
+
 .mt-0 {
   margin-top: 0px;
 }
@@ -1092,10 +1096,6 @@ video {
 
 .mt-6 {
   margin-top: 1.5rem;
-}
-
-.mr-4 {
-  margin-right: 1rem;
 }
 
 .block {
@@ -1996,10 +1996,6 @@ video {
     grid-column: span 3 / span 3;
   }
 
-  .md\:col-span-6 {
-    grid-column: span 6 / span 6;
-  }
-
   .md\:mx-auto {
     margin-left: auto;
     margin-right: auto;
@@ -2161,6 +2157,10 @@ video {
     width: 1.5rem;
   }
 
+  .md\:w-60 {
+    width: 15rem;
+  }
+
   .md\:w-7\/12 {
     width: 58.333333%;
   }
@@ -2179,10 +2179,6 @@ video {
 
   .md\:w-full {
     width: 100%;
-  }
-
-  .md\:w-60 {
-    width: 15rem;
   }
 
   .md\:flex-1 {
@@ -2317,11 +2313,6 @@ video {
     padding-bottom: 3rem;
   }
 
-  .md\:py-2 {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
-
   .md\:py-3 {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
@@ -2442,10 +2433,6 @@ video {
 }
 
 @media (min-width: 1024px) {
-  .lg\:col-span-6 {
-    grid-column: span 6 / span 6;
-  }
-
   .lg\:flex {
     display: flex;
   }
@@ -2456,10 +2443,6 @@ video {
 
   .lg\:w-7\/12 {
     width: 58.333333%;
-  }
-
-  .lg\:grid-cols-12 {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 
   .lg\:gap-2 {
@@ -2520,14 +2503,6 @@ video {
 
   .xl\:grid-cols-12 {
     grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-
-  .xl\:justify-between {
-    justify-content: space-between;
-  }
-
-  .xl\:justify-around {
-    justify-content: space-around;
   }
 
   .xl\:justify-evenly {

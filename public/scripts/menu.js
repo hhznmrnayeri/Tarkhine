@@ -2,6 +2,7 @@ const galleryModal=document.querySelector('.gallery__modal')
 const closeGallery=document.querySelector('.close__gallery')
 const menuWrapperIrani=document.querySelector('.menu__wrapper--irani')
 const menuWrapperForeign=document.querySelector('.menu__wrapper--foreign')
+const menuWrapperPizza=document.querySelector('.menu__wrapper--pizza')
 const topicItemArray=document.querySelectorAll('.topic__item')
 function closeGalleryModal(){
     overlay.classList.remove('overlay__active')
@@ -157,3 +158,4 @@ function insertMenu(array,wrapper){
 }
 insertMenu(menuArrayIrani,menuWrapperIrani)
 insertMenu(menuArrayForeign,menuWrapperForeign)
+insertMenu(menuArrayPizza,menuWrapperPizza)

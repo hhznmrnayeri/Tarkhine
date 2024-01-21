@@ -828,7 +828,7 @@ video {
 @media (min-width: 768px) {
   .favorite__btn {
     left: 1rem;
-    top: 0.625rem;
+    top: 0.125rem;
     bottom: auto;
     right: auto;
     height: 1.5rem;
@@ -1976,12 +1976,8 @@ video {
     top: 0px;
   }
 
-  .md\:top-2 {
-    top: 0.5rem;
-  }
-
-  .md\:top-2\.5 {
-    top: 0.625rem;
+  .md\:top-0\.5 {
+    top: 0.125rem;
   }
 
   .md\:order-1 {

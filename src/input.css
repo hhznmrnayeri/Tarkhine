@@ -114,7 +114,7 @@
         @apply absolute bg-primary h-px -bottom-1.5 left-0 right-0 w-full md:-bottom-3.5
     }
     .favorite__btn{
-        @apply absolute w-4 h-4 md:w-6 md:h-6 bottom-1.5 right-0 top-auto left-auto md:left-4 md:top-2.5 md:bottom-auto md:right-auto
+        @apply absolute w-4 h-4 md:w-6 md:h-6 bottom-1.5 right-0 top-auto left-auto md:left-4 md:top-0.5 md:bottom-auto md:right-auto
     }
 }
 

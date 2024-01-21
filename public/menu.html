@@ -390,29 +390,9 @@
                 <!-- section wrapper -->
                 <div class="flex flex-col md:flex-row items-start md:items-center gap-3 justify-between">
                     <!-- topic type wrapper -->
-                    <!-- <style>
-                        .swiper {
-                          width: 100%;
-                          height: 100%;
-                        }
-                        /* .swiper-slide {
-                          text-align: center;
-                          font-size: 18px;
-                          background: #fff;
-                          display: flex;
-                          justify-content: center;
-                          align-items: center;
-                        } */
-                        /* .swiper-slide img {
-                          display: block;
-                          width: 100%;
-                          height: 100%;
-                          object-fit: cover;
-                        } */
-                      </style> -->
                     <div class="swiper mySwiper w-full h-full">
                         <div class="swiper-wrapper child:flex-center">
-                            <div class="swiper-slide">
+                            <div class="swiper-slide" style="width: auto;">
                                 <button class="text-2xs md:text-base text-nowrap flex items-center gap-1 px-2 rounded-lg md:rounded-5xl bg-gray-300 py-1">
                                     <span>غذاهای ایرانی</span>
                                     <svg class="w-3 md:w-4 h-3 md:h-4">
@@ -420,7 +400,7 @@
                                     </svg>
                                 </button>
                             </div>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide" style="width: auto;">
                                 <button class="text-2xs md:text-base text-nowrap flex items-center gap-1 px-2 rounded-lg md:rounded-5xl bg-gray-300 py-1">
                                     <span>غذاهای غیر ایرانی</span>
                                     <svg class="w-3 md:w-4 h-3 md:h-4">
@@ -428,7 +408,7 @@
                                     </svg>
                                 </button>
                             </div>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide" style="width: auto;">
                                 <button class="text-2xs md:text-base text-nowrap flex items-center gap-1 px-2 rounded-lg md:rounded-5xl bg-gray-300 py-1">
                                     <span>پیتزاها</span>
                                     <svg class="w-3 md:w-4 h-3 md:h-4">
@@ -436,7 +416,7 @@
                                     </svg>
                                 </button>
                             </div>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide" style="width: auto;">
                                 <button class="text-2xs md:text-base text-nowrap flex items-center gap-1 px-2 rounded-lg md:rounded-5xl bg-gray-300 py-1">
                                     <span>ساندویچ‌ها</span>
                                     <svg class="w-3 md:w-4 h-3 md:h-4">
@@ -444,7 +424,7 @@
                                     </svg>
                                 </button>
                             </div>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide" style="width: auto;">
                                 <button class="text-2xs md:text-base text-nowrap flex items-center gap-1 px-2 rounded-lg md:rounded-5xl bg-gray-300 py-1">
                                     <span>پرفروش‌ترین</span>
                                     <svg class="w-3 md:w-4 h-3 md:h-4">
@@ -452,7 +432,7 @@
                                     </svg>
                                 </button>
                             </div>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide" style="width: auto;">
                                 <button class="text-2xs md:text-base text-nowrap flex items-center gap-1 px-2 rounded-lg md:rounded-5xl bg-gray-300 py-1">
                                     <span>اقتصادی‌ترین</span>
                                     <svg class="w-3 md:w-4 h-3 md:h-4">
@@ -460,7 +440,7 @@
                                     </svg>
                                 </button>
                             </div>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide" style="width: auto;">
                                 <button class="text-2xs md:text-base text-nowrap flex items-center gap-1 px-2 rounded-lg md:rounded-5xl bg-gray-300 py-1">
                                     <span>اقتصادی‌ترین</span>
                                     <svg class="w-3 md:w-4 h-3 md:h-4">
@@ -471,7 +451,7 @@
                         </div>
                     </div>
                     <!-- search wrapper -->
-                    <form class="mt-4 flex items-center justify-between px-4 py-2 border border-gray-400 rounded w-full md:w-5/12 overflow-hidden flex-grow">
+                    <form class="flex items-center justify-between px-4 py-2 border border-gray-400 rounded w-full md:w-5/12 overflow-hidden flex-grow">
                         <!-- search input -->
                         <input type="text" class="border-none outline-none text-2xs md:text-xs flex-grow" placeholder="جستجو">
                         <!-- search btn -->
@@ -855,24 +835,29 @@
                 swiper: swiper,
             },
         });
-        let swiper3 = new Swiper(".mySwiper", {
+        // let swiper3 = new Swiper(".mySwiper", {
+        //     slidesPerView: "auto",
+        //     loop: true,
+        //     spaceBetween: 8,
+        //     // breakpoints:{
+        //     //     768:{
+        //     //         slidesPerView:5,
+        //     //         spaceBetween: 8,
+        //     //     },
+        //     //     1024:{
+        //     //         slidesPerView:6.1,
+        //     //         spaceBetween: 8,
+        //     //     },
+        //     //     1280:{
+        //     //         slidesPerView:6,
+        //     //         spaceBetween: 8,
+        //     //     }
+        //     // }
+        // });
+        var swiper3 = new Swiper(".mySwiper", {
             slidesPerView: "auto",
-            loop: true,
+            rewind: true,
             spaceBetween: 8,
-            // breakpoints:{
-            //     768:{
-            //         slidesPerView:5,
-            //         spaceBetween: 8,
-            //     },
-            //     1024:{
-            //         slidesPerView:6.1,
-            //         spaceBetween: 8,
-            //     },
-            //     1280:{
-            //         slidesPerView:6,
-            //         spaceBetween: 8,
-            //     }
-            // }
         });
     </script>
 </body>

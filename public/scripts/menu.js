@@ -70,32 +70,38 @@ menuArraySandwich=[
 {id:31,img:'images/menu/food29.png',title:'ساندویچ کتلت کدو سبز',resepi:'کدو سبز، هویج، سیب زمینی، پیاز',offerWrapper:'hidden',offerPrice:'',offerCount:'',priceValue:'۱۴۵٬۰۰۰',star:5},
 {id:32,img:'images/menu/food30.png',title:'پنینی اسفناج',resepi:' قارچ، اسفناج، پیاز، پنیر پیتزا، خامه، پودر پاپریکا، گردو، سرکه بالزامیک، سس مایونز',offerWrapper:'flex',offerPrice:'۲۱۰٬۰۰۰',offerCount:'۱۵',priceValue:'۱۹۰٬۰۰۰',star:3},
 ]
-// menuArray.forEach(item=>{
-//     let fillStar=item.star
-//     let emptyStar=5-item.star
-//     let parentElem=document.createElement('div')
-//     parentElem.className='flex items-center'
-//     for(let i=0;i<emptyStar;i++){
-//         let svgElem=document.createElement('svg')
-//         svgElem.className='w-4 h-4 md:w-6 md:h-6'
-//         let useElem=document.createElement('use')
-//         useElem.setAttribute('href','#star-empty')
-//         svgElem.appendChild(useElem)
-//         parentElem.appendChild(svgElem)
-//     }
-//     for(let i=0;i<fillStar;i++){
-//         let svgElem=document.createElement('svg')
-//         svgElem.className='w-4 h-4 md:w-6 md:h-6'
-//         let useElem=document.createElement('use')
-//         useElem.setAttribute('href','#star')
-//         svgElem.appendChild(useElem)
-//         parentElem.appendChild(svgElem)
-//     }
-//     console.log(parentElem)
-//     item.parentStar=parentElem
-// })
+function generateStarElem(count){
+    let fillStar=count
+    let emptyStar=5-count
+    let starArray=[]
+    for(let i=0;i<emptyStar;i++){
+        starArray.push('star-empty')
+    }
+    for(let i=0;i<fillStar;i++){
+        starArray.push('star')
+    }
+    let parentElem=`<div class="flex items-center">
+    <svg class="w-4 h-4 md:w-6 md:h-6">
+        <use href="#${starArray[0]}"></use>
+    </svg>
+    <svg class="w-4 h-4 md:w-6 md:h-6">
+        <use href="#${starArray[1]}"></use>
+    </svg>
+    <svg class="w-4 h-4 md:w-6 md:h-6">
+        <use href="#${starArray[2]}"></use>
+    </svg>
+    <svg class="w-4 h-4 md:w-6 md:h-6">
+        <use href="#${starArray[3]}"></use>
+    </svg>
+    <svg class="w-4 h-4 md:w-6 md:h-6">
+        <use href="#${starArray[4]}"></use>
+    </svg>
+</div>`
+    return parentElem
+}
 function insertMenu(array,wrapper){
     array.forEach(item=>{
+    let starWrapper=generateStarElem(item.star)
         wrapper.insertAdjacentHTML('beforeend',`<!-- menu item -->
 <div class="menu__item col-span-1 xl:col-span-6 flex gap-2 md:gap-8 rounded md:rounded-lg border border-gray-400 md:shadow-card">
     <!-- item img -->
@@ -127,23 +133,7 @@ function insertMenu(array,wrapper){
         <!-- bottom box -->
         <div class="flex items-center gap-2 xl:gap-6 mr-4">
             <!-- star wrapper -->
-            <div class="flex items-center">
-                                    <svg class="w-4 h-4 md:w-6 md:h-6">
-                                        <use href="#star-empty"></use>
-                                    </svg>
-                                    <svg class="w-4 h-4 md:w-6 md:h-6">
-                                        <use href="#star"></use>
-                                    </svg>
-                                    <svg class="w-4 h-4 md:w-6 md:h-6">
-                                        <use href="#star"></use>
-                                    </svg>
-                                    <svg class="w-4 h-4 md:w-6 md:h-6">
-                                        <use href="#star"></use>
-                                    </svg>
-                                    <svg class="w-4 h-4 md:w-6 md:h-6">
-                                        <use href="#star"></use>
-                                    </svg>
-                                </div>
+            ${starWrapper}
             <!-- item btn -->
             <button class="item__btn flex-center p-2 md:w-60 text-white bg-primary rounded text-2xs md:text-base md:font-estedadMedium md:px-4">افزودن به سبد خرید</button>
         </div>

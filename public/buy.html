@@ -423,7 +423,7 @@
                 <!-- state wrapper -->
                 <div class="flex-center gap-2  text-sm md:w-1/2 ">
                     <!-- state item -->
-                    <button class="state__item state__item--active flex items-center gap-1">
+                    <button class="state__item state__item--active flex items-center gap-1" data-id="basket">
                         <svg class="w-6 h-6 hidden md:block">
                             <use href="#shopping-cart"></use>
                         </svg>سبد خرید
@@ -431,7 +431,7 @@
                     <!-- state line -->
                     <div class="hidden md:block flex-auto h-px bg-gray-400 border-dashed border-gray-400"></div>
                     <!-- state item -->
-                    <button class="state__item flex items-center gap-1">
+                    <button class="state__item flex items-center gap-1" data-id="complete">
                         <svg class="w-6 h-6 hidden md:block">
                             <use href="#tick-square"></use>
                         </svg>تکمیل اطلاعات
@@ -439,7 +439,7 @@
                     <!-- state line -->
                     <div class="hidden md:block flex-auto h-px bg-gray-400 border-dashed border-gray-400"></div>
                     <!-- state item -->
-                    <button class="state__item flex items-center gap-1">
+                    <button class="state__item flex items-center gap-1" data-id="pay">
                         <svg class="w-6 h-6 hidden md:block">
                             <use href="#wallet"></use>
                         </svg>پرداخت
@@ -679,5 +679,6 @@
     <!-- overlay -->
     <div class="overlay fixed top-0 bottom-0 right-0 left-0 transition-all duration-300 z-20"></div>
     <script src="scripts/app.js"></script>
+    <script src="scripts/buy.js"></script>
 </body>
 </html>

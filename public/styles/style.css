@@ -885,6 +885,21 @@ video {
   width: 2rem;
 }
 
+.section__item {
+  visibility: hidden;
+  height: 0px;
+  opacity: 0;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.section__item--active {
+  visibility: visible;
+  height: auto;
+  opacity: 1;
+}
+
 .visible {
   visibility: visible;
 }
@@ -1165,6 +1180,10 @@ video {
 
 .hidden {
   display: none;
+}
+
+.h-0 {
+  height: 0px;
 }
 
 .h-1 {

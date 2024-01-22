@@ -105,7 +105,7 @@ function insertMenu(array,wrapper){
         wrapper.insertAdjacentHTML('beforeend',`<!-- menu item -->
 <div class="menu__item col-span-1 xl:col-span-6 flex gap-2 md:gap-8 rounded md:rounded-lg border border-gray-400 md:shadow-card">
     <!-- item img -->
-    <img src="${item.img}" alt="food" class="item__img w-24 md:w-40">
+    <img src="${item.img}" alt="food" class="item__img w-24 md:w-40 cursor-pointer">
     <!-- item content -->
     <div class=" pl-2 md:pl-4 flex flex-col items-end gap-1 justify-center xl:justify-evenly w-full relative">
         <!-- top box -->

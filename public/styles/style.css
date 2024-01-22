@@ -836,6 +836,13 @@ video {
   }
 }
 
+.nav__icon--active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(65 127 86 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .visible {
   visibility: visible;
 }

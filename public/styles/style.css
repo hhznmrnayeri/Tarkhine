@@ -1347,6 +1347,10 @@ video {
   width: 100%;
 }
 
+.w-40 {
+  width: 10rem;
+}
+
 .flex-auto {
   flex: 1 1 auto;
 }
@@ -1407,6 +1411,10 @@ video {
   align-items: stretch;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -1449,6 +1457,14 @@ video {
 
 .gap-6 {
   gap: 1.5rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
 }
 
 .gap-x-16 {
@@ -1629,12 +1645,20 @@ video {
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url(../images/home/section.jpg);
 }
 
+.bg-buy-empty {
+  background-image: url(../images/buy/Empty.png);
+}
+
 .bg-cover {
   background-size: cover;
 }
 
 .bg-center {
   background-position: center;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
 }
 
 .object-cover {
@@ -1739,6 +1763,26 @@ video {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .pb-12 {
@@ -2100,6 +2144,14 @@ video {
     grid-column: span 3 / span 3;
   }
 
+  .md\:col-span-6 {
+    grid-column: span 6 / span 6;
+  }
+
+  .md\:col-span-7 {
+    grid-column: span 7 / span 7;
+  }
+
   .md\:mx-auto {
     margin-left: auto;
     margin-right: auto;
@@ -2147,6 +2199,10 @@ video {
 
   .md\:mt-7 {
     margin-top: 1.75rem;
+  }
+
+  .md\:mt-8 {
+    margin-top: 2rem;
   }
 
   .md\:block {
@@ -2414,6 +2470,10 @@ video {
     padding: 0.5rem;
   }
 
+  .md\:p-6 {
+    padding: 1.5rem;
+  }
+
   .md\:px-4 {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -2452,6 +2512,21 @@ video {
   .md\:py-8 {
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
+
+  .md\:py-48 {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+
+  .md\:px-7 {
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+  }
+
+  .md\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   .md\:pl-4 {
@@ -2553,6 +2628,10 @@ video {
 }
 
 @media (min-width: 1024px) {
+  .lg\:col-span-7 {
+    grid-column: span 7 / span 7;
+  }
+
   .lg\:flex {
     display: flex;
   }
@@ -2563,6 +2642,10 @@ video {
 
   .lg\:w-7\/12 {
     width: 58.333333%;
+  }
+
+  .lg\:grid-cols-12 {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 
   .lg\:gap-2 {
@@ -2631,6 +2714,10 @@ video {
 
   .xl\:gap-6 {
     gap: 1.5rem;
+  }
+
+  .xl\:gap-5 {
+    gap: 1.25rem;
   }
 
   .xl\:gap-x-60 {

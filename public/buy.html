@@ -455,7 +455,87 @@
             <!-- section wrapper -->
             <div class="flex flex-col overflow-hidden">
                 <!-- section  -->
-                <section id="basket" class="section__item section__item--active">1</section>
+                <section id="basket" class="section__item section__item--active mt-6 md:mt-10">
+                    <!-- empty basket -->
+                    <div class="empty__basket bg-buy-empty bg-no-repeat bg-center flex-col text-xs border px-8 border-gray-400 rounded-lg py-24 md:py-48 hidden">
+                        <!-- empty caption -->
+                        <p class="text-gray-700 md:text-2xl">شما در حال حاضر هیچ سفارشی ثبت نکرده‌اید!</p>
+                        <!-- menu btn -->
+                        <a href="menu.html" class="text-primary rounded border border-primary p-2 h-8 w-40 mt-4 md:font-estedadMedium md:text-base md:px-4 flex-center md:mt-8">منوی رستوران</a>
+                    </div>
+                    <!-- basket wrapper -->
+                    <div class="basket__wrapper grid grid-cols-1 lg:grid-cols-12 md:gap-6">
+                        <!-- food wrapper -->
+                        <div class="col-span-1 lg:col-span-7 flex flex-col md:p-6 md:gap-4 md:border md:border-gray-400 md:rounded-lg">
+                            <!-- food item -->
+                            <div class="flex items-center md:border md:border-gray-400 rounded-lg">
+                                <!-- food img -->
+                                <img src="images/menu/food11.png" alt="food">
+                                <!-- food content -->
+                                <div class="md:py-4 md:px-4 w-full bg-gray-100 md:bg-white flex items-start justify-between xl:gap-5">
+                                    <!-- right box -->
+                                    <div class="flex flex-col items-start justify-center gap-1 w-full h-full flex-grow">
+                                        <!-- food name -->
+                                        <h4 class="md:text-2xl md:font-estedadSemiBold">پاستا سبزیجات</h4>
+                                        <!-- food resepi -->
+                                        <p class="md:text-sm ">پاستا، قارچ، گوجه، کدوی خوردشده، پیاز خلالی‌شده</p>
+                                        <!-- bottom wrapper -->
+                                        <div class="flex items-center gap-6">
+                                            <!-- star wrapper -->
+                                            <div class="flex items-center">
+                                                <svg class="w-6 h-6">
+                                                    <use href="#star"></use>
+                                                </svg>
+                                                <svg class="w-6 h-6">
+                                                    <use href="#star"></use>
+                                                </svg>
+                                                <svg class="w-6 h-6">
+                                                    <use href="#star"></use>
+                                                </svg>
+                                                <svg class="w-6 h-6">
+                                                    <use href="#star"></use>
+                                                </svg>
+                                                <svg class="w-6 h-6">
+                                                    <use href="#star"></use>
+                                                </svg>
+                                            </div>
+                                            <!-- count wrapper -->
+                                            <div class="flex items-center gap-2 px-1 bg-tint-100 rounded text-primary md:text-2xl">
+                                                <!-- plus btn -->
+                                                <button class="plus__btn">+</button>
+                                                <!-- count food -->
+                                                <span class="count__food md:text-sm">۲</span>
+                                                <!-- minus btn -->
+                                                <button class="minus__btn">-</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- left box -->
+                                    <div class="flex flex-col items-end gap-8">
+                                        <!-- trash btn -->
+                                        <button>
+                                            <svg class="w-6 h-6">
+                                                <use href="#trash"></use>
+                                            </svg>
+                                        </button>
+                                        <!-- price content -->
+                                        <div class="flex flex-col gap-1">
+                                            <!-- offer wrapper -->
+                                            <div class="flex items-center gap-2 justify-end">
+                                                <!-- main price -->
+                                                <h5 class="line-through text-gray-500">۱۷۵٬۰۰۰</h5>
+                                                <!-- offer count -->
+                                                <h6 class="text-error text-2xs bg-error-200 rounded-lg px-1.5"><span class="offer__count">۲۰</span>%</h6>
+                                            </div>
+                                            <!-- offer price -->
+                                            <h5 class="ms:text-lg"><span class="offer__price md:text-2xl">۱۴۰٬۰۰۰</span>تومان</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <!-- section  -->
                 <section id="complete" class="section__item">2</section>
                 <!-- section  -->

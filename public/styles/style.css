@@ -468,6 +468,21 @@ video {
   src: url("../../public/fonts/Estedad-Bold.woff2") format("truetype");
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 3px grey;
+  background-color: inherit
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.25rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(117 117 117 / var(--tw-bg-opacity));
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -1615,6 +1630,15 @@ video {
   background-color: rgb(173 173 173 / var(--tw-bg-opacity));
 }
 
+.bg-gray-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(117 117 117 / var(--tw-bg-opacity));
+}
+
+.bg-inherit {
+  background-color: inherit;
+}
+
 .bg-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(65 127 86 / var(--tw-bg-opacity));
@@ -1788,6 +1812,10 @@ video {
   padding-bottom: 3rem;
 }
 
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
+
 .pb-4 {
   padding-bottom: 1rem;
 }
@@ -1798,10 +1826,6 @@ video {
 
 .pt-14 {
   padding-top: 3.5rem;
-}
-
-.pb-3 {
-  padding-bottom: 0.75rem;
 }
 
 .text-center {
@@ -1907,14 +1931,14 @@ video {
   color: rgb(229 242 233 / var(--tw-text-opacity));
 }
 
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
 .text-warning {
   --tw-text-opacity: 1;
   color: rgb(169 121 28 / var(--tw-text-opacity));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .line-through {
@@ -2269,10 +2293,6 @@ video {
     height: 20rem;
   }
 
-  .md\:h-\[554px\] {
-    height: 554px;
-  }
-
   .md\:w-1\/2 {
     width: 50%;
   }
@@ -2486,16 +2506,16 @@ video {
     background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   }
 
+  .md\:p-0 {
+    padding: 0px;
+  }
+
   .md\:p-2 {
     padding: 0.5rem;
   }
 
   .md\:p-6 {
     padding: 1.5rem;
-  }
-
-  .md\:p-0 {
-    padding: 0px;
   }
 
   .md\:px-4 {
@@ -2549,10 +2569,6 @@ video {
 
   .md\:pt-32 {
     padding-top: 8rem;
-  }
-
-  .md\:pb-3 {
-    padding-bottom: 0.75rem;
   }
 
   .md\:font-estedad {
@@ -2651,12 +2667,12 @@ video {
 }
 
 @media (min-width: 1024px) {
-  .lg\:col-span-7 {
-    grid-column: span 7 / span 7;
-  }
-
   .lg\:col-span-5 {
     grid-column: span 5 / span 5;
+  }
+
+  .lg\:col-span-7 {
+    grid-column: span 7 / span 7;
   }
 
   .lg\:flex {
@@ -2665,10 +2681,6 @@ video {
 
   .lg\:h-64 {
     height: 16rem;
-  }
-
-  .lg\:h-80 {
-    height: 20rem;
   }
 
   .lg\:h-72 {

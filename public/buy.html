@@ -762,7 +762,7 @@
                                 <!-- title -->
                                 <h4>سبد خرید(<span class="sumBasket__count text-sm">۴</span>)</h4>
                                 <!-- delete all basket btn -->
-                                <button class="deletAll__basket text-gray-800">
+                                <button class="deleteAll__basket text-gray-800">
                                     <svg class="w-6 h-6">
                                         <use href=#trash></use>
                                     </svg>
@@ -890,6 +890,27 @@
             </div>
         </div>
     </footer>
+    <!-- delete all modal -->
+    <div class="deleteAll__modal fixed overflow-hidden rounded-lg bg-white w-11/12 md:w-5/12 h-48 md:h-56 inset-0 m-auto z-30">
+        <!-- top wrapper -->
+        <div class="bg-gray-100 flex items-center justify-between py-4 px-6 text-sm font-estedadMedium md:text-2xl md:font-estedadSemiBold">
+            <h3 class="mx-auto">حذف محصولات</h3>
+            <button class="close__deleteAll--modal text-gray-700">
+                <svg class="w-6 h-6">
+                    <use href="#close"></use>
+                </svg>
+            </button>
+        </div>
+        <!-- caption -->
+        <p class="mt-3 md:mt-8 text-xs md:text-base text-center">همه محصولات سبد خرید شما حذف شود؟</p>
+        <!-- btn wrapper -->
+        <div class="mt-8 flex-center gap-4 md:gap-5 px-16">
+            <!-- back btn -->
+            <button class="back__btn border border-primary rounded flex-center p-2 text-primary text-xs md:px-4 md:text-base md:font-estedadMedium flex-1">بازگشت</button>
+            <!-- delete btn -->
+            <button class="delete__btn bg-error-200 rounded flex-center p-2 text-error text-xs md:px-4 md:text-base md:font-estedadMedium flex-1">حذف</button>
+        </div>
+    </div>
     <!-- search modal -->
     <div class="search__modal hidden md:block fixed rounded-lg overflow-hidden bg-white pb-12 w-5/12 h-64 inset-0 m-auto z-30">
         <!-- top box -->
@@ -1034,7 +1055,9 @@
         </div>
     </div>
     <!-- overlay -->
-    <div class="overlay fixed top-0 bottom-0 right-0 left-0 transition-all duration-300 z-20"></div>
+    <div class="overlay fixed top-0 bottom-0 right-0 left-0 transition-all duration-300 z-20">
+
+    </div>
     <script src="scripts/app.js"></script>
     <script src="scripts/buy.js"></script>
 </body>

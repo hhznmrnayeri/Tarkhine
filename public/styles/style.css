@@ -1512,6 +1512,10 @@ video {
   overflow: hidden;
 }
 
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
 .text-nowrap {
   text-wrap: nowrap;
 }
@@ -1534,6 +1538,15 @@ video {
 
 .border-2 {
   border-width: 2px;
+}
+
+.border-y {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+
+.border-b {
+  border-bottom-width: 1px;
 }
 
 .border-dashed {
@@ -1787,6 +1800,10 @@ video {
   padding-top: 3.5rem;
 }
 
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1893,6 +1910,11 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-warning {
+  --tw-text-opacity: 1;
+  color: rgb(169 121 28 / var(--tw-text-opacity));
 }
 
 .line-through {
@@ -2247,6 +2269,10 @@ video {
     height: 20rem;
   }
 
+  .md\:h-\[554px\] {
+    height: 554px;
+  }
+
   .md\:w-1\/2 {
     width: 50%;
   }
@@ -2417,12 +2443,28 @@ video {
     border-radius: 0.5rem;
   }
 
+  .md\:rounded-none {
+    border-radius: 0px;
+  }
+
   .md\:border {
     border-width: 1px;
   }
 
   .md\:border-4 {
     border-width: 4px;
+  }
+
+  .md\:border-b {
+    border-bottom-width: 1px;
+  }
+
+  .md\:border-t-0 {
+    border-top-width: 0px;
+  }
+
+  .md\:border-none {
+    border-style: none;
   }
 
   .md\:border-gray-400 {
@@ -2450,6 +2492,10 @@ video {
 
   .md\:p-6 {
     padding: 1.5rem;
+  }
+
+  .md\:p-0 {
+    padding: 0px;
   }
 
   .md\:px-4 {
@@ -2505,6 +2551,10 @@ video {
     padding-top: 8rem;
   }
 
+  .md\:pb-3 {
+    padding-bottom: 0.75rem;
+  }
+
   .md\:font-estedad {
     font-family: Estedad;
   }
@@ -2556,14 +2606,14 @@ video {
     line-height: 1rem;
   }
 
-  .md\:text-primary {
-    --tw-text-opacity: 1;
-    color: rgb(65 127 86 / var(--tw-text-opacity));
-  }
-
   .md\:text-gray-800 {
     --tw-text-opacity: 1;
     color: rgb(53 53 53 / var(--tw-text-opacity));
+  }
+
+  .md\:text-primary {
+    --tw-text-opacity: 1;
+    color: rgb(65 127 86 / var(--tw-text-opacity));
   }
 
   .md\:opacity-0 {
@@ -2605,12 +2655,28 @@ video {
     grid-column: span 7 / span 7;
   }
 
+  .lg\:col-span-5 {
+    grid-column: span 5 / span 5;
+  }
+
   .lg\:flex {
     display: flex;
   }
 
   .lg\:h-64 {
     height: 16rem;
+  }
+
+  .lg\:h-80 {
+    height: 20rem;
+  }
+
+  .lg\:h-72 {
+    height: 18rem;
+  }
+
+  .lg\:h-\[554px\] {
+    height: 554px;
   }
 
   .lg\:w-7\/12 {

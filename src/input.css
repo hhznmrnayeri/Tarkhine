@@ -187,6 +187,12 @@
     .address__modal--active{
         @apply visible opacity-100
     }
+    .bank__item{
+        @apply rounded border border-gray-400 w-16 h-16 md:w-24 md:h-24 grayscale transition-all duration-300
+    }
+    .bank__item--active{
+        @apply border-primary shadow-bank grayscale-0
+    }
 }
 
 @layer utilities{

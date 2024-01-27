@@ -962,10 +962,22 @@
                 <section id="pay" class="section__item section__item--active mt-6 md:mt-10">
                     <!-- section wrapper -->
                     <div class=" grid grid-cols-1 lg:grid-cols-12 gap-3 md:gap-6">
-                        <!-- address wrapper -->
+                        <!-- pay wrapper -->
                         <div class="col-span-1 lg:col-span-7 flex flex-col  overflow-hidden">
-                            <!-- state delivery -->
-                            <div class="border border-gray-400 rounded-lg p-4 md:py-8 md:px-6 flex flex-col md:flex-row items-start md:items-center md:justify-between gap-2 w-full">
+                            <!-- discount pay -->
+                            <form class="border border-gray-400 rounded-lg p-4 md:py-8 md:px-6 flex flex-col md:flex-row items-start md:items-center md:justify-between gap-2 w-full">
+                                <!-- title -->
+                                <h3 class="flex gap-1 items-center text-sm md:text-base pb-2 mb-2 md:mb-0 md:pb-0 border-b md:border-none border-gray-400 w-full md:w-auto"><svg class="w-4 md:w-6 h-4 md:h-6"><use href="#discount-shape"></use></svg>ثبت کد تخفیف</h3>
+                                <!-- form wrapper -->
+                                <div class="flex gap-2">
+                                    <!-- input code -->
+                                    <input type="text" class="outline-none p-2 md:px-4 flex-1 border border-gray-400 rounded-lg text-sm text-gray-700" placeholder="کد تخفیف">
+                                    <!-- submit discount -->
+                                    <button class="text-gray-300 text-xs rounded bg-gray-400 p-2 md:px-4">ثبت کد</button>
+                                </div>
+                            </form>
+                            <!-- state pay -->
+                            <div class="border border-gray-400 rounded-lg p-4 md:py-8 md:px-6 flex flex-col md:flex-row items-start md:items-center md:justify-between gap-2 w-full mt-3 md:mt-6">
                                 <!-- title -->
                                 <h3 class="flex gap-1 items-center text-sm md:text-base pb-2 mb-2 md:mb-0 md:pb-0 border-b md:border-none border-gray-400 w-full md:w-auto"><svg class="w-4 md:w-6 h-4 md:h-6"><use href="#wallet-money"></use></svg>روش پرداخت</h3>
                                 <!-- radio input -->
@@ -981,88 +993,39 @@
                             </div>
                             <!-- section wrapper -->
                             <div class="flex flex-col mt-3 md:mt-6 overflow-hidden">
-                                <!-- section delivpayery -->
-                                <div id="online" class="section__pay section__pay--active p-4 md:px-6 border border-gray-400 rounded-lg">
-                                    <!-- top wrapper -->
-                                    <div class="flex items-center justify-between pb-2 border-b border-gray-400">
-                                        <!-- title -->
-                                        <h3 class="flex items-center gap-1 text-sm md:text-base"><svg class="w-4 md:w-6 h-4 md:h-6"><use href="#location"></use></svg>آدرس‌ها</h3>
-                                        <!-- add address btn -->
-                                        <button class="add__address--btn text-primary flex items-center gap-1 text-xs"><span class="w-4 h-4 border border-primary flex-center rounded-full">+</span>افزودن آدرس</button>
-                                    </div>
-                                    <!-- empty address -->
-                                    <div class="hidden bg-buy-empty bg-center bg-no-repeat bg-contain pb-20">
+                                <!-- section pay -->
+                                <div id="online" class="section__pay section__pay--active p-4 md:px-6 border border-gray-400 rounded-lg flex flex-col md:flex-row items-start gap-x-12">
+                                    <!-- title -->
+                                    <h3 class="flex gap-1 items-center text-sm md:text-base pb-2 mb-2 md:mb-0 md:pb-0 border-b md:border-none border-gray-400 w-full md:w-auto flex-shrink-0"><svg class="w-4 md:w-6 h-4 md:h-6"><use href="#card"></use></svg>درگاه پرداخت</h3>
+                                    <!-- content -->
+                                    <div class="flex flex-col gap-2 text-2xs text-center text-gray-700">
+                                        <!-- bank wrapper -->
+                                        <div class="flex items-center gap-2 md:gap-4">
+                                            <!-- bank item -->
+                                            <button class="bank__item bank__item--active">
+                                                <img src="images/buy/bank1.png" alt="bank">
+                                            </button>
+                                            <!-- bank item -->
+                                            <button class="bank__item">
+                                                <img src="images/buy/bank2.png" alt="bank">
+                                            </button>
+                                            <!-- bank item -->
+                                            <button class="bank__item">
+                                                <img src="images/buy/bank3.png" alt="bank">
+                                            </button>
+                                        </div>
                                         <!-- caption -->
-                                        <p class="text-center text-2xs md:text-sm text-gray-600 mt-20">شما در حال حاضر هیچ آدرسی ثبت نکرده‌اید!</p>
-                                    </div>
-                                    <!-- address wrapper -->
-                                    <div class="flex items-start justify-between flex-col xl:flex-row flex-wrap pt-4 gap-2 md:gap-4">
-                                        <!-- address item -->
-                                        <div class="address__item address__item--active border rounded p-4 flex flex-col gap-2 bg-gray-200 xl:w-80">
-                                            <!-- top wrapper -->
-                                            <div class="flex items-start justify-between gap-3 ">
-                                                <!-- address text -->
-                                                <p class="text-2xs md:text-sm">تهران: اقدسیه، بزرگراه ارتش، مجتمع شمیران سنتر، طبقه ۱۰</p>
-                                                <!-- edit address -->
-                                                <button><svg class="w-4 md:w-6 h-4 md:h-6"><use href="#edit"></use></svg></button>
-                                                <!-- delete address -->
-                                                <button><svg class="w-4 md:w-6 h-4 md:h-6"><use href="#trash"></use></svg></button>
-                                            </div>
-                                            <!-- bottom wrapper -->
-                                            <div class="flex items-center justify-between text-2xs md:text-sm text-gray-700">
-                                                <!-- name address -->
-                                                <span>محل کار</span>
-                                                <!-- user name -->
-                                                <span>سردار وظیفه</span>
-                                                <!-- phone -->
-                                                <span class="md:text-xs">۰۹۱۴ ۸۶۴ ۳۳۵۰</span>
-                                            </div>
-                                        </div>
-                                        <!-- address item -->
-                                        <div class="address__item border rounded p-4 flex flex-col gap-2 bg-gray-200 xl:w-80">
-                                            <!-- top wrapper -->
-                                            <div class="flex items-start justify-between gap-3 ">
-                                                <!-- address text -->
-                                                <p class="text-2xs md:text-sm">تهران: اقدسیه، بزرگراه ارتش، مجتمع شمیران سنتر، طبقه ۱۰</p>
-                                                <!-- edit address -->
-                                                <button><svg class="w-4 md:w-6 h-4 md:h-6"><use href="#edit"></use></svg></button>
-                                                <!-- delete address -->
-                                                <button><svg class="w-4 md:w-6 h-4 md:h-6"><use href="#trash"></use></svg></button>
-                                            </div>
-                                            <!-- bottom wrapper -->
-                                            <div class="flex items-center justify-between text-2xs md:text-sm text-gray-700">
-                                                <!-- name address -->
-                                                <span>محل کار</span>
-                                                <!-- user name -->
-                                                <span>سردار وظیفه</span>
-                                                <!-- phone -->
-                                                <span class="md:text-xs">۰۹۱۴ ۸۶۴ ۳۳۵۰</span>
-                                            </div>
-                                        </div>
+                                        <p class=" md:text-xs">پرداخت از طریق کلیه کارت‌های عضو شتاب امکان‌پذیر است.‌</p>
+                                        <!-- description -->
+                                        <p class=" ">(لطفا قبل از پرداخت فیلترشکن خود را خاموش کنید.)‌</p>
                                     </div>
                                 </div>
                                 <!-- section pay -->
-                                <div id="offline" class="section__pay p-4 md:px-6 border border-gray-400 rounded-lg flex items-start justify-between">
-                                    <!-- right box -->
-                                    <div class="flex flex-col items-start flex-grow flex-shrink-0">
-                                        <!-- title -->
-                                        <h3 class="flex items-center gap-1 text-sm md:text-base pb-1 md:pb-0 border-b md:border-none w-full md:w-auto border-gray-400"><svg class="w-4 md:w-6 h-4 md:h-6"><use href="#location"></use></svg>آدرس شعبه اکباتان</h3>
-                                        <!-- address content -->
-                                        <div class="flex flex-col gap-1 text-2xs md:text-xs mt-4 md:mt-6 text-gray-700 pr-3 md:pr-0">
-                                            <!-- address text -->
-                                            <p class="">شهرک اکباتان، فاز ۳، مجتمع تجاری کوروش، طبقه سوم</p>
-                                            <!-- phone -->
-                                            <span>شماره تماس ۱: ۱۲۵۴ ۵۴۸۹ -۰۲۱</span>
-                                            <!-- phone -->
-                                            <span>شماره تماس ۲: ۱۲۵۵ ۵۴۸۹ -۰۲۱</span>
-                                            <!-- clock -->
-                                            <span>ساعت کاری: همه‌روزه از ساعت ۱۲ تا ۲۳ بجز روزهای تعطیل</span>
-                                        </div>
-                                        <!-- map btn -->
-                                        <button class="flex-center border border-gray-700 p-2 h-8 w-36 self-center mt-6 text-primary rounded text-xs">مشاهده در نقشه</button>
-                                    </div>
-                                    <!-- left box -->
-                                    <img src="images/buy/map.png" alt="map" class="h-full hidden flex-grow w-64 md:block rounded border border-gray-400">
+                                <div id="offline" class="section__pay p-4 md:px-6 border border-gray-400 rounded-lg flex flex-col md:flex-row items-start justify-between bg-gray-100 gap-4">
+                                    <!-- title -->
+                                    <h3 class="flex gap-1 items-center text-sm md:text-base pb-2 mb-2 md:mb-0 md:pb-0 border-b md:border-none border-gray-400 w-full md:w-auto flex-shrink-0"><svg class="w-4 md:w-6 h-4 md:h-6"><use href="#warning"></use></svg>قابل توجه</h3>
+                                    <!-- caption -->
+                                    <p class="text-2xs text-gray-700">هزینه سفارش شما در حین تحویل کالا دریافت خواهد شد. لطفا قبل از تحویل کالا کارت بانکی یا پول نقد همراه خود داشته باشید و از درخواست برای پرداخت در زمان بعدی یا نسیه خودداری فرمایید. با تشکر از همراهی شما.</p>
                                 </div>
                             </div>
                         </div>

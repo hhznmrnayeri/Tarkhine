@@ -827,24 +827,71 @@
                             </div>
                             <!-- section delivery -->
                             <div id="courier" class="section__delivery section__delivery--active p-4 md:px-6 border border-gray-400 rounded-lg">
+                                <!-- top wrapper -->
+                                <div class="flex items-center justify-between pb-2 border-b border-gray-400">
+                                    <!-- title -->
+                                    <h3 class="flex items-center gap-1 text-sm md:text-base"><svg class="w-4 md:w-6 h-4 md:h-6"><use href="#location"></use></svg>آدرس‌ها</h3>
+                                    <!-- add address btn -->
+                                    <button class="add__address--btn text-primary flex items-center gap-1 text-xs"><span class="w-4 h-4 border border-primary flex-center rounded-full">+</span>افزودن آدرس</button>
+                                </div>
                                 <!-- empty address -->
-                                <div class="flex flex-col bg-buy-empty bg-center bg-no-repeat bg-contain pb-20">
-                                    <!-- top wrapper -->
-                                    <div class="flex items-center justify-between pb-2 border-b border-gray-400">
-                                        <!-- title -->
-                                        <h3 class="flex items-center gap-1 text-sm md:text-base"><svg class="w-4 md:w-6 h-4 md:h-6"><use href="#location"></use></svg>آدرس‌ها</h3>
-                                        <!-- add address btn -->
-                                        <button class="add__address--btn text-primary flex items-center gap-1 text-xs"><span class="w-4 h-4 border border-primary flex-center rounded-full">+</span>افزودن آدرس</button>
-                                    </div>
+                                <div class="hidden bg-buy-empty bg-center bg-no-repeat bg-contain pb-20">
                                     <!-- caption -->
                                     <p class="text-center text-2xs md:text-sm text-gray-600 mt-20">شما در حال حاضر هیچ آدرسی ثبت نکرده‌اید!</p>
                                 </div>
+                                <!-- address wrapper -->
+                                <div class="flex items-start justify-between flex-col xl:flex-row flex-wrap pt-4 gap-2 md:gap-4">
+                                    <!-- address item -->
+                                    <div class="address__item address__item--active border rounded p-4 flex flex-col gap-2 bg-gray-200 xl:w-80">
+                                        <!-- top wrapper -->
+                                        <div class="flex items-start justify-between gap-3 ">
+                                            <!-- address text -->
+                                            <p class="text-2xs md:text-sm">تهران: اقدسیه، بزرگراه ارتش، مجتمع شمیران سنتر، طبقه ۱۰</p>
+                                            <!-- edit address -->
+                                            <button><svg class="w-4 md:w-6 h-4 md:h-6"><use href="#edit"></use></svg></button>
+                                            <!-- delete address -->
+                                            <button><svg class="w-4 md:w-6 h-4 md:h-6"><use href="#trash"></use></svg></button>
+                                        </div>
+                                        <!-- bottom wrapper -->
+                                        <div class="flex items-center justify-between text-2xs md:text-sm text-gray-700">
+                                            <!-- name address -->
+                                            <span>محل کار</span>
+                                            <!-- user name -->
+                                            <span>سردار وظیفه</span>
+                                            <!-- phone -->
+                                            <span class="md:text-xs">۰۹۱۴ ۸۶۴ ۳۳۵۰</span>
+                                        </div>
+                                    </div>
+                                    <!-- address item -->
+                                    <div class="address__item border rounded p-4 flex flex-col gap-2 bg-gray-200 xl:w-80">
+                                        <!-- top wrapper -->
+                                        <div class="flex items-start justify-between gap-3 ">
+                                            <!-- address text -->
+                                            <p class="text-2xs md:text-sm">تهران: اقدسیه، بزرگراه ارتش، مجتمع شمیران سنتر، طبقه ۱۰</p>
+                                            <!-- edit address -->
+                                            <button><svg class="w-4 md:w-6 h-4 md:h-6"><use href="#edit"></use></svg></button>
+                                            <!-- delete address -->
+                                            <button><svg class="w-4 md:w-6 h-4 md:h-6"><use href="#trash"></use></svg></button>
+                                        </div>
+                                        <!-- bottom wrapper -->
+                                        <div class="flex items-center justify-between text-2xs md:text-sm text-gray-700">
+                                            <!-- name address -->
+                                            <span>محل کار</span>
+                                            <!-- user name -->
+                                            <span>سردار وظیفه</span>
+                                            <!-- phone -->
+                                            <span class="md:text-xs">۰۹۱۴ ۸۶۴ ۳۳۵۰</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                            <!-- description textarea -->
+                            <textarea name="address" class="border border-gray-400 outline-none text-gray-700 rounded-lg p-4 text-sm"  rows="4" placeholder="توضیحات سفارش"></textarea>
                             <!-- section delivery -->
                             <div id="person" class="section__delivery">person</div>
                         </div>
                         <!-- detail wrapper -->
-                        <div class="col-span-1 lg:col-span-5 flex flex-col p-6 rounded-lg border border-gray-400">
+                        <div class="col-span-1 lg:col-span-5 flex flex-col p-6 rounded-lg border lg:h-64 border-gray-400">
                             <!-- title wrapper -->
                             <div class="hidden md:flex items-center justify-between pb-3 md:border-b md:border-gray-400">
                                 <!-- title -->

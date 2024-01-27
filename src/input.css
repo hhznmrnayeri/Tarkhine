@@ -159,6 +159,12 @@
     .section__delivery--active{
         @apply visible opacity-100 h-auto
     }
+    .address__item{
+        @apply border-gray-400
+    }
+    .address__item--active{
+        @apply border-primary
+    }
 }
 
 @layer utilities{

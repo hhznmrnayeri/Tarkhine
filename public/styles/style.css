@@ -1364,6 +1364,10 @@ video {
   height: 1px;
 }
 
+.h-60 {
+  height: 15rem;
+}
+
 .w-0 {
   width: 0px;
 }
@@ -2428,6 +2432,10 @@ video {
 
   .md\:h-80 {
     height: 20rem;
+  }
+
+  .md\:h-44 {
+    height: 11rem;
   }
 
   .md\:w-1\/2 {

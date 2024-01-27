@@ -319,6 +319,40 @@
         </div>
     </header>
     <main>
+        <div class="container">
+            <!-- payment success -->
+            <div class="bg-payment bg-center bg-cover hidden flex-col text-primary text-center">
+                <!-- img -->
+                <img src="images/buy/success.png" alt="payment" class="mt-24 md:mt-12 w-30 h-28 md:w-64 md:h-60">
+                <!-- title -->
+                <h1 class="font-estedadBold mt-6 md:mt-12 md:text-4xl">پرداخت شما با موفقیت انجام شد!</h1>
+                <!-- caption -->
+                <p class="mt-4 text-xs md:text-xl md:mt-6">کد رهگیری سفارش شما:  <span class="tracking__code">۲۱۵۴۹۰۱۹</span></p>
+                <!-- btn wrapper -->
+                <div class="flex-center gap-4 mt-12 text-xs md:font-estedadMedium md:text-base md:gap-6 w-full">
+                    <!-- home btn -->
+                    <a href="index.html" class="border border-primary bg-white p-2 rounded w-full h-8 md:h-10 md:w-48 md:px-4">بازگشت به صفحه اصلی</a>
+                    <!-- tracking btn -->
+                    <a href="#" class="bg-primary text-white p-2 rounded w-full h-8 md:h-10 md:w-48 md:px-4">پیگیری سفارش</a>
+                </div>
+            </div>
+            <!-- failed success -->
+            <div class="flex-center flex-col text-center">
+                <!-- img -->
+                <img src="images/buy/error.png" alt="payment" class="mt-24 md:mt-12 w-30 h-28 md:w-64 md:h-60">
+                <!-- title -->
+                <h1 class="font-estedadBold mt-6 md:mt-12 md:text-4xl text-error">پرداخت شما ناموفق بود!</h1>
+                <!-- caption -->
+                <p class="mt-4 text-xs md:text-xl md:mt-6">کد پیگیری تراکنش شما:  <span class="tracking__code">۲۱۵۴۹۰۱۹</span></p>
+                <!-- btn wrapper -->
+                <div class="flex-center gap-4 mt-12 text-xs md:font-estedadMedium md:text-base md:gap-6 w-full">
+                    <!-- home btn -->
+                    <a href="index.html" class="text-primary bg-white p-2 rounded w-full h-8 md:h-10 md:w-48 md:px-4">بازگشت به صفحه اصلی</a>
+                    <!-- repeat btn -->
+                    <a href="#" class="text-primary bg-white border border-primary p-2 rounded w-full h-8 md:h-10 md:w-48 md:px-4">پرداخت مجدد</a>
+                </div>
+            </div>
+        </div>
     </main>
     <footer class="mt-6 md:mt-12 bg-footer bg-center bg-cover text-gray-300 py-5 md:py-8">
         <div class="container">

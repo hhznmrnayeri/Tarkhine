@@ -149,6 +149,10 @@
     .deleteAll__modal--active{
         @apply visible opacity-100
     }
+    .state__delivery--active .state__radio::after{
+        content: '';
+        @apply absolute bg-primary w-3 h-3 rounded-full m-auto inset-0
+    }
 }
 
 @layer utilities{

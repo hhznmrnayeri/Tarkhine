@@ -426,7 +426,7 @@
                 <!-- state wrapper -->
                 <div class="flex-center gap-2  text-sm md:w-1/2 ">
                     <!-- state item -->
-                    <button class="state__item state__item--active flex items-center gap-1" data-id="basket">
+                    <button class="state__item flex items-center gap-1" data-id="basket">
                         <svg class="w-6 h-6 hidden md:block">
                             <use href="#shopping-cart"></use>
                         </svg>سبد خرید
@@ -434,7 +434,7 @@
                     <!-- state line -->
                     <div class="hidden md:block flex-auto h-px bg-gray-400 border-dashed border-gray-400"></div>
                     <!-- state item -->
-                    <button class="state__item flex items-center gap-1" data-id="complete">
+                    <button class="state__item state__item--active flex items-center gap-1" data-id="complete">
                         <svg class="w-6 h-6 hidden md:block">
                             <use href="#tick-square"></use>
                         </svg>تکمیل اطلاعات
@@ -458,7 +458,7 @@
             <!-- section wrapper -->
             <div class="flex flex-col overflow-hidden">
                 <!-- section  -->
-                <section id="basket" class="section__item section__item--active mt-6 md:mt-10">
+                <section id="basket" class="section__item mt-6 md:mt-10">
                     <!-- empty basket -->
                     <div class="empty__basket bg-buy-empty bg-no-repeat bg-center flex-col text-xs border px-8 border-gray-400 rounded-lg py-24 md:py-48 hidden">
                         <!-- empty caption -->
@@ -805,7 +805,75 @@
                     </div>
                 </section>
                 <!-- section  -->
-                <section id="complete" class="section__item">2</section>
+                <section id="complete" class="section__item section__item--active mt-6 md:mt-10">
+                    <!-- section wrapper -->
+                    <div class=" grid grid-cols-1 lg:grid-cols-12 gap-3 md:gap-6">
+                        <!-- address wrapper -->
+                        <div class="col-span-1 lg:col-span-7 flex flex-col gap-3 md:gap-6">
+                            <!-- state delivery -->
+                            <div class="border border-gray-400 rounded-lg p-4 md:py-8 md:px-6 flex flex-col md:flex-row items-start md:items-center md:justify-between gap-2 w-full">
+                                <!-- title -->
+                                <h3 class="flex gap-1 items-center text-sm md:text-base pb-2 mb-2 md:mb-0 md:pb-0 border-b md:border-none border-gray-400 w-full md:w-auto"><svg class="w-4 md:w-6 h-4 md:h-6"><use href="#truck"></use></svg>روش تحویل سفارش</h3>
+                                <!-- radio input -->
+                                <button class="state__delivery state__delivery--active flex items-center gap-2" data-id="courier">
+                                    <span class="state__radio w-4 h-4 rounded-full border border-gray-400 p-1 relative"></span>
+                                    <span class="flex items-center gap-1 text-gray-700 text-xs md:text-sm">ارسال توسط پیک<svg class="w-4 md:w-6 h-4 md:h-6"><use href="#truck-fast"></use></svg></span>
+                                </button>
+                                <!-- radio input -->
+                                <button class="state__delivery flex items-center gap-2" data-id="person">
+                                    <span class="state__radio w-4 h-4 rounded-full border border-gray-400 p-1 relative"></span>
+                                    <span class="flex items-center gap-1 text-gray-700 text-xs md:text-sm">تحویل حضوری<svg class="w-4 md:w-6 h-4 md:h-6"><use href="#shopping-bag"></use></svg></span>
+                                </button>
+                            </div>
+                            <!-- section delivery -->
+                            <div id="courier" class="">courier</div>
+                            <!-- section delivery -->
+                            <div id="person" class="">person</div>
+                        </div>
+                        <!-- detail wrapper -->
+                        <div class="col-span-1 lg:col-span-5 flex flex-col p-6 rounded-lg border border-gray-400">
+                            <!-- title wrapper -->
+                            <div class="hidden md:flex items-center justify-between pb-3 md:border-b md:border-gray-400">
+                                <!-- title -->
+                                <h4>سبد خرید(<span class="sumBasket__count text-sm">۴</span>)</h4>
+                                <!-- delete all basket btn -->
+                                <button class="deleteAll__basket text-gray-800">
+                                    <svg class="w-6 h-6">
+                                        <use href=#trash></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <!-- discount wrapper -->
+                            <div class="flex items-center justify-between py-3 border-b border-gray-400">
+                                <!-- title -->
+                                <h5 class="text-sm">تخفیف محصولات</h5>
+                                <!-- discount price -->
+                                <span class="text-gray-700 text-sm"><span class="discount__value">۶۳٬۰۰۰</span>تومان</span>
+                            </div>
+                            <!-- shipping wrapper -->
+                            <div class="flex flex-col gap-2 py-3 border-b border-gray-400">
+                                <!-- top wrapper -->
+                                <div class="flex items-center justify-between">
+                                    <!-- title -->
+                                    <h5 class="text-sm">هزینه ارسال</h5>
+                                    <!-- shipping price -->
+                                    <span class="text-gray-700 text-sm"><span class="shipping__value">۰</span>تومان</span>
+                                </div>
+                            </div>
+                            <!-- price wrapper -->
+                            <div class="flex items-center justify-between py-3 ">
+                                <!-- title -->
+                                <h5 class="text-sm">مبلغ قابل پرداخت</h5>
+                                <!-- sum of price -->
+                                <span class="text-primary text-sm"><span class="price__value">۵۴۲٬۰۰۰</span>تومان</span>
+                            </div>
+                            <!-- box btn -->
+                            <button class="w-full text-white bg-primary flex-center gap-1 md:gap-2 rounded p-2 md:px-4 text-xs md:text-base md:font-estedadMedium">
+                                <span class=" flex items-center gap-2"><svg class="w-4 md:w-6 h-4 md:h-6"><use href="#tick-circle"></use></svg>ثبت سفارش</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
                 <!-- section  -->
                 <section id="pay" class="section__item">3</section>
             </div>

@@ -1,5 +1,7 @@
 const stateItemArray=document.querySelectorAll('.state__item')
 const sectionItemArray=document.querySelectorAll('.section__item')
+const stateDeliveryArray=document.querySelectorAll('.state__delivery')
+const sectionDeliveryArray=document.querySelectorAll('.section__delivery')
 const deleteAllBasketBtn=document.querySelector('.deleteAll__basket')
 const basketWrapper=document.querySelector('.basket__wrapper')
 const emptyBasket=document.querySelector('.empty__basket')
@@ -8,6 +10,18 @@ const closeDeleteAllModalBtn=document.querySelector('.close__deleteAll--modal')
 const backBtn=document.querySelector('.back__btn')
 const deleteBtn=document.querySelector('.delete__btn')
 const deleteAllBasketMobile=document.querySelector('.deleteAll__basket--mobile')
+stateDeliveryArray.forEach(item=>{
+    item.addEventListener('click',()=>{
+        stateDeliveryArray.forEach(state=>{
+            state.classList.remove('state__delivery--active')
+        })
+        sectionDeliveryArray.forEach(section=>{
+            section.classList.remove('section__delivery--active')
+        })
+        item.classList.add('state__delivery--active')
+        document.getElementById(item.dataset.id).classList.add('section__delivery--active')
+    })
+})
 stateItemArray.forEach(item=>{
     item.addEventListener('click',()=>{
         stateItemArray.forEach(state=>{

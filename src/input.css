@@ -153,6 +153,12 @@
         content: '';
         @apply absolute bg-primary w-3 h-3 rounded-full m-auto inset-0
     }
+    .section__delivery{
+        @apply invisible opacity-0 h-0 transition-all duration-300
+    }
+    .section__delivery--active{
+        @apply visible opacity-100 h-auto
+    }
 }
 
 @layer utilities{

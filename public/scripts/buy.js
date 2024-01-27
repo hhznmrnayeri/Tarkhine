@@ -5,6 +5,9 @@ const sectionDeliveryArray=document.querySelectorAll('.section__delivery')
 const addressItemArray=document.querySelectorAll('.address__item')
 const addAddressBtn=document.querySelector('.add__address--btn')
 const deleteAllBasketBtn=document.querySelector('.deleteAll__basket')
+const locationModal=document.querySelector('.location__modal')
+const closeLocationModalBtn=document.querySelector('.close__location--modal')
+const submitLocation=document.querySelector('.submit__location')
 const basketWrapper=document.querySelector('.basket__wrapper')
 const emptyBasket=document.querySelector('.empty__basket')
 const deleteAllModal=document.querySelector('.deleteAll__modal')
@@ -44,6 +47,14 @@ stateItemArray.forEach(item=>{
         document.getElementById(item.dataset.id).classList.add('section__item--active')
     })
 })
+function closeLocationModal(){
+    overlay.classList.remove('overlay__active')
+    locationModal.classList.remove('location__modal--active')
+}
+function openLocationModal(){
+    overlay.classList.add('overlay__active')
+    locationModal.classList.add('location__modal--active')
+}
 function closeDeleteAllModal(){
     overlay.classList.remove('overlay__active')
     deleteAllModal.classList.remove('deleteAll__modal--active')
@@ -58,6 +69,9 @@ function deleteAllItemBasket(){
     basketWrapper.classList.add('hidden')
     deleteAllBasketMobile.classList.add('text-gray-400')
 }
+addAddressBtn.addEventListener('click',()=>{
+    openLocationModal()
+})
 deleteAllBasketBtn.addEventListener('click',()=>{
     openDeleteAllModal()
 })
@@ -71,6 +85,9 @@ deleteBtn.addEventListener('click',()=>{
     deleteAllItemBasket()
     closeDeleteAllModal()
 })
+closeLocationModalBtn.addEventListener('click',()=>{
+    closeLocationModal()
+})
 closeDeleteAllModalBtn.addEventListener('click',()=>{
     closeDeleteAllModal()
 })
@@ -78,5 +95,6 @@ overlay.addEventListener('click',(e)=>{
     e.preventDefault()
     if(e.target.parentElement.tagName=='BODY'){
         closeDeleteAllModal()
+        closeLocationModal()
     }
 })

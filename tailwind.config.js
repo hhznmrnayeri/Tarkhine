@@ -59,6 +59,7 @@ module.exports = {
         "gallery6":"url(../images/home/gallery6.jpg)",
         "gallery7":"url(../images/home/gallery7.jpg)",
         "buy-empty":"url(../images/buy/Empty.png)",
+        "map":"url(../images/buy/map.png)",
         "mobileMenu":"linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url(../images/home/menu.jpg)",
         "header":"linear-gradient(0deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%), linear-gradient(0deg, rgba(33, 64, 43, 0.50) 0%, rgba(33, 64, 43, 0.50) 100%), url(../images/home/home.jpg)",
         "header-menu":"linear-gradient(0deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%), linear-gradient(0deg, rgba(33, 64, 43, 0.50) 0%, rgba(33, 64, 43, 0.50) 100%), url(../images/menu/header.jpg)",

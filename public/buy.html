@@ -1042,6 +1042,42 @@
             </div>
         </div>
     </footer>
+    <!-- create location modal -->
+    <div class="location__modal location__modal--active fixed overflow-hidden rounded-lg bg-white w-full flex flex-col md:w-7/12 h-full md:h-3/4 inset-0 m-auto z-30">
+        <!-- top wrapper -->
+        <div class="bg-gray-100 flex items-center justify-between py-4 px-6 text-sm font-estedadMedium md:text-2xl md:font-estedadSemiBold">
+            <h3 class="mx-auto">افزودن آدرس</h3>
+            <button class="close__location--modal text-gray-700">
+                <svg class="w-6 h-6">
+                    <use href="#close"></use>
+                </svg>
+            </button>
+        </div>
+        <!-- content -->
+        <div class="bg-map bg-center bg-cover relative py-8 px-6 flex flex-col items-center justify-between flex-grow">
+            <!-- top wrapper -->
+            <div class="flex items-start justify-between text-primary w-full">
+                <!-- gps btn -->
+                <button class="bg-white flex items-center gap-1 p-2 md:px-6 text-xs md:text-base md:font-estedadMedium">
+                    <svg class="w-4 h-4 md:w-6 md:h-6"><use href="#gps"></use></svg>موقعیت من
+                </button>
+                <!-- zoom wrapper -->
+                <div class="flex flex-col gap-2">
+                    <!-- zoom in btn -->
+                    <button class="flex-center bg-white w-8 md:w-10 h-8 md:h-10 rounded">+</button>
+                    <!-- zoom out btn -->
+                    <button class="flex-center bg-white w-8 md:w-10 h-8 md:h-10 rounded">-</button>
+                </div>
+            </div>
+            <!-- bottom wrapper -->
+            <div class="flex flex-col items-center gap-3 md:gap-6">
+                <!-- address text -->
+                <p class="bg-white flex items-center gap-1 p-2 shadow-card rounded text-xs md:text-sm w-full md:w-96 mx-auto"><svg class="w-4 h-4 md:w-6 md:h-6"><use href="#location"></use></svg>ولیعصر، خیابان بزرگمهر، کوچه نسیم</p>
+                <!-- submit btn -->
+                <button class="submit__location bg-primary text-white text-xs md:text-base md:font-estedadMedium flex-center p-2 md:px-4 rounded w-64">ثبت موقعیت</button>
+            </div>
+        </div>
+    </div>
     <!-- delete all modal -->
     <div class="deleteAll__modal fixed overflow-hidden rounded-lg bg-white w-11/12 md:w-5/12 h-48 md:h-56 inset-0 m-auto z-30">
         <!-- top wrapper -->
@@ -1207,7 +1243,7 @@
         </div>
     </div>
     <!-- overlay -->
-    <div class="overlay fixed top-0 bottom-0 right-0 left-0 transition-all duration-300 z-20">
+    <div class="overlay overlay__active fixed top-0 bottom-0 right-0 left-0 transition-all duration-300 z-20">
 
     </div>
     <script src="scripts/app.js"></script>

@@ -165,6 +165,12 @@
     .address__item--active{
         @apply border-primary
     }
+    .location__modal{
+        @apply invisible opacity-0 transition-all duration-300
+    }
+    .location__modal--active{
+        @apply visible opacity-100
+    }
 }
 
 @layer utilities{

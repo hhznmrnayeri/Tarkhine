@@ -980,6 +980,19 @@ video {
   opacity: 1;
 }
 
+.address__modal {
+  visibility: hidden;
+  opacity: 0;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.address__modal--active {
+  visibility: visible;
+  opacity: 1;
+}
+
 .visible {
   visibility: visible;
 }
@@ -1334,6 +1347,10 @@ video {
   height: 1.5rem;
 }
 
+.h-60 {
+  height: 15rem;
+}
+
 .h-64 {
   height: 16rem;
 }
@@ -1362,10 +1379,6 @@ video {
 
 .h-px {
   height: 1px;
-}
-
-.h-60 {
-  height: 15rem;
 }
 
 .w-0 {
@@ -2418,6 +2431,10 @@ video {
     height: 10rem;
   }
 
+  .md\:h-44 {
+    height: 11rem;
+  }
+
   .md\:h-56 {
     height: 14rem;
   }
@@ -2432,10 +2449,6 @@ video {
 
   .md\:h-80 {
     height: 20rem;
-  }
-
-  .md\:h-44 {
-    height: 11rem;
   }
 
   .md\:w-1\/2 {

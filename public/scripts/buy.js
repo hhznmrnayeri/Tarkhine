@@ -6,6 +6,10 @@ const addressItemArray=document.querySelectorAll('.address__item')
 const addAddressBtn=document.querySelector('.add__address--btn')
 const deleteAllBasketBtn=document.querySelector('.deleteAll__basket')
 const locationModal=document.querySelector('.location__modal')
+const addressModal=document.querySelector('.address__modal')
+const closeAddressModalBtn=document.querySelector('.close__address--modal')
+const closeAddress=document.querySelector('.close__address')
+const submitAddress=document.querySelector('.submit__address')
 const closeLocationModalBtn=document.querySelector('.close__location--modal')
 const submitLocation=document.querySelector('.submit__location')
 const basketWrapper=document.querySelector('.basket__wrapper')
@@ -47,6 +51,14 @@ stateItemArray.forEach(item=>{
         document.getElementById(item.dataset.id).classList.add('section__item--active')
     })
 })
+function closeAddressModal(){
+    overlay.classList.remove('overlay__active')
+    addressModal.classList.remove('address__modal--active')
+}
+function openAddressModal(){
+    overlay.classList.add('overlay__active')
+    addressModal.classList.add('address__modal--active')
+}
 function closeLocationModal(){
     overlay.classList.remove('overlay__active')
     locationModal.classList.remove('location__modal--active')
@@ -88,6 +100,21 @@ deleteBtn.addEventListener('click',()=>{
 closeLocationModalBtn.addEventListener('click',()=>{
     closeLocationModal()
 })
+submitAddress.addEventListener('click',(e)=>{
+    e.preventDefault()
+    closeAddressModal()
+})
+submitLocation.addEventListener('click',()=>{
+    closeLocationModal()
+    openAddressModal()
+})
+closeAddress.addEventListener('click',(e)=>{
+    e.preventDefault()
+    closeAddressModal()
+})
+closeAddressModalBtn.addEventListener('click',()=>{
+    closeAddressModal()
+})
 closeDeleteAllModalBtn.addEventListener('click',()=>{
     closeDeleteAllModal()
 })
@@ -96,5 +123,6 @@ overlay.addEventListener('click',(e)=>{
     if(e.target.parentElement.tagName=='BODY'){
         closeDeleteAllModal()
         closeLocationModal()
+        closeAddressModal()
     }
 })

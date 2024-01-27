@@ -826,7 +826,20 @@
                                 </button>
                             </div>
                             <!-- section delivery -->
-                            <div id="courier" class="section__delivery section__delivery--active">courier</div>
+                            <div id="courier" class="section__delivery section__delivery--active p-4 md:px-6 border border-gray-400 rounded-lg">
+                                <!-- empty address -->
+                                <div class="flex flex-col bg-buy-empty bg-center bg-no-repeat bg-contain pb-20">
+                                    <!-- top wrapper -->
+                                    <div class="flex items-center justify-between pb-2 border-b border-gray-400">
+                                        <!-- title -->
+                                        <h3 class="flex items-center gap-1 text-sm md:text-base"><svg class="w-4 md:w-6 h-4 md:h-6"><use href="#location"></use></svg>آدرس‌ها</h3>
+                                        <!-- add address btn -->
+                                        <button class="add__address--btn text-primary flex items-center gap-1 text-xs"><span class="w-4 h-4 border border-primary flex-center rounded-full">+</span>افزودن آدرس</button>
+                                    </div>
+                                    <!-- caption -->
+                                    <p class="text-center text-2xs md:text-sm text-gray-600 mt-20">شما در حال حاضر هیچ آدرسی ثبت نکرده‌اید!</p>
+                                </div>
+                            </div>
                             <!-- section delivery -->
                             <div id="person" class="section__delivery">person</div>
                         </div>

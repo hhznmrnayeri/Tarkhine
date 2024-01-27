@@ -1742,6 +1742,10 @@ video {
   background-size: cover;
 }
 
+.bg-contain {
+  background-size: contain;
+}
+
 .bg-center {
   background-position: center;
 }
@@ -1891,6 +1895,10 @@ video {
 
 .pt-14 {
   padding-top: 3.5rem;
+}
+
+.pb-20 {
+  padding-bottom: 5rem;
 }
 
 .text-center {

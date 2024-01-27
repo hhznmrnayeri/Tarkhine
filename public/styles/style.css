@@ -957,6 +957,35 @@ video {
   opacity: 1;
 }
 
+.state__pay--active .state__radio::after{
+  content: '';
+  position: absolute;
+  inset: 0px;
+  margin: auto;
+  height: 0.75rem;
+  width: 0.75rem;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(65 127 86 / var(--tw-bg-opacity))
+}
+
+.section__pay {
+  visibility: hidden;
+  height: 0px;
+  overflow: hidden;
+  opacity: 0;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.section__pay--active {
+  visibility: visible;
+  height: -moz-min-content;
+  height: min-content;
+  opacity: 1;
+}
+
 .address__item {
   --tw-border-opacity: 1;
   border-color: rgb(203 203 203 / var(--tw-border-opacity));

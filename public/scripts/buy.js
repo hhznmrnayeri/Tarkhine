@@ -2,6 +2,8 @@ const stateItemArray=document.querySelectorAll('.state__item')
 const sectionItemArray=document.querySelectorAll('.section__item')
 const stateDeliveryArray=document.querySelectorAll('.state__delivery')
 const sectionDeliveryArray=document.querySelectorAll('.section__delivery')
+const addressItemArray=document.querySelectorAll('.address__item')
+const addAddressBtn=document.querySelector('.add__address--btn')
 const deleteAllBasketBtn=document.querySelector('.deleteAll__basket')
 const basketWrapper=document.querySelector('.basket__wrapper')
 const emptyBasket=document.querySelector('.empty__basket')
@@ -10,6 +12,14 @@ const closeDeleteAllModalBtn=document.querySelector('.close__deleteAll--modal')
 const backBtn=document.querySelector('.back__btn')
 const deleteBtn=document.querySelector('.delete__btn')
 const deleteAllBasketMobile=document.querySelector('.deleteAll__basket--mobile')
+addressItemArray.forEach(item=>{
+    item.addEventListener('click',()=>{
+        addressItemArray.forEach(state=>{
+            state.classList.remove('address__item--active')
+        })
+        item.classList.add('address__item--active')
+    })
+})
 stateDeliveryArray.forEach(item=>{
     item.addEventListener('click',()=>{
         stateDeliveryArray.forEach(state=>{

@@ -22,58 +22,35 @@ const closeDeleteAllModalBtn=document.querySelector('.close__deleteAll--modal')
 const backBtn=document.querySelector('.back__btn')
 const deleteBtn=document.querySelector('.delete__btn')
 const deleteAllBasketMobile=document.querySelector('.deleteAll__basket--mobile')
-bankItemArray.forEach(item=>{
-    item.addEventListener('click',()=>{
-        bankItemArray.forEach(state=>{
-            state.classList.remove('bank__item--active')
+function changeSectionActive(array1,activeClass1,array2,activeClass2){
+    array1.forEach(item=>{
+        item.addEventListener('click',()=>{
+            array1.forEach(state=>{
+                state.classList.remove(activeClass1)
+            })
+            array2.forEach(section=>{
+                section.classList.remove(activeClass2)
+            })
+            item.classList.add(activeClass1)
+            document.getElementById(item.dataset.id).classList.add(activeClass2)
         })
-        item.classList.add('bank__item--active')
     })
-})
-addressItemArray.forEach(item=>{
-    item.addEventListener('click',()=>{
-        addressItemArray.forEach(state=>{
-            state.classList.remove('address__item--active')
+}
+function changeStateActive(array,activeClass){
+    array.forEach(item=>{
+        item.addEventListener('click',()=>{
+            array.forEach(state=>{
+                state.classList.remove(activeClass)
+            })
+            item.classList.add(activeClass)
         })
-        item.classList.add('address__item--active')
     })
-})
-statePayArray.forEach(item=>{
-    item.addEventListener('click',()=>{
-        statePayArray.forEach(state=>{
-            state.classList.remove('state__pay--active')
-        })
-        sectionPayArray.forEach(section=>{
-            section.classList.remove('section__pay--active')
-        })
-        item.classList.add('state__pay--active')
-        document.getElementById(item.dataset.id).classList.add('section__pay--active')
-    })
-})
-stateDeliveryArray.forEach(item=>{
-    item.addEventListener('click',()=>{
-        stateDeliveryArray.forEach(state=>{
-            state.classList.remove('state__delivery--active')
-        })
-        sectionDeliveryArray.forEach(section=>{
-            section.classList.remove('section__delivery--active')
-        })
-        item.classList.add('state__delivery--active')
-        document.getElementById(item.dataset.id).classList.add('section__delivery--active')
-    })
-})
-stateItemArray.forEach(item=>{
-    item.addEventListener('click',()=>{
-        stateItemArray.forEach(state=>{
-            state.classList.remove('state__item--active')
-        })
-        sectionItemArray.forEach(section=>{
-            section.classList.remove('section__item--active')
-        })
-        item.classList.add('state__item--active')
-        document.getElementById(item.dataset.id).classList.add('section__item--active')
-    })
-})
+}
+changeStateActive(bankItemArray,'bank__item--active')
+changeStateActive(addressItemArray,'address__item--active')
+changeSectionActive(statePayArray,'state__pay--active',sectionPayArray,'section__pay--active')
+changeSectionActive(stateDeliveryArray,'state__delivery--active',sectionDeliveryArray,'section__delivery--active')
+changeSectionActive(stateItemArray,'state__item--active',sectionItemArray,'section__item--active')
 function closeAddressModal(){
     overlay.classList.remove('overlay__active')
     addressModal.classList.remove('address__modal--active')

@@ -2,6 +2,8 @@ const stateItemArray=document.querySelectorAll('.state__item')
 const sectionItemArray=document.querySelectorAll('.section__item')
 const stateDeliveryArray=document.querySelectorAll('.state__delivery')
 const sectionDeliveryArray=document.querySelectorAll('.section__delivery')
+const statePayArray=document.querySelectorAll('.state__pay')
+const sectionPayArray=document.querySelectorAll('.section__pay')
 const addressItemArray=document.querySelectorAll('.address__item')
 const addAddressBtn=document.querySelector('.add__address--btn')
 const deleteAllBasketBtn=document.querySelector('.deleteAll__basket')
@@ -25,6 +27,18 @@ addressItemArray.forEach(item=>{
             state.classList.remove('address__item--active')
         })
         item.classList.add('address__item--active')
+    })
+})
+statePayArray.forEach(item=>{
+    item.addEventListener('click',()=>{
+        statePayArray.forEach(state=>{
+            state.classList.remove('state__pay--active')
+        })
+        sectionPayArray.forEach(section=>{
+            section.classList.remove('section__pay--active')
+        })
+        item.classList.add('state__pay--active')
+        document.getElementById(item.dataset.id).classList.add('section__pay--active')
     })
 })
 stateDeliveryArray.forEach(item=>{

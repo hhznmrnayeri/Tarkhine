@@ -1091,10 +1091,48 @@ video {
   opacity: 1;
 }
 
+.calendar__box {
+  visibility: hidden;
+  height: 0px;
+  opacity: 0;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.calendar__box--active {
+  visibility: visible;
+  z-index: 30;
+  height: 18rem;
+  opacity: 1;
+}
+
 .overlay__subMenu--active {
   visibility: visible;
   background-color: rgb(12 12 12 / 0);
   opacity: 1;
+}
+
+.day__disable {
+  cursor: text;
+  --tw-text-opacity: 1;
+  color: rgb(173 173 173 / var(--tw-text-opacity));
+}
+
+.day__calendar {
+  height: 2rem;
+  width: 2rem;
+}
+
+.day__active {
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(65 127 86 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .visible {
@@ -1484,6 +1522,10 @@ video {
   height: 16rem;
 }
 
+.h-72 {
+  height: 18rem;
+}
+
 .h-8 {
   height: 2rem;
 }
@@ -1645,6 +1687,10 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.cursor-text {
+  cursor: text;
 }
 
 .resize {

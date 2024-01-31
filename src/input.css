@@ -206,8 +206,23 @@
     .shire__box--active{
         @apply visible opacity-100 h-48 z-30
     }
+    .calendar__box{
+        @apply invisible h-0 opacity-0 transition-all duration-300
+    }
+    .calendar__box--active{
+        @apply visible opacity-100 h-72 z-30
+    }
     .overlay__subMenu--active{
         @apply visible opacity-100 bg-black/0
+    }
+    .day__disable{
+        @apply text-gray-500 cursor-text
+    }
+    .day__calendar{
+        @apply w-8 h-8 
+    }
+    .day__active{
+        @apply text-white bg-primary rounded-full flex-center
     }
 }
 

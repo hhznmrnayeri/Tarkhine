@@ -2048,6 +2048,10 @@ video {
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url(../images/home/section.jpg);
 }
 
+.bg-header-about {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%), linear-gradient(0deg, rgba(33, 64, 43, 0.50) 0%, rgba(33, 64, 43, 0.50) 100%), url(../images/about/header.jpg);
+}
+
 .bg-contain {
   background-size: contain;
 }

@@ -200,6 +200,15 @@
         content: '';
         @apply absolute border-2 border-primary rounded rotate-45 top-0 bottom-0 my-auto -right-6 w-4 h-4
     }
+    .shire__box{
+        @apply invisible h-0 opacity-0 transition-all duration-300
+    }
+    .shire__box--active{
+        @apply visible opacity-100 h-48 z-30
+    }
+    .overlay__subMenu--active{
+        @apply visible opacity-100 bg-black/0
+    }
 }
 
 @layer utilities{

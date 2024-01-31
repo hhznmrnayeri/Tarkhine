@@ -1122,6 +1122,9 @@ video {
 .day__calendar {
   height: 2rem;
   width: 2rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
 }
 
 .day__active {
@@ -2530,6 +2533,10 @@ video {
     grid-column: span 6 / span 6;
   }
 
+  .sm\:w-72 {
+    width: 18rem;
+  }
+
   .sm\:grid-cols-12 {
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
@@ -3199,6 +3206,10 @@ video {
 
   .lg\:w-7\/12 {
     width: 58.333333%;
+  }
+
+  .lg\:w-full {
+    width: 100%;
   }
 
   .lg\:grid-cols-12 {

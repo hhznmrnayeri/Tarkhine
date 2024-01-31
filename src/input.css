@@ -219,7 +219,7 @@
         @apply text-gray-500 cursor-text
     }
     .day__calendar{
-        @apply w-8 h-8 
+        @apply w-8 h-8 transition-all duration-300
     }
     .day__active{
         @apply text-white bg-primary rounded-full flex-center

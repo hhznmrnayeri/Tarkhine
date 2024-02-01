@@ -240,6 +240,12 @@
     .header__title{
         @apply transition-all duration-300
     }
+    .section__question{
+        @apply transition-all duration-300 invisible opacity-0
+    }
+    .section__question--active{
+        @apply visible opacity-100
+    }
 }
 
 @layer utilities{

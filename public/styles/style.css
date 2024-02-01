@@ -1180,6 +1180,7 @@ video {
 .section__question {
   visibility: hidden;
   height: 0px;
+  overflow: hidden;
   border-radius: 0.25rem;
   border-width: 1px;
   --tw-border-opacity: 1;
@@ -2603,6 +2604,10 @@ video {
 
 .group:focus .group-focus\:visible {
   visibility: visible;
+}
+
+.group:focus .group-focus\:h-auto {
+  height: auto;
 }
 
 .group:focus .group-focus\:max-h-screen {

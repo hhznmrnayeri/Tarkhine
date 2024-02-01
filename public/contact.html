@@ -5,7 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تماس با ما</title>
+    <link rel="stylesheet" href="./styles/swiper-bundle.min.css">
     <link rel="stylesheet" href="./styles/style.css">
+    <style>
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-position: center;
+            background-size: cover;
+        }
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .swiper {
+            width: 100%;
+            height: 18rem;
+            margin: 0 auto;
+        }
+        .mySwiper2 {
+            height: 80%;
+            width: 100%;
+        }
+        .mySwiper {
+            height: 20%;
+            padding: 10px 0;
+        }
+        .mySwiper .swiper-slide {
+            width: 25%;
+            height: 100%;
+            opacity: 0.6;
+        }
+        .mySwiper .swiper-slide-thumb-active {
+            opacity: 1;
+        }
+</style>
 </head>
 <body class="font-estedad text-gray-800 bg-white">
     <svg class="hidden">
@@ -560,6 +597,79 @@
             </div>
         </div>
     </footer>
+    <!-- gallery branch -->
+    <div class="gallery__branch  fixed rounded-lg overflow-hidden w-11/12 md:w-7/12 h-5/6 md:h-3/4 inset-0 m-auto z-30">
+        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2 overflow-hidden">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <!-- background image -->
+                    <img src="images/home/gallery1.jpg" alt="branch">
+                </div>
+                <div class="swiper-slide">
+                    <!-- background image -->
+                    <img src="images/home/gallery2.jpg" alt="branch">
+                </div>
+                <div class="swiper-slide">
+                    <!-- background image -->
+                    <img src="images/home/gallery3.jpg" alt="branch">
+                </div>
+                <div class="swiper-slide">
+                    <!-- background image -->
+                    <img src="images/home/gallery4.jpg" alt="branch">
+                </div>
+                <div class="swiper-slide">
+                    <!-- background image -->
+                    <img src="images/home/gallery5.jpg" alt="branch">
+                </div>
+                <div class="swiper-slide">
+                    <!-- background image -->
+                    <img src="images/home/gallery6.jpg" alt="branch">
+                </div>
+                <div class="swiper-slide">
+                    <!-- background image -->
+                    <img src="images/home/gallery7.jpg" alt="branch">
+                </div>
+            </div>
+            <!-- close gallery btn -->
+            <button class="close__gallery absolute top-1 left-1 z-40 text-white">
+                <svg class="w-10 h-10">
+                    <use href="#close"></use>
+                </svg>
+            </button>
+        </div>
+        <div thumbsSlider="" class="swiper mySwiper absolute bottom-24 left-0 right-0 h-20 w-10/12 overflow-hidden">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide rounded border border-white">
+                    <!-- background image -->
+                    <img src="images/home/gallery1.jpg">
+                </div>
+                <div class="swiper-slide rounded border border-white">
+                    <!-- background image -->
+                    <img src="images/home/gallery2.jpg">
+                </div>
+                <div class="swiper-slide rounded border border-white">
+                    <!-- background image -->
+                    <img src="images/home/gallery3.jpg">
+                </div>
+                <div class="swiper-slide rounded border border-white">
+                    <!-- background image -->
+                    <img src="images/home/gallery4.jpg">
+                </div>
+                <div class="swiper-slide rounded border border-white">
+                    <!-- background image -->
+                    <img src="images/home/gallery5.jpg">
+                </div>
+                <div class="swiper-slide rounded border border-white">
+                    <!-- background image -->
+                    <img src="images/home/gallery6.jpg">
+                </div>
+                <div class="swiper-slide rounded border border-white">
+                    <!-- background image -->
+                    <img src="images/home/gallery7.jpg">
+                </div>
+            </div>
+        </div>
+</div>
     <!-- search modal -->
     <div class="search__modal hidden md:block fixed rounded-lg overflow-hidden bg-white pb-12 w-5/12 h-64 inset-0 m-auto z-30">
         <!-- top box -->
@@ -705,6 +815,40 @@
     </div>
     <!-- overlay -->
     <div class="overlay fixed top-0 bottom-0 right-0 left-0 transition-all duration-300 z-20"></div>
+    <script src="scripts/swiper-bundle.min.js"></script>
     <script src="scripts/app.js"></script>
+    <script src="scripts/contact.js"></script>
+    <script>
+        let swiper = new Swiper(".mySwiper", {
+            spaceBetween: 10,
+            slidesPerView: 3,
+            freeMode: true,
+            watchSlidesProgress: true,
+            breakpoints:{
+                480:{
+                    slidesPerView:4,
+                    spaceBetween:10
+                },
+                768:{
+                    slidesPerView:4,
+                    spaceBetween:10
+                },
+                1024:{
+                    slidesPerView:6,
+                    spaceBetween:10
+                },
+                1280:{
+                    slidesPerView:6,
+                    spaceBetween:32
+                },
+            }
+        });
+        let swiper2 = new Swiper(".mySwiper2", {
+            spaceBetween: 10,
+            thumbs: {
+                swiper: swiper,
+            },
+        });
+    </script>
 </body>
 </html>

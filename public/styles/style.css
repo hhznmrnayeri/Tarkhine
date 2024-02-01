@@ -1180,6 +1180,10 @@ video {
 .section__question {
   visibility: hidden;
   height: 0px;
+  border-radius: 0.25rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(203 203 203 / var(--tw-border-opacity));
   opacity: 0;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1625,6 +1629,10 @@ video {
   height: 1px;
 }
 
+.max-h-0 {
+  max-height: 0px;
+}
+
 .w-0 {
   width: 0px;
 }
@@ -1991,6 +1999,10 @@ video {
 
 .border-b {
   border-bottom-width: 1px;
+}
+
+.border-t {
+  border-top-width: 1px;
 }
 
 .border-dashed {
@@ -2571,6 +2583,10 @@ video {
   transition-duration: 300ms;
 }
 
+.duration-500 {
+  transition-duration: 500ms;
+}
+
 .flex-center {
   display: flex;
   align-items: center;
@@ -2583,6 +2599,32 @@ video {
 
 .group:hover .group-hover\:opacity-100 {
   opacity: 1;
+}
+
+.group:focus .group-focus\:visible {
+  visibility: visible;
+}
+
+.group:focus .group-focus\:max-h-screen {
+  max-height: 100vh;
+}
+
+.group:focus .group-focus\:-rotate-180 {
+  --tw-rotate: -180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group:focus .group-focus\:text-primary {
+  --tw-text-opacity: 1;
+  color: rgb(65 127 86 / var(--tw-text-opacity));
+}
+
+.group:focus .group-focus\:opacity-100 {
+  opacity: 1;
+}
+
+.group:focus .group-focus\:duration-300 {
+  transition-duration: 300ms;
 }
 
 .child\:h-full>* {

@@ -241,7 +241,7 @@
         @apply transition-all duration-300
     }
     .section__question{
-        @apply transition-all duration-300 invisible opacity-0 h-0
+        @apply transition-all duration-300 invisible opacity-0 h-0 border border-gray-400 rounded
     }
     .section__question--active{
         @apply visible opacity-100 h-auto

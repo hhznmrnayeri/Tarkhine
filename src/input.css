@@ -224,6 +224,16 @@
     .day__active{
         @apply text-white bg-primary rounded-full flex-center
     }
+    .state__question{
+        @apply transition-all duration-300 pb-1.5
+    }
+    .state__question--active{
+        @apply relative text-primary font-estedadBold
+    }
+    .state__question--active::after{
+        content: '';
+        @apply absolute left-0 -bottom-1.5 right-0 w-full h-0.5 bg-primary
+    }
 }
 
 @layer utilities{

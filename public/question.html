@@ -321,7 +321,7 @@
             </nav>
         </div>
         <!-- header slide section -->
-        <div class="header__section bg-header-privacy h-44 md:h-80 bg-cover bg-center pt-14 md:pt-32 px-6 relative">
+        <div class="header__section  h-44 md:h-80 bg-cover bg-center pt-14 md:pt-32 px-6 relative">
             <!-- title wrapper -->
             <div class="flex-center  text-center">
                 <!-- header title -->
@@ -336,11 +336,11 @@
                 <!-- state wrapper -->
                 <div class="py-1.5 md:pt-4 flex items-center gap-4 md:gap-8 text-gray-700 text-xs md:text-xl">
                     <!-- state item -->
-                    <button class="state__question state__question--active ">سوالات متداول</button>
+                    <button class="state__question state__question--active " data-id="question">سوالات متداول</button>
                     <!-- state item -->
-                    <button class="state__question ">قوانین ترخینه</button>
+                    <button class="state__question " data-id="rule">قوانین ترخینه</button>
                     <!-- state item -->
-                    <button class="state__question ">حریم خصوصی</button>
+                    <button class="state__question " data-id="privacy">حریم خصوصی</button>
                 </div>
             </div>
         </div>
@@ -570,5 +570,6 @@
     <!-- overlay -->
     <div class="overlay fixed top-0 bottom-0 right-0 left-0 transition-all duration-300 z-20"></div>
     <script src="scripts/app.js"></script>
+    <script src="scripts/question.js"></script>
 </body>
 </html>

@@ -234,6 +234,12 @@
         content: '';
         @apply absolute left-0 -bottom-1.5 right-0 w-full h-0.5 bg-primary
     }
+    .header__section{
+        @apply transition-all duration-300 bg-header-question
+    }
+    .header__title{
+        @apply transition-all duration-300
+    }
 }
 
 @layer utilities{

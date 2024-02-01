@@ -2806,6 +2806,10 @@ video {
     grid-column: span 3 / span 3;
   }
 
+  .md\:col-span-9 {
+    grid-column: span 9 / span 9;
+  }
+
   .md\:mx-auto {
     margin-left: auto;
     margin-right: auto;

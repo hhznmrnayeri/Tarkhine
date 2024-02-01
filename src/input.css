@@ -241,10 +241,10 @@
         @apply transition-all duration-300
     }
     .section__question{
-        @apply transition-all duration-300 invisible opacity-0
+        @apply transition-all duration-300 invisible opacity-0 h-0
     }
     .section__question--active{
-        @apply visible opacity-100
+        @apply visible opacity-100 h-auto
     }
 }
 

@@ -1,4 +1,5 @@
 const stateItemArray=document.querySelectorAll('.state__question')
+const sectionItemArray=document.querySelectorAll('.section__question')
 const headerSection=document.querySelector('.header__section')
 const headerTitle=document.querySelector('.header__title')
 const headerTitleArray=[
@@ -12,7 +13,11 @@ stateItemArray.forEach(item=>{
         stateItemArray.forEach(btn=>{
             btn.classList.remove('state__question--active')
         })
+        sectionItemArray.forEach(sec=>{
+            sec.classList.remove('section__question--active')
+        })
     let requestValue=headerTitleArray.find(obj=>{return obj.id==item.dataset.id})
+    document.getElementById(item.dataset.id).classList.add('section__question--active')
     headerTitle.innerHTML=requestValue.value
         item.classList.add('state__question--active')
     })

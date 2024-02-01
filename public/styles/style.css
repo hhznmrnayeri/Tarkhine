@@ -1245,6 +1245,22 @@ video {
   display: block;
 }
 
+.profile__section {
+  visibility: hidden;
+  height: 0px;
+  overflow: hidden;
+  opacity: 0;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.profile__section--active {
+  visibility: visible;
+  height: auto;
+  opacity: 1;
+}
+
 .visible {
   visibility: visible;
 }

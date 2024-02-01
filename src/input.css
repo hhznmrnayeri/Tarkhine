@@ -265,6 +265,12 @@
     .profile__state--active .icon__fill{
         @apply block
     }
+    .profile__section{
+        @apply transition-all duration-300 invisible opacity-0 h-0 overflow-hidden
+    }
+    .profile__section--active{
+        @apply visible opacity-100 h-auto
+    }
 }
 
 @layer utilities{

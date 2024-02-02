@@ -22,6 +22,8 @@ const closeAddress=document.querySelector('.close__address')
 const submitAddress=document.querySelector('.submit__address')
 const closeLocationModalBtn=document.querySelector('.close__location--modal')
 const submitLocation=document.querySelector('.submit__location')
+const stateWrapper=document.querySelector('.state__wrapper')
+const openStateWrapperArray=document.querySelectorAll('.back__btn')
 profileStateArray.forEach(state=>{
     state.addEventListener('click',()=>{
         profileStateArray.forEach(item=>{
@@ -32,6 +34,12 @@ profileStateArray.forEach(state=>{
         })
     state.classList.add('profile__state--active')
     document.getElementById(state.dataset.id).classList.add('profile__section--active')
+    stateWrapper.classList.remove('state__wrapper--active')
+    })
+})
+openStateWrapperArray.forEach(item=>{
+    item.addEventListener('click',()=>{
+        stateWrapper.classList.add('state__wrapper--active')
     })
 })
 editProfile.addEventListener('click',()=>{

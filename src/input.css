@@ -275,7 +275,7 @@
         @apply left-full
     }
     .state__wrapper--active{
-        @apply left-0
+        @apply left-0 z-10
     }
     .profile__edit--input{
         @apply w-full h-full bg-transparent text-gray-800 outline outline-0 focus:outline-0 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-gray-800 placeholder-shown:border-t-gray-800 border focus:border-2 border-t-transparent focus:border-t-transparent text-sm px-3 py-2.5 rounded-lg border-gray-800 focus:border-gray-800

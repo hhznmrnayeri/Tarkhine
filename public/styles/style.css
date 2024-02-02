@@ -1267,6 +1267,7 @@ video {
 
 .state__wrapper--active {
   left: 0px;
+  z-index: 10;
 }
 
 .profile__edit--input {
@@ -3739,12 +3740,12 @@ video {
     grid-column: span 3 / span 3;
   }
 
-  .md\:col-span-9 {
-    grid-column: span 9 / span 9;
-  }
-
   .md\:col-span-6 {
     grid-column: span 6 / span 6;
+  }
+
+  .md\:col-span-9 {
+    grid-column: span 9 / span 9;
   }
 
   .md\:mx-auto {

@@ -307,6 +307,32 @@
     .filter__item--active .tick__icon{
         @apply block
     }
+    .delivery__label{
+        @apply bg-gray-300 rounded py-0.5 px-1 md:px-3
+    }
+    .order__state{
+        @apply bg-warning-200 text-warning rounded py-0.5 px-1 md:px-3
+    }
+    .delivered{
+        @apply text-primary bg-tint-100 rounded py-0.5 px-1 md:px-3
+    }
+    .canceled{
+        @apply text-error bg-error-200 rounded py-0.5 px-1 md:px-3
+    }
+    .state__order--active{
+        @apply text-primary text-base font-estedadBold relative
+    }
+    .state__order--active svg{
+        @apply w-6 h-6 md:w-8 md:h-8
+    }
+    .state__order--active::after{
+        content: '';
+        @apply absolute h-px border border-dashed border-primary flex-1 right-full lg:-left-1/2 w-14 xs:w-20 sm:w-30 md:w-1/12 lg:w-1/2
+    }
+    .food__wrapper::after{
+        content: '';
+        @apply flex-auto
+    }
 }
 
 @layer utilities{

@@ -222,6 +222,10 @@
         <symbol id="tick" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M3.58141 7.57998C3.38141 7.57998 3.19141 7.49998 3.05141 7.35998L0.221406 4.52998C-0.0685937 4.23998 -0.0685937 3.75998 0.221406 3.46998C0.511406 3.17998 0.991406 3.17998 1.28141 3.46998L3.58141 5.76998L8.72141 0.629976C9.01141 0.339976 9.49141 0.339976 9.78141 0.629976C10.0714 0.919976 10.0714 1.39998 9.78141 1.68998L4.11141 7.35998C3.97141 7.49998 3.78141 7.57998 3.58141 7.57998Z" fill="#417F56"/>
         </symbol>
+        <symbol id="home-order" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+            <path d="M7.99997 12.5002C7.72664 12.5002 7.49997 12.2735 7.49997 12.0002V10.0002C7.49997 9.72687 7.72664 9.50021 7.99997 9.50021C8.27331 9.50021 8.49997 9.72687 8.49997 10.0002V12.0002C8.49997 12.2735 8.27331 12.5002 7.99997 12.5002Z" fill="currentColor"/>
+            <path d="M11.7333 15.0402H4.26664C3.05331 15.0402 1.94664 14.1069 1.74664 12.9135L0.859974 7.60021C0.713307 6.77354 1.11997 5.71354 1.77997 5.18687L6.39997 1.48687C7.29331 0.766874 8.69997 0.77354 9.59997 1.49354L14.22 5.18687C14.8733 5.71354 15.2733 6.77354 15.14 7.60021L14.2533 12.9069C14.0533 14.0869 12.92 15.0402 11.7333 15.0402ZM7.99331 1.95354C7.63997 1.95354 7.28664 2.06021 7.02664 2.26687L2.40664 5.97354C2.03331 6.27354 1.76664 6.96687 1.84664 7.44021L2.73331 12.7469C2.85331 13.4469 3.55331 14.0402 4.26664 14.0402H11.7333C12.4466 14.0402 13.1466 13.4469 13.2666 12.7402L14.1533 7.43354C14.2266 6.96687 13.96 6.26021 13.5933 5.96687L8.97331 2.27354C8.70664 2.06021 8.34664 1.95354 7.99331 1.95354Z" fill="currentColor"/>
+        </symbol>
     </svg>
     <header class="shadow-menu">
         <!-- container -->
@@ -783,6 +787,464 @@
                                             <use href="#arrow-left"></use>
                                         </svg>
                                     </button>
+                                </div>
+                                <!-- order wrapper -->
+                                <div class="flex flex-col gap-3 md:gap-4 w-full mt-6 md:mt-8">
+                                    <!-- order item -->
+                                    <div class="order__item w-full border border-gray-400 rounded px-3 pt-2 pb-4 md:px-6 md:pb-6 md:pt-4">
+                                        <!-- top wrapper -->
+                                        <div class="flex items-start justify-between">
+                                            <!-- right box -->
+                                            <div class="flex flex-col items-start gap-4 md:gap-2">
+                                                <!-- branch name -->
+                                                <span class="md:mt-2 text-xs md:text-sm text-gray-600">شعبه اقدسیه</span>
+                                                <!-- detail wrapper -->
+                                                <div class="flex flex-col md:flex-row flex-wrap items-start gap-2 text-gray-600 md:text-gray-700 text-2xs">
+                                                    <!-- detail item -->
+                                                    <div class="flex items-center gap-1 md:order-1">
+                                                        <!-- detail icon -->
+                                                        <svg class="w-3 h-3 md:w-4 md:h-4 flex-shrink-0">
+                                                            <use href="#calendar"></use>
+                                                        </svg>
+                                                        <!-- detail text -->
+                                                        <p>شنبه، ۸ مرداد، ساعت ۱۸:۵۳</p>
+                                                    </div>
+                                                    <!-- detail item -->
+                                                    <div class="flex items-center gap-1 md:order-2">
+                                                        <!-- detail icon -->
+                                                        <svg class="w-3 h-3 md:w-4 md:h-4 flex-shrink-0">
+                                                            <use href="#location"></use>
+                                                        </svg>
+                                                        <!-- detail text -->
+                                                        <p>تهران: اقدسیه، بزرگراه ارتش، مجتمع شمیران سنتر، طبقه ۱۰</p>
+                                                    </div>
+                                                    <!-- detail item -->
+                                                    <div class="flex items-center gap-1 md:order-1 ">
+                                                        <!-- detail icon -->
+                                                        <svg class="w-3 h-3 md:w-4 md:h-4 flex-shrink-0 md:hidden">
+                                                            <use href="#wallet"></use>
+                                                        </svg>
+                                                        <!-- detail text -->
+                                                        <p>مبلغ: <span>۲۲۸٬۵۰۰</span>تومان تخفیف: <span>۲۸٬۵۰۰</span>تومان</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- left box -->
+                                            <div class="flex flex-col items-end gap-4 flex-shrink-0 xl:w-72">
+                                                <!-- label wrapper -->
+                                                <div class="flex items-center gap-2 text-2xs md:text-xs">
+                                                    <!-- delivery label -->
+                                                    <span class="delivery__label">ارسال توسط پیک</span>
+                                                    <!-- order state -->
+                                                    <span class="order__state">جاری</span>
+                                                </div>
+                                                <!-- detail item -->
+                                                <div class="flex items-center gap-1 text-gray-600 md:text-gray-700 text-2xs md:text-xs">
+                                                    <!-- detail icon -->
+                                                    <svg class="w-3 h-3 md:w-4 md:h-4">
+                                                        <use href="#clock"></use>
+                                                    </svg>
+                                                    <!-- detail text -->
+                                                    <p>آماده تحویل تا <span class="text-primary" dir="ltr">۲۵:۳۳</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- order state -->
+                                        <div class="flex items-center gap-1 md:gap-2 justify-between px-2 lg:px-10 text-gray-400 text-sm mt-4">
+                                            <!-- state item -->
+                                            <span class="state__order state__order--active flex items-center">
+                                                <svg class="w-4 h-4 md:w-6 md:h-6">
+                                                    <use href="#home-order"></use>
+                                                </svg>
+                                                <span class="hidden md:block">در حال آماده‌سازی</span>
+                                            </span>
+                                            <div class="h-px border border-dashed border-gray-400 flex-1"></div>
+                                            <!-- state item -->
+                                            <span class="state__order flex items-center">
+                                                <svg class="w-4 h-4 md:w-6 md:h-6">
+                                                    <use href="#truck-fast"></use>
+                                                </svg>
+                                                <span class="hidden md:block">ارسال توسط پیک</span>
+                                            </span>
+                                            <div class="h-px border border-dashed border-gray-400 flex-1"></div>
+                                            <!-- state item -->
+                                            <span class="state__order flex items-center">
+                                                <svg class="w-4 h-4 md:w-6 md:h-6">
+                                                    <use href="#tick-circle"></use>
+                                                </svg>
+                                                <span class="hidden md:block">تحویل سفارش</span>
+                                            </span>
+                                        </div>
+                                        <!-- food wrapper -->
+                                        <div class="food__wrapper flex items-center justify-between mt-4 gap-2 md:gap-4 flex-wrap xl:flex-nowrap">
+                                            <!-- food item -->
+                                            <div class="border border-gray-400 rounded-lg flex flex-col w-24 h-24 max-w-28 xs:max-w-24 sm:max-w-28 md:max-w-24 lg:max-w-28 xl:max-w-32 md:h-32 relative overflow-hidden  flex-grow">
+                                                <!-- img -->
+                                                <img src="images/menu/food9.png" alt="food" class="w-full h-12 md:h-20">
+                                                <!-- food content -->
+                                                <div class="p-1 text-2xs lg:px-4 flex-center flex-col ">
+                                                    <!-- food name -->
+                                                    <span class="flex-shrink-0 text-nowrap">کوکو سبزی</span>
+                                                    <!-- food price -->
+                                                    <span> ۲۷۰٬۰۰۰ تومان</span>
+                                                </div>
+                                                <!-- count food -->
+                                                <span class="absolute text-primary text-2xs bg-white px-0.5 rounded-sm left-1 top-0 bottom-0 my-auto h-3 md:text-xs md:rounded md:px-1">۳×</span>
+                                            </div>
+                                            <!-- food item -->
+                                            <div class="border border-gray-400 rounded-lg flex flex-col w-24 h-24 max-w-28 xs:max-w-24 sm:max-w-28 md:max-w-24 lg:max-w-28 xl:max-w-32 md:h-32 relative overflow-hidden  flex-grow">
+                                                <!-- img -->
+                                                <img src="images/menu/food8.png" alt="food" class="w-full h-12 md:h-20">
+                                                <!-- food content -->
+                                                <div class="p-1 text-2xs lg:px-4 flex-center flex-col ">
+                                                    <!-- food name -->
+                                                    <span class="flex-shrink-0 text-nowrap">دلمه برگ مو</span>
+                                                    <!-- food price -->
+                                                    <span> ۱۹۵٬۰۰۰ تومان</span>
+                                                </div>
+                                                <!-- count food -->
+                                                <span class="absolute text-primary text-2xs bg-white px-0.5 rounded-sm left-1 top-0 bottom-0 my-auto h-3 md:text-xs md:rounded md:px-1">۱×</span>
+                                            </div>
+                                            <!-- food item -->
+                                            <div class="border border-gray-400 rounded-lg flex flex-col w-24 h-24 max-w-28 xs:max-w-24 sm:max-w-28 md:max-w-24 lg:max-w-28 xl:max-w-32 md:h-32 relative overflow-hidden  flex-grow">
+                                                <!-- img -->
+                                                <img src="images/menu/food7.png" alt="food" class="w-full h-12 md:h-20">
+                                                <!-- food content -->
+                                                <div class="p-1 text-2xs lg:px-4 flex-center flex-col ">
+                                                    <!-- food name -->
+                                                    <span class="flex-shrink-0 text-nowrap">دلمه کلم برگ</span>
+                                                    <!-- food price -->
+                                                    <span> ۲۰۹٬۰۰۰ تومان</span>
+                                                </div>
+                                                <!-- count food -->
+                                                <span class="absolute text-primary text-2xs bg-white px-0.5 rounded-sm left-1 top-0 bottom-0 my-auto h-3 md:text-xs md:rounded md:px-1">۲×</span>
+                                            </div>
+                                            <!-- food item -->
+                                            <div class="border border-gray-400 rounded-lg flex flex-col w-24 h-24 max-w-28 xs:max-w-24 sm:max-w-28 md:max-w-24 lg:max-w-28 xl:max-w-32 md:h-32 relative overflow-hidden  flex-grow">
+                                                <!-- img -->
+                                                <img src="images/menu/food6.png" alt="food" class="w-full h-12 md:h-20">
+                                                <!-- food content -->
+                                                <div class="p-1 text-2xs lg:px-4 flex-center flex-col ">
+                                                    <!-- food name -->
+                                                    <span class="flex-shrink-0 text-nowrap">بادمجان شکم‌پر</span>
+                                                    <!-- food price -->
+                                                    <span> ۱۳۶٬۰۰۰ تومان</span>
+                                                </div>
+                                                <!-- count food -->
+                                                <span class="absolute text-primary text-2xs bg-white px-0.5 rounded-sm left-1 top-0 bottom-0 my-auto h-3 md:text-xs md:rounded md:px-1">۱×</span>
+                                            </div>
+                                            <!-- food item -->
+                                            <div class="border border-gray-400 rounded-lg flex flex-col w-24 h-24 max-w-28 xs:max-w-24 sm:max-w-28 md:max-w-24 lg:max-w-28 xl:max-w-32 md:h-32 relative overflow-hidden  flex-grow">
+                                                <!-- img -->
+                                                <img src="images/menu/food5.png" alt="food" class="w-full h-12 md:h-20">
+                                                <!-- food content -->
+                                                <div class="p-1 text-2xs lg:px-4 flex-center flex-col ">
+                                                    <!-- food name -->
+                                                    <span class="flex-shrink-0 text-nowrap">بورانی بادمجان</span>
+                                                    <!-- food price -->
+                                                    <span> ۱۴۸٬۰۰۰ تومان</span>
+                                                </div>
+                                                <!-- count food -->
+                                                <span class="absolute text-primary text-2xs bg-white px-0.5 rounded-sm left-1 top-0 bottom-0 my-auto h-3 md:text-xs md:rounded md:px-1">۲×</span>
+                                            </div>
+                                            <!-- food item -->
+                                            <div class="border border-gray-400 rounded-lg flex flex-col w-24 h-24 max-w-28 xs:max-w-24 sm:max-w-28 md:max-w-24 lg:max-w-28 xl:max-w-32 md:h-32 relative overflow-hidden  flex-grow">
+                                                <!-- img -->
+                                                <img src="images/menu/food4.png" alt="food" class="w-full h-12 md:h-20">
+                                                <!-- food content -->
+                                                <div class="p-1 text-2xs lg:px-4 flex-center flex-col ">
+                                                    <!-- food name -->
+                                                    <span class="flex-shrink-0 text-nowrap">کله جوش</span>
+                                                    <!-- food price -->
+                                                    <span> ۲۰۳٬۰۰۰ تومان</span>
+                                                </div>
+                                                <!-- count food -->
+                                                <span class="absolute text-primary text-2xs bg-white px-0.5 rounded-sm left-1 top-0 bottom-0 my-auto h-3 md:text-xs md:rounded md:px-1">۱×</span>
+                                            </div>
+                                        </div>
+                                        <!-- btn -->
+                                        <button class=" mx-auto md:ml-0 md:mr-auto border rounded p-2 text-xs flex-center h-8 w-24 md:w-30 text-error border-error mt-4">لغو سفارش</button>
+                                    </div>
+                                    <!-- order item -->
+                                    <div class="order__item w-full border border-gray-400 rounded px-3 pt-2 pb-4 md:px-6 md:pb-6 md:pt-4">
+                                        <!-- top wrapper -->
+                                        <div class="flex items-start justify-between">
+                                            <!-- right box -->
+                                            <div class="flex flex-col items-start gap-4 md:gap-2">
+                                                <!-- branch name -->
+                                                <span class="md:mt-2 text-xs md:text-sm text-gray-600">شعبه اقدسیه</span>
+                                                <!-- detail wrapper -->
+                                                <div class="flex flex-col md:flex-row flex-wrap items-start gap-2 text-gray-600 md:text-gray-700 text-2xs">
+                                                    <!-- detail item -->
+                                                    <div class="flex items-center gap-1 md:order-1">
+                                                        <!-- detail icon -->
+                                                        <svg class="w-3 h-3 md:w-4 md:h-4 flex-shrink-0">
+                                                            <use href="#calendar"></use>
+                                                        </svg>
+                                                        <!-- detail text -->
+                                                        <p>شنبه، ۸ مرداد، ساعت ۱۸:۵۳</p>
+                                                    </div>
+                                                    <!-- detail item -->
+                                                    <div class="flex items-center gap-1 md:order-2">
+                                                        <!-- detail icon -->
+                                                        <svg class="w-3 h-3 md:w-4 md:h-4 flex-shrink-0">
+                                                            <use href="#location"></use>
+                                                        </svg>
+                                                        <!-- detail text -->
+                                                        <p>تهران: اقدسیه، بزرگراه ارتش، مجتمع شمیران سنتر، طبقه ۱۰</p>
+                                                    </div>
+                                                    <!-- detail item -->
+                                                    <div class="flex items-center gap-1 md:order-1 ">
+                                                        <!-- detail icon -->
+                                                        <svg class="w-3 h-3 md:w-4 md:h-4 flex-shrink-0 md:hidden">
+                                                            <use href="#wallet"></use>
+                                                        </svg>
+                                                        <!-- detail text -->
+                                                        <p>مبلغ: <span>۲۲۸٬۵۰۰</span>تومان تخفیف: <span>۲۸٬۵۰۰</span>تومان</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- left box -->
+                                            <div class="flex flex-col items-end gap-4 flex-shrink-0 xl:w-72">
+                                                <!-- label wrapper -->
+                                                <div class="flex items-center gap-2 text-2xs md:text-xs">
+                                                    <!-- delivery label -->
+                                                    <span class="delivery__label">تحویل حضوری</span>
+                                                    <!-- order state -->
+                                                    <span class="delivered">تحویل شده</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- food wrapper -->
+                                        <div class="food__wrapper flex items-center justify-between mt-4 gap-2 md:gap-4 flex-wrap xl:flex-nowrap">
+                                            <!-- food item -->
+                                            <div class="border border-gray-400 rounded-lg flex flex-col w-24 h-24 max-w-28 xs:max-w-24 sm:max-w-28 md:max-w-24 lg:max-w-28 xl:max-w-32 md:h-32 relative overflow-hidden  flex-grow">
+                                                <!-- img -->
+                                                <img src="images/menu/food16.png" alt="food" class="w-full h-12 md:h-20">
+                                                <!-- food content -->
+                                                <div class="p-1 text-2xs lg:px-4 flex-center flex-col ">
+                                                    <!-- food name -->
+                                                    <span class="flex-shrink-0 text-nowrap">پاکورا سبزیجات </span>
+                                                    <!-- food price -->
+                                                    <span> ۱۱۰٬۰۰۰ تومان</span>
+                                                </div>
+                                                <!-- count food -->
+                                                <span class="absolute text-primary text-2xs bg-white px-0.5 rounded-sm left-1 top-0 bottom-0 my-auto h-3 md:text-xs md:rounded md:px-1">۳×</span>
+                                            </div>
+                                            <!-- food item -->
+                                            <div class="border border-gray-400 rounded-lg flex flex-col w-24 h-24 max-w-28 xs:max-w-24 sm:max-w-28 md:max-w-24 lg:max-w-28 xl:max-w-32 md:h-32 relative overflow-hidden  flex-grow">
+                                                <!-- img -->
+                                                <img src="images/menu/food15.png" alt="food" class="w-full h-12 md:h-20">
+                                                <!-- food content -->
+                                                <div class="p-1 text-2xs lg:px-4 flex-center flex-col ">
+                                                    <!-- food name -->
+                                                    <span class="flex-shrink-0 text-nowrap">سوشی</span>
+                                                    <!-- food price -->
+                                                    <span> ۸۵٬۰۰۰ تومان</span>
+                                                </div>
+                                                <!-- count food -->
+                                                <span class="absolute text-primary text-2xs bg-white px-0.5 rounded-sm left-1 top-0 bottom-0 my-auto h-3 md:text-xs md:rounded md:px-1">۲×</span>
+                                            </div>
+                                            <!-- food item -->
+                                            <div class="border border-gray-400 rounded-lg flex flex-col w-24 h-24 max-w-28 xs:max-w-24 sm:max-w-28 md:max-w-24 lg:max-w-28 xl:max-w-32 md:h-32 relative overflow-hidden  flex-grow">
+                                                <!-- img -->
+                                                <img src="images/menu/food14.png" alt="food" class="w-full h-12 md:h-20">
+                                                <!-- food content -->
+                                                <div class="p-1 text-2xs lg:px-4 flex-center flex-col ">
+                                                    <!-- food name -->
+                                                    <span class="flex-shrink-0 text-nowrap">لازانیا</span>
+                                                    <!-- food price -->
+                                                    <span> ۱۵۰٬۰۰۰ تومان</span>
+                                                </div>
+                                                <!-- count food -->
+                                                <span class="absolute text-primary text-2xs bg-white px-0.5 rounded-sm left-1 top-0 bottom-0 my-auto h-3 md:text-xs md:rounded md:px-1">۴×</span>
+                                            </div>
+                                            <!-- food item -->
+                                            <div class="border border-gray-400 rounded-lg flex flex-col w-24 h-24 max-w-28 xs:max-w-24 sm:max-w-28 md:max-w-24 lg:max-w-28 xl:max-w-32 md:h-32 relative overflow-hidden  flex-grow">
+                                                <!-- img -->
+                                                <img src="images/menu/food13.png" alt="food" class="w-full h-12 md:h-20">
+                                                <!-- food content -->
+                                                <div class="p-1 text-2xs lg:px-4 flex-center flex-col ">
+                                                    <!-- food name -->
+                                                    <span class="flex-shrink-0 text-nowrap">راتاتویی</span>
+                                                    <!-- food price -->
+                                                    <span> ۹۵٬۰۰۰ تومان</span>
+                                                </div>
+                                                <!-- count food -->
+                                                <span class="absolute text-primary text-2xs bg-white px-0.5 rounded-sm left-1 top-0 bottom-0 my-auto h-3 md:text-xs md:rounded md:px-1">۱×</span>
+                                            </div>
+                                            <!-- food item -->
+                                            <div class="border border-gray-400 rounded-lg flex flex-col w-24 h-24 max-w-28 xs:max-w-24 sm:max-w-28 md:max-w-24 lg:max-w-28 xl:max-w-32 md:h-32 relative overflow-hidden  flex-grow">
+                                                <!-- img -->
+                                                <img src="images/menu/food12.png" alt="food" class="w-full h-12 md:h-20">
+                                                <!-- food content -->
+                                                <div class="p-1 text-2xs lg:px-4 flex-center flex-col ">
+                                                    <!-- food name -->
+                                                    <span class="flex-shrink-0 text-nowrap">پاستا بلونز</span>
+                                                    <!-- food price -->
+                                                    <span> ۱۶۰٬۰۰۰ تومان</span>
+                                                </div>
+                                                <!-- count food -->
+                                                <span class="absolute text-primary text-2xs bg-white px-0.5 rounded-sm left-1 top-0 bottom-0 my-auto h-3 md:text-xs md:rounded md:px-1">۱×</span>
+                                            </div>
+                                            <!-- food item -->
+                                            <div class="border border-gray-400 rounded-lg flex flex-col w-24 h-24 max-w-28 xs:max-w-24 sm:max-w-28 md:max-w-24 lg:max-w-28 xl:max-w-32 md:h-32 relative overflow-hidden  flex-grow">
+                                                <!-- img -->
+                                                <img src="images/menu/food4.png" alt="food" class="w-full h-12 md:h-20">
+                                                <!-- food content -->
+                                                <div class="p-1 text-2xs lg:px-4 flex-center flex-col ">
+                                                    <!-- food name -->
+                                                    <span class="flex-shrink-0 text-nowrap">پاستا سبزیجات </span>
+                                                    <!-- food price -->
+                                                    <span> ۱۵۰٬۰۰۰ تومان</span>
+                                                </div>
+                                                <!-- count food -->
+                                                <span class="absolute text-primary text-2xs bg-white px-0.5 rounded-sm left-1 top-0 bottom-0 my-auto h-3 md:text-xs md:rounded md:px-1">۲×</span>
+                                            </div>
+                                        </div>
+                                        <!-- btn -->
+                                        <button class=" mx-auto md:ml-0 md:mr-auto border rounded p-2 text-xs flex-center h-8 w-24 md:w-30 text-primary border-primary mt-4">سفارش مجدد</button>
+                                    </div>
+                                    <!-- order item -->
+                                    <div class="order__item w-full border border-gray-400 rounded px-3 pt-2 pb-4 md:px-6 md:pb-6 md:pt-4">
+                                        <!-- top wrapper -->
+                                        <div class="flex items-start justify-between">
+                                            <!-- right box -->
+                                            <div class="flex flex-col items-start gap-4 md:gap-2">
+                                                <!-- branch name -->
+                                                <span class="md:mt-2 text-xs md:text-sm text-gray-600">شعبه اقدسیه</span>
+                                                <!-- detail wrapper -->
+                                                <div class="flex flex-col md:flex-row flex-wrap items-start gap-2 text-gray-600 md:text-gray-700 text-2xs">
+                                                    <!-- detail item -->
+                                                    <div class="flex items-center gap-1 md:order-1">
+                                                        <!-- detail icon -->
+                                                        <svg class="w-3 h-3 md:w-4 md:h-4 flex-shrink-0">
+                                                            <use href="#calendar"></use>
+                                                        </svg>
+                                                        <!-- detail text -->
+                                                        <p>شنبه، ۸ مرداد، ساعت ۱۸:۵۳</p>
+                                                    </div>
+                                                    <!-- detail item -->
+                                                    <div class="flex items-center gap-1 md:order-2">
+                                                        <!-- detail icon -->
+                                                        <svg class="w-3 h-3 md:w-4 md:h-4 flex-shrink-0">
+                                                            <use href="#location"></use>
+                                                        </svg>
+                                                        <!-- detail text -->
+                                                        <p>تهران: اقدسیه، بزرگراه ارتش، مجتمع شمیران سنتر، طبقه ۱۰</p>
+                                                    </div>
+                                                    <!-- detail item -->
+                                                    <div class="flex items-center gap-1 md:order-1 ">
+                                                        <!-- detail icon -->
+                                                        <svg class="w-3 h-3 md:w-4 md:h-4 flex-shrink-0 md:hidden">
+                                                            <use href="#wallet"></use>
+                                                        </svg>
+                                                        <!-- detail text -->
+                                                        <p>مبلغ: <span>۲۲۸٬۵۰۰</span>تومان تخفیف: <span>۲۸٬۵۰۰</span>تومان</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- left box -->
+                                            <div class="flex flex-col items-end gap-4 flex-shrink-0 xl:w-72">
+                                                <!-- label wrapper -->
+                                                <div class="flex items-center gap-2 text-2xs md:text-xs">
+                                                    <!-- delivery label -->
+                                                    <span class="delivery__label">تحویل حضوری</span>
+                                                    <!-- order state -->
+                                                    <span class="canceled">لغو شده</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- food wrapper -->
+                                        <div class="food__wrapper flex items-center justify-between mt-4 gap-2 md:gap-4 flex-wrap xl:flex-nowrap">
+                                            <!-- food item -->
+                                            <div class="border border-gray-400 rounded-lg flex flex-col w-24 h-24 max-w-28 xs:max-w-24 sm:max-w-28 md:max-w-24 lg:max-w-28 xl:max-w-32 md:h-32 relative overflow-hidden  flex-grow">
+                                                <!-- img -->
+                                                <img src="images/menu/food22.png" alt="food" class="w-full h-12 md:h-20">
+                                                <!-- food content -->
+                                                <div class="p-1 text-2xs lg:px-4 flex-center flex-col ">
+                                                    <!-- food name -->
+                                                    <span class="flex-shrink-0 text-nowrap">پیتزا قارچ</span>
+                                                    <!-- food price -->
+                                                    <span> ۱۷۵٬۰۰۰ تومان</span>
+                                                </div>
+                                                <!-- count food -->
+                                                <span class="absolute text-primary text-2xs bg-white px-0.5 rounded-sm left-1 top-0 bottom-0 my-auto h-3 md:text-xs md:rounded md:px-1">۳×</span>
+                                            </div>
+                                            <!-- food item -->
+                                            <div class="border border-gray-400 rounded-lg flex flex-col w-24 h-24 max-w-28 xs:max-w-24 sm:max-w-28 md:max-w-24 lg:max-w-28 xl:max-w-32 md:h-32 relative overflow-hidden  flex-grow">
+                                                <!-- img -->
+                                                <img src="images/menu/food21.png" alt="food" class="w-full h-12 md:h-20">
+                                                <!-- food content -->
+                                                <div class="p-1 text-2xs lg:px-4 flex-center flex-col ">
+                                                    <!-- food name -->
+                                                    <span class="flex-shrink-0 text-nowrap">پیتزا سبزیجات و خامه</span>
+                                                    <!-- food price -->
+                                                    <span> ۱۸۵٬۰۰۰ تومان</span>
+                                                </div>
+                                                <!-- count food -->
+                                                <span class="absolute text-primary text-2xs bg-white px-0.5 rounded-sm left-1 top-0 bottom-0 my-auto h-3 md:text-xs md:rounded md:px-1">۱×</span>
+                                            </div>
+                                            <!-- food item -->
+                                            <div class="border border-gray-400 rounded-lg flex flex-col w-24 h-24 max-w-28 xs:max-w-24 sm:max-w-28 md:max-w-24 lg:max-w-28 xl:max-w-32 md:h-32 relative overflow-hidden  flex-grow">
+                                                <!-- img -->
+                                                <img src="images/menu/food20.png" alt="food" class="w-full h-12 md:h-20">
+                                                <!-- food content -->
+                                                <div class="p-1 text-2xs lg:px-4 flex-center flex-col ">
+                                                    <!-- food name -->
+                                                    <span class="flex-shrink-0 text-nowrap">پیتزا بادمجان و زیتون</span>
+                                                    <!-- food price -->
+                                                    <span> ۱۵۰٬۰۰۰ تومان</span>
+                                                </div>
+                                                <!-- count food -->
+                                                <span class="absolute text-primary text-2xs bg-white px-0.5 rounded-sm left-1 top-0 bottom-0 my-auto h-3 md:text-xs md:rounded md:px-1">۲×</span>
+                                            </div>
+                                            <!-- food item -->
+                                            <div class="border border-gray-400 rounded-lg flex flex-col w-24 h-24 max-w-28 xs:max-w-24 sm:max-w-28 md:max-w-24 lg:max-w-28 xl:max-w-32 md:h-32 relative overflow-hidden  flex-grow">
+                                                <!-- img -->
+                                                <img src="images/menu/food19.png" alt="food" class="w-full h-12 md:h-20">
+                                                <!-- food content -->
+                                                <div class="p-1 text-2xs lg:px-4 flex-center flex-col ">
+                                                    <!-- food name -->
+                                                    <span class="flex-shrink-0 text-nowrap">پیتزا روکولا</span>
+                                                    <!-- food price -->
+                                                    <span> ۱۸۸٬۰۰۰ تومان</span>
+                                                </div>
+                                                <!-- count food -->
+                                                <span class="absolute text-primary text-2xs bg-white px-0.5 rounded-sm left-1 top-0 bottom-0 my-auto h-3 md:text-xs md:rounded md:px-1">۱×</span>
+                                            </div>
+                                            <!-- food item -->
+                                            <div class="border border-gray-400 rounded-lg flex flex-col w-24 h-24 max-w-28 xs:max-w-24 sm:max-w-28 md:max-w-24 lg:max-w-28 xl:max-w-32 md:h-32 relative overflow-hidden  flex-grow">
+                                                <!-- img -->
+                                                <img src="images/menu/food18.png" alt="food" class="w-full h-12 md:h-20">
+                                                <!-- food content -->
+                                                <div class="p-1 text-2xs lg:px-4 flex-center flex-col ">
+                                                    <!-- food name -->
+                                                    <span class="flex-shrink-0 text-nowrap">پالاک پنیر</span>
+                                                    <!-- food price -->
+                                                    <span> ۱۸۰٬۰۰۰ تومان</span>
+                                                </div>
+                                                <!-- count food -->
+                                                <span class="absolute text-primary text-2xs bg-white px-0.5 rounded-sm left-1 top-0 bottom-0 my-auto h-3 md:text-xs md:rounded md:px-1">۲×</span>
+                                            </div>
+                                            <!-- food item -->
+                                            <div class="border border-gray-400 rounded-lg flex flex-col w-24 h-24 max-w-28 xs:max-w-24 sm:max-w-28 md:max-w-24 lg:max-w-28 xl:max-w-32 md:h-32 relative overflow-hidden  flex-grow">
+                                                <!-- img -->
+                                                <img src="images/menu/food17.png" alt="food" class="w-full h-12 md:h-20">
+                                                <!-- food content -->
+                                                <div class="p-1 text-2xs lg:px-4 flex-center flex-col ">
+                                                    <!-- food name -->
+                                                    <span class="flex-shrink-0 text-nowrap">کالزونه اسفناج</span>
+                                                    <!-- food price -->
+                                                    <span> ۱۷۷٬۰۰۰ تومان</span>
+                                                </div>
+                                                <!-- count food -->
+                                                <span class="absolute text-primary text-2xs bg-white px-0.5 rounded-sm left-1 top-0 bottom-0 my-auto h-3 md:text-xs md:rounded md:px-1">۱×</span>
+                                            </div>
+                                        </div>
+                                        <!-- btn -->
+                                        <button class=" mx-auto md:ml-0 md:mr-auto border rounded p-2 text-xs flex-center h-8 w-24 md:w-30 text-primary border-primary mt-4">سفارش مجدد</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -23,6 +23,10 @@ const submitAddress=document.querySelector('.submit__address')
 const closeLocationModalBtn=document.querySelector('.close__location--modal')
 const submitLocation=document.querySelector('.submit__location')
 const stateWrapper=document.querySelector('.state__wrapper')
+const logoutModal=document.querySelector('.logout__modal')
+const logoutBtn=document.querySelector('.logout__btn')
+const closeLogoutModalBtn=document.querySelector('.close__logout--modal')
+const backLogoutBtn=document.querySelector('.back__logout--btn')
 const openStateWrapperArray=document.querySelectorAll('.back__btn')
 profileStateArray.forEach(state=>{
     state.addEventListener('click',()=>{
@@ -81,6 +85,7 @@ overlay.addEventListener('click',(e)=>{
         closeCancelModal()
         closeLocationModal()
         closeAddressModal()
+        closeLogoutModal()
     }
 })
 filterItemArray.forEach(item=>{
@@ -99,8 +104,25 @@ function openCancelModal(){
     overlay.classList.add('overlay__active')
     cancelModal.classList.add('cancel__modal--active')
 }
+function closeLogoutModal(){
+    overlay.classList.remove('overlay__active')
+    logoutModal.classList.remove('logout__modal--active')
+}
+function openLogoutModal(){
+    overlay.classList.add('overlay__active')
+    logoutModal.classList.add('logout__modal--active')
+}
+logoutBtn.addEventListener('click',()=>{
+    openLogoutModal()
+})
+closeLogoutModalBtn.addEventListener('click',()=>{
+    closeLogoutModal()
+})
 cancelModalBtn.addEventListener('click',()=>{
     closeCancelModal()
+})
+backLogoutBtn.addEventListener('click',()=>{
+    closeLogoutModal()
 })
 backCancelBtn.addEventListener('click',()=>{
     closeCancelModal()

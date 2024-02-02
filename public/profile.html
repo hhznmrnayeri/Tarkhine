@@ -226,6 +226,9 @@
             <path d="M7.99997 12.5002C7.72664 12.5002 7.49997 12.2735 7.49997 12.0002V10.0002C7.49997 9.72687 7.72664 9.50021 7.99997 9.50021C8.27331 9.50021 8.49997 9.72687 8.49997 10.0002V12.0002C8.49997 12.2735 8.27331 12.5002 7.99997 12.5002Z" fill="currentColor"/>
             <path d="M11.7333 15.0402H4.26664C3.05331 15.0402 1.94664 14.1069 1.74664 12.9135L0.859974 7.60021C0.713307 6.77354 1.11997 5.71354 1.77997 5.18687L6.39997 1.48687C7.29331 0.766874 8.69997 0.77354 9.59997 1.49354L14.22 5.18687C14.8733 5.71354 15.2733 6.77354 15.14 7.60021L14.2533 12.9069C14.0533 14.0869 12.92 15.0402 11.7333 15.0402ZM7.99331 1.95354C7.63997 1.95354 7.28664 2.06021 7.02664 2.26687L2.40664 5.97354C2.03331 6.27354 1.76664 6.96687 1.84664 7.44021L2.73331 12.7469C2.85331 13.4469 3.55331 14.0402 4.26664 14.0402H11.7333C12.4466 14.0402 13.1466 13.4469 13.2666 12.7402L14.1533 7.43354C14.2266 6.96687 13.96 6.26021 13.5933 5.96687L8.97331 2.27354C8.70664 2.06021 8.34664 1.95354 7.99331 1.95354Z" fill="currentColor"/>
         </symbol>
+        <symbol id="heart-favorite" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.9587 0.0666504C8.75203 0.0666504 7.67203 0.653317 6.9987 1.55332C6.32536 0.653317 5.24536 0.0666504 4.0387 0.0666504C1.99203 0.0666504 0.332031 1.73332 0.332031 3.79332C0.332031 4.58665 0.458698 5.31998 0.678698 5.99998C1.73203 9.33332 4.9787 11.3266 6.58536 11.8733C6.81203 11.9533 7.18536 11.9533 7.41203 11.8733C9.0187 11.3266 12.2654 9.33332 13.3187 5.99998C13.5387 5.31998 13.6654 4.58665 13.6654 3.79332C13.6654 1.73332 12.0054 0.0666504 9.9587 0.0666504Z" fill="#C30000"/>
+        </symbol>
     </svg>
     <header class="shadow-menu">
         <!-- container -->
@@ -712,7 +715,7 @@
                         </div>
                     </section>
                     <!-- section item -->
-                    <section id="profile__wallet" class="profile__section profile__section--active">
+                    <section id="profile__wallet" class="profile__section">
                         <!-- section content -->
                         <div class="md:border md:border-gray-400 md:rounded-lg md:p-6 flex flex-col overflow-hidden">
                             <!-- empty box -->
@@ -1250,7 +1253,469 @@
                         </div>
                     </section>
                     <!-- section item -->
-                    <section id="profile__heart" class="profile__section">3</section>
+                    <section id="profile__heart" class="profile__section profile__section--active">
+                        <!-- section content -->
+                        <div class="md:border md:border-gray-400 md:rounded-lg md:p-6 flex flex-col overflow-hidden">
+                            <!-- empty box -->
+                            <div class="empty__box hidden flex-col items-start">
+                                <!-- top wrapper -->
+                                <div class="flex items-center justify-between md:justify-start md:pb-2 md:border-b border-gray-400 w-full">
+                                    <!-- back btn -->
+                                    <button class="back__btn md:hidden">
+                                        <svg class="w-4 h-4">
+                                            <use href="#arrow-right"></use>
+                                        </svg>
+                                    </button>
+                                    <!-- title -->
+                                    <h2 class=" md:text-xl font-estedadBold mx-auto md:mr-0">علاقمندی‌ها</h2>
+                                </div>
+                                <!-- bottom wrapper -->
+                                <div class="flex-center bg-buy-empty bg-no-repeat bg-center  flex-col gap-4 md:gap-8 py-30 md:py-36 w-full border border-gray-400 rounded-lg md:border-none md:rounded-none mt-6">
+                                    <!-- caption -->
+                                    <p class="text-gray-600 text-2xs md:text-xl md:text-gray-700">شما در حال حاضر هیچ محصولی را به علاقه‌مندی‌ها اضافه نکرده‌اید!</p>
+                                    <!-- menu btn -->
+                                    <a href="menu.html" class="text-primary border border-primary bg-white flex-center text-xs h-8 w-40 rounded p-2 md:h-10 md:w-72 md:py-2 md:px-4 md:text-base md:font-estedadMedium">منوی رستوران</a>
+                                </div>
+                            </div>
+                            <!-- favorite box -->
+                            <div class="flex flex-col items-start">
+                                <!-- top wrapper -->
+                                <div class="flex items-center justify-between md:justify-start md:pb-2 md:border-b border-gray-400 w-full">
+                                    <!-- back btn -->
+                                    <button class="back__btn md:hidden">
+                                        <svg class="w-4 h-4">
+                                            <use href="#arrow-right"></use>
+                                        </svg>
+                                    </button>
+                                    <!-- title -->
+                                    <h2 class=" md:text-xl font-estedadBold mx-auto md:mr-0">علاقمندی‌ها</h2>
+                                </div>
+                                <!-- center wrapper -->
+                                <div class="flex items-center justify-between mt-2 md:mt-4 w-full gap-2 md:gap-4">
+                                    <!-- filter wrapper -->
+                                    <div class="hidden lg:flex items-center gap-2 ">
+                                        <button class="filter__item filter__item--active text-2xs md:text-base text-nowrap flex items-center gap-1 px-2 rounded-lg md:rounded-5xl bg-gray-300 py-1">
+                                            <svg class="tick__icon w-3 md:w-4 h-3 md:h-4">
+                                                <use href="#tick"></use>
+                                            </svg>
+                                            <span>همه</span>
+                                            <svg class="arrow__icon w-3 md:w-4 h-3 md:h-4">
+                                                <use href="#arrow-left"></use>
+                                            </svg>
+                                        </button>
+                                        <button class="filter__item text-2xs md:text-base text-nowrap flex items-center gap-1 px-2 rounded-lg md:rounded-5xl bg-gray-300 py-1">
+                                            <svg class="tick__icon w-3 md:w-4 h-3 md:h-4">
+                                                <use href="#tick"></use>
+                                            </svg>
+                                            <span>غذای اصلی</span>
+                                            <svg class="arrow__icon w-3 md:w-4 h-3 md:h-4">
+                                                <use href="#arrow-left"></use>
+                                            </svg>
+                                        </button>
+                                        <button class="filter__item text-2xs md:text-base text-nowrap flex items-center gap-1 px-2 rounded-lg md:rounded-5xl bg-gray-300 py-1">
+                                            <svg class="tick__icon w-3 md:w-4 h-3 md:h-4">
+                                                <use href="#tick"></use>
+                                            </svg>
+                                            <span>پیش غذا</span>
+                                            <svg class="arrow__icon w-3 md:w-4 h-3 md:h-4">
+                                                <use href="#arrow-left"></use>
+                                            </svg>
+                                        </button>
+                                        <button class="filter__item text-2xs md:text-base text-nowrap flex items-center gap-1 px-2 rounded-lg md:rounded-5xl bg-gray-300 py-1">
+                                            <svg class="tick__icon w-3 md:w-4 h-3 md:h-4">
+                                                <use href="#tick"></use>
+                                            </svg>
+                                            <span>دسر</span>
+                                            <svg class="arrow__icon w-3 md:w-4 h-3 md:h-4">
+                                                <use href="#arrow-left"></use>
+                                            </svg>
+                                        </button>
+                                        <button class="filter__item text-2xs md:text-base text-nowrap flex items-center gap-1 px-2 rounded-lg md:rounded-5xl bg-gray-300 py-1">
+                                            <svg class="tick__icon w-3 md:w-4 h-3 md:h-4">
+                                                <use href="#tick"></use>
+                                            </svg>
+                                            <span>نوشیدنی</span>
+                                            <svg class="arrow__icon w-3 md:w-4 h-3 md:h-4">
+                                                <use href="#arrow-left"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <!-- search wrapper -->
+                                    <form class="flex items-center justify-between px-4 py-2 border border-gray-400 rounded w-full  overflow-hidden flex-grow">
+                                        <!-- search input -->
+                                        <input type="text" class="border-none outline-none text-2xs md:text-xs flex-grow" placeholder="جستجو">
+                                        <!-- search btn -->
+                                        <button class="search__btn">
+                                            <svg class="w-4 h-4 md:w-6 md:h-6">
+                                                <use href="#search"></use>
+                                            </svg>
+                                        </button>
+                                    </form>
+                                </div>
+                                <!-- bottom wrapper -->
+                                <div class="flex flex-col w-full">
+                                    <!-- undefined box -->
+                                    <div class="hidden flex-col gap-4 py-40">
+                                        <!-- caption -->
+                                        <p class="text-xs md:text-xl">موردی با این مشخصات پیدا نکردیم!</p>
+                                        <!-- img -->
+                                        <img src="images/home/undefined.png" alt="undefined" class="w-40 md:w-96">
+                                    </div>
+                                    <!-- favorite wrapper -->
+                                    <div class="grid grid-cols-12 gap-x-4 gap-y-5 md:gap-y-6 mt-6 md:mt-11">
+                                        <!-- favorite item -->
+                                        <div class="col-span-6 md:col-span-12 lg:col-span-6 xl:col-span-4 flex flex-col overflow-hidden rounded md:rounded-lg border border-gray-400">
+                                            <!-- img -->
+                                            <img src="images/menu/food11.png" alt="food" class="w-full  rounded md:rounded-lg">
+                                            <!-- favorite content -->
+                                            <div class="p-2 md:p-4">
+                                                <!-- top wrapper -->
+                                                <div class="flex items-center justify-between">
+                                                    <!-- favorite title -->
+                                                    <h4 class="text-xs md:text-xl md:font-estedadSemiBold">پاستا سبزیجات </h4>
+                                                    <!-- heart btn -->
+                                                    <button class="text-error">
+                                                        <svg class="w-4 h-4 md:w-6 md:h-6">
+                                                            <use href="#heart-favorite"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <!-- center wrapper -->
+                                                <div class="flex items-center justify-between mt-1 md:mt-2">
+                                                    <!-- desktop star -->
+                                                    <div class="hidden md:flex items-center">
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star-empty"></use>
+                                                        </svg>
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <!-- mobile star -->
+                                                    <div class="flex md:hidden items-center gap-0.5 text-xs">
+                                                        <!-- star -->
+                                                        <svg class="w-3 h-3">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                        <!-- star count -->
+                                                        <span>۴</span>
+                                                    </div>
+                                                    <!-- price wrapper -->
+                                                    <span class="text-xs md:text-base"><span>۱۵۰٬۰۰۰ </span>تومان</span>
+                                                </div>
+                                                <!-- btn -->
+                                                <button class="text-2xs text-white bg-primary md:font-estedadMedium md:text-base rounded p-2 md:px-4 w-full h-10 mt-2 md:mt-6">افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                        <!-- favorite item -->
+                                        <div class="col-span-6 md:col-span-12 lg:col-span-6 xl:col-span-4 flex flex-col overflow-hidden rounded md:rounded-lg border border-gray-400">
+                                            <!-- img -->
+                                            <img src="images/menu/food11.png" alt="food" class="w-full  rounded md:rounded-lg">
+                                            <!-- favorite content -->
+                                            <div class="p-2 md:p-4">
+                                                <!-- top wrapper -->
+                                                <div class="flex items-center justify-between">
+                                                    <!-- favorite title -->
+                                                    <h4 class="text-xs md:text-xl md:font-estedadSemiBold">پاستا سبزیجات </h4>
+                                                    <!-- heart btn -->
+                                                    <button class="text-error">
+                                                        <svg class="w-4 h-4 md:w-6 md:h-6">
+                                                            <use href="#heart-favorite"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <!-- center wrapper -->
+                                                <div class="flex items-center justify-between mt-1 md:mt-2">
+                                                    <!-- desktop star -->
+                                                    <div class="hidden md:flex items-center">
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star-empty"></use>
+                                                        </svg>
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <!-- mobile star -->
+                                                    <div class="flex md:hidden items-center gap-0.5 text-xs">
+                                                        <!-- star -->
+                                                        <svg class="w-3 h-3">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                        <!-- star count -->
+                                                        <span>۴</span>
+                                                    </div>
+                                                    <!-- price wrapper -->
+                                                    <span class="text-xs md:text-base"><span>۱۵۰٬۰۰۰ </span>تومان</span>
+                                                </div>
+                                                <!-- btn -->
+                                                <button class="text-2xs text-white bg-primary md:font-estedadMedium md:text-base rounded p-2 md:px-4 w-full h-10 mt-2 md:mt-6">افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                        <!-- favorite item -->
+                                        <div class="col-span-6 md:col-span-12 lg:col-span-6 xl:col-span-4 flex flex-col overflow-hidden rounded md:rounded-lg border border-gray-400">
+                                            <!-- img -->
+                                            <img src="images/menu/food11.png" alt="food" class="w-full  rounded md:rounded-lg">
+                                            <!-- favorite content -->
+                                            <div class="p-2 md:p-4">
+                                                <!-- top wrapper -->
+                                                <div class="flex items-center justify-between">
+                                                    <!-- favorite title -->
+                                                    <h4 class="text-xs md:text-xl md:font-estedadSemiBold">پاستا سبزیجات </h4>
+                                                    <!-- heart btn -->
+                                                    <button class="text-error">
+                                                        <svg class="w-4 h-4 md:w-6 md:h-6">
+                                                            <use href="#heart-favorite"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <!-- center wrapper -->
+                                                <div class="flex items-center justify-between mt-1 md:mt-2">
+                                                    <!-- desktop star -->
+                                                    <div class="hidden md:flex items-center">
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star-empty"></use>
+                                                        </svg>
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <!-- mobile star -->
+                                                    <div class="flex md:hidden items-center gap-0.5 text-xs">
+                                                        <!-- star -->
+                                                        <svg class="w-3 h-3">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                        <!-- star count -->
+                                                        <span>۴</span>
+                                                    </div>
+                                                    <!-- price wrapper -->
+                                                    <span class="text-xs md:text-base"><span>۱۵۰٬۰۰۰ </span>تومان</span>
+                                                </div>
+                                                <!-- btn -->
+                                                <button class="text-2xs text-white bg-primary md:font-estedadMedium md:text-base rounded p-2 md:px-4 w-full h-10 mt-2 md:mt-6">افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                        <!-- favorite item -->
+                                        <div class="col-span-6 md:col-span-12 lg:col-span-6 xl:col-span-4 flex flex-col overflow-hidden rounded md:rounded-lg border border-gray-400">
+                                            <!-- img -->
+                                            <img src="images/menu/food11.png" alt="food" class="w-full  rounded md:rounded-lg">
+                                            <!-- favorite content -->
+                                            <div class="p-2 md:p-4">
+                                                <!-- top wrapper -->
+                                                <div class="flex items-center justify-between">
+                                                    <!-- favorite title -->
+                                                    <h4 class="text-xs md:text-xl md:font-estedadSemiBold">پاستا سبزیجات </h4>
+                                                    <!-- heart btn -->
+                                                    <button class="text-error">
+                                                        <svg class="w-4 h-4 md:w-6 md:h-6">
+                                                            <use href="#heart-favorite"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <!-- center wrapper -->
+                                                <div class="flex items-center justify-between mt-1 md:mt-2">
+                                                    <!-- desktop star -->
+                                                    <div class="hidden md:flex items-center">
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star-empty"></use>
+                                                        </svg>
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <!-- mobile star -->
+                                                    <div class="flex md:hidden items-center gap-0.5 text-xs">
+                                                        <!-- star -->
+                                                        <svg class="w-3 h-3">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                        <!-- star count -->
+                                                        <span>۴</span>
+                                                    </div>
+                                                    <!-- price wrapper -->
+                                                    <span class="text-xs md:text-base"><span>۱۵۰٬۰۰۰ </span>تومان</span>
+                                                </div>
+                                                <!-- btn -->
+                                                <button class="text-2xs text-white bg-primary md:font-estedadMedium md:text-base rounded p-2 md:px-4 w-full h-10 mt-2 md:mt-6">افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                        <!-- favorite item -->
+                                        <div class="col-span-6 md:col-span-12 lg:col-span-6 xl:col-span-4 flex flex-col overflow-hidden rounded md:rounded-lg border border-gray-400">
+                                            <!-- img -->
+                                            <img src="images/menu/food11.png" alt="food" class="w-full  rounded md:rounded-lg">
+                                            <!-- favorite content -->
+                                            <div class="p-2 md:p-4">
+                                                <!-- top wrapper -->
+                                                <div class="flex items-center justify-between">
+                                                    <!-- favorite title -->
+                                                    <h4 class="text-xs md:text-xl md:font-estedadSemiBold">پاستا سبزیجات </h4>
+                                                    <!-- heart btn -->
+                                                    <button class="text-error">
+                                                        <svg class="w-4 h-4 md:w-6 md:h-6">
+                                                            <use href="#heart-favorite"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <!-- center wrapper -->
+                                                <div class="flex items-center justify-between mt-1 md:mt-2">
+                                                    <!-- desktop star -->
+                                                    <div class="hidden md:flex items-center">
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star-empty"></use>
+                                                        </svg>
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <!-- mobile star -->
+                                                    <div class="flex md:hidden items-center gap-0.5 text-xs">
+                                                        <!-- star -->
+                                                        <svg class="w-3 h-3">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                        <!-- star count -->
+                                                        <span>۴</span>
+                                                    </div>
+                                                    <!-- price wrapper -->
+                                                    <span class="text-xs md:text-base"><span>۱۵۰٬۰۰۰ </span>تومان</span>
+                                                </div>
+                                                <!-- btn -->
+                                                <button class="text-2xs text-white bg-primary md:font-estedadMedium md:text-base rounded p-2 md:px-4 w-full h-10 mt-2 md:mt-6">افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                        <!-- favorite item -->
+                                        <div class="col-span-6 md:col-span-12 lg:col-span-6 xl:col-span-4 flex flex-col overflow-hidden rounded md:rounded-lg border border-gray-400">
+                                            <!-- img -->
+                                            <img src="images/menu/food11.png" alt="food" class="w-full  rounded md:rounded-lg">
+                                            <!-- favorite content -->
+                                            <div class="p-2 md:p-4">
+                                                <!-- top wrapper -->
+                                                <div class="flex items-center justify-between">
+                                                    <!-- favorite title -->
+                                                    <h4 class="text-xs md:text-xl md:font-estedadSemiBold">پاستا سبزیجات </h4>
+                                                    <!-- heart btn -->
+                                                    <button class="text-error">
+                                                        <svg class="w-4 h-4 md:w-6 md:h-6">
+                                                            <use href="#heart-favorite"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <!-- center wrapper -->
+                                                <div class="flex items-center justify-between mt-1 md:mt-2">
+                                                    <!-- desktop star -->
+                                                    <div class="hidden md:flex items-center">
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star-empty"></use>
+                                                        </svg>
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                        <!-- star -->
+                                                        <svg class="w-6 h-6">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <!-- mobile star -->
+                                                    <div class="flex md:hidden items-center gap-0.5 text-xs">
+                                                        <!-- star -->
+                                                        <svg class="w-3 h-3">
+                                                            <use href="#star"></use>
+                                                        </svg>
+                                                        <!-- star count -->
+                                                        <span>۴</span>
+                                                    </div>
+                                                    <!-- price wrapper -->
+                                                    <span class="text-xs md:text-base"><span>۱۵۰٬۰۰۰ </span>تومان</span>
+                                                </div>
+                                                <!-- btn -->
+                                                <button class="text-2xs text-white bg-primary md:font-estedadMedium md:text-base rounded p-2 md:px-4 w-full h-10 mt-2 md:mt-6">افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                     <!-- section item -->
                     <section id="profile__location" class="profile__section">4</section>
                 </div>

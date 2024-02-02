@@ -46,7 +46,7 @@
         <symbol id="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
             <path d="M11.8805 27.56C11.6271 27.56 11.3738 27.4667 11.1738 27.2667C10.7871 26.88 10.7871 26.24 11.1738 25.8534L19.8671 17.16C20.5071 16.52 20.5071 15.48 19.8671 14.84L11.1738 6.14669C10.7871 5.76003 10.7871 5.12003 11.1738 4.73336C11.5605 4.34669 12.2005 4.34669 12.5871 4.73336L21.2805 13.4267C21.9605 14.1067 22.3471 15.0267 22.3471 16C22.3471 16.9734 21.9738 17.8934 21.2805 18.5734L12.5871 27.2667C12.3871 27.4534 12.1338 27.56 11.8805 27.56Z" fill="currentColor"/>
         </symbol>
-        <symbol id="arroe-left" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <symbol id="arrow-left" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path d="M9.99953 13.78C9.87286 13.78 9.7462 13.7333 9.6462 13.6333L5.29953 9.28668C4.59286 8.58001 4.59286 7.42001 5.29953 6.71335L9.6462 2.36668C9.83953 2.17335 10.1595 2.17335 10.3529 2.36668C10.5462 2.56001 10.5462 2.88001 10.3529 3.07335L6.0062 7.42001C5.6862 7.74001 5.6862 8.26001 6.0062 8.58001L10.3529 12.9267C10.5462 13.12 10.5462 13.44 10.3529 13.6333C10.2529 13.7267 10.1262 13.78 9.99953 13.78Z" fill="currentColor"/>
         </symbol>
         <symbol id="twitter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25" fill="none">
@@ -566,7 +566,7 @@
                                     <h2 class=" md:text-xl font-estedadBold mx-auto md:mr-0">ویرایش اطلاعات شخصی</h2>
                                 </div>
                                 <!-- bottom wrapper -->
-                                <form class="flex flex-col gap-3 md:gap-6 mt-6 md:mt-12 w-full">
+                                <form class="flex flex-col gap-3 md:gap-6 mt-6 md:mt-12 w-full pb-60">
                                     <!-- detail wrapper -->
                                     <div class="flex-center flex-col md:flex-row gap-3 md:gap-4 w-full">
                                         <!-- detail item -->
@@ -595,10 +595,97 @@
                                     </div>
                                     <!-- detail wrapper -->
                                     <div class="flex-center flex-col md:flex-row gap-3 md:gap-4 w-full">
-                                        <!-- detail item -->
-                                        <div class="relative w-full h-10">
+                                        <!-- input wrapper -->
+                                        <div class="calendar__wrapper group relative w-full flex flex-col h-10" tabindex="1">
+                                            <!-- input -->
                                             <input class="profile__edit--input peer" dir="ltr" placeholder=" " value="۱۳۸۱/۰۵/۰۱"/>
                                             <label class="profile__edit--label">تاریخ تولد (اختیاری)</label>
+                                            <!-- sub menu -->
+                                            <div class="calendar__box calendar__box--active absolute w-full top-full left-0 bottom-full bg-white rounded-lg shadow-card p-4 text-sm flex flex-col font-estedadMedium ">
+                                                <!-- top wrapper -->
+                                                <div class="flex items-center justify-between">
+                                                    <!-- next btn -->
+                                                    <button class="text-primary rounded-full border border-primary w-6 h-6 flex-center">
+                                                        <svg class="w-4 h-4">
+                                                            <use href="#arrow-right"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <!-- month value -->
+                                                    <span class="font-estedadBold">اردیبهشت ۱۴۰۲</span>
+                                                    <!-- prev btn -->
+                                                    <button class="text-primary rounded-full border border-primary w-6 h-6 flex-center">
+                                                        <svg class="w-4 h-4">
+                                                            <use href="#arrow-left"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <!-- day wrapper -->
+                                                <div class="flex items-start justify-between text-gray-700 mt-4">
+                                                    <!-- day box -->
+                                                    <div class="flex flex-col items-center gap-2">
+                                                        <span>ش</span>
+                                                        <button class="day__calendar">۶</button>
+                                                        <button class="day__calendar">۱۳</button>
+                                                        <button class="day__calendar">۲۰</button>
+                                                        <button class="day__calendar">۲۷</button>
+                                                        <button class="day__calendar day__disable">۴</button>
+                                                    </div>
+                                                    <!-- day box -->
+                                                    <div class="flex flex-col items-center gap-2">
+                                                        <span>ی</span>
+                                                        <button class="day__calendar">۵</button>
+                                                        <button class="day__calendar">۱۲</button>
+                                                        <button class="day__calendar">۱۹</button>
+                                                        <button class="day__calendar">۲۶</button>
+                                                        <button class="day__calendar day__disable">۳</button>
+                                                    </div>
+                                                    <!-- day box -->
+                                                    <div class="flex flex-col items-center gap-2">
+                                                        <span>د</span>
+                                                        <button class="day__calendar">۴</button>
+                                                        <button class="day__calendar">۱۱</button>
+                                                        <button class="day__calendar">۱۸</button>
+                                                        <button class="day__calendar">۲۵</button>
+                                                        <button class="day__calendar day__disable">۲</button>
+                                                    </div>
+                                                    <!-- day box -->
+                                                    <div class="flex flex-col items-center gap-2">
+                                                        <span>س</span>
+                                                        <button class="day__calendar">۳</button>
+                                                        <button class="day__calendar">۱۰</button>
+                                                        <button class="day__calendar">۱۷</button>
+                                                        <button class="day__calendar">۲۴</button>
+                                                        <button class="day__calendar day__disable">۱</button>
+                                                    </div>
+                                                    <!-- day box -->
+                                                    <div class="flex flex-col items-center gap-2">
+                                                        <span>چ</span>
+                                                        <button class="day__calendar">۲</button>
+                                                        <button class="day__calendar">۹</button>
+                                                        <button class="day__calendar">۱۶</button>
+                                                        <button class="day__calendar">۲۳</button>
+                                                        <button class="day__calendar">۳۰</button>
+                                                    </div>
+                                                    <!-- day box -->
+                                                    <div class="flex flex-col items-center gap-2">
+                                                        <span>پ</span>
+                                                        <button class="day__calendar day__active">۱</button>
+                                                        <button class="day__calendar">۸</button>
+                                                        <button class="day__calendar">۱۵</button>
+                                                        <button class="day__calendar">۲۲</button>
+                                                        <button class="day__calendar">۲۹</button>
+                                                    </div>
+                                                    <!-- day box -->
+                                                    <div class="flex flex-col items-center gap-2">
+                                                        <span>ج</span>
+                                                        <button class="day__calendar day__disable">۳۰</button>
+                                                        <button class="day__calendar">۷</button>
+                                                        <button class="day__calendar">۱۴</button>
+                                                        <button class="day__calendar">۲۱</button>
+                                                        <button class="day__calendar">۲۸</button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <!-- detail item -->
                                         <div class="relative w-full h-10">

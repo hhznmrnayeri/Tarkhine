@@ -1596,6 +1596,10 @@ video {
   bottom: 6rem;
 }
 
+.bottom-full {
+  bottom: 100%;
+}
+
 .left-0 {
   left: 0px;
 }
@@ -2684,6 +2688,10 @@ video {
   padding-bottom: 1rem;
 }
 
+.pb-96 {
+  padding-bottom: 24rem;
+}
+
 .pl-2 {
   padding-left: 0.5rem;
 }
@@ -2702,6 +2710,10 @@ video {
 
 .pt-4 {
   padding-top: 1rem;
+}
+
+.pb-60 {
+  padding-bottom: 15rem;
 }
 
 .text-center {

@@ -8,6 +8,11 @@ const cancelBtn=document.querySelector('.cancel__btn')
 const submitBtn=document.querySelector('.submit__btn')
 const calendarWrapper=document.querySelector('.calendar__wrapper')
 const calendarBox=document.querySelector('.calendar__box')
+const cancelModal=document.querySelector('.cancel__modal')
+const cancelOrder=document.querySelector('.cancel__order')
+const cancelModalBtn=document.querySelector('.cancel__modal--btn')
+const backCancelBtn=document.querySelector('.back__cancel--btn')
+const closeCancelModalBtn=document.querySelector('.close__cancel--modal')
 const dayCalendarArray=document.querySelectorAll('.day__calendar')
 profileStateArray.forEach(state=>{
     state.addEventListener('click',()=>{
@@ -57,6 +62,7 @@ overlay.addEventListener('click',(e)=>{
     if(e.target.parentElement.tagName=='BODY'){
         overlay.classList.remove('overlay__subMenu--active')
         calendarBox.classList.remove('calendar__box--active')
+        closeCancelModal()
     }
 })
 filterItemArray.forEach(item=>{
@@ -66,4 +72,24 @@ filterItemArray.forEach(item=>{
         })
         item.classList.add('filter__item--active')
     })
+})
+function closeCancelModal(){
+    overlay.classList.remove('overlay__active')
+    cancelModal.classList.remove('cancel__modal--active')
+}
+function openCancelModal(){
+    overlay.classList.add('overlay__active')
+    cancelModal.classList.add('cancel__modal--active')
+}
+cancelModalBtn.addEventListener('click',()=>{
+    closeCancelModal()
+})
+backCancelBtn.addEventListener('click',()=>{
+    closeCancelModal()
+})
+closeCancelModalBtn.addEventListener('click',()=>{
+    closeCancelModal()
+})
+cancelOrder.addEventListener('click',()=>{
+    openCancelModal()
 })

@@ -963,7 +963,7 @@
                                             </div>
                                         </div>
                                         <!-- btn -->
-                                        <button class=" mx-auto md:ml-0 md:mr-auto border rounded p-2 text-xs flex-center h-8 w-24 md:w-30 text-error border-error mt-4">لغو سفارش</button>
+                                        <button class="cancel__order mx-auto md:ml-0 md:mr-auto border rounded p-2 text-xs flex-center h-8 w-24 md:w-30 text-error border-error mt-4">لغو سفارش</button>
                                     </div>
                                     <!-- order item -->
                                     <div class="order__item w-full border border-gray-400 rounded px-3 pt-2 pb-4 md:px-6 md:pb-6 md:pt-4">
@@ -1337,7 +1337,7 @@
         </div>
     </footer>
     <!-- cancel modal -->
-    <div class="cancel__modal cancel__modal--active fixed overflow-hidden rounded-lg bg-white w-11/12 md:w-5/12 h-48 md:h-56 inset-0 m-auto z-30">
+    <div class="cancel__modal fixed overflow-hidden rounded-lg bg-white w-11/12 md:w-5/12 h-48 md:h-56 inset-0 m-auto z-30">
         <!-- top wrapper -->
         <div class="bg-gray-100 flex items-center justify-between py-4 px-6 text-sm font-estedadMedium md:text-2xl md:font-estedadSemiBold">
             <h3 class="mx-auto">لغو سفارش</h3>
@@ -1352,9 +1352,9 @@
         <!-- btn wrapper -->
         <div class="mt-8 flex-center gap-4 md:gap-5 px-10">
             <!-- back btn -->
-            <button class="back__btn  bg-primary rounded flex-center p-2 text-white text-xs md:px-4 md:text-base md:font-estedadMedium flex-1">بازگشت</button>
+            <button class="back__cancel--btn  bg-primary rounded flex-center p-2 text-white text-xs md:px-4 md:text-base md:font-estedadMedium flex-1">بازگشت</button>
             <!-- delete btn -->
-            <button class="delete__btn bg-error-200 rounded flex-center p-2 text-error text-xs md:px-4 md:text-base md:font-estedadMedium flex-1">لغو سفارش</button>
+            <button class="cancel__modal--btn bg-error-200 rounded flex-center p-2 text-error text-xs md:px-4 md:text-base md:font-estedadMedium flex-1">لغو سفارش</button>
         </div>
     </div>
     <!-- search modal -->
@@ -1501,7 +1501,7 @@
         </div>
     </div>
     <!-- overlay -->
-    <div class="overlay overlay__active fixed top-0 bottom-0 right-0 left-0 transition-all duration-300 z-20"></div>
+    <div class="overlay fixed top-0 bottom-0 right-0 left-0 transition-all duration-300 z-20"></div>
     <script src="scripts/app.js"></script>
     <script src="scripts/profile.js"></script>
 </body>

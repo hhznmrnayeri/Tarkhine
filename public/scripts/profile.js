@@ -14,6 +14,14 @@ const cancelModalBtn=document.querySelector('.cancel__modal--btn')
 const backCancelBtn=document.querySelector('.back__cancel--btn')
 const closeCancelModalBtn=document.querySelector('.close__cancel--modal')
 const dayCalendarArray=document.querySelectorAll('.day__calendar')
+const addAddressBtnArray=document.querySelectorAll('.add__address')
+const locationModal=document.querySelector('.location__modal')
+const addressModal=document.querySelector('.address__modal')
+const closeAddressModalBtn=document.querySelector('.close__address--modal')
+const closeAddress=document.querySelector('.close__address')
+const submitAddress=document.querySelector('.submit__address')
+const closeLocationModalBtn=document.querySelector('.close__location--modal')
+const submitLocation=document.querySelector('.submit__location')
 profileStateArray.forEach(state=>{
     state.addEventListener('click',()=>{
         profileStateArray.forEach(item=>{
@@ -63,6 +71,8 @@ overlay.addEventListener('click',(e)=>{
         overlay.classList.remove('overlay__subMenu--active')
         calendarBox.classList.remove('calendar__box--active')
         closeCancelModal()
+        closeLocationModal()
+        closeAddressModal()
     }
 })
 filterItemArray.forEach(item=>{
@@ -92,4 +102,43 @@ closeCancelModalBtn.addEventListener('click',()=>{
 })
 cancelOrder.addEventListener('click',()=>{
     openCancelModal()
+})
+function closeAddressModal(){
+    overlay.classList.remove('overlay__active')
+    addressModal.classList.remove('address__modal--active')
+}
+function openAddressModal(){
+    overlay.classList.add('overlay__active')
+    addressModal.classList.add('address__modal--active')
+}
+function closeLocationModal(){
+    overlay.classList.remove('overlay__active')
+    locationModal.classList.remove('location__modal--active')
+}
+function openLocationModal(){
+    overlay.classList.add('overlay__active')
+    locationModal.classList.add('location__modal--active')
+}
+addAddressBtnArray.forEach(item=>{
+    item.addEventListener('click',()=>{
+        openLocationModal()
+    })
+})
+closeLocationModalBtn.addEventListener('click',()=>{
+    closeLocationModal()
+})
+submitAddress.addEventListener('click',(e)=>{
+    e.preventDefault()
+    closeAddressModal()
+})
+submitLocation.addEventListener('click',()=>{
+    closeLocationModal()
+    openAddressModal()
+})
+closeAddress.addEventListener('click',(e)=>{
+    e.preventDefault()
+    closeAddressModal()
+})
+closeAddressModalBtn.addEventListener('click',()=>{
+    closeAddressModal()
 })

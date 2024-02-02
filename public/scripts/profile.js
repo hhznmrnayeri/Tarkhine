@@ -1,5 +1,6 @@
 const profileStateArray=document.querySelectorAll('.profile__state')
 const profileSectionArray=document.querySelectorAll('.profile__section')
+const filterItemArray=document.querySelectorAll('.filter__item')
 const profileBox=document.querySelector('.profile__box')
 const editBox=document.querySelector('.edit__box')
 const editProfile=document.querySelector('.edit__profile')
@@ -57,4 +58,12 @@ overlay.addEventListener('click',(e)=>{
         overlay.classList.remove('overlay__subMenu--active')
         calendarBox.classList.remove('calendar__box--active')
     }
+})
+filterItemArray.forEach(item=>{
+    item.addEventListener('click',()=>{
+        filterItemArray.forEach(btn=>{
+            btn.classList.remove('filter__item--active')
+        })
+        item.classList.add('filter__item--active')
+    })
 })

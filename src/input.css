@@ -339,6 +339,12 @@
     .cancel__modal--active{
         @apply visible opacity-100
     }
+    .logout__modal{
+        @apply invisible opacity-0 transition-all duration-300
+    }
+    .logout__modal--active{
+        @apply visible opacity-100
+    }
 }
 
 @layer utilities{

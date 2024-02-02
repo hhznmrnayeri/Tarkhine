@@ -1661,6 +1661,19 @@ video {
   opacity: 1;
 }
 
+.logout__modal {
+  visibility: hidden;
+  opacity: 0;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.logout__modal--active {
+  visibility: visible;
+  opacity: 1;
+}
+
 .pointer-events-none {
   pointer-events: none;
 }

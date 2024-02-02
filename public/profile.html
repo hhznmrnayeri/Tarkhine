@@ -424,7 +424,7 @@
             <!-- section wrapper -->
             <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mt-6 md:mt-12">
                 <!-- state wrapper -->
-                <div class="col-span-1 md:col-span-3 flex flex-col md:border border-gray-400 md:px-2 md:py-4 md:rounded-lg">
+                <div class="state__wrapper top-20  bottom-0  fixed md:static bg-white w-full h-full md:h-80 px-5  md:col-span-3 flex flex-col md:border border-gray-400 md:px-2 md:py-4 md:rounded-lg transition-all duration-300">
                     <!-- top wrapper -->
                     <div class="flex items-center md:items-end gap-2 md:gap-5 pb-2 border-b border-gray-600">
                         <!-- img -->
@@ -505,7 +505,118 @@
                 <!-- section wrapper -->
                 <div class="col-span-1 md:col-span-9 flex flex-col overflow-hidden">
                     <!-- section item -->
-                    <section id="profile__user" class="profile__section profile__section--active">1</section>
+                    <section id="profile__user" class="profile__section profile__section--active">
+                        <!-- section content -->
+                        <div class="md:border md:border-gray-400 md:rounded-lg md:p-6 flex flex-col overflow-hidden">
+                            <!-- profile box -->
+                            <div class="profile__box profile__box--active flex flex-col items-start">
+                                <!-- top wrapper -->
+                                <div class="flex items-center justify-between md:justify-start md:pb-2 md:border-b border-gray-400 w-full">
+                                    <!-- back btn -->
+                                    <button class="back__btn md:hidden">
+                                        <svg class="w-4 h-4">
+                                            <use href="#arrow-right"></use>
+                                        </svg>
+                                    </button>
+                                    <!-- title -->
+                                    <h2 class=" md:text-xl font-estedadBold mx-auto md:mr-0">پروفایل من</h2>
+                                </div>
+                                <!-- bottom wrapper -->
+                                <div class="flex flex-col gap-3 md:gap-6 mt-6 md:mt-12 w-full">
+                                    <!-- detail wrapper -->
+                                    <div class="flex-center flex-col md:flex-row gap-3 md:gap-4 w-full">
+                                        <!-- detail item -->
+                                        <span class="border border-gray-400 h-8 md:h-10 w-full flex items-center text-gray-400 text-2xs px-4 py-1 rounded md:rounded-lg">نام</span>
+                                        <!-- detail item -->
+                                        <span class="border border-gray-400 h-8 md:h-10 w-full flex items-center text-gray-400 text-2xs px-4 py-1 rounded md:rounded-lg">نام خانوادگی</span>
+                                    </div>
+                                    <!-- detail wrapper -->
+                                    <div class="flex-center flex-col md:flex-row gap-3 md:gap-4 w-full">
+                                        <!-- detail item -->
+                                        <span class="border border-gray-400 h-8 md:h-10 w-full flex items-center text-gray-400 text-2xs px-4 py-1 rounded md:rounded-lg">آدرس ایمیل</span>
+                                        <!-- detail item -->
+                                        <span class="border border-gray-400 h-8 md:h-10 w-full flex items-center text-gray-700 text-2xs px-4 py-1 rounded md:rounded-lg" dir="ltr">۰۹۱۴ ۸۶۴ ۳۳۵۰</span>
+                                    </div>
+                                    <!-- detail wrapper -->
+                                    <div class="flex-center flex-col md:flex-row gap-3 md:gap-4 w-full">
+                                        <!-- detail item -->
+                                        <span class="border border-gray-400 h-8 md:h-10 w-full flex items-center text-gray-400 text-2xs px-4 py-1 rounded md:rounded-lg">تاریخ تولد <span class="text-2xs">(اختیاری)</span></span>
+                                        <!-- detail item -->
+                                        <span class="border border-gray-400 h-8 md:h-10 w-full flex items-center text-gray-400 text-2xs px-4 py-1 rounded md:rounded-lg">نام نمایشی</span>
+                                    </div>
+                                    <!-- edit btn -->
+                                    <button class="edit__profile flex-center gap-1 md:gap-2 text-primary text-xs border border-primary rounded p-2 self-center mx-auto h-8 w-40 md:h-10 md:w-72 md:text-base md:font-estedadMedium mt-2 md:py-2 md:px-4">
+                                        <svg class="w-4 h-4 md:w-6 md:h-6">
+                                            <use href="#edit"></use>
+                                        </svg>ویرایش اطلاعات شخصی
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- edit box -->
+                            <div class="edit__box flex flex-col items-start">
+                                <!-- top wrapper -->
+                                <div class="flex items-center justify-between md:justify-start md:pb-2 md:border-b border-gray-400 w-full">
+                                    <!-- back btn -->
+                                    <button class="back__btn md:hidden">
+                                        <svg class="w-4 h-4">
+                                            <use href="#arrow-right"></use>
+                                        </svg>
+                                    </button>
+                                    <!-- title -->
+                                    <h2 class=" md:text-xl font-estedadBold mx-auto md:mr-0">ویرایش اطلاعات شخصی</h2>
+                                </div>
+                                <!-- bottom wrapper -->
+                                <form class="flex flex-col gap-3 md:gap-6 mt-6 md:mt-12 w-full">
+                                    <!-- detail wrapper -->
+                                    <div class="flex-center flex-col md:flex-row gap-3 md:gap-4 w-full">
+                                        <!-- detail item -->
+                                        <div class="relative w-full h-10">
+                                            <input class="profile__edit--input peer" placeholder=" " value="سردار"/>
+                                            <label class="profile__edit--label">نام</label>
+                                        </div>
+                                        <!-- detail item -->
+                                        <div class="relative w-full h-10">
+                                            <input class="profile__edit--input peer" placeholder=" " value="وظیفه"/>
+                                            <label class="profile__edit--label">نام خانوادگی</label>
+                                        </div>
+                                    </div>
+                                    <!-- detail wrapper -->
+                                    <div class="flex-center flex-col md:flex-row gap-3 md:gap-4 w-full">
+                                        <!-- detail item -->
+                                        <div class="relative w-full h-10">
+                                            <input class="profile__edit--input peer" dir="ltr" placeholder=" " value="Example@gmail.com"/>
+                                            <label class="profile__edit--label">آدرس ایمیل</label>
+                                        </div>
+                                        <!-- detail item -->
+                                        <div class="relative w-full h-10">
+                                            <input class="profile__edit--input peer" dir="ltr" placeholder=" " value="۰۹۱۴ ۸۶۴ ۳۳۵۰"/>
+                                            <label class="profile__edit--label">شماره همراه</label>
+                                        </div>
+                                    </div>
+                                    <!-- detail wrapper -->
+                                    <div class="flex-center flex-col md:flex-row gap-3 md:gap-4 w-full">
+                                        <!-- detail item -->
+                                        <div class="relative w-full h-10">
+                                            <input class="profile__edit--input peer" dir="ltr" placeholder=" " value="۱۳۸۱/۰۵/۰۱"/>
+                                            <label class="profile__edit--label">تاریخ تولد (اختیاری)</label>
+                                        </div>
+                                        <!-- detail item -->
+                                        <div class="relative w-full h-10">
+                                            <input class="profile__edit--input peer" placeholder=" " value=""/>
+                                            <label class="profile__edit--label">نام نمایشی</label>
+                                        </div>
+                                    </div>
+                                    <!-- btn wrapper -->
+                                    <div class="flex items-center md:justify-end gap-4">
+                                        <!-- cancel btn -->
+                                        <button class="cancel__btn text-primary bg-white border border-primary text-xs rounded flex-center md:text-base md:font-estedadMedium h-8 md:h-10 w-full md:w-36">انصراف</button>
+                                        <!-- submit btn -->
+                                        <button class="submit__btn bg-primary text-white text-xs rounded flex-center md:text-base md:font-estedadMedium h-8 md:h-10 w-full md:w-36">ذخیره اطلاعات</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
                     <!-- section item -->
                     <section id="profile__wallet" class="profile__section">2</section>
                     <!-- section item -->

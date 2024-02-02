@@ -1484,6 +1484,31 @@ video {
   opacity: 1;
 }
 
+.tick__icon {
+  display: none;
+}
+
+.filter__item {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.filter__item--active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 242 233 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(65 127 86 / var(--tw-text-opacity));
+}
+
+.filter__item--active .arrow__icon {
+  display: none;
+}
+
+.filter__item--active .tick__icon {
+  display: block;
+}
+
 .pointer-events-none {
   pointer-events: none;
 }
@@ -1801,10 +1826,6 @@ video {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.mt-30 {
-  margin-top: 7.5rem;
 }
 
 .block {
@@ -2644,6 +2665,11 @@ video {
   padding-bottom: 0.75rem;
 }
 
+.py-30 {
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
+}
+
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -2662,11 +2688,6 @@ video {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.py-30 {
-  padding-top: 7.5rem;
-  padding-bottom: 7.5rem;
 }
 
 .pb-1 {
@@ -2697,8 +2718,8 @@ video {
   padding-bottom: 1rem;
 }
 
-.pb-96 {
-  padding-bottom: 24rem;
+.pb-60 {
+  padding-bottom: 15rem;
 }
 
 .pl-2 {
@@ -2719,14 +2740,6 @@ video {
 
 .pt-4 {
   padding-top: 1rem;
-}
-
-.pb-60 {
-  padding-bottom: 15rem;
-}
-
-.pt-30 {
-  padding-top: 7.5rem;
 }
 
 .text-center {
@@ -3578,10 +3591,6 @@ video {
     margin-top: 2rem;
   }
 
-  .md\:mt-36 {
-    margin-top: 9rem;
-  }
-
   .md\:block {
     display: block;
   }
@@ -4008,6 +4017,11 @@ video {
     padding-bottom: 0.875rem;
   }
 
+  .md\:py-36 {
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+  }
+
   .md\:py-4 {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -4026,11 +4040,6 @@ video {
   .md\:py-8 {
     padding-top: 2rem;
     padding-bottom: 2rem;
-  }
-
-  .md\:py-36 {
-    padding-top: 9rem;
-    padding-bottom: 9rem;
   }
 
   .md\:pb-0 {
@@ -4059,10 +4068,6 @@ video {
 
   .md\:pt-4 {
     padding-top: 1rem;
-  }
-
-  .md\:pt-36 {
-    padding-top: 9rem;
   }
 
   .md\:font-estedad {
@@ -4116,6 +4121,11 @@ video {
     line-height: 1rem;
   }
 
+  .md\:text-gray-700 {
+    --tw-text-opacity: 1;
+    color: rgb(113 113 113 / var(--tw-text-opacity));
+  }
+
   .md\:text-gray-800 {
     --tw-text-opacity: 1;
     color: rgb(53 53 53 / var(--tw-text-opacity));
@@ -4124,11 +4134,6 @@ video {
   .md\:text-primary {
     --tw-text-opacity: 1;
     color: rgb(65 127 86 / var(--tw-text-opacity));
-  }
-
-  .md\:text-gray-700 {
-    --tw-text-opacity: 1;
-    color: rgb(113 113 113 / var(--tw-text-opacity));
   }
 
   .md\:opacity-0 {

@@ -292,6 +292,21 @@
     .profile__box--active,.edit__box--active{
         @apply visible opacity-100 h-auto
     }
+    .tick__icon{
+        @apply hidden
+    }
+    .filter__item{
+        @apply transition-all duration-300
+    }
+    .filter__item--active{
+        @apply text-primary bg-tint-100
+    }
+    .filter__item--active .arrow__icon{
+        @apply hidden
+    }
+    .filter__item--active .tick__icon{
+        @apply block
+    }
 }
 
 @layer utilities{

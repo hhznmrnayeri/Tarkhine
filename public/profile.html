@@ -219,6 +219,9 @@
             <path d="M9.10672 11.5H6.88672C6.61339 11.5 6.38672 11.2733 6.38672 11C6.38672 10.7267 6.61339 10.5 6.88672 10.5H9.10672C9.38005 10.5 9.60672 10.7267 9.60672 11C9.60672 11.2733 9.38005 11.5 9.10672 11.5Z" fill="#353535"/>
             <path d="M9.66536 8.83331H6.33203C6.0587 8.83331 5.83203 8.60665 5.83203 8.33331C5.83203 8.05998 6.0587 7.83331 6.33203 7.83331H9.66536C9.9387 7.83331 10.1654 8.05998 10.1654 8.33331C10.1654 8.60665 9.9387 8.83331 9.66536 8.83331Z" fill="#353535"/>
         </symbol>
+        <symbol id="tick" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.58141 7.57998C3.38141 7.57998 3.19141 7.49998 3.05141 7.35998L0.221406 4.52998C-0.0685937 4.23998 -0.0685937 3.75998 0.221406 3.46998C0.511406 3.17998 0.991406 3.17998 1.28141 3.46998L3.58141 5.76998L8.72141 0.629976C9.01141 0.339976 9.49141 0.339976 9.78141 0.629976C10.0714 0.919976 10.0714 1.39998 9.78141 1.68998L4.11141 7.35998C3.97141 7.49998 3.78141 7.57998 3.58141 7.57998Z" fill="#417F56"/>
+        </symbol>
     </svg>
     <header class="shadow-menu">
         <!-- container -->
@@ -709,7 +712,7 @@
                         <!-- section content -->
                         <div class="md:border md:border-gray-400 md:rounded-lg md:p-6 flex flex-col overflow-hidden">
                             <!-- empty box -->
-                            <div class="empty__box flex flex-col items-start">
+                            <div class="empty__box hidden flex-col items-start">
                                 <!-- top wrapper -->
                                 <div class="flex items-center justify-between md:justify-start md:pb-2 md:border-b border-gray-400 w-full">
                                     <!-- back btn -->
@@ -729,8 +732,8 @@
                                     <a href="menu.html" class="text-primary border border-primary flex-center text-xs h-8 w-40 rounded p-2 md:h-10 md:w-72 md:py-2 md:px-4 md:text-base md:font-estedadMedium">منوی رستوران</a>
                                 </div>
                             </div>
-                            <!-- edit box -->
-                            <div class="edit__box flex flex-col items-start">
+                            <!-- order box -->
+                            <div class=" flex flex-col items-start">
                                 <!-- top wrapper -->
                                 <div class="flex items-center justify-between md:justify-start md:pb-2 md:border-b border-gray-400 w-full">
                                     <!-- back btn -->
@@ -740,144 +743,47 @@
                                         </svg>
                                     </button>
                                     <!-- title -->
-                                    <h2 class=" md:text-xl font-estedadBold mx-auto md:mr-0">ویرایش اطلاعات شخصی</h2>
+                                    <h2 class=" md:text-xl font-estedadBold mx-auto md:mr-0">سفارشات</h2>
                                 </div>
-                                <!-- bottom wrapper -->
-                                <form class="flex flex-col gap-3 md:gap-6 mt-6 md:mt-12 w-full pb-60">
-                                    <!-- detail wrapper -->
-                                    <div class="flex-center flex-col md:flex-row gap-3 md:gap-4 w-full">
-                                        <!-- detail item -->
-                                        <div class="relative w-full h-10">
-                                            <input class="profile__edit--input peer" placeholder=" " value="سردار"/>
-                                            <label class="profile__edit--label">نام</label>
-                                        </div>
-                                        <!-- detail item -->
-                                        <div class="relative w-full h-10">
-                                            <input class="profile__edit--input peer" placeholder=" " value="وظیفه"/>
-                                            <label class="profile__edit--label">نام خانوادگی</label>
-                                        </div>
-                                    </div>
-                                    <!-- detail wrapper -->
-                                    <div class="flex-center flex-col md:flex-row gap-3 md:gap-4 w-full">
-                                        <!-- detail item -->
-                                        <div class="relative w-full h-10">
-                                            <input class="profile__edit--input peer" dir="ltr" placeholder=" " value="Example@gmail.com"/>
-                                            <label class="profile__edit--label">آدرس ایمیل</label>
-                                        </div>
-                                        <!-- detail item -->
-                                        <div class="relative w-full h-10">
-                                            <input class="profile__edit--input peer" dir="ltr" placeholder=" " value="۰۹۱۴ ۸۶۴ ۳۳۵۰"/>
-                                            <label class="profile__edit--label">شماره همراه</label>
-                                        </div>
-                                    </div>
-                                    <!-- detail wrapper -->
-                                    <div class="flex-center flex-col md:flex-row gap-3 md:gap-4 w-full">
-                                        <!-- input wrapper -->
-                                        <div class="calendar__wrapper group relative w-full flex flex-col h-10" tabindex="1">
-                                            <!-- input -->
-                                            <input class="profile__edit--input peer" dir="ltr" placeholder=" " value="۱۳۸۱/۰۵/۰۱"/>
-                                            <label class="profile__edit--label">تاریخ تولد (اختیاری)</label>
-                                            <!-- sub menu -->
-                                            <div class="calendar__box  absolute w-full top-full left-0 bottom-full bg-white rounded-lg shadow-card p-2 lg:p-4 text-sm flex flex-col font-estedadMedium ">
-                                                <!-- top wrapper -->
-                                                <div class="flex items-center justify-between">
-                                                    <!-- next btn -->
-                                                    <button class="text-primary rounded-full border border-primary w-6 h-6 flex-center">
-                                                        <svg class="w-4 h-4">
-                                                            <use href="#arrow-right"></use>
-                                                        </svg>
-                                                    </button>
-                                                    <!-- month value -->
-                                                    <span class="font-estedadBold">مرداد  ۱۳۸۱</span>
-                                                    <!-- prev btn -->
-                                                    <button class="text-primary rounded-full border border-primary w-6 h-6 flex-center">
-                                                        <svg class="w-4 h-4">
-                                                            <use href="#arrow-left"></use>
-                                                        </svg>
-                                                    </button>
-                                                </div>
-                                                <!-- day wrapper -->
-                                                <div class="flex items-start justify-between text-gray-700 mt-4">
-                                                    <!-- day box -->
-                                                    <div class="flex flex-col items-center gap-2">
-                                                        <span>ش</span>
-                                                        <button class="day__calendar">۶</button>
-                                                        <button class="day__calendar">۱۳</button>
-                                                        <button class="day__calendar">۲۰</button>
-                                                        <button class="day__calendar">۲۷</button>
-                                                        <button class="day__calendar day__disable">۴</button>
-                                                    </div>
-                                                    <!-- day box -->
-                                                    <div class="flex flex-col items-center gap-2">
-                                                        <span>ی</span>
-                                                        <button class="day__calendar">۵</button>
-                                                        <button class="day__calendar">۱۲</button>
-                                                        <button class="day__calendar">۱۹</button>
-                                                        <button class="day__calendar">۲۶</button>
-                                                        <button class="day__calendar day__disable">۳</button>
-                                                    </div>
-                                                    <!-- day box -->
-                                                    <div class="flex flex-col items-center gap-2">
-                                                        <span>د</span>
-                                                        <button class="day__calendar">۴</button>
-                                                        <button class="day__calendar">۱۱</button>
-                                                        <button class="day__calendar">۱۸</button>
-                                                        <button class="day__calendar">۲۵</button>
-                                                        <button class="day__calendar day__disable">۲</button>
-                                                    </div>
-                                                    <!-- day box -->
-                                                    <div class="flex flex-col items-center gap-2">
-                                                        <span>س</span>
-                                                        <button class="day__calendar">۳</button>
-                                                        <button class="day__calendar">۱۰</button>
-                                                        <button class="day__calendar">۱۷</button>
-                                                        <button class="day__calendar">۲۴</button>
-                                                        <button class="day__calendar day__disable">۱</button>
-                                                    </div>
-                                                    <!-- day box -->
-                                                    <div class="flex flex-col items-center gap-2">
-                                                        <span>چ</span>
-                                                        <button class="day__calendar">۲</button>
-                                                        <button class="day__calendar">۹</button>
-                                                        <button class="day__calendar">۱۶</button>
-                                                        <button class="day__calendar">۲۳</button>
-                                                        <button class="day__calendar">۳۰</button>
-                                                    </div>
-                                                    <!-- day box -->
-                                                    <div class="flex flex-col items-center gap-2">
-                                                        <span>پ</span>
-                                                        <button class="day__calendar day__active">۱</button>
-                                                        <button class="day__calendar">۸</button>
-                                                        <button class="day__calendar">۱۵</button>
-                                                        <button class="day__calendar">۲۲</button>
-                                                        <button class="day__calendar">۲۹</button>
-                                                    </div>
-                                                    <!-- day box -->
-                                                    <div class="flex flex-col items-center gap-2">
-                                                        <span>ج</span>
-                                                        <button class="day__calendar day__disable">۳۰</button>
-                                                        <button class="day__calendar">۷</button>
-                                                        <button class="day__calendar">۱۴</button>
-                                                        <button class="day__calendar">۲۱</button>
-                                                        <button class="day__calendar">۲۸</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- detail item -->
-                                        <div class="relative w-full h-10">
-                                            <input class="profile__edit--input peer" placeholder=" " value=""/>
-                                            <label class="profile__edit--label">نام نمایشی</label>
-                                        </div>
-                                    </div>
-                                    <!-- btn wrapper -->
-                                    <div class="flex items-center md:justify-end gap-4">
-                                        <!-- cancel btn -->
-                                        <button class="cancel__btn text-primary bg-white border border-primary text-xs rounded flex-center md:text-base md:font-estedadMedium h-8 md:h-10 w-full md:w-36">انصراف</button>
-                                        <!-- submit btn -->
-                                        <button class="submit__btn bg-primary text-white text-xs rounded flex-center md:text-base md:font-estedadMedium h-8 md:h-10 w-full md:w-36">ذخیره اطلاعات</button>
-                                    </div>
-                                </form>
+                                <!-- filter wrapper -->
+                                <div class="flex items-center gap-2 mt-2 md:mt-4">
+                                    <button class="filter__item filter__item--active text-2xs md:text-base text-nowrap flex items-center gap-1 px-2 rounded-lg md:rounded-5xl bg-gray-300 py-1">
+                                        <svg class="tick__icon w-3 md:w-4 h-3 md:h-4">
+                                            <use href="#tick"></use>
+                                        </svg>
+                                        <span>همه</span>
+                                        <svg class="arrow__icon w-3 md:w-4 h-3 md:h-4">
+                                            <use href="#arrow-left"></use>
+                                        </svg>
+                                    </button>
+                                    <button class="filter__item text-2xs md:text-base text-nowrap flex items-center gap-1 px-2 rounded-lg md:rounded-5xl bg-gray-300 py-1">
+                                        <svg class="tick__icon w-3 md:w-4 h-3 md:h-4">
+                                            <use href="#tick"></use>
+                                        </svg>
+                                        <span>جاری</span>
+                                        <svg class="arrow__icon w-3 md:w-4 h-3 md:h-4">
+                                            <use href="#arrow-left"></use>
+                                        </svg>
+                                    </button>
+                                    <button class="filter__item text-2xs md:text-base text-nowrap flex items-center gap-1 px-2 rounded-lg md:rounded-5xl bg-gray-300 py-1">
+                                        <svg class="tick__icon w-3 md:w-4 h-3 md:h-4">
+                                            <use href="#tick"></use>
+                                        </svg>
+                                        <span>تحویل شده</span>
+                                        <svg class="arrow__icon w-3 md:w-4 h-3 md:h-4">
+                                            <use href="#arrow-left"></use>
+                                        </svg>
+                                    </button>
+                                    <button class="filter__item text-2xs md:text-base text-nowrap flex items-center gap-1 px-2 rounded-lg md:rounded-5xl bg-gray-300 py-1">
+                                        <svg class="tick__icon w-3 md:w-4 h-3 md:h-4">
+                                            <use href="#tick"></use>
+                                        </svg>
+                                        <span>لغو شده</span>
+                                        <svg class="arrow__icon w-3 md:w-4 h-3 md:h-4">
+                                            <use href="#arrow-left"></use>
+                                        </svg>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </section>

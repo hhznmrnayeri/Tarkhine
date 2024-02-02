@@ -1803,6 +1803,10 @@ video {
   margin-top: 2rem;
 }
 
+.mt-30 {
+  margin-top: 7.5rem;
+}
+
 .block {
   display: block;
 }
@@ -2660,6 +2664,11 @@ video {
   padding-bottom: 2rem;
 }
 
+.py-30 {
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
+}
+
 .pb-1 {
   padding-bottom: 0.25rem;
 }
@@ -2714,6 +2723,10 @@ video {
 
 .pb-60 {
   padding-bottom: 15rem;
+}
+
+.pt-30 {
+  padding-top: 7.5rem;
 }
 
 .text-center {
@@ -3565,6 +3578,10 @@ video {
     margin-top: 2rem;
   }
 
+  .md\:mt-36 {
+    margin-top: 9rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -4011,6 +4028,11 @@ video {
     padding-bottom: 2rem;
   }
 
+  .md\:py-36 {
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+  }
+
   .md\:pb-0 {
     padding-bottom: 0px;
   }
@@ -4037,6 +4059,10 @@ video {
 
   .md\:pt-4 {
     padding-top: 1rem;
+  }
+
+  .md\:pt-36 {
+    padding-top: 9rem;
   }
 
   .md\:font-estedad {
@@ -4098,6 +4124,11 @@ video {
   .md\:text-primary {
     --tw-text-opacity: 1;
     color: rgb(65 127 86 / var(--tw-text-opacity));
+  }
+
+  .md\:text-gray-700 {
+    --tw-text-opacity: 1;
+    color: rgb(113 113 113 / var(--tw-text-opacity));
   }
 
   .md\:opacity-0 {

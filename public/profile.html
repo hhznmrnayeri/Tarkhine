@@ -1336,6 +1336,27 @@
             </div>
         </div>
     </footer>
+    <!-- cancel modal -->
+    <div class="cancel__modal cancel__modal--active fixed overflow-hidden rounded-lg bg-white w-11/12 md:w-5/12 h-48 md:h-56 inset-0 m-auto z-30">
+        <!-- top wrapper -->
+        <div class="bg-gray-100 flex items-center justify-between py-4 px-6 text-sm font-estedadMedium md:text-2xl md:font-estedadSemiBold">
+            <h3 class="mx-auto">لغو سفارش</h3>
+            <button class="close__cancel--modal text-gray-700">
+                <svg class="w-6 h-6">
+                    <use href="#close"></use>
+                </svg>
+            </button>
+        </div>
+        <!-- caption -->
+        <p class="mt-3 md:mt-8 text-xs md:text-base text-center">آیا از لغو سفارش خود مطمئن هستید؟</p>
+        <!-- btn wrapper -->
+        <div class="mt-8 flex-center gap-4 md:gap-5 px-10">
+            <!-- back btn -->
+            <button class="back__btn  bg-primary rounded flex-center p-2 text-white text-xs md:px-4 md:text-base md:font-estedadMedium flex-1">بازگشت</button>
+            <!-- delete btn -->
+            <button class="delete__btn bg-error-200 rounded flex-center p-2 text-error text-xs md:px-4 md:text-base md:font-estedadMedium flex-1">لغو سفارش</button>
+        </div>
+    </div>
     <!-- search modal -->
     <div class="search__modal hidden md:block fixed rounded-lg overflow-hidden bg-white pb-12 w-5/12 h-64 inset-0 m-auto z-30">
         <!-- top box -->
@@ -1480,7 +1501,7 @@
         </div>
     </div>
     <!-- overlay -->
-    <div class="overlay fixed top-0 bottom-0 right-0 left-0 transition-all duration-300 z-20"></div>
+    <div class="overlay overlay__active fixed top-0 bottom-0 right-0 left-0 transition-all duration-300 z-20"></div>
     <script src="scripts/app.js"></script>
     <script src="scripts/profile.js"></script>
 </body>

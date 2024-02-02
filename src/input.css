@@ -333,6 +333,12 @@
         content: '';
         @apply flex-auto
     }
+    .cancel__modal{
+        @apply invisible opacity-0 transition-all duration-300
+    }
+    .cancel__modal--active{
+        @apply visible opacity-100
+    }
 }
 
 @layer utilities{

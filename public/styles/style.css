@@ -1647,6 +1647,19 @@ video {
   flex: 1 1 auto
 }
 
+.cancel__modal {
+  visibility: hidden;
+  opacity: 0;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.cancel__modal--active {
+  visibility: visible;
+  opacity: 1;
+}
+
 .pointer-events-none {
   pointer-events: none;
 }
@@ -2854,6 +2867,16 @@ video {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 .pb-1 {

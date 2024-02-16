@@ -2,6 +2,7 @@ const headerBtn=document.querySelector('.header__btn')
 const galleryBranch=document.querySelector('.gallery__branch')
 const closeGallery=document.querySelector('.close__gallery')
 const chooseBranchModal=document.querySelector('.choose__branchModal')
+const headerTitle=document.querySelector('.header__title')
 const closeChooseBranchBtn=document.querySelector('.close__chooseBranch--btn')
 const topicBtnArray=document.querySelectorAll('.topic__btn')
 const galleryIconArray=document.querySelectorAll('.gallery__icon')
@@ -46,4 +47,15 @@ overlay.addEventListener('click',(e)=>{
         closeChooseBranchModal()
         closeGalleryBranch()
     }
+})
+let headerValue='تجربه غذای سالم و گیاهی به سبک ترخینه'
+let counter=0
+window.addEventListener('load',()=>{
+    let headerInterval=setInterval(()=>{
+        if(counter>35){
+            clearInterval(headerInterval)
+        }
+        headerTitle.innerHTML+=headerValue[counter]
+        counter++
+    },50)
 })

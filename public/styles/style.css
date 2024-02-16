@@ -2029,6 +2029,10 @@ video {
   height: 0.25rem;
 }
 
+.h-1\/5 {
+  height: 20%;
+}
+
 .h-10 {
   height: 2.5rem;
 }
@@ -2137,10 +2141,6 @@ video {
 
 .h-px {
   height: 1px;
-}
-
-.h-1\/5 {
-  height: 20%;
 }
 
 .w-0 {
@@ -3551,10 +3551,6 @@ video {
   color: rgb(53 53 53 / var(--tw-text-opacity));
 }
 
-.child\:block>* {
-  display: block;
-}
-
 .child\:h-full>* {
   height: 100%;
 }
@@ -3581,11 +3577,6 @@ video {
 
 .child\:bg-center>* {
   background-position: center;
-}
-
-.child\:object-cover>* {
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .child\:py-2>* {

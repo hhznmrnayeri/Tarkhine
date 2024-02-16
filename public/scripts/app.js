@@ -28,6 +28,7 @@ const editPhoneNumber=document.querySelector('.edit__phoneNumber')
 const errorBox=document.querySelector('.error__box')
 const closeError=document.querySelector('.close__error')
 const submitCode=document.querySelector('.submit__code')
+const shoppingCartBtn=document.querySelector('.shopping__cart--btn')
 const closeModalBtnArray=document.querySelectorAll('.close__modal')
 const inputCodeArray=document.querySelectorAll('.input__code')
 const pattern = /^09[0|1|2|3][0-9]{8}$/;
@@ -47,6 +48,9 @@ function openSearchModal(){
     overlay.classList.add('overlay__active')
     searchModal.classList.add('search__modal--active')
 }
+shoppingCartBtn.addEventListener('click',()=>{
+    window.location.href='buy.html'
+})
 mobileMenuBtn.addEventListener('click',()=>{
     openMenu()
 })

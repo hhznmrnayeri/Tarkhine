@@ -6,6 +6,7 @@ const headerTitle=document.querySelector('.header__title')
 const moreAboutBtn=document.querySelector('.more__about--btn')
 const closeChooseBranchBtn=document.querySelector('.close__chooseBranch--btn')
 const topicBtnArray=document.querySelectorAll('.topic__btn')
+const branchBtnArray=document.querySelectorAll('.branch__btn')
 const galleryIconArray=document.querySelectorAll('.gallery__icon')
 function closeChooseBranchModal(){
     overlay.classList.remove('overlay__active')
@@ -38,6 +39,11 @@ closeGallery.addEventListener('click',()=>{
 topicBtnArray.forEach(item=>{
     item.addEventListener('click',()=>{
         openChooseBranchModal()
+    })
+})
+branchBtnArray.forEach(item=>{
+    item.addEventListener('click',()=>{
+        window.location.href='branch.html'
     })
 })
 galleryIconArray.forEach(item=>{

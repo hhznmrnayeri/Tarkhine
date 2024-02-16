@@ -2009,10 +2009,6 @@ video {
   display: flex;
 }
 
-.table {
-  display: table;
-}
-
 .grid {
   display: grid;
 }
@@ -2143,6 +2139,10 @@ video {
   height: 1px;
 }
 
+.h-1\/5 {
+  height: 20%;
+}
+
 .w-0 {
   width: 0px;
 }
@@ -2265,10 +2265,6 @@ video {
 
 .flex-shrink-0 {
   flex-shrink: 0;
-}
-
-.shrink {
-  flex-shrink: 1;
 }
 
 .flex-grow {
@@ -3555,6 +3551,10 @@ video {
   color: rgb(53 53 53 / var(--tw-text-opacity));
 }
 
+.child\:block>* {
+  display: block;
+}
+
 .child\:h-full>* {
   height: 100%;
 }
@@ -3571,12 +3571,21 @@ video {
   flex-shrink: 0;
 }
 
+.child\:overflow-hidden>* {
+  overflow: hidden;
+}
+
 .child\:bg-cover>* {
   background-size: cover;
 }
 
 .child\:bg-center>* {
   background-position: center;
+}
+
+.child\:object-cover>* {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .child\:py-2>* {

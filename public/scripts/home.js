@@ -3,6 +3,8 @@ const galleryBranch=document.querySelector('.gallery__branch')
 const closeGallery=document.querySelector('.close__gallery')
 const chooseBranchModal=document.querySelector('.choose__branchModal')
 const headerTitle=document.querySelector('.header__title')
+const mobileSearchBtn=document.querySelector('.mobile__search--btn')
+const submitSearchBtn=document.querySelector('.submit__search--btn')
 const moreAboutBtn=document.querySelector('.more__about--btn')
 const closeChooseBranchBtn=document.querySelector('.close__chooseBranch--btn')
 const topicBtnArray=document.querySelectorAll('.topic__btn')
@@ -26,6 +28,14 @@ function openGalleryBranch(){
 }
 moreAboutBtn.addEventListener('click',()=>{
     window.location.href='about.html'
+})
+submitSearchBtn.addEventListener('click',(e)=>{
+    e.preventDefault()
+    window.location.href='search.html'
+})
+mobileSearchBtn.addEventListener('click',(e)=>{
+    e.preventDefault()
+    window.location.href='search.html'
 })
 headerBtn.addEventListener('click',()=>{
     openChooseBranchModal()

@@ -3397,6 +3397,16 @@ video {
   border-top-color: rgb(53 53 53 / var(--tw-border-opacity));
 }
 
+.hover\:bg-primary:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(65 127 86 / var(--tw-bg-opacity));
+}
+
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .focus\:border-2:focus {
   border-width: 2px;
 }

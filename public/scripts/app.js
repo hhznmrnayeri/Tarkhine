@@ -216,7 +216,7 @@ function sendCodeMethod(){
     })
 }
 resendBtn.addEventListener('click',()=>{
-    startTime(1)
+    sendCodeMethod()
     HideResendCode()
     closeErrorBox()
 })

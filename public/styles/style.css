@@ -1858,6 +1858,18 @@ video {
   top: 100%;
 }
 
+.top-2 {
+  top: 0.5rem;
+}
+
+.-top-6 {
+  top: -1.5rem;
+}
+
+.-top-10 {
+  top: -2.5rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -2249,6 +2261,11 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .max-w-28 {

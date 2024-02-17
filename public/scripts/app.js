@@ -28,6 +28,7 @@ const editPhoneNumber=document.querySelector('.edit__phoneNumber')
 const errorBox=document.querySelector('.error__box')
 const closeError=document.querySelector('.close__error')
 const submitCode=document.querySelector('.submit__code')
+const codeSmsElem=document.querySelector('.code__sms')
 const shoppingCartBtn=document.querySelector('.shopping__cart--btn')
 const closeModalBtnArray=document.querySelectorAll('.close__modal')
 const inputCodeArray=document.querySelectorAll('.input__code')
@@ -138,7 +139,7 @@ function codeValidation(){
         openErrorBox()
     }else{
         if(codeSms==checkCode){
-            closeErrorBox()
+            window.location.href='profile.html'
         }else{
             openErrorBox()
         }
@@ -191,7 +192,16 @@ function sendCodeMethod(){
     inputCodeArray[0].focus()
     startTime(1)
     codeSms=Math.floor(Math.random()*100000)
-    alert(codeSms)
+    codeSmsElem.innerHTML=codeSms
+    codeSmsElem.classList.remove('-top-10')
+    codeSmsElem.classList.add('top-2')
+    codeSmsElem.addEventListener('click',(e)=>{
+        e.target.classList.remove('top-2')
+        e.target.classList.add('-top-10')
+        if (navigator && navigator.clipboard && navigator.clipboard.writeText){
+            return navigator.clipboard.writeText(e.target.innerHTML)
+        }
+    })
     inputCodeArray[0].addEventListener('paste',(e)=>{
         let pasteValue=e.clipboardData.getData('text/plain')
         if(pasteValue.length==5){

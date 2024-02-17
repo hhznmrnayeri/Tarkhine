@@ -32,6 +32,7 @@ const shoppingCartBtn=document.querySelector('.shopping__cart--btn')
 const closeModalBtnArray=document.querySelectorAll('.close__modal')
 const inputCodeArray=document.querySelectorAll('.input__code')
 const pattern = /^09[0|1|2|3][0-9]{8}$/;
+var codeSms;
 function closeMenu(){
     overlay.classList.remove('overlay__active')
     mobileMenu.classList.remove('mobile__menu--open')
@@ -72,9 +73,17 @@ overlay.addEventListener('click',(e)=>{
     }
 })
 
+inputPhoneNumber.addEventListener('keyup',()=>{
+    if(inputPhoneNumber.value.length==11){
+        sendCode.classList.add('bg-primary')
+    }else{
+        sendCode.classList.remove('bg-primary')
+    }
+})
 function closeSignupModal(){
     overlay.classList.remove('overlay__active')
     signupModal.classList.remove('signup__modal--active')
+    sendCode.classList.remove('bg-primary')
     inputPhoneNumber.value=''
     inputCodeArray.forEach(item=>{
         item.value=''
@@ -117,25 +126,35 @@ function closeMessageBox(){
 }
 function codeValidation(){
     let emptyInput=0
+    let checkCode=''
     inputCodeArray.forEach(item=>{
         if(item.value==''||isNaN(Number(item.value))){
             emptyInput++
+        }else{
+            checkCode+=item.value
         }
     })
     if(emptyInput){
         openErrorBox()
     }else{
-        closeErrorBox()
+        if(codeSms==checkCode){
+            closeErrorBox()
+        }else{
+            openErrorBox()
+        }
     }
 }
-function startTime(){
-    minuteValue.innerHTML=1
-    secondValue.innerHTML=59
-    checkTime()
-}
-function stopTime(){
-    minuteValue.innerHTML=0
-    secondValue.innerHTML=0
+function startTime(inputTime){
+    if(inputTime==1){
+        minuteValue.innerHTML=0
+        secondValue.innerHTML=59
+        var startTimer= window.setTimeout(() => {
+            checkTime()
+        });
+    }
+    if(inputTime==0){
+        window.clearTimeout(startTimer)
+    }
 }
 function checkTime(){
     let checkSecond= setInterval(() => {
@@ -169,34 +188,25 @@ function sendCodeMethod(){
     }else{
         openMessageBox()
     }
-    inputCode1.focus()
-    inputCode1.addEventListener('keyup',()=>{
-        inputCode2.focus()
-        inputCode1.classList.remove('input__code--active')
-        inputCode2.classList.add('input__code--active')
+    inputCodeArray[0].focus()
+    startTime(1)
+    codeSms=Math.floor(Math.random()*100000)
+    alert(codeSms)
+    inputCodeArray[0].addEventListener('paste',(e)=>{
+        let pasteValue=e.clipboardData.getData('text/plain')
+        if(pasteValue.length==5){
+            let pasteArray=String(pasteValue).split('')
+            for(let i=0;i<5;i++){
+                inputCodeArray[i].value=pasteArray[i]
+            }
+            inputCodeArray[4].focus()
+            codeValidation()
+            submitCode.classList.add('bg-primary')
+        }
     })
-    inputCode2.addEventListener('keyup',()=>{
-        inputCode3.focus()
-        inputCode2.classList.remove('input__code--active')
-        inputCode3.classList.add('input__code--active')
-    })
-    inputCode3.addEventListener('keyup',()=>{
-        inputCode4.focus()
-        inputCode3.classList.remove('input__code--active')
-        inputCode4.classList.add('input__code--active')
-    })
-    inputCode4.addEventListener('keyup',()=>{
-        inputCode5.focus()
-        inputCode4.classList.remove('input__code--active')
-        inputCode5.classList.add('input__code--active')
-    })
-    inputCode5.addEventListener('keydown',()=>{
-        inputCode5.classList.remove('input__code--active')
-    })
-    startTime()
 }
 resendBtn.addEventListener('click',()=>{
-    startTime()
+    startTime(1)
     HideResendCode()
     closeErrorBox()
 })
@@ -234,6 +244,8 @@ editPhoneNumber.addEventListener('click',()=>{
         item.value=''
     })
     HideResendCode()
+    closeErrorBox()
+    startTime(0)
 })
 backSection.addEventListener('click',()=>{
     openSectionSignup(sectionPhoneNumber)
@@ -243,4 +255,17 @@ backSection.addEventListener('click',()=>{
         item.value=''
     })
     HideResendCode()
+    closeErrorBox()
+    startTime(0)
+})
+inputCodeArray.forEach(item=>{
+    item.addEventListener('keydown',()=>{
+        if(item==inputCodeArray[4]){
+            submitCode.classList.add('bg-primary')
+        }else{
+            item.nextElementSibling.focus()
+            item.classList.remove('input__code--active')
+            item.nextElementSibling.classList.add('input__code--active')
+        }
+    })
 })

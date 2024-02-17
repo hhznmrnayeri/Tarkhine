@@ -9,7 +9,7 @@ const headerTitleArray=[
 ]
 stateItemArray.forEach(item=>{
     item.addEventListener('click',()=>{
-        headerSection.style.backgroundImage= `linear-gradient(0deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%), linear-gradient(0deg, rgba(33, 64, 43, 0.50) 0%, rgba(33, 64, 43, 0.50) 100%), url(images/question/${item.dataset.id}.jpg)`
+        headerSection.style.backgroundImage= `linear-gradient(0deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%), linear-gradient(0deg, rgba(33, 64, 43, 0.50) 0%, rgba(33, 64, 43, 0.50) 100%), url(images/question/${item.dataset.id}.webp)`
         stateItemArray.forEach(btn=>{
             btn.classList.remove('state__question--active')
         })

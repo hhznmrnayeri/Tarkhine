@@ -1,5 +1,6 @@
 const galleryModal=document.querySelector('.gallery__modal')
 const closeGallery=document.querySelector('.close__gallery')
+const completeBtn=document.querySelector('.complete__btn')
 const menuWrapperIrani=document.querySelector('.menu__wrapper--irani')
 const menuWrapperForeign=document.querySelector('.menu__wrapper--foreign')
 const menuWrapperPizza=document.querySelector('.menu__wrapper--pizza')
@@ -162,4 +163,7 @@ itemImgArray.forEach(item=>{
     item.addEventListener('click',()=>{
         openGalleryModal()
     })
+})
+completeBtn.addEventListener('click',()=>{
+    window.location.href='buy.html'
 })

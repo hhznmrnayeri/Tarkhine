@@ -8,6 +8,9 @@ const addressItemArray=document.querySelectorAll('.address__item')
 const bankItemArray=document.querySelectorAll('.bank__item')
 const addAddressBtn=document.querySelector('.add__address--btn')
 const deleteAllBasketBtn=document.querySelector('.deleteAll__basket')
+const stateBtn1=document.querySelector('.state__btn1')
+const stateBtn2=document.querySelector('.state__btn2')
+const stateBtn3=document.querySelector('.state__btn3')
 const locationModal=document.querySelector('.location__modal')
 const addressModal=document.querySelector('.address__modal')
 const closeAddressModalBtn=document.querySelector('.close__address--modal')
@@ -22,6 +25,29 @@ const closeDeleteAllModalBtn=document.querySelector('.close__deleteAll--modal')
 const backBtn=document.querySelector('.back__btn')
 const deleteBtn=document.querySelector('.delete__btn')
 const deleteAllBasketMobile=document.querySelector('.deleteAll__basket--mobile')
+stateBtn1.addEventListener('click',()=>{
+            stateItemArray.forEach(state=>{
+                state.classList.remove('state__item--active')
+            })
+            sectionItemArray.forEach(section=>{
+                section.classList.remove('section__item--active')
+            })
+    stateItemArray[1].classList.add('state__item--active')
+    sectionItemArray[1].classList.add('section__item--active')
+})
+stateBtn2.addEventListener('click',()=>{
+            stateItemArray.forEach(state=>{
+                state.classList.remove('state__item--active')
+            })
+            sectionItemArray.forEach(section=>{
+                section.classList.remove('section__item--active')
+            })
+    stateItemArray[2].classList.add('state__item--active')
+    sectionItemArray[2].classList.add('section__item--active')
+})
+stateBtn3.addEventListener('click',()=>{
+    window.location.href='payment.html'
+})
 function changeSectionActive(array1,activeClass1,array2,activeClass2){
     array1.forEach(item=>{
         item.addEventListener('click',()=>{

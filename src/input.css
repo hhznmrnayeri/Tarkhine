@@ -138,7 +138,7 @@
         @apply w-8 h-8
     }
     .section__item{
-        @apply invisible opacity-0 h-0 transition-all duration-300
+        @apply invisible opacity-0 h-0 transition-all duration-300 overflow-hidden
     }
     .section__item--active{
         @apply visible opacity-100 h-auto
@@ -167,7 +167,7 @@
         @apply invisible opacity-0 transition-all duration-300 overflow-hidden h-0
     }
     .section__pay--active{
-        @apply visible opacity-100 h-min
+        @apply visible opacity-100 h-min z-10
     }
     .address__item{
         @apply border-gray-400

@@ -903,6 +903,7 @@ video {
 .section__item {
   visibility: hidden;
   height: 0px;
+  overflow: hidden;
   opacity: 0;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -981,6 +982,7 @@ video {
 
 .section__pay--active {
   visibility: visible;
+  z-index: 10;
   height: -moz-min-content;
   height: min-content;
   opacity: 1;

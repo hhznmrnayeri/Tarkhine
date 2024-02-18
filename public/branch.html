@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>صفحه شعبه</title>
-    <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <style>
         .swiper5 .swiper-pagination-bullet{
             width: 8px;
@@ -17,6 +17,15 @@
         }
         .swiper-pagination{
             bottom:-24px !important;
+        }
+        .swiper6 .swiper{
+            width: 100%;
+            height: 100%;
+        }
+        .swiper6 .swiper-pagination-custom{
+            margin: 0 auto !important;
+            text-align: center !important;
+            display:block !important;
         }
     </style>
 </head>
@@ -346,45 +355,38 @@
             </nav>
         </div>
         <!-- header slide section -->
-        <div class="bg-header h-44 md:h-80 bg-cover bg-center pt-14 md:pt-32 px-6 relative">
-            <!-- title wrapper -->
-            <div class="flex-center md:justify-between">
-                <!-- next slide btn -->
-                <button class="text-white hidden md:block">
-                    <svg class="w-8 h-8">
-                        <use href="#arrow-right"></use>
+        <div class=" w-full h-44 md:h-80 relative">
+            <div class="swiper swiper6 h-full">
+                <div class="swiper-wrapper ">
+                    <div class="swiper-slide bg-header w-full h-full bg-cover bg-center bg-no-repeat"></div>
+                    <div class="swiper-slide bg-header-slide1 w-full h-full bg-cover bg-center bg-no-repeat"></div>
+                    <div class="swiper-slide bg-header-slide2 w-full h-full bg-cover bg-center bg-no-repeat"></div>
+                </div>
+                    <!-- title wrapper -->
+                    <div class="flex-center md:justify-between absolute top-0 bottom-0 my-auto z-10 w-full ">
+                        <!-- prev slide btn -->
+                        <button class="text-white hidden md:block swiper-button-prev-custom mr-5">
+                            <svg class="w-8 h-8">
+                                <use href="#arrow-right"></use>
+                            </svg>
+                        </button>
+                        <!-- header title -->
+                        <h1 class="header__title text-tint-100 font-estedadBold md:text-4xl">طعم بی‌نظیر طبیعت!</h1>
+                        <!-- next slide btn -->
+                        <button class="text-white hidden md:block swiper-button-next-custom ml-5">
+                            <svg class="w-8 h-8">
+                                <use href="#arrow-left"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- header btn -->
+                    <button class="header__btn md:font-estedadMedium text-2xs md:text-base rounded bg-primary p-2 md:px-4 text-white text-center flex-center absolute z-10 h-6 w-24 md:h-10 md:w-48 left-0 right-0 mx-auto bottom-10 md:bottom-16">سفارش آنلاین غذا</button>
+                    <!-- navigation box -->
+                    <svg class="h-8 w-32 absolute left-0 right-0 -bottom-[3px] z-10 mx-auto ">
+                        <use href="#navigation"></use>
                     </svg>
-                </button>
-                <!-- header title -->
-                <h1 class="text-tint-100 font-estedadBold md:text-4xl">طعم بی‌نظیر طبیعت!</h1>
-                <!-- prev slide btn -->
-                <button class="text-white hidden md:block">
-                    <svg class="w-8 h-8">
-                        <use href="#arrow-left"></use>
-                    </svg>
-                </button>
-            </div>
-            <!-- header btn -->
-            <button class="header__btn md:font-estedadMedium text-2xs md:text-base rounded bg-primary p-2 md:px-4 text-white text-center mx-auto mt-5 md:mt-10 flex-center mb-4 md:mb-9">سفارش آنلاین غذا</button>
-            <!-- navigation box -->
-            <svg class="h-5 md:h-8 w-24 md:w-32 absolute left-0 right-0 -bottom-0.5 mx-auto">
-                <use href="#navigation"></use>
-            </svg>
-            <!-- navigation wrapper -->
-            <div class="flex-center gap-1 absolute left-0 right-0 mx-auto bottom-1 md:bottom-2">
-                <!-- navigation item -->
-                <span class="w-1 h-1 md:w-2 md:h-2 rounded-full bg-gray-500"></span>
-                <!-- navigation item -->
-                <span class="w-1 h-1 md:w-2 md:h-2 rounded-full bg-gray-500"></span>
-                <!-- navigation item -->
-                <span class="w-1 h-1 md:w-2 md:h-2 rounded-full bg-gray-500"></span>
-                <!-- navigation item -->
-                <span class="w-1 h-1 md:w-2 md:h-2 rounded-full bg-gray-500"></span>
-                <!-- navigation item -->
-                <span class="w-1 h-1 md:w-2 md:h-2 rounded-full bg-gray-500"></span>
-                <!-- navigation item -->
-                <span class="navigation__item--active w-2 h-2 md:w-3 md:h-3 rounded-full"></span>
-            </div>
+                    <div class="swiper-pagination-custom z-20 absolute "></div>
+                </div>
         </div>
     </header>
     <main>
@@ -1980,6 +1982,19 @@
                     spaceBetween:24
                 },
             }
+        });
+        var swiper6 = new Swiper(".swiper6", {
+            cssMode: true,
+            navigation: {
+                nextEl: ".swiper-button-next-custom",
+                prevEl: ".swiper-button-prev-custom",
+            },
+            pagination: {
+                el: ".swiper-pagination-custom",
+                clickable: true,
+            },
+            mousewheel: true,
+            keyboard: true,
         });
         const fullMenuBtn=document.querySelector('.full__menu--btn');
         fullMenuBtn.addEventListener('click',()=>{

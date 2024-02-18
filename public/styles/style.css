@@ -1868,6 +1868,26 @@ video {
   top: 100%;
 }
 
+.bottom-5 {
+  bottom: 1.25rem;
+}
+
+.bottom-10 {
+  bottom: 2.5rem;
+}
+
+.-bottom-\[3px\] {
+  bottom: -3px;
+}
+
+.bottom-16 {
+  bottom: 4rem;
+}
+
+.bottom-8 {
+  bottom: 2rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -1925,6 +1945,11 @@ video {
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
+}
+
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
 }
 
 .-mb-6 {
@@ -2009,6 +2034,14 @@ video {
 
 .mt-8 {
   margin-top: 2rem;
+}
+
+.ml-5 {
+  margin-left: 1.25rem;
+}
+
+.mr-5 {
+  margin-right: 1.25rem;
 }
 
 .block {
@@ -2264,6 +2297,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-32 {
+  width: 8rem;
 }
 
 .max-w-28 {
@@ -2557,6 +2594,14 @@ video {
   border-top-width: 1px;
 }
 
+.border-b-4 {
+  border-bottom-width: 4px;
+}
+
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+
 .border-dashed {
   border-style: dashed;
 }
@@ -2719,6 +2764,14 @@ video {
 
 .bg-header-representation {
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%), linear-gradient(0deg, rgba(33, 64, 43, 0.50) 0%, rgba(33, 64, 43, 0.50) 100%), url(../images/representation/header.webp);
+}
+
+.bg-header-slide1 {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%), linear-gradient(0deg, rgba(33, 64, 43, 0.50) 0%, rgba(33, 64, 43, 0.50) 100%), url(../images/home/header1.webp);
+}
+
+.bg-header-slide2 {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%), linear-gradient(0deg, rgba(33, 64, 43, 0.50) 0%, rgba(33, 64, 43, 0.50) 100%), url(../images/home/header2.webp);
 }
 
 .bg-map {
@@ -3760,6 +3813,10 @@ video {
 
   .md\:top-0\.5 {
     top: 0.125rem;
+  }
+
+  .md\:bottom-16 {
+    bottom: 4rem;
   }
 
   .md\:order-1 {

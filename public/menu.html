@@ -7,6 +7,18 @@
     <title>منو</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/swiper-bundle.min.css">
+    <style>
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .header__slider .swiper{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body class="font-estedad text-gray-800 bg-white">
     <svg class="hidden">
@@ -331,43 +343,39 @@
             </nav>
         </div>
         <!-- header slide section -->
-        <div class="bg-header-menu h-44 md:h-80 bg-cover bg-center pt-14 md:pt-32 px-6 relative">
-            <!-- title wrapper -->
-            <div class="flex-center md:justify-between">
-                <!-- next slide btn -->
-                <button class="text-white hidden md:block">
-                    <svg class="w-8 h-8">
-                        <use href="#arrow-right"></use>
+        <div class=" w-full h-44 md:h-80 relative">
+            <div class="swiper header__slider h-full">
+                <div class="swiper-wrapper ">
+                  <div class="swiper-slide bg-header w-full h-full bg-cover bg-center bg-no-repeat"></div>
+                  <div class="swiper-slide bg-header-slide1 w-full h-full bg-cover bg-center bg-no-repeat"></div>
+                  <div class="swiper-slide bg-header-slide2 w-full h-full bg-cover bg-center bg-no-repeat"></div>
+                </div>
+                
+                    <!-- title wrapper -->
+                    <div class="flex-center md:justify-between absolute top-0 bottom-0 my-auto z-10 w-full ">
+                        <!-- prev slide btn -->
+                        <button class="text-white hidden md:block swiper-button-prev-custom mr-5">
+                            <svg class="w-8 h-8">
+                                <use href="#arrow-right"></use>
+                            </svg>
+                        </button>
+                        <!-- header title -->
+                        <h1 class="header__title text-tint-100 font-estedadBold md:text-4xl">لذت غذای سالم و گیاهی را با ترخینه تجربه کنید!</h1>
+                        <!-- next slide btn -->
+                        <button class="text-white hidden md:block swiper-button-next-custom ml-5">
+                            <svg class="w-8 h-8">
+                                <use href="#arrow-left"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- header btn -->
+                    <button class="header__btn md:font-estedadMedium text-2xs md:text-base rounded bg-primary p-2 md:px-4 text-white text-center flex-center absolute z-10 h-6 w-24 md:h-10 md:w-48 left-0 right-0 mx-auto bottom-10 md:bottom-16">سفارش آنلاین غذا</button>
+                    <!-- navigation box -->
+                    <svg class="h-8 w-32 absolute left-0 right-0 -bottom-[3px] z-10 mx-auto ">
+                        <use href="#navigation"></use>
                     </svg>
-                </button>
-                <!-- header title -->
-                <h1 class="text-tint-100 font-estedadBold md:text-4xl">لذت غذای سالم و گیاهی را با ترخینه تجربه کنید!</h1>
-                <!-- prev slide btn -->
-                <button class="text-white hidden md:block">
-                    <svg class="w-8 h-8">
-                        <use href="#arrow-left"></use>
-                    </svg>
-                </button>
-            </div>
-            <!-- navigation box -->
-            <svg class="h-5 md:h-8 w-24 md:w-32 absolute left-0 right-0 -bottom-0.5 mx-auto">
-                <use href="#navigation"></use>
-            </svg>
-            <!-- navigation wrapper -->
-            <div class="flex-center gap-1 absolute left-0 right-0 mx-auto bottom-1 md:bottom-2">
-                <!-- navigation item -->
-                <span class="w-1 h-1 md:w-2 md:h-2 rounded-full bg-gray-500"></span>
-                <!-- navigation item -->
-                <span class="w-1 h-1 md:w-2 md:h-2 rounded-full bg-gray-500"></span>
-                <!-- navigation item -->
-                <span class="w-1 h-1 md:w-2 md:h-2 rounded-full bg-gray-500"></span>
-                <!-- navigation item -->
-                <span class="w-1 h-1 md:w-2 md:h-2 rounded-full bg-gray-500"></span>
-                <!-- navigation item -->
-                <span class="w-1 h-1 md:w-2 md:h-2 rounded-full bg-gray-500"></span>
-                <!-- navigation item -->
-                <span class="navigation__item--active w-2 h-2 md:w-3 md:h-3 rounded-full"></span>
-            </div>
+                </div>
+                <div class="swiper-pagination z-20 absolute left-0 right-0 mx-auto mt-1"></div>
         </div>
     </header>
     <main>
@@ -915,6 +923,19 @@
             slidesPerView: "auto",
             rewind: true,
             spaceBetween: 8,
+        });
+        var swiper4 = new Swiper(".header__slider", {
+            cssMode: true,
+            navigation: {
+                nextEl: ".swiper-button-next-custom",
+                prevEl: ".swiper-button-prev-custom",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            mousewheel: true,
+            keyboard: true,
         });
     </script>
 </body>

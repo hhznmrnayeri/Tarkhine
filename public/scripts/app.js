@@ -32,7 +32,7 @@ const codeSmsElem=document.querySelector('.code__sms')
 const shoppingCartBtn=document.querySelector('.shopping__cart--btn')
 const closeModalBtnArray=document.querySelectorAll('.close__modal')
 const inputCodeArray=document.querySelectorAll('.input__code')
-const pattern = /^09[0|1|2|3][0-9]{8}$/;
+const pattern = /^09[0|1|2|3|9][0-9]{8}$/;
 var codeSms;
 function closeMenu(){
     overlay.classList.remove('overlay__active')

@@ -3721,6 +3721,10 @@ video {
     top: -11rem;
   }
 
+  .md\:bottom-0 {
+    bottom: 0px;
+  }
+
   .md\:bottom-16 {
     bottom: 4rem;
   }
@@ -3763,10 +3767,6 @@ video {
 
   .md\:top-0\.5 {
     top: 0.125rem;
-  }
-
-  .md\:bottom-0 {
-    bottom: 0px;
   }
 
   .md\:order-1 {
@@ -4452,11 +4452,6 @@ video {
     justify-content: center;
   }
 
-  .md\:hover\:-translate-y-4:hover {
-    --tw-translate-y: -1rem;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
   .group:hover .md\:group-hover\:-bottom-10 {
     bottom: -2.5rem;
   }
@@ -4467,11 +4462,6 @@ video {
 
   .group:hover .md\:group-hover\:-translate-y-10 {
     --tw-translate-y: -2.5rem;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .group:hover .md\:group-hover\:-translate-y-4 {
-    --tw-translate-y: -1rem;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 

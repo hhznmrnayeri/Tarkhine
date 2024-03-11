@@ -104,7 +104,7 @@ function insertMenu(array,wrapper){
     array.forEach(item=>{
     let starWrapper=generateStarElem(item.star)
         wrapper.insertAdjacentHTML('beforeend',`<!-- menu item -->
-<div class="menu__item col-span-1 xl:col-span-6 flex gap-2 md:gap-8 rounded md:rounded-lg border border-gray-400 md:shadow-card">
+<div class="menu__item group col-span-1 xl:col-span-6 flex gap-2 md:gap-8 rounded md:rounded-lg border border-gray-400 md:shadow-card">
     <!-- item img -->
     <img src="${item.img}" alt="food" class="item__img w-24 md:w-40 cursor-pointer">
     <!-- item content -->

@@ -2702,6 +2702,10 @@ video {
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url(../images/home/footer.webp);
 }
 
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
 .bg-header {
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%), linear-gradient(0deg, rgba(33, 64, 43, 0.50) 0%, rgba(33, 64, 43, 0.50) 100%), url(../images/home/home.webp);
 }
@@ -2744,6 +2748,44 @@ video {
 
 .bg-section {
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url(../images/home/section.webp);
+}
+
+.bg-slide__gallery1 {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(0deg, rgba(33, 64, 43, 0.50) 0%, rgba(33, 64, 43, 0.50) 50%), url(../images/home/gallery1.webp);
+}
+
+.bg-slide__gallery2 {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(0deg, rgba(33, 64, 43, 0.50) 0%, rgba(33, 64, 43, 0.50) 50%), url(../images/home/gallery2.webp);
+}
+
+.bg-slide__gallery3 {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(0deg, rgba(33, 64, 43, 0.50) 0%, rgba(33, 64, 43, 0.50) 50%), url(../images/home/gallery3.webp);
+}
+
+.bg-slide__gallery4 {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(0deg, rgba(33, 64, 43, 0.50) 0%, rgba(33, 64, 43, 0.50) 50%), url(../images/home/gallery4.webp);
+}
+
+.bg-slide__gallery5 {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(0deg, rgba(33, 64, 43, 0.50) 0%, rgba(33, 64, 43, 0.50) 50%), url(../images/home/gallery5.webp);
+}
+
+.bg-slide__gallery6 {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(0deg, rgba(33, 64, 43, 0.50) 0%, rgba(33, 64, 43, 0.50) 50%), url(../images/home/gallery6.webp);
+}
+
+.bg-slide__gallery7 {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(0deg, rgba(33, 64, 43, 0.50) 0%, rgba(33, 64, 43, 0.50) 50%), url(../images/home/gallery7.webp);
+}
+
+.from-black {
+  --tw-gradient-from: #0C0C0C var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(12 12 12 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-primary {
+  --tw-gradient-to: #417F56 var(--tw-gradient-to-position);
 }
 
 .bg-contain {
@@ -3154,15 +3196,15 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow-subMenu {
-  --tw-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
-  --tw-shadow-colored: 0px 0px 6px 0px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .shadow-none {
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-subMenu {
+  --tw-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
+  --tw-shadow-colored: 0px 0px 6px 0px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -4483,12 +4525,6 @@ video {
     opacity: 1;
   }
 
-  .md\:shadow-card {
-    --tw-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0, 0.10), 0px 4px 4px 0px rgba(0, 0, 0, 0.09), 0px 9px 5px 0px rgba(0, 0, 0, 0.05), 0px 16px 6px 0px rgba(0, 0, 0, 0.01), 0px 25px 7px 0px rgba(0, 0, 0, 0.00);
-    --tw-shadow-colored: 0px 0px 0px 0px var(--tw-shadow-color), 0px 1px 2px 0px var(--tw-shadow-color), 0px 4px 4px 0px var(--tw-shadow-color), 0px 9px 5px 0px var(--tw-shadow-color), 0px 16px 6px 0px var(--tw-shadow-color), 0px 25px 7px 0px var(--tw-shadow-color);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  }
-
   .md\:flex-center {
     display: flex;
     align-items: center;
@@ -4520,12 +4556,6 @@ video {
 
   .group:hover .md\:group-hover\:opacity-100 {
     opacity: 1;
-  }
-
-  .group:hover .md\:group-hover\:shadow-card {
-    --tw-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0, 0.10), 0px 4px 4px 0px rgba(0, 0, 0, 0.09), 0px 9px 5px 0px rgba(0, 0, 0, 0.05), 0px 16px 6px 0px rgba(0, 0, 0, 0.01), 0px 25px 7px 0px rgba(0, 0, 0, 0.00);
-    --tw-shadow-colored: 0px 0px 0px 0px var(--tw-shadow-color), 0px 1px 2px 0px var(--tw-shadow-color), 0px 4px 4px 0px var(--tw-shadow-color), 0px 9px 5px 0px var(--tw-shadow-color), 0px 16px 6px 0px var(--tw-shadow-color), 0px 25px 7px 0px var(--tw-shadow-color);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 }
 

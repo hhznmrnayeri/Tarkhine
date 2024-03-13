@@ -3029,6 +3029,10 @@ video {
   padding-top: 1rem;
 }
 
+.pb-24 {
+  padding-bottom: 6rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -3039,6 +3043,10 @@ video {
 
 .text-start {
   text-align: start;
+}
+
+.align-top {
+  vertical-align: top;
 }
 
 .font-estedad {
@@ -4460,6 +4468,10 @@ video {
 
   .md\:pt-4 {
     padding-top: 1rem;
+  }
+
+  .md\:pb-44 {
+    padding-bottom: 11rem;
   }
 
   .md\:font-estedad {

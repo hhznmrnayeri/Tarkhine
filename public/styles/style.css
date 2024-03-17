@@ -4631,6 +4631,22 @@ video {
     width: 100%;
   }
 
+  .lg\:w-96 {
+    width: 24rem;
+  }
+
+  .lg\:w-\[380px\] {
+    width: 380px;
+  }
+
+  .lg\:w-64 {
+    width: 16rem;
+  }
+
+  .lg\:w-\[252px\] {
+    width: 252px;
+  }
+
   .lg\:max-w-28 {
     max-width: 7rem;
   }
@@ -4749,6 +4765,10 @@ video {
 
   .xl\:w-80 {
     width: 20rem;
+  }
+
+  .xl\:w-\[380px\] {
+    width: 380px;
   }
 
   .xl\:max-w-32 {

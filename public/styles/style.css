@@ -4627,24 +4627,12 @@ video {
     width: 58.333333%;
   }
 
-  .lg\:w-full {
-    width: 100%;
-  }
-
-  .lg\:w-96 {
-    width: 24rem;
-  }
-
-  .lg\:w-\[380px\] {
-    width: 380px;
-  }
-
-  .lg\:w-64 {
-    width: 16rem;
-  }
-
   .lg\:w-\[252px\] {
     width: 252px;
+  }
+
+  .lg\:w-full {
+    width: 100%;
   }
 
   .lg\:max-w-28 {

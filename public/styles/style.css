@@ -1331,9 +1331,9 @@ video {
 }
 
 .profile__edit--input:focus {
-  border-width: 2px;
+  border-width: 1px;
   --tw-border-opacity: 1;
-  border-color: rgb(53 53 53 / var(--tw-border-opacity));
+  border-color: rgb(65 127 86 / var(--tw-border-opacity));
   border-top-color: transparent;
   outline-width: 0px;
 }
@@ -1370,13 +1370,12 @@ video {
 
 .profile__edit--label::before {
   pointer-events: none;
-  margin-top: 6.5px;
+  margin-top: 7.5px;
   margin-right: 0.25rem;
   box-sizing: border-box;
   display: block;
-  height: 0.375rem;
-  width: 0.625rem;
-  border-top-left-radius: 0.375rem;
+  height: 0.125rem;
+  width: 0.375rem;
   border-top-width: 1px;
   border-left-width: 1px;
   --tw-border-opacity: 1;
@@ -1389,14 +1388,13 @@ video {
 
 .profile__edit--label::after {
   pointer-events: none;
-  margin-top: 6.5px;
+  margin-top: 7.5px;
   margin-left: 0.25rem;
   box-sizing: border-box;
   display: block;
-  height: 0.375rem;
-  width: 0.625rem;
+  height: 0.125rem;
+  width: 0.375rem;
   flex-grow: 1;
-  border-top-right-radius: 0.375rem;
   border-top-width: 1px;
   border-right-width: 1px;
   --tw-border-opacity: 1;
@@ -1452,19 +1450,19 @@ video {
 }
 
 .peer:focus ~ .profile__edit--label::before {
-  border-top-width: 2px;
-  border-left-width: 2px;
+  border-top-width: 1px;
+  border-left-width: 1px;
   content: var(--tw-content) !important;
   --tw-border-opacity: 1 !important;
-  border-color: rgb(53 53 53 / var(--tw-border-opacity)) !important;
+  border-color: rgb(65 127 86 / var(--tw-border-opacity)) !important;
 }
 
 .peer:focus ~ .profile__edit--label::after {
-  border-top-width: 2px;
-  border-right-width: 2px;
+  border-top-width: 1px;
+  border-right-width: 1px;
   content: var(--tw-content) !important;
   --tw-border-opacity: 1 !important;
-  border-color: rgb(53 53 53 / var(--tw-border-opacity)) !important;
+  border-color: rgb(65 127 86 / var(--tw-border-opacity)) !important;
 }
 
 .peer:disabled ~ .profile__edit--label {
@@ -1831,10 +1829,6 @@ video {
   left: 0.25rem;
 }
 
-.left-12 {
-  left: 3rem;
-}
-
 .left-3 {
   left: 0.75rem;
 }
@@ -1849,10 +1843,6 @@ video {
 
 .right-0 {
   right: 0px;
-}
-
-.right-12 {
-  right: 3rem;
 }
 
 .right-2 {
@@ -3316,9 +3306,9 @@ video {
   margin-right: 0.25rem;
 }
 
-.before\:mt-\[6\.5px\]::before {
+.before\:mt-\[7\.5px\]::before {
   content: var(--tw-content);
-  margin-top: 6.5px;
+  margin-top: 7.5px;
 }
 
 .before\:box-border::before {
@@ -3331,29 +3321,24 @@ video {
   display: block;
 }
 
-.before\:h-1::before {
+.before\:h-0::before {
   content: var(--tw-content);
-  height: 0.25rem;
+  height: 0px;
 }
 
-.before\:h-1\.5::before {
+.before\:h-0\.5::before {
   content: var(--tw-content);
-  height: 0.375rem;
+  height: 0.125rem;
 }
 
-.before\:w-2::before {
+.before\:w-1::before {
   content: var(--tw-content);
-  width: 0.5rem;
+  width: 0.25rem;
 }
 
-.before\:w-2\.5::before {
+.before\:w-1\.5::before {
   content: var(--tw-content);
-  width: 0.625rem;
-}
-
-.before\:rounded-tl-md::before {
-  content: var(--tw-content);
-  border-top-left-radius: 0.375rem;
+  width: 0.375rem;
 }
 
 .before\:border-l::before {
@@ -3389,9 +3374,9 @@ video {
   margin-left: 0.25rem;
 }
 
-.after\:mt-\[6\.5px\]::after {
+.after\:mt-\[7\.5px\]::after {
   content: var(--tw-content);
-  margin-top: 6.5px;
+  margin-top: 7.5px;
 }
 
 .after\:box-border::after {
@@ -3404,34 +3389,29 @@ video {
   display: block;
 }
 
-.after\:h-1::after {
+.after\:h-0::after {
   content: var(--tw-content);
-  height: 0.25rem;
+  height: 0px;
 }
 
-.after\:h-1\.5::after {
+.after\:h-0\.5::after {
   content: var(--tw-content);
-  height: 0.375rem;
+  height: 0.125rem;
 }
 
-.after\:w-2::after {
+.after\:w-1::after {
   content: var(--tw-content);
-  width: 0.5rem;
+  width: 0.25rem;
 }
 
-.after\:w-2\.5::after {
+.after\:w-1\.5::after {
   content: var(--tw-content);
-  width: 0.625rem;
+  width: 0.375rem;
 }
 
 .after\:flex-grow::after {
   content: var(--tw-content);
   flex-grow: 1;
-}
-
-.after\:rounded-tr-md::after {
-  content: var(--tw-content);
-  border-top-right-radius: 0.375rem;
 }
 
 .after\:border-r::after {
@@ -3495,13 +3475,13 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.focus\:border-2:focus {
-  border-width: 2px;
+.focus\:border:focus {
+  border-width: 1px;
 }
 
-.focus\:border-gray-800:focus {
+.focus\:border-primary:focus {
   --tw-border-opacity: 1;
-  border-color: rgb(53 53 53 / var(--tw-border-opacity));
+  border-color: rgb(65 127 86 / var(--tw-border-opacity));
 }
 
 .focus\:border-t-transparent:focus {
@@ -3608,36 +3588,36 @@ video {
   color: rgb(53 53 53 / var(--tw-text-opacity));
 }
 
-.peer:focus ~ .peer-focus\:before\:border-l-2::before {
+.peer:focus ~ .peer-focus\:before\:border-l::before {
   content: var(--tw-content);
-  border-left-width: 2px;
+  border-left-width: 1px;
 }
 
-.peer:focus ~ .peer-focus\:before\:border-t-2::before {
+.peer:focus ~ .peer-focus\:before\:border-t::before {
   content: var(--tw-content);
-  border-top-width: 2px;
+  border-top-width: 1px;
 }
 
-.peer:focus ~ .peer-focus\:before\:\!border-gray-800::before {
+.peer:focus ~ .peer-focus\:before\:\!border-primary::before {
   content: var(--tw-content);
   --tw-border-opacity: 1 !important;
-  border-color: rgb(53 53 53 / var(--tw-border-opacity)) !important;
+  border-color: rgb(65 127 86 / var(--tw-border-opacity)) !important;
 }
 
-.peer:focus ~ .peer-focus\:after\:border-r-2::after {
+.peer:focus ~ .peer-focus\:after\:border-r::after {
   content: var(--tw-content);
-  border-right-width: 2px;
+  border-right-width: 1px;
 }
 
-.peer:focus ~ .peer-focus\:after\:border-t-2::after {
+.peer:focus ~ .peer-focus\:after\:border-t::after {
   content: var(--tw-content);
-  border-top-width: 2px;
+  border-top-width: 1px;
 }
 
-.peer:focus ~ .peer-focus\:after\:\!border-gray-800::after {
+.peer:focus ~ .peer-focus\:after\:\!border-primary::after {
   content: var(--tw-content);
   --tw-border-opacity: 1 !important;
-  border-color: rgb(53 53 53 / var(--tw-border-opacity)) !important;
+  border-color: rgb(65 127 86 / var(--tw-border-opacity)) !important;
 }
 
 .peer:disabled ~ .peer-disabled\:text-transparent {

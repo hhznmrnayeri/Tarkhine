@@ -4600,6 +4600,10 @@ video {
     height: 554px;
   }
 
+  .lg\:h-16 {
+    height: 4rem;
+  }
+
   .lg\:w-1\/2 {
     width: 50%;
   }
@@ -4726,6 +4730,10 @@ video {
 
   .xl\:h-80 {
     height: 20rem;
+  }
+
+  .xl\:h-10 {
+    height: 2.5rem;
   }
 
   .xl\:w-72 {

@@ -4584,6 +4584,10 @@ video {
     display: flex;
   }
 
+  .lg\:h-16 {
+    height: 4rem;
+  }
+
   .lg\:h-20 {
     height: 5rem;
   }
@@ -4598,10 +4602,6 @@ video {
 
   .lg\:h-\[554px\] {
     height: 554px;
-  }
-
-  .lg\:h-16 {
-    height: 4rem;
   }
 
   .lg\:w-1\/2 {
@@ -4728,12 +4728,12 @@ video {
     grid-column: span 6 / span 6;
   }
 
-  .xl\:h-80 {
-    height: 20rem;
-  }
-
   .xl\:h-10 {
     height: 2.5rem;
+  }
+
+  .xl\:h-80 {
+    height: 20rem;
   }
 
   .xl\:w-72 {

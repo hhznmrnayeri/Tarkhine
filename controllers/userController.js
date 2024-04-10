@@ -13,3 +13,5 @@ exports.createUser = () => {};
 exports.updateUser = () => {};
 
 exports.deleteUser = () => {};
+
+exports.loginUser = () => {}

@@ -46,6 +46,6 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-const User = mongoose.model("Tour", tourSchema);
+const User = mongoose.model("Tour", userSchema);
 
 module.exports = User;

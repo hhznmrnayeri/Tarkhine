@@ -30,7 +30,12 @@ exports.getFood = async (req, res) => {
         food: food,
       },
     });
-  } catch (err) {}
+  } catch (err) {
+    res.send(400).json({
+        status : 'fail',
+        data : err
+    })
+  }
 };
 
 exports.createFood = async (req, res) => {

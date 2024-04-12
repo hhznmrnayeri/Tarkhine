@@ -4,6 +4,7 @@ const express = require("express");
 const morgan = require("morgan");
 
 const userRouter = require('./routes/userRouter')
+const foodRouter = require('./routes/foodRouter')
 
 const app = express();
 
@@ -21,5 +22,6 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 app.use("/app/users", userRouter);
+app.use("/app/food" , foodRouter)
 
 module.exports = app;

@@ -32,9 +32,9 @@ exports.getFood = async (req, res) => {
     });
   } catch (err) {
     res.send(400).json({
-        status : 'fail',
-        data : err
-    })
+      status: "fail",
+      data: err,
+    });
   }
 };
 
@@ -54,7 +54,24 @@ exports.createFood = async (req, res) => {
   }
 };
 
-exports.updateFood = async (req, res) => {};
+exports.updateFood = async (req, res) => {
+  try {
+    const food = await Food.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true,
+    });
+
+    res.status(200).json({
+      status: "success",
+      data: { food },
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: "fail",
+      data: err,
+    });
+  }
+};
 
 exports.deleteFood = async (req, res) => {};
 

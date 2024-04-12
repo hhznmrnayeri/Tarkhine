@@ -86,4 +86,25 @@ exports.deleteFood = async (req, res) => {
   }
 };
 
-exports.getFilteredFood = async (req, res) => {};
+exports.getFilteredFood = async (req, res) => {
+  try {
+    const foods = await Food.find()
+
+    const filteredFood = await foods.filter((food) => {
+      return food.type === req.params.type;
+    });
+
+    res.status(200).json({
+      status: "success",
+      result: filteredFood.length,
+      data: {
+        foods: filteredFood,
+      },
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: "fail",
+      data: err,
+    });
+  }
+};

@@ -4,6 +4,6 @@ const mongoose = require("mongoose");
 
 const { basketSchema } = require("./../schemas/basketSchema");
 
-const Food = mongoose.model("basket", basketSchema);
+const Basket = mongoose.model("Basket", basketSchema);
 
 module.exports = Basket;

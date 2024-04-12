@@ -5,6 +5,7 @@ const morgan = require("morgan");
 
 const userRouter = require('./routes/userRouter')
 const foodRouter = require('./routes/foodRouter')
+const basketRouter = require('./routes/basketRouter')
 
 const app = express();
 
@@ -23,5 +24,6 @@ app.use(express.json());
 
 app.use("/app/users", userRouter);
 app.use("/app/food" , foodRouter)
+app.use("/app/basket" , basketRouter)
 
 module.exports = app;

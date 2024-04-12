@@ -73,6 +73,17 @@ exports.updateFood = async (req, res) => {
   }
 };
 
-exports.deleteFood = async (req, res) => {};
+exports.deleteFood = async (req, res) => {
+  try {
+    await Food.findByIdAndDelete(req.params.id);
+
+    res.status(204).json({
+      status: "success",
+      massage: "successful",
+    });
+  } catch {
+    res.status(400).send(err);
+  }
+};
 
 exports.getFilteredFood = async (req, res) => {};

@@ -6,3 +6,7 @@ registerBtn.addEventListener("click", (event) => {
     console.log('first')
   register();
 });
+window.addEventListener('load',()=>{
+  fetch(`http://localhost:3000/app/users`)
+  .then(res=>console.log(res))
+})

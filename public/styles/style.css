@@ -1769,10 +1769,6 @@ video {
   top: -0.375rem;
 }
 
-.-top-10 {
-  top: -2.5rem;
-}
-
 .-top-16 {
   top: -4rem;
 }
@@ -1869,10 +1865,6 @@ video {
   top: 0.25rem;
 }
 
-.top-2 {
-  top: 0.5rem;
-}
-
 .top-20 {
   top: 5rem;
 }
@@ -1960,10 +1952,6 @@ video {
   margin-bottom: 1rem;
 }
 
-.mb-6 {
-  margin-bottom: 1.5rem;
-}
-
 .ml-5 {
   margin-left: 1.25rem;
 }
@@ -1978,10 +1966,6 @@ video {
 
 .mr-5 {
   margin-right: 1.25rem;
-}
-
-.mt-0 {
-  margin-top: 0px;
 }
 
 .mt-1 {
@@ -2010,10 +1994,6 @@ video {
 
 .mt-24 {
   margin-top: 6rem;
-}
-
-.mt-28 {
-  margin-top: 7rem;
 }
 
 .mt-3 {
@@ -2290,11 +2270,6 @@ video {
   width: auto;
 }
 
-.w-fit {
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
 .w-full {
   width: 100%;
 }
@@ -2412,10 +2387,6 @@ video {
   gap: 0.5rem;
 }
 
-.gap-2\.5 {
-  gap: 0.625rem;
-}
-
 .gap-3 {
   gap: 0.75rem;
 }
@@ -2506,10 +2477,6 @@ video {
   border-color: rgb(203 203 203 / var(--tw-divide-opacity));
 }
 
-.self-start {
-  align-self: flex-start;
-}
-
 .self-end {
   align-self: flex-end;
 }
@@ -2596,10 +2563,6 @@ video {
 
 .border-none {
   border-style: none;
-}
-
-.border-current {
-  border-color: currentColor;
 }
 
 .border-error {
@@ -3148,11 +3111,6 @@ video {
 .text-primary {
   --tw-text-opacity: 1;
   color: rgb(65 127 86 / var(--tw-text-opacity));
-}
-
-.text-success {
-  --tw-text-opacity: 1;
-  color: rgb(0 150 109 / var(--tw-text-opacity));
 }
 
 .text-tint-100 {
@@ -3715,10 +3673,6 @@ video {
     flex-direction: row;
   }
 
-  .xs\:gap-4 {
-    gap: 1rem;
-  }
-
   .xs\:px-4 {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -3919,18 +3873,6 @@ video {
     margin-right: auto;
   }
 
-  .md\:mt-0 {
-    margin-top: 0px;
-  }
-
-  .md\:mt-0\.5 {
-    margin-top: 0.125rem;
-  }
-
-  .md\:mt-1 {
-    margin-top: 0.25rem;
-  }
-
   .md\:mt-10 {
     margin-top: 2.5rem;
   }
@@ -4073,10 +4015,6 @@ video {
 
   .md\:w-12 {
     width: 3rem;
-  }
-
-  .md\:w-14 {
-    width: 3.5rem;
   }
 
   .md\:w-20 {
@@ -4468,10 +4406,6 @@ video {
 
   .md\:pt-4 {
     padding-top: 1rem;
-  }
-
-  .md\:font-estedad {
-    font-family: Estedad;
   }
 
   .md\:font-estedadBold {

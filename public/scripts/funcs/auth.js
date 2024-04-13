@@ -1,22 +1,17 @@
 import { showSwal, saveIntoLocalStorage, getToken } from "./utils.js";
 
 const register = () => {
-  const nameInput = document.querySelector("#name");
   const usernameInput = document.querySelector("#username");
   const emailInput = document.querySelector("#email");
-  const phoneInput = document.querySelector("#phone");
   const passwordInput = document.querySelector("#password");
 
   const newUserInfos = {
-    name: nameInput.value.trim(),
-    username: usernameInput.value.trim(),
+    userName: usernameInput.value.trim(),
     email: emailInput.value.trim(),
-    phone: phoneInput.value.trim(),
     password: passwordInput.value.trim(),
-    confirmPassword: passwordInput.value.trim(),
   };
 
-  fetch(`http://localhost:4000/v1/auth/register`, {
+  fetch(`http://localhost:3000/app/users`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -24,35 +19,36 @@ const register = () => {
     body: JSON.stringify(newUserInfos),
   })
     .then((res) => {
-      if (res.status === 201) {
-        showSwal(
-          "ثبت نام با موفقیت انجام شد",
-          "success",
-          "ورود به پنل",
-          (result) => {
-            location.href = "index.html";
-          }
-        );
-      } else if (res.status === 409) {
-        showSwal(
-          "نام کاربری یا ایمیل قبلا استفاده شده",
-          "error",
-          "تصحیح اطلاعات",
-          () => {}
-        );
-      } else if (res.status === 403) {
-        showSwal(
-          "متاسفانه این شماره تماس بن شده",
-          "error",
-          "تصحیح اطلاعات",
-          () => {}
-        );
-      }
-      return res.json();
+      console.log(res)
+      // if (res.status === 201) {
+      //   showSwal(
+      //     "ثبت نام با موفقیت انجام شد",
+      //     "success",
+      //     "ورود به پنل",
+      //     (result) => {
+      //       location.href = "index.html";
+      //     }
+      //   );
+      // } else if (res.status === 409) {
+      //   showSwal(
+      //     "نام کاربری یا ایمیل قبلا استفاده شده",
+      //     "error",
+      //     "تصحیح اطلاعات",
+      //     () => {}
+      //   );
+      // } else if (res.status === 403) {
+      //   showSwal(
+      //     "متاسفانه این شماره تماس بن شده",
+      //     "error",
+      //     "تصحیح اطلاعات",
+      //     () => {}
+      //   );
+      // }
+      // return res.json();
     })
-    .then((result) => {
-      saveIntoLocalStorage("user", { token: result.accessToken });
-    });
+    // .then((result) => {
+    //   saveIntoLocalStorage("user", { token: result.accessToken });
+    // });
 };
 
 const login = () => {

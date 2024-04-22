@@ -51,4 +51,5 @@ overlay.addEventListener('click',(e)=>{
 
 
 signupBtn.addEventListener('click',()=>{
+    location.href="profile.html"
 })

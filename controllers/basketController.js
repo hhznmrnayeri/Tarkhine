@@ -1,11 +1,25 @@
-"use strict"
+"use strict";
 
-const Basket = require('./../models/basketModel')
+const Basket = require("./../models/basketModel");
 
-exports.getAllItems = async (req ,res) => {}
+exports.getAllItems = async (req, res) => {};
 
-exports.addItem = async (req ,res) => {}
+exports.addItem = async (req, res) => {
+  const newItem = await Basket.create(req.body);
 
-exports.updateItem = async (req ,res) => {}
+  try {
+    res.status(201).json({
+      status: "success",
+      data: { item: newItem },
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: "fail",
+      data: err,
+    });
+  }
+};
 
-exports.deleteItem = async (req ,res) => {}
+exports.updateItem = async (req, res) => {};
+
+exports.deleteItem = async (req, res) => {};

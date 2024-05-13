@@ -12,6 +12,10 @@ const basketSchema = mongoose.Schema({
     type: Number,
     default: 1,
   },
+  key : {
+    type : String,
+    required : true,
+  }
 });
 
 exports.basketSchema = basketSchema

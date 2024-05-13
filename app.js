@@ -3,9 +3,10 @@
 const express = require("express");
 const morgan = require("morgan");
 
-const userRouter = require('./routes/userRouter')
-const foodRouter = require('./routes/foodRouter')
-const basketRouter = require('./routes/basketRouter')
+const userRouter = require("./routes/userRouter");
+const foodRouter = require("./routes/foodRouter");
+const basketRouter = require("./routes/basketRouter");
+const substationRouter = require(".routes/substationRouter");
 
 const app = express();
 
@@ -23,7 +24,8 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 app.use("/app/users", userRouter);
-app.use("/app/food" , foodRouter)
-app.use("/app/basket" , basketRouter)
+app.use("/app/food", foodRouter);
+app.use("/app/basket", basketRouter);
+app.use("/app/substation", substationRouter);
 
 module.exports = app;

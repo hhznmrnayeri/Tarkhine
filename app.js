@@ -6,7 +6,7 @@ const morgan = require("morgan");
 const userRouter = require("./routes/userRouter");
 const foodRouter = require("./routes/foodRouter");
 const basketRouter = require("./routes/basketRouter");
-const substationRouter = require(".routes/substationRouter");
+const substationRouter = require("./routes/substationRouter");
 
 const app = express();
 

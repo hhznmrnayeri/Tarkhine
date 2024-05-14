@@ -12,7 +12,7 @@ router
 
 router
   .route("/:id")
-  .get(foodController.getSubstation)
+  .get(substationController.getSubstation)
   .patch(substationController.updateSubstation)
   .delete(substationController.deleteSubstation);
 

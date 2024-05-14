@@ -22,7 +22,7 @@ const foodSchema = new mongoose.Schema({
     default: 4,
   },
   price: {
-    type: String,
+    type: Number,
     required: [true, "A food most have price"],
   },
   discount: {

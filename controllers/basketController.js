@@ -20,6 +20,34 @@ exports.addItem = async (req, res) => {
   }
 };
 
-exports.updateItem = async (req, res) => {};
+exports.updateItem = async (req, res) => {
+  try {
+    const item = await Substation.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true,
+    });
 
-exports.deleteItem = async (req, res) => {};
+    res.status(200).json({
+      status: "success",
+      data: { substation },
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: "fail",
+      data: err,
+    });
+  }
+};
+
+exports.deleteItem = async (req, res) => {
+  try {
+    await Basket.findByIdAndDelete(req.params.id);
+
+    res.status(204).json({
+      status: "success",
+      massage: "successful",
+    });
+  } catch {
+    res.status(400).send(err);
+  }
+};

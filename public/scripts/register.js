@@ -8,5 +8,5 @@ registerBtn.addEventListener("click", (event) => {
 });
 window.addEventListener('load',()=>{
   fetch(`http://127.0.0.1:3000/app/users`)
-  .then(res=>console.log(res))
+  .then(res=>console.log(res));
 })

@@ -93,7 +93,7 @@ return (
                             <NavLink to="/representation" className={link=>link.isActive?'text-primary font-estedadBold':''}>اعطای نمایندگی</NavLink>
                         </li>
                         {/* nav item */}
-                        <li className={`${props.title==='about'?'nav__item--active':''}`}>
+                        <li className={`${props.title==='about'?'nav__item--active text-primary font-estedadBold':''}`}>
                             {/* nav link */}
                             <NavLink to="/about" className={link=>link.isActive?'text-primary font-estedadBold':''}>درباره ما</NavLink>
                         </li>

@@ -4,6 +4,7 @@ import Footer from '../share/Footer'
 import Header from '../share/Header'
 import SearchBox from '../share/SearchBox'
 import Topic from './Topic'
+import Intro from './Intro'
 export default function Index() {
   return (
     <div>
@@ -11,6 +12,7 @@ export default function Index() {
       <Header title='تجربه غذای سالم گیاهی به سبک ترخینه'/>
       <SearchBox/>
       <Topic/>
+      <Intro/>
       <Footer/>
     </div>
   )

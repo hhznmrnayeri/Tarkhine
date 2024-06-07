@@ -5,7 +5,7 @@ import { SiInstagram } from "react-icons/si";
 import { LiaTelegramPlane } from "react-icons/lia";
 export default function Footer() {
 return (
-    <footer className="mt-6 md:mt-12 bg-footer bg-center bg-cover text-gray-300 py-5 md:py-8">
+    <footer className="bg-footer bg-center bg-cover text-gray-300 py-5 md:py-8">
         <div className="container">
             {/* footer wrapper */}
             <div className="flex items-start justify-between gap-4 flex-wrap">

@@ -43,6 +43,17 @@
   .nav__icon--active{
   @apply text-white bg-primary
 }
+/* .swiper-pagination-bullet .swiper-pagination-bullet-active{
+  @apply bg-primary
+} */
+.swiper-pagination {
+  .swiper-pagination-bullet {
+    @apply bg-primary opacity-30 cursor-pointer
+  }
+  .swiper-pagination-bullet-active {
+    @apply bg-primary opacity-100
+  }
+}
 }
 @layer utilities{
   .flex-center{

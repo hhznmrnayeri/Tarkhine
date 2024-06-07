@@ -1,7 +1,10 @@
 import React from 'react'
+import Nav from '../share/Nav'
 
 export default function Profile() {
   return (
-    <div>Profile</div>
+    <div>
+      <Nav title='profile'/>
+    </div>
   )
 }

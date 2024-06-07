@@ -1,7 +1,10 @@
 import React from 'react'
+import Nav from '../share/Nav'
 
 export default function Menu() {
   return (
-    <div>Menu</div>
+    <div>
+      <Nav title='menu'/>
+    </div>
   )
 }

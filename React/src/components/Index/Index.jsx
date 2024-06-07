@@ -1,7 +1,9 @@
 import React from 'react'
-
+import Nav from '../share/Nav'
 export default function Index() {
   return (
-    <div>Index</div>
+    <div>
+      <Nav title='home'/>
+    </div>
   )
 }

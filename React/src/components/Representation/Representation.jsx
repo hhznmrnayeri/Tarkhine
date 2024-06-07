@@ -1,7 +1,10 @@
 import React from 'react'
+import Nav from '../share/Nav'
 
 export default function Representation() {
   return (
-    <div>Representation</div>
+    <div>
+      <Nav title='representation'/>
+    </div>
   )
 }

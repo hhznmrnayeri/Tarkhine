@@ -28,9 +28,21 @@
   ::-webkit-scrollbar-thumb {
     @apply bg-gray-600 rounded
   }
+  button,input{
+    @apply outline-none
+  }
 }
 @layer components{
-  
+  .nav__item--active {
+    @apply relative py-0
+}
+  .nav__item--active::after{
+    content: '';
+    @apply absolute bg-primary left-0 right-0 h-px w-full -bottom-1
+}
+  .nav__icon--active{
+  @apply text-white bg-primary
+}
 }
 @layer utilities{
   .flex-center{

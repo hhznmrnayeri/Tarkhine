@@ -54,7 +54,7 @@ export default {
         },
       },
       backgroundImage:{
-        "test":"url(assets/img.jpg)",
+        "mobileMenu":"linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url(assets/images/home/mobileMenu.webp)",
         // "header-representation":"linear-gradient(0deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%), linear-gradient(0deg, rgba(33, 64, 43, 0.50) 0%, rgba(33, 64, 43, 0.50) 100%), url(../images/representation/header.jpg)",
       },
       fontFamily:{
@@ -68,6 +68,7 @@ export default {
       },
       boxShadow: {
         "2":"0px 2px 2px 0px rgba(0, 0, 0, 0.25)",
+        "subMenu":"0px 0px 6px 0px rgba(0, 0, 0, 0.15)",
         "card":"0px 0px 0px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0,   0.10), 0px 4px 4px 0px rgba(0, 0, 0, 0.09), 0px 9px 5px 0px rgba(0, 0, 0, 0.05), 0px 16px 6px 0px rgba(0, 0, 0, 0.01), 0px 25px 7px 0px rgba(0, 0, 0, 0.00)",
       },
       fontSize: {

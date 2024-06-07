@@ -1,7 +1,10 @@
 import React from 'react'
+import Nav from '../share/Nav'
 
 export default function Question() {
   return (
-    <div>Question</div>
+    <div>
+      <Nav title='about'/>
+    </div>
   )
 }

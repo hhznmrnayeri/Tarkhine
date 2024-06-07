@@ -1,7 +1,10 @@
 import React from 'react'
+import Nav from '../share/Nav'
 
 export default function Contact() {
   return (
-    <div>Contact</div>
+    <div>
+      <Nav title='contact'/>
+    </div>
   )
 }

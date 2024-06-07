@@ -5,6 +5,7 @@ import Header from '../share/Header'
 import SearchBox from '../share/SearchBox'
 import Topic from './Topic'
 import Intro from './Intro'
+import Branch from './Branch'
 export default function Index() {
   return (
     <div>
@@ -13,6 +14,7 @@ export default function Index() {
       <SearchBox/>
       <Topic/>
       <Intro/>
+      <Branch/>
       <Footer/>
     </div>
   )

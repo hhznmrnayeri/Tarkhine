@@ -40,7 +40,7 @@ return (
                     {/* main price */}
                     <span className="main__price text-gray-500 line-through">{props.price}</span>
                     {/* count offer */}
-                    <span className="count__offer text-error px-1.5 rounded-lg bg-error-200">%{props.discount}</span>
+                    <span className={`${props.discount?'count__offer text-error px-1.5 rounded-lg bg-error-200':''}`}>{props.discount?`% ${props.discount}`:''}</span>
                 </div>
                 {/* offer price */}
                 <span className="text-2xs md:text-base">{props.offer} تومان</span>

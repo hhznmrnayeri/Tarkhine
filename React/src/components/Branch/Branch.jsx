@@ -5,6 +5,7 @@ import Header from '../share/Header'
 import SearchBox from '../share/SearchBox'
 import Special from './Special'
 import Popular from './Popular'
+import Foreign from './Foreign'
 export default function Branch() {
   return (
     <div>
@@ -13,6 +14,7 @@ export default function Branch() {
       <SearchBox/>
       <Special/>
       <Popular/>
+      <Foreign/>
       <Footer/>
     </div>
   )

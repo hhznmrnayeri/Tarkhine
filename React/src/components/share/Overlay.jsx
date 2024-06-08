@@ -11,7 +11,8 @@ export default function Overlay({onHide,children}) {
         return () => window.removeEventListener('keydown', checkKey)
     });
 return ReactDOM.createPortal(
-    <div className="fixed inset-0 transition-all duration-300 z-20 backdrop-blur-sm bg-black/40 font-estedad text-gray-800" onClick={onHide}>
+    <div className="fixed inset-0 transition-all duration-300 z-20 backdrop-blur-sm bg-black/40 font-estedad text-gray-800"        onClick={(e)=>{e.target.parentElement.id==='modals__parent'?onHide():null;
+    }}>
         {children}
     </div>
     ,document.getElementById("modals__parent")

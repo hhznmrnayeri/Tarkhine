@@ -11,7 +11,7 @@ import NavigationIcon from './NavigationIcon';
 import { NavLink } from 'react-router-dom';
 export default function Header(props) {
 return (
-<div className="w-full h-44 md:h-80 relative">
+<div className="header w-full h-44 md:h-80 relative">
     <Swiper
         pagination={{
             el: ".swiper-pagination",

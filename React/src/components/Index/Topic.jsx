@@ -57,7 +57,7 @@ return (
                 {/* modal title */}
                 <h3 className="text-center self-center mx-auto">انتخاب شعبه</h3>
                 {/* close modal */}
-                <button className="text-gray-800 self-end">
+                <button className="text-gray-800 self-end" onClick={closeModal}>
                     <IoMdClose className="w-6 md:w-10 h-6 md:h-10"/>
                 </button>
             </div>

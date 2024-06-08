@@ -18,10 +18,11 @@ export default function Branch() {
     }
     const closeGalleryModal=()=>{
         setShowGalleryModal(false);
+        setThumbsSwiper(null);
     }
 return (
 <>
-    <section className='mb-6 md:mb-12'>
+<section className='mb-6 md:mb-12'>
     <div className="container">
         {/* section title */}
         <h2 className="text-center font-estedadBold mt-6 md:mt-12 md:text-2xl">ترخینه گردی</h2>
@@ -131,7 +132,7 @@ return (
     </div>
 </section>
 {showGalleryModal&&<Overlay onHide={closeGalleryModal}>
-<div className="fixed rounded-lg overflow-hidden w-11/12 md:w-7/12 h-[90%] md:h-3/4 inset-0 m-auto z-30 visible opacity-100 transition-all duration-300">
+<div className={`thumb__gallery fixed rounded-lg overflow-hidden w-11/12 md:w-9/12 xl:w-7/12 h-[90%] md:h-3/4 inset-0 m-auto z-30  transition-all duration-300 ${showGalleryModal?'visible opacity-100':'invisible opacity-0'}`}>
     <Swiper
         style={{
             '--swiper-navigation-color': '#fff',
@@ -140,37 +141,37 @@ return (
         spaceBetween={10}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Thumbs]}
-        className="mySwiper2 overflow-hidden w-full h-4/5 mx-auto"
+        className="mySwiper2 overflow-hidden w-full h-5/6 mx-auto rounded-lg"
     >
         <SwiperSlide>
-            <img src="src/assets/images/home/gallery1.webp"/>
+            <img src="src/assets/images/home/gallery1.webp" className="w-full h-full object-cover"/>
         </SwiperSlide>
         <SwiperSlide>
-            <img src="src/assets/images/home/gallery2.webp"/>
+            <img src="src/assets/images/home/gallery2.webp" className="w-full h-full object-cover"/>
         </SwiperSlide>
         <SwiperSlide>
-            <img src="src/assets/images/home/gallery3.webp"/>
+            <img src="src/assets/images/home/gallery3.webp" className="w-full h-full object-cover"/>
         </SwiperSlide>
         <SwiperSlide>
-            <img src="src/assets/images/home/gallery4.webp"/>
+            <img src="src/assets/images/home/gallery4.webp" className="w-full h-full object-cover"/>
         </SwiperSlide>
         <SwiperSlide>
-            <img src="src/assets/images/home/gallery5.webp"/>
+            <img src="src/assets/images/home/gallery5.webp" className="w-full h-full object-cover"/>
         </SwiperSlide>
         <SwiperSlide>
-            <img src="src/assets/images/home/gallery6.webp"/>
+            <img src="src/assets/images/home/gallery6.webp" className="w-full h-full object-cover"/>
         </SwiperSlide>
         <SwiperSlide>
-            <img src="src/assets/images/home/gallery7.webp"/>
+            <img src="src/assets/images/home/gallery7.webp" className="w-full h-full object-cover"/>
         </SwiperSlide>
         <button onClick={closeGalleryModal} className="absolute top-1 left-1 z-40 text-white">
-            <IoMdClose className="w-10 h-10"/>
+            <IoMdClose className="w-8 md:w-10 h-8 md:h-10"/>
         </button>
     </Swiper>
     <Swiper
         onSwiper={setThumbsSwiper}
         spaceBetween={10}
-        slidesPerView={3}
+        slidesPerView={2.5}
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Thumbs]}
@@ -180,23 +181,23 @@ return (
                 spaceBetween:10
             },
             640:{
-                slidesPerView:4.5,
+                slidesPerView:5.5,
                 spaceBetween:10
             },
             768:{
-                slidesPerView:4.5,
+                slidesPerView:5.5,
                 spaceBetween:10
             },
             1024:{
-                slidesPerView:6,
-                spaceBetween:10
+                slidesPerView:6.5,
+                spaceBetween:24
             },
             1280:{
                 slidesPerView:6.5,
                 spaceBetween:32
             },
         }}
-        className="mySwiper absolute bottom-40 md:bottom-24 left-0 right-0 h-1/5 w-10/12 overflow-hidden py-2.5 child:w-1/4 child:h-full child:opacity-60"
+        className="mySwiper absolute bottom-40 xs:bottom-24 md:bottom-20 xl:bottom-24 left-0 mx-auto px-0 right-0 h-1/6 md:h-1/5 w-10/12 overflow-hidden py-2.5"
     >
         <SwiperSlide className='rounded border border-white'>
             <img src="src/assets/images/home/gallery1.webp" className="w-full h-full object-cover"/>

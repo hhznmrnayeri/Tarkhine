@@ -43,7 +43,7 @@
   .nav__icon--active{
   @apply text-white bg-primary
 }
-.swiper-pagination {
+.header .swiper-pagination {
   .swiper-pagination-bullet {
     @apply bg-primary opacity-30 cursor-pointer
   }
@@ -51,27 +51,27 @@
     @apply bg-primary opacity-100
   }
 }
-.swiper-slide img {
-  @apply block w-full h-full object-cover
+.thumb__gallery{
+  .swiper-slide img {
+    @apply block w-full h-full object-cover
+  }
+  .swiper-slide {
+    @apply bg-center bg-cover
+  }
+  .mySwiper2 {
+    @apply h-5/6 w-full mx-auto p-0 rounded-lg
+  }
+  .mySwiper {
+    @apply h-1/5 py-2.5
+  }
+  .mySwiper .swiper-slide {
+    @apply w-1/4 h-full opacity-40
+  }
+  .mySwiper .swiper-slide-thumb-active {
+    @apply opacity-100
+  }
 }
-.mySwiper2 {
-  @apply w-full mx-auto h-72
-}
-.swiper-slide {
-  @apply bg-center bg-cover
-}
-.mySwiper2 {
-  @apply h-4/5 w-full
-}
-.mySwiper {
-  @apply h-1/5 py-2.5
-}
-.mySwiper .swiper-slide {
-  @apply w-1/4 h-full opacity-40
-}
-.mySwiper .swiper-slide-thumb-active {
-  @apply opacity-100
-}
+
 }
 @layer utilities{
   .flex-center{

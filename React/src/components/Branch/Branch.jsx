@@ -4,6 +4,7 @@ import Footer from '../share/Footer'
 import Header from '../share/Header'
 import SearchBox from '../share/SearchBox'
 import Special from './Special'
+import Popular from './Popular'
 export default function Branch() {
   return (
     <div>
@@ -11,6 +12,7 @@ export default function Branch() {
       <Header title='طعم بی‌نظیر طبیعت!'/>
       <SearchBox/>
       <Special/>
+      <Popular/>
       <Footer/>
     </div>
   )

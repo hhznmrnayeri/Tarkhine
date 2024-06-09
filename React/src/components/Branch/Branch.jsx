@@ -10,6 +10,7 @@ import { LiaClipboardListSolid } from "react-icons/lia";
 import Gallery from './Gallery'
 import About from './About'
 import Comment from './Comment'
+import { NavLink } from 'react-router-dom'
 export default function Branch() {
   return (
     <div>
@@ -19,10 +20,10 @@ export default function Branch() {
       <Special/>
       <Popular/>
       <Foreign/>
-      <button className="full__menu--btn flex-center mx-auto border mt-3 md:mt-7 border-primary text-primary gap-2 p-2 rounded md:px-4 md:font-estedadMedium text-xs md:text-base">
+      <NavLink to='/menu' className="flex-center mx-auto border mt-3 md:mt-7 border-primary text-primary gap-2 p-2 rounded md:px-4 md:font-estedadMedium text-xs md:text-base w-52">
             <LiaClipboardListSolid className="w-4 h-4 md:w-6 md:h-6"/>
             مشاهده منوی کامل
-      </button>
+      </NavLink>
       <Gallery/>
       <About/>
       <Comment/>

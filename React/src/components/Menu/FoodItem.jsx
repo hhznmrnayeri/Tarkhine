@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { IoMdStar } from "react-icons/io";
+import { IoMdStarOutline } from "react-icons/io";
 import { IoMdHeartEmpty } from "react-icons/io";
 import Overlay from '../share/Overlay';
 import { IoMdClose } from "react-icons/io";
@@ -20,18 +21,19 @@ export default function FoodItem(props) {
     }
     const [starCount]=useState(props.star);
     let emptyStar=5-starCount;
-    let starArray=[]
+    let emptyArray=Array(+emptyStar);
+    let fillArray=Array(+starCount);
     for(let i=0;i<emptyStar;i++){
-        starArray.push('hidden')
+        emptyArray.push('empty')
     }
     for(let i=0;i<starCount;i++){
-        starArray.push('fill-[#F4B740] ')
+        fillArray.push('fill')
     }
 return (
 <>
 <div className="group col-span-1 xl:col-span-6 flex gap-2 md:gap-8 rounded md:rounded-lg border border-gray-400 shadow-none md:hover:shadow-card transition-all duration-300 overflow-hidden h-28 md:h-40">
     {/* item img */}
-    <img src={props.img} alt="food" onClick={openGalleryModal} className="w-24 md:w-40 cursor-pointer"/>
+    <img src={props.img[0]} alt="food" onClick={openGalleryModal} className="w-24 md:w-40 cursor-pointer"/>
     {/* item content */}
     <div className=" pl-2 md:pl-4 flex flex-col items-end gap-1 justify-center xl:justify-evenly w-full relative">
         {/* top box */}
@@ -60,7 +62,8 @@ return (
         <div className="flex items-center gap-2 xl:gap-6 mr-4">
             {/* star wrapper */}
             <div className="flex items-center">
-                {starArray.map((index,item)=>(<IoMdStar key={item} className={`w-4 h-4 md:w-6 md:h-6 ${index}`}/>))}
+                {emptyArray.map((item,index)=>(<IoMdStarOutline key={index} className={`w-4 h-4 md:w-6 md:h-6 ${item} text-[#F4B740]`}/>))}
+                {fillArray.map((item,index)=>(<IoMdStar key={index} className={`w-4 h-4 md:w-6 md:h-6 ${item} text-[#F4B740]`}/>))}
             </div>
             {/* item btn */}
             <button className="item__btn flex-center p-2 md:w-60 text-white bg-primary rounded text-2xs md:text-base md:font-estedadMedium md:px-4">افزودن به سبد خرید</button>
@@ -81,28 +84,15 @@ return (
         </div>
         <div className="flex items-start justify-between p-4 order-3">
             <div className="flex flex-col items-start gap-1">
-                <h5 className="font-estedadBold">کوفته برنجی</h5>
-                <p className="text-sm">برنج سبزی کوفته لپه آرد نخودچی، گردو و زرشک و آلو پیاز</p>
+                <h5 className="font-estedadBold">{props.title}</h5>
+                <p className="text-sm">{props.resepi}</p>
             </div>
             <div className="flex flex-col items-end gap-1">
                 <div className="flex items-center">
-                    <svg className="w-6 h-6">
-                        <use href="#star"></use>
-                    </svg>
-                    <svg className="w-6 h-6">
-                        <use href="#star"></use>
-                    </svg>
-                    <svg className="w-6 h-6">
-                        <use href="#star"></use>
-                    </svg>
-                    <svg className="w-6 h-6">
-                        <use href="#star"></use>
-                    </svg>
-                    <svg className="w-6 h-6">
-                        <use href="#star"></use>
-                    </svg>
+                {emptyArray.map((item,index)=>(<IoMdStarOutline key={index} className={`w-4 h-4 md:w-6 md:h-6 ${item} text-[#F4B740]`}/>))}
+                {fillArray.map((item,index)=>(<IoMdStar key={index} className={`w-4 h-4 md:w-6 md:h-6 ${item} text-[#F4B740]`}/>))}
                 </div>
-                <span className="text-sm text-gray-400">(<span className="comment__count">۷۵</span> نظر)</span>
+                <span className="text-sm text-gray-400">(<span className="comment__count">{props.comment}</span> نظر)</span>
             </div>
         </div>
     <Swiper
@@ -115,6 +105,10 @@ return (
         modules={[FreeMode, Thumbs]}
         className="mySwiper2 overflow-hidden w-full h-5/6 mx-auto order-2 relative"
     >
+        {/* {props.img.map(item=>(<SwiperSlide>
+            <img src={item} className="w-full h-full object-cover"/>
+        </SwiperSlide>))} */}
+        {props.img.map((item,index)=>(<SwiperSlide key={index+1}><img src={item} className="w-full h-full object-cover"/></SwiperSlide>))}
         <SwiperSlide>
             <img src="src/assets/images/menu/food1.webp" className="w-full h-full object-cover"/>
         </SwiperSlide>
@@ -168,6 +162,9 @@ return (
             }}
             className="mySwiper absolute bottom-40 xs:bottom-24 md:bottom-20 xl:bottom-24 left-0 mx-auto px-0 right-0 md:h-1/5 w-10/12 overflow-hidden py-2.5 h-20 z-20"
         >
+            {props.img.map((item,index)=>(<SwiperSlide key={index+1} className='rounded border border-white'>
+                <img src={item} className="w-full h-full object-cover"/>
+            </SwiperSlide>))}
             <SwiperSlide className='rounded border border-white'>
                 <img src="src/assets/images/menu/food1.webp" className="w-full h-full object-cover"/>
             </SwiperSlide>

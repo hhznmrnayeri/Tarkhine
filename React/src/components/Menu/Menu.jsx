@@ -5,6 +5,7 @@ import Header from '../share/Header'
 import Topic from './Topic'
 import Type from './Type'
 import Search from './Search'
+import List from './List'
 export default function Menu() {
   return (
     <div>
@@ -19,6 +20,7 @@ export default function Menu() {
                 </div>
             </div>
       </section>
+      <List/>
       <Footer/>
     </div>
   )

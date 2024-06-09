@@ -8,6 +8,7 @@ import Popular from './Popular'
 import Foreign from './Foreign'
 import { LiaClipboardListSolid } from "react-icons/lia";
 import Gallery from './Gallery'
+import About from './About'
 
 export default function Branch() {
   return (
@@ -23,6 +24,7 @@ export default function Branch() {
             مشاهده منوی کامل
       </button>
       <Gallery/>
+      <About/>
       <Footer/>
     </div>
   )

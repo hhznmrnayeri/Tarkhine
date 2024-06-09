@@ -71,6 +71,14 @@
     @apply opacity-100
   }
 }
+.comment .swiper-pagination-custom2{
+.swiper-pagination-bullet{
+  @apply bg-primary opacity-30 cursor-pointer w-2 h-2
+}
+.swiper-pagination-bullet-active{
+    @apply bg-primary opacity-100 scale-125
+}
+}
 }
 @layer utilities{
   .flex-center{

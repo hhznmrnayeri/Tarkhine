@@ -9,7 +9,7 @@ import Foreign from './Foreign'
 import { LiaClipboardListSolid } from "react-icons/lia";
 import Gallery from './Gallery'
 import About from './About'
-
+import Comment from './Comment'
 export default function Branch() {
   return (
     <div>
@@ -25,6 +25,7 @@ export default function Branch() {
       </button>
       <Gallery/>
       <About/>
+      <Comment/>
       <Footer/>
     </div>
   )

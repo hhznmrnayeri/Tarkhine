@@ -71,6 +71,26 @@
     @apply opacity-100
   }
 }
+.food__gallery{
+  .swiper-slide img {
+    @apply block w-full h-full object-cover
+  }
+  .swiper-slide {
+    @apply bg-center bg-cover
+  }
+  .mySwiper2 {
+    @apply h-5/6 w-full mx-auto p-0
+  }
+  .mySwiper {
+    @apply h-1/5 py-2.5
+  }
+  .mySwiper .swiper-slide {
+    @apply w-1/4 h-full opacity-40
+  }
+  .mySwiper .swiper-slide-thumb-active {
+    @apply opacity-100
+  }
+}
 .comment .swiper-pagination-custom2{
 .swiper-pagination-bullet{
   @apply bg-primary opacity-30 cursor-pointer w-2 h-2

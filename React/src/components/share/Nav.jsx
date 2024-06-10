@@ -36,7 +36,7 @@ return (
                     </button>
                     {/* logo */}
                     <NavLink to='/'>
-                        <img src="src/assets/images/home/Logo.webp" alt="logo" className=""/>
+                        <img src="src/assets/images/home/Logo.webp" alt="logo"/>
                     </NavLink>
                     {/* nav menu */}
                     <ul className="text-gray-700 lg:text-xl hidden md:flex items-center gap-2 md:gap-1 lg:gap-6 ">
@@ -52,7 +52,7 @@ return (
                             {/* nav submenu icon */}
                             <HiOutlineChevronDown className="w-4 h-4"/>
                             {/* sub menu */}
-                            <ul className="bg-white rounded p-2 flex flex-col items-start child:w-full gap-2 text-sm absolute left-0 -bottom-3 shadow-subMenu top-full h-max w-36 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10">
+                            <ul className="bg-white rounded p-2 flex flex-col items-start child:w-full gap-2 text-sm absolute left-0 -bottom-3 shadow-subMenu top-full h-max w-36 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-30">
                                 {/* sub menu item */}
                                     <NavLink to='/branch'>اکباتان</NavLink>
                                     <hr/>
@@ -73,7 +73,7 @@ return (
                             {/* nav submenu icon */}
                             <HiOutlineChevronDown className="w-4 h-4"/>
                             {/* sub menu */}
-                            <ul className="bg-white rounded p-2 flex flex-col items-start child:w-full gap-2 text-sm absolute right-0 -bottom-3 shadow-subMenu top-full h-max w-36 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10">
+                            <ul className="bg-white rounded p-2 flex flex-col items-start child:w-full gap-2 text-sm absolute right-0 -bottom-3 shadow-subMenu top-full h-max w-36 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-30">
                                 {/* sub menu item */}
                                     <NavLink to='/menu'>غذای اصلی</NavLink>
                                     <hr/>
@@ -106,35 +106,37 @@ return (
                     {/* nav icon wrapper */}
                     <div className="flex items-center gap-1 lg:gap-2 text-primary">
                         {/* nav icon item */}
-                        <NavLink to='/search' className={`search__btn hidden md:flex-center rounded p-2 ${props.title==='search'?'nav__icon--active':'bg-tint-100'}`}>
+                        <NavLink to='/search' className={`hidden md:flex-center rounded p-2 ${props.title==='search'?'nav__icon--active':'bg-tint-100'}`}>
                             <RiSearchLine className="w-4 h-4 md:w-6 md:h-6"/>
                         </NavLink>
                         {/* nav icon item */}
-                        <NavLink to='/buy' className={`shopping__cart--btn flex-center rounded p-2 ${props.title==='buy'?'nav__icon--active':'bg-tint-100'}`}>
+                        <NavLink to='/buy' className={`flex-center rounded p-2 ${props.title==='buy'?'nav__icon--active':'bg-tint-100'}`}>
                             <MdOutlineShoppingCart className="w-4 h-4 md:w-6 md:h-6"/>
                         </NavLink>
                         {/* nav icon item */}
-                        <NavLink to='/profile' className={`signup__btn flex items-end gap-0.5 rounded p-2 relative group ${props.title==='profile'?'nav__icon--active':'bg-tint-100'}`}>
-                            <LiaUserSolid className="w-4 h-4 md:w-6 md:h-6"/>
-                            <HiOutlineChevronDown className="w-4 h-4 hidden"/>
-                            {/* sub menu */}
-                            <ul className="bg-white text-gray-800 rounded p-2 hidden flex-col items-start child:w-full gap-2 text-sm absolute left-0 -bottom-3 shadow-subMenu top-full h-max w-36 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-10">
-                                {/* sub menu item */}
-                            <NavLink to='/profile' className="flex items-center gap-1"><LiaUserSolid className="w-4 h-4"/>پروفایل</NavLink>
-                                    <hr/>
-                                {/* sub menu item */}
-                                    <NavLink to='/profile' className="flex items-center gap-1"><TbWallet className="w-4 h-4"/>پیگیری سفارش</NavLink>
-                                    <hr/>
-                                {/* sub menu item */}
-                                    <NavLink to='/profile' className="flex items-center gap-1"><IoMdHeartEmpty className="w-4 h-4"/>علاقه‌مندی‌ها</NavLink>
-                                    <hr/>
-                                {/* sub menu item */}
-                                    <NavLink to='/profile' className="flex items-center gap-1"><IoLocationOutline className="w-4 h-4"/>آدرس‌های من</NavLink>
-                                    <hr/>
-                                {/* sub menu item */}
-                                    <NavLink to='/profile' className="flex items-center gap-1"><TbLogout2 className="w-4 h-4"/>خروج از حساب</NavLink>
+                        <div className={`flex items-end  rounded p-2 relative group w-8 md:w-10 h-8 md:h-10 ${props.title==='profile'?'nav__icon--active':'bg-tint-100'}`}>
+                            <NavLink to='/profile' className='absolute w-full h-full inset-0 flex-center'>
+                                <LiaUserSolid className="w-4 h-4 md:w-6 md:h-6"/>
+                                <HiOutlineChevronDown className="w-4 h-4 hidden"/>
+                            </NavLink>
+                                {/* sub menu */}
+                            <ul className="bg-white text-gray-800 rounded p-2 hidden flex-col items-start child:w-full gap-2 text-sm absolute left-0 -bottom-3 shadow-subMenu top-full h-min w-36 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-300 z-30">
+                                    {/* sub menu item */}
+                                        <NavLink to='/profile' className="flex items-center gap-1"><LiaUserSolid className="w-4 h-4"/>پروفایل</NavLink>
+                                        <hr/>
+                                    {/* sub menu item */}
+                                        <NavLink to='/profile' className="flex items-center gap-1"><TbWallet className="w-4 h-4"/>پیگیری سفارش</NavLink>
+                                        <hr/>
+                                    {/* sub menu item */}
+                                        <NavLink to='/profile' className="flex items-center gap-1"><IoMdHeartEmpty className="w-4 h-4"/>علاقه‌مندی‌ها</NavLink>
+                                        <hr/>
+                                    {/* sub menu item */}
+                                        <NavLink to='/profile' className="flex items-center gap-1"><IoLocationOutline className="w-4 h-4"/>آدرس‌های من</NavLink>
+                                        <hr/>
+                                    {/* sub menu item */}
+                                        <NavLink to='/profile' className="flex items-center gap-1"><TbLogout2 className="w-4 h-4"/>خروج از حساب</NavLink>
                             </ul>
-                        </NavLink>
+                        </div>
                     </div>
                 </div>
             </div>

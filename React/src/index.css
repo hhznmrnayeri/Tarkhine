@@ -113,6 +113,15 @@
   content: '';
   @apply absolute border-2 border-primary rounded rotate-45 top-0 bottom-0 my-auto -right-6 w-4 h-4
 }
+.day__disable{
+  @apply text-gray-500 cursor-text
+}
+.day__calendar{
+  @apply w-8 h-8 transition-all duration-300
+}
+.day__active{
+  @apply text-white bg-primary rounded-full flex-center
+}
 }
 @layer utilities{
   .flex-center{

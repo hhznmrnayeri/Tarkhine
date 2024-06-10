@@ -28,7 +28,7 @@
   ::-webkit-scrollbar-thumb {
     @apply bg-gray-600 rounded
   }
-  button,input{
+*{
     @apply outline-none
   }
 }
@@ -105,6 +105,13 @@
 .topic__item--active::after{
   content: '';
   @apply absolute bg-primary h-px -bottom-1.5 left-0 right-0 w-full md:-bottom-3.5
+}
+.advantage__item{
+  @apply relative
+}
+.advantage__item::before{
+  content: '';
+  @apply absolute border-2 border-primary rounded rotate-45 top-0 bottom-0 my-auto -right-6 w-4 h-4
 }
 }
 @layer utilities{

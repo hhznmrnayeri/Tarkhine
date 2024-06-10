@@ -18,9 +18,9 @@ return (
                         {/* list item */}
                         <NavLink to="/question">پرسش‌های متداول</NavLink>
                         {/* list item */}
-                        <NavLink to="/question">قوانین ترخینه</NavLink>
+                        <NavLink to="/question/rules">قوانین ترخینه</NavLink>
                         {/* list item */}
-                        <NavLink to="/question">حریم خصوصی</NavLink>
+                        <NavLink to="/question/privacy">حریم خصوصی</NavLink>
                     </ul>
                     {/* icon wrapper */}
                     <div className="flex items-center gap-2 md:gap-4">

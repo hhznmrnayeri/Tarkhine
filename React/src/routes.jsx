@@ -9,6 +9,9 @@ import Profile from "./components/Profile/Profile";
 import Question from "./components/Question/Question";
 import Representation from "./components/Representation/Representation";
 import Search from "./components/Search/Search";
+import QuestionSection from "./components/Question/QuestionSection";
+import RuleSection from "./components/Question/RuleSection";
+import PrivacySection from "./components/Question/PrivacySection";
 const routes=[
     {path:"/",element: <Index />},
     {path:"about",element: <About />},
@@ -18,7 +21,13 @@ const routes=[
     {path:"menu",element: <Menu />},
     {path:"payment",element: <Payment />},
     {path:"profile",element: <Profile />},
-    {path:"question",element: <Question />},
+    {path:"question",element: <Question />,
+        children:[
+            {path:'',element:<QuestionSection/>},
+            {path:'rules',element:<RuleSection/>},
+            {path:'privacy',element:<PrivacySection/>},
+        ],
+    },
     {path:"representation",element: <Representation />},
     {path:"search",element: <Search />},
 ];

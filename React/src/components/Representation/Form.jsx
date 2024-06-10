@@ -13,7 +13,7 @@ export default function Form() {
     }
 return (
 <>
-<div className="container">
+<div className="container mb-6 md:mb-12">
     <form className="text-center mt-4 md:mt-12 py-4 md:py-8 px-4 md:px-6 border border-gray-400 flex flex-col">
         <SectionTitle title='فرم درخواست نمایندگی'/>
         <SectionSubTitle subTitle='مشخصات فردی متقاضی'/>

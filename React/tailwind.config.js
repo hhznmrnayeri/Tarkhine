@@ -68,6 +68,7 @@ export default {
         "slide__gallery6":"linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(0deg, rgba(33, 64, 43, 0.50) 0%, rgba(33, 64, 43, 0.50) 50%), url(assets/images/home/gallery6.webp)",
         "slide__gallery7":"linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(0deg, rgba(33, 64, 43, 0.50) 0%, rgba(33, 64, 43, 0.50) 50%), url(assets/images/home/gallery7.webp)",
         "header-representation":"linear-gradient(0deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%), linear-gradient(0deg, rgba(33, 64, 43, 0.50) 0%, rgba(33, 64, 43, 0.50) 100%), url(assets/images/representation/header.webp)",
+        "map":"url(assets/images/buy/map.webp)",
       },
       fontFamily:{
         "estedad":"Estedad",

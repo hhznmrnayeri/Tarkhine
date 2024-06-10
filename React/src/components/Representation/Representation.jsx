@@ -5,6 +5,7 @@ import Header from '../share/Header'
 import Option from './Option'
 import Advantage from './Advantage'
 import Advice from './Advice'
+import Form from './Form'
 export default function Representation() {
   return (
     <div>
@@ -13,6 +14,7 @@ export default function Representation() {
       <Option/>
       <Advantage/>
       <Advice/>
+      <Form/>
       <Footer/>
     </div>
   )

@@ -1,7 +1,7 @@
 import React from 'react'
 import Nav from '../share/Nav'
+import HeaderSlider from '../share/HeaderSlider'
 import Footer from '../share/Footer'
-import Header from '../share/Header'
 import SearchBox from '../share/SearchBox'
 import Special from './Special'
 import Popular from './Popular'
@@ -15,7 +15,7 @@ export default function Branch() {
   return (
     <div>
       <Nav title='branch'/>
-      <Header title='طعم بی‌نظیر طبیعت!'/>
+      <HeaderSlider title='طعم بی‌نظیر طبیعت!'/>
       <SearchBox/>
       <Special/>
       <Popular/>

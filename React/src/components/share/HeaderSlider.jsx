@@ -9,7 +9,7 @@ import { GoChevronRight } from "react-icons/go";
 import { GoChevronLeft } from "react-icons/go";
 import NavigationIcon from './NavigationIcon';
 import { NavLink } from 'react-router-dom';
-export default function Header(props) {
+export default function HeaderSlider(props) {
 return (
 <div className="header w-full h-44 md:h-80 relative">
     <Swiper

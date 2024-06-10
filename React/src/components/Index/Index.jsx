@@ -1,7 +1,7 @@
 import React from 'react'
 import Nav from '../share/Nav'
+import HeaderSlider from '../share/HeaderSlider'
 import Footer from '../share/Footer'
-import Header from '../share/Header'
 import SearchBox from '../share/SearchBox'
 import Topic from './Topic'
 import Intro from './Intro'
@@ -10,7 +10,7 @@ export default function Index() {
   return (
     <div>
       <Nav title='home'/>
-      <Header title='تجربه غذای سالم گیاهی به سبک ترخینه'/>
+      <HeaderSlider title='تجربه غذای سالم گیاهی به سبک ترخینه'/>
       <SearchBox/>
       <Topic/>
       <Intro/>

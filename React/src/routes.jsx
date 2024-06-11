@@ -12,11 +12,20 @@ import Search from "./components/Search/Search";
 import QuestionSection from "./components/Question/QuestionSection";
 import RuleSection from "./components/Question/RuleSection";
 import PrivacySection from "./components/Question/PrivacySection";
+import Basket from "./components/Buy/Basket";
+import Complete from "./components/Buy/Complete";
+import Pay from "./components/Buy/Pay";
 const routes=[
     {path:"/",element: <Index />},
     {path:"about",element: <About />},
     {path:"branch",element: <Branch />},
-    {path:"buy",element: <Buy />},
+    {path:"buy",element: <Buy />,
+        children:[
+            {path:'',element:<Basket/>},
+            {path:'complete',element:<Complete/>},
+            {path:'pay',element:<Pay/>},
+        ]
+    },
     {path:"contact",element: <Contact />},
     {path:"menu",element: <Menu />},
     {path:"payment",element: <Payment />},

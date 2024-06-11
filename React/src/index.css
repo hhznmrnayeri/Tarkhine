@@ -129,6 +129,15 @@
   content: '';
   @apply absolute left-0 -bottom-1.5 right-0 w-full h-0.5 bg-primary
 }
+.state__item{
+  @apply text-gray-400 invisible md:visible opacity-0 md:opacity-100 transition-all duration-300 w-0 md:w-auto
+}
+.state__item--active{
+  @apply visible opacity-100 text-gray-800 font-estedadBold text-base md:text-primary w-auto
+}
+.state__item--active svg{
+  @apply w-8 h-8
+}
 }
 @layer utilities{
   .flex-center{

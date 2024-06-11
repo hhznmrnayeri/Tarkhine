@@ -26,7 +26,7 @@ export default function Nav(props) {
     }
 return (
     <>
-        <nav>
+        <nav className={`${props.shadow?'shadow-menu':''}`}>
             <div className="container">
                 <div className="py-4 md:py-8 flex items-center justify-between">
                     {/* mobile menu btn */}

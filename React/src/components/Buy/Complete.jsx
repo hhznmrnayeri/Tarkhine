@@ -146,11 +146,11 @@ return (
                     {/* sum of price */}
                     <span className="text-primary text-sm">۵۴۲٬۰۰۰ تومان</span>
                 </div>
-                <button className="state__btn2 w-full text-white bg-primary flex-center gap-1 md:gap-2 rounded p-2 md:px-4 text-xs md:text-base md:font-estedadMedium">
+                <NavLink to='/buy/pay' className="state__btn2 w-full text-white bg-primary flex-center gap-1 md:gap-2 rounded p-2 md:px-4 text-xs md:text-base md:font-estedadMedium">
                     <span className=" flex items-center gap-2">
                         <FaRegCircleCheck className="w-4 md:w-6 h-4 md:h-6"/>
                     ثبت سفارش</span>
-                </button>
+                </NavLink>
             </div>
         </div>
     </section>

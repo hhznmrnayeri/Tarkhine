@@ -3,7 +3,7 @@ import { IoTrashOutline } from "react-icons/io5";
 import { BiEditAlt } from "react-icons/bi";
 export default function AddressItem(props) {
 return (
-<div className={`border rounded p-4 flex flex-col gap-2 bg-gray-200 xl:w-80 ${props.active?'border-primary':'border-gray-400'}`}>
+<div className={`border rounded p-4 flex flex-col gap-2 bg-gray-100 xl:w-80 ${props.active?'border-primary':'border-gray-400'}`}>
     {/* top wrapper */}
     <div className="flex items-start justify-between gap-3 ">
         {/* address text */}

@@ -152,6 +152,25 @@
 .bank__item--active{
   @apply border-primary shadow-bank grayscale-0
 }
+.profile__state{
+  @apply transition-all duration-300
+}
+.icon__fill{
+  @apply hidden
+}
+.profile__state--active{
+  @apply relative text-primary text-sm font-estedadMedium md:text-base
+}
+.profile__state--active::before{
+  content: '';
+  @apply absolute h-full w-0.5 bg-primary top-0 bottom-0 -right-2 rounded-l
+}
+.profile__state--active .icon__empty{
+  @apply hidden
+}
+.profile__state--active .icon__fill{
+  @apply block
+}
 }
 @layer utilities{
   .flex-center{

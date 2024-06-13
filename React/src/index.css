@@ -171,6 +171,15 @@
 .profile__state--active .icon__fill{
   @apply block
 }
+.profile__edit--input{
+  @apply w-full h-full bg-transparent text-gray-800 outline outline-0 focus:outline-0 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-gray-800 placeholder-shown:border-t-gray-800 border focus:border border-t-transparent focus:border-t-transparent text-sm px-3 py-2.5 rounded-lg border-gray-800 focus:border-primary
+}
+.profile__edit--label::before,.profile__edit--label::after{
+  content: ' ';
+}
+.profile__edit--label{
+  @apply flex w-full h-full  pointer-events-none absolute left-0 !overflow-visible truncate peer-placeholder-shown:text-gray-800 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-gray-800 transition-all -top-1.5 peer-placeholder-shown:text-xs text-xs peer-focus:text-xs before:block before:box-border before:w-1.5 before:h-0.5 before:mt-[7.5px] before:mr-1 peer-placeholder-shown:before:border-transparent  before:border-t peer-focus:before:border-t before:border-l peer-focus:before:border-l before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:block after:flex-grow after:box-border after:w-1.5 after:h-0.5 after:mt-[7.5px] after:ml-1 peer-placeholder-shown:after:border-transparent  after:border-t peer-focus:after:border-t after:border-r peer-focus:after:border-r after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-gray-800 peer-focus:text-gray-800 before:border-gray-800 peer-focus:before:!border-primary after:border-gray-800 peer-focus:after:!border-primary
+}
 }
 @layer utilities{
   .flex-center{

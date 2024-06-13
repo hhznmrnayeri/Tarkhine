@@ -91,21 +91,23 @@ return (
                 </div>
                 {/* section wrapper */}
                 <div className="col-span-1 md:col-span-9 flex flex-col overflow-hidden">
-                    <div className="flex items-center justify-between md:justify-start md:pb-2 md:border-b border-gray-400 w-full">
-                        <button onClick={openAsideMenu} className="md:hidden">
-                            <GoChevronRight className="w-4 h-4"/>
-                        </button>
-                        <h2 className="md:text-xl font-estedadBold mx-auto md:mr-0">
-                            {menuItemActive==='user'?'پروفایل من':''}
-                            {menuItemActive==='wallet'?'سفارشات':''}
-                            {menuItemActive==='heart'?'علاقمندی‌ها':''}
-                            {menuItemActive==='location'?'آدرس‌ها':''}
-                        </h2>
+                    <div className='md:border md:border-gray-400 md:rounded-lg md:p-6 flex flex-col overflow-hidden'>
+                        <div className="flex items-center justify-between md:justify-start md:pb-2 md:border-b border-gray-400 w-full">
+                            <button onClick={openAsideMenu} className="md:hidden">
+                                <GoChevronRight className="w-4 h-4"/>
+                            </button>
+                            <h2 className="md:text-xl font-estedadBold mx-auto md:mr-0">
+                                {menuItemActive==='user'?'پروفایل من':''}
+                                {menuItemActive==='wallet'?'سفارشات':''}
+                                {menuItemActive==='heart'?'علاقمندی‌ها':''}
+                                {menuItemActive==='location'?'آدرس‌ها':''}
+                            </h2>
+                        </div>
+                        {menuItemActive==='user'&&<UserSection/>}
+                        {menuItemActive==='wallet'&&<WalletSection/>}
+                        {menuItemActive==='heart'&&<HeartSection/>}
+                        {menuItemActive==='location'&&<LocationSection/>}
                     </div>
-                    {menuItemActive==='user'&&<UserSection/>}
-                    {menuItemActive==='wallet'&&<WalletSection/>}
-                    {menuItemActive==='heart'&&<HeartSection/>}
-                    {menuItemActive==='location'&&<LocationSection/>}
                 </div>
             </div>
         </div>

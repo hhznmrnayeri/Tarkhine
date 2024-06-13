@@ -7,23 +7,33 @@ import { IoTrashOutline } from "react-icons/io5";
 import { TbAlertHexagon } from "react-icons/tb";
 import { GoChevronLeft } from "react-icons/go";
 import { LiaUserSolid } from "react-icons/lia";
+import { IoMdClose } from "react-icons/io";
 import Empty from '../share/Empty';
+import Overlay from '../share/Overlay'
 import { NavLink } from 'react-router-dom';
 import OrderItem from './OrderItem';
-
 export default function Basket() {
     const [orderArray,setOrderArray]=useState([{id:1, title:'پاستا سبزیجات', resepi:'پاستا، قارچ، گوجه، کدوی خوردشده، پیاز خلالی‌شده', img:'src/assets/images/menu/food11.webp', star:'4', price:'۱۷۵٬۰۰۰', offer:'۱۴۰٬۰۰۰', discount:'۲۰', count:'۱',}]);
     const [isLogin]=useState(true);
+    const [showDeleteModal,setShowDeleteModal]=useState(false);
     const clearAllOrder=()=>{
         setOrderArray([]);
+        setShowDeleteModal(false)
+    }
+    const closeDeleteModal=()=>{
+        setShowDeleteModal(false);
+    }
+    const openDeleteModal=()=>{
+        setShowDeleteModal(true);
     }
 return (
+<>
 <div className='container'>
     <div className="flex items-center justify-between md:justify-center mt-6 md:mt-10">
                 {/* back btn */}
-                <button className="md:hidden">
+                <NavLink to='/menu' className="md:hidden">
                     <GoChevronRight className="w-4 h-4"/>
-                </button>
+                </NavLink>
                 {/* state wrapper */}
                 <div className="flex-center gap-2  text-sm md:w-1/2 ">
                     {/* state item */}
@@ -44,7 +54,7 @@ return (
                     </span>
                 </div>
                 {/* trash btn */}
-                <button className="md:hidden" onClick={clearAllOrder}>
+                <button className="md:hidden" onClick={openDeleteModal}>
                     <IoTrashOutline className="w-4 h-4"/>
                 </button>
     </div>
@@ -62,7 +72,7 @@ return (
                 {/* title */}
                 <h4>سبد خرید(<span className="text-sm">{orderArray.length}</span>)</h4>
                 {/* delete all basket btn */}
-                <button className="text-gray-800" onClick={clearAllOrder}>
+                <button className="text-gray-800" onClick={openDeleteModal}>
                     <IoTrashOutline className="w-6 h-6"/>
                 </button>
             </div>
@@ -107,5 +117,26 @@ return (
         {/* basket wrapper */}
     </section>
 </div>
+{showDeleteModal&&<Overlay onHide={closeDeleteModal}>
+    <div className="deleteAll__modal fixed overflow-hidden rounded-lg bg-white w-11/12 md:w-5/12 h-48 md:h-56 inset-0 m-auto z-30">
+        {/* top wrapper */}
+        <div className="bg-gray-100 flex items-center justify-between py-4 px-6 text-sm font-estedadMedium md:text-2xl md:font-estedadSemiBold">
+            <h3 className="mx-auto">حذف محصولات</h3>
+            <button onClick={closeDeleteModal} className="close__deleteAll--modal text-gray-700">
+                <IoMdClose className="w-6 h-6"/>
+            </button>
+        </div>
+        {/* caption */}
+        <p className="mt-3 md:mt-8 text-xs md:text-base text-center">همه محصولات سبد خرید شما حذف شود؟</p>
+        {/* btn wrapper */}
+        <div className="mt-8 flex-center gap-4 md:gap-5 px-16">
+            {/* back btn */}
+            <button onClick={closeDeleteModal} className="back__btn border border-primary rounded flex-center p-2 text-primary text-xs md:px-4 md:text-base md:font-estedadMedium flex-1">بازگشت</button>
+            {/* delete btn */}
+            <button onClick={clearAllOrder} className="delete__btn bg-error-200 rounded flex-center p-2 text-error text-xs md:px-4 md:text-base md:font-estedadMedium flex-1">حذف</button>
+        </div>
+    </div>
+</Overlay>}
+</>
 )
 }

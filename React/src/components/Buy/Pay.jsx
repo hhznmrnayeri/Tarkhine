@@ -20,9 +20,9 @@ export default function Pay() {
 <div className='container'>
     <div className="flex items-center justify-between md:justify-center mt-6 md:mt-10">
                 {/* back btn */}
-                <button className="md:hidden">
+                <NavLink to='/buy/complete' className="md:hidden">
                     <GoChevronRight className="w-4 h-4"/>
-                </button>
+                </NavLink>
                 {/* state wrapper */}
                 <div className="flex-center gap-2  text-sm md:w-1/2 ">
                     {/* state item */}

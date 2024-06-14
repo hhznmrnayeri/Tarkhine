@@ -45,7 +45,7 @@ return (
             <GoChevronRight className="w-8 h-8"/>
         </button>
         {/* header title */}
-        <h1 className="header__title text-tint-100 font-estedadBold md:text-4xl">{props.title}</h1>
+        <h1 className="header__title text-tint-100 font-estedadBold text-center md:text-4xl">{props.title}</h1>
         {/* next slide btn */}
         <button className="text-white hidden md:block swiper-button-next-custom ml-5">
             <GoChevronLeft className="w-8 h-8"/>

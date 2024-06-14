@@ -103,7 +103,6 @@ return (
         {/* detail wrapper */}
         <div className="flex-center flex-col md:flex-row gap-3 md:gap-4 w-full">
             {/* detail item */}
-            {/* <span className="border border-gray-400 h-8 md:h-10 w-full flex items-center text-gray-400 text-2xs px-4 py-1 rounded md:rounded-lg">{date.length?date:`تاریخ تولد ${<span className="text-2xs">(اختیاری)</span>}`}</span> */}
             <span className="border border-gray-400 h-8 md:h-10 w-full flex items-center text-gray-400 text-2xs px-4 py-1 rounded md:rounded-lg">{date.length?date:<span>تاریخ تولد <span className="text-2xs">(اختیاری)</span></span>}</span>
             {/* detail item */}
             <span className="border border-gray-400 h-8 md:h-10 w-full flex items-center text-gray-400 text-2xs px-4 py-1 rounded md:rounded-lg">{userName.length?userName:'نام نمایشی'}</span>

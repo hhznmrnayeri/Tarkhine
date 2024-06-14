@@ -192,7 +192,7 @@ return (
     </section>
 </div>
 {showLocationModal&&<Overlay onHide={closeLocationModal}>
-<div className="fixed overflow-hidden rounded-lg bg-white w-full flex flex-col md:w-7/12 h-full md:h-3/4 inset-0 m-auto z-30">
+<div className="fixed overflow-hidden rounded-lg bg-white w-full flex flex-col md:w-7/12 h-full md:h-3/4 inset-0 m-auto z-30 overflow-y-auto">
         {/* top wrapper */}
         <div className="bg-gray-100 flex items-center justify-between py-4 px-6 text-sm font-estedadMedium md:text-2xl md:font-estedadSemiBold">
             <h3 className="mx-auto">افزودن آدرس</h3>
@@ -227,7 +227,7 @@ return (
     </div>
 </Overlay>}
 {showAddressModal&&<Overlay onHide={closeAddressModal}>
-<div className="fixed overflow-hidden rounded-lg bg-white w-full flex flex-col md:w-7/12 h-full md:h-5/6 inset-0 m-auto z-30">
+<div className="fixed overflow-hidden rounded-lg bg-white w-full flex flex-col md:w-7/12 h-full md:h-5/6 inset-0 m-auto z-30 overflow-y-auto">
         {/* top wrapper */}
         <div className="bg-gray-100 flex items-center justify-between py-4 px-6 text-sm font-estedadMedium md:text-2xl md:font-estedadSemiBold">
             <h3 className="mx-auto">ثبت آدرس</h3>
@@ -250,7 +250,7 @@ return (
             {/* address text */}
             <input type="text" className="w-full outline-none border border-gray-400 rounded px-2 mt-3 md:mt-4 pt-2 pb-24 md:pb-44 align-top" placeholder="آدرس دقیق شما" value={captionAddress} onChange={e=>setCaptionAddress(e.target.value)}/>
             {/* btn wrapper */}
-            <div className="flex items-center gap-6 mt-6 md:mt-4">
+            <div className="flex items-center gap-6 mt-6 md:mt-4 mb-2">
                 {/* close */}
                 <button onClick={closeAddressModal} className="text-primary flex-1">انصراف</button>
                 {/* submit address */}

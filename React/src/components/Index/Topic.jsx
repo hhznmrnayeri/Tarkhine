@@ -51,7 +51,7 @@ return (
         </section>
         {showModal&&<Overlay onHide={closeModal}>
         {/* choose branch modal */}
-        <div className="fixed rounded-lg overflow-hidden bg-white pb-12 w-11/12 md:w-7/12 h-5/6 md:h-3/4 inset-0 m-auto z-30">
+        <div className="fixed rounded-lg overflow-hidden bg-white pb-12 w-11/12 md:w-7/12 h-5/6 md:h-5/6 inset-0 m-auto z-30 overflow-y-auto">
             {/* top box */}
             <div className="bg-gray-300 md:bg-white flex items-center justify-between py-4 p-6 font-estedadMedium md:font-estedadSemiBold text-sm md:text-xl">
                 {/* modal title */}

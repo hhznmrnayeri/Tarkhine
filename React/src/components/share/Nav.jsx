@@ -285,7 +285,7 @@ export default function Nav(props) {
                           : "flex-center"
                       } rounded p-2 ${
                         props.title === item.title
-                          ? "nav__icon--active"
+                          ? "nav__icon--active child:w-4 child:h-4 child:md:w-6 child:md:h-6"
                           : "bg-tint-100 child:w-4 child:h-4 child:md:w-6 child:md:h-6"
                       }`}
                     >

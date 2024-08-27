@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "build": "npx tailwindcss -i ./src/input.css -o ./public/styles/style.css --watch"
+    "build": "npx tailwindcss -i ./src/input.css -o ./public/styles/style.css --watch",
+    "dev": "npx json-server db.json"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.1"

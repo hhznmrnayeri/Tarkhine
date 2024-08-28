@@ -31,7 +31,7 @@ export default function Index() {
       <SearchBox />
       <Topic topicArray={topicArray} branchArray={branchArray} />
       <Intro />
-      <Branch />
+      <Branch branchArray={branchArray} />
       <Footer />
     </div>
   );

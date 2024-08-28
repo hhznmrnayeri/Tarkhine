@@ -47,20 +47,44 @@
       "finish_time": "۲۳"
     }
   ],
-  "album": [
-    { "id": 1, "img": "src/assets/images/home/gallery1.webp", "branchID": 1 },
-    { "id": 2, "img": "src/assets/images/home/gallery2.webp", "branchID": 1 },
-    { "id": 3, "img": "src/assets/images/home/gallery3.webp", "branchID": 2 },
-    { "id": 4, "img": "src/assets/images/home/gallery4.webp", "branchID": 2 },
-    { "id": 5, "img": "src/assets/images/home/gallery5.webp", "branchID": 3 },
-    { "id": 6, "img": "src/assets/images/home/gallery6.webp", "branchID": 3 },
-    { "id": 7, "img": "src/assets/images/home/gallery7.webp", "branchID": 4 }
+  "albums": [
+    { "id": 1, "img": "src/assets/images/home/gallery1.webp", "branchId": 1 },
+    { "id": 2, "img": "src/assets/images/home/gallery2.webp", "branchId": 1 },
+    { "id": 3, "img": "src/assets/images/home/gallery3.webp", "branchId": 1 },
+    { "id": 4, "img": "src/assets/images/home/gallery4.webp", "branchId": 1 },
+    { "id": 5, "img": "src/assets/images/home/gallery5.webp", "branchId": 1 },
+    { "id": 6, "img": "src/assets/images/home/gallery6.webp", "branchId": 1 },
+    { "id": 7, "img": "src/assets/images/home/gallery7.webp", "branchId": 1 },
+    { "id": 8, "img": "src/assets/images/home/gallery8.webp", "branchId": 1 },
+    { "id": 9, "img": "src/assets/images/home/gallery9.webp", "branchId": 2 },
+    { "id": 10, "img": "src/assets/images/home/gallery10.webp", "branchId": 2 },
+    { "id": 11, "img": "src/assets/images/home/gallery11.webp", "branchId": 2 },
+    { "id": 12, "img": "src/assets/images/home/gallery12.webp", "branchId": 2 },
+    { "id": 13, "img": "src/assets/images/home/gallery13.webp", "branchId": 2 },
+    { "id": 14, "img": "src/assets/images/home/gallery14.webp", "branchId": 2 },
+    { "id": 15, "img": "src/assets/images/home/gallery15.webp", "branchId": 2 },
+    { "id": 16, "img": "src/assets/images/home/gallery16.webp", "branchId": 2 },
+    { "id": 17, "img": "src/assets/images/home/gallery17.webp", "branchId": 3 },
+    { "id": 18, "img": "src/assets/images/home/gallery18.webp", "branchId": 3 },
+    { "id": 19, "img": "src/assets/images/home/gallery19.webp", "branchId": 3 },
+    { "id": 20, "img": "src/assets/images/home/gallery20.webp", "branchId": 3 },
+    { "id": 21, "img": "src/assets/images/home/gallery21.webp", "branchId": 3 },
+    { "id": 22, "img": "src/assets/images/home/gallery22.webp", "branchId": 3 },
+    { "id": 23, "img": "src/assets/images/home/gallery23.webp", "branchId": 3 },
+    { "id": 24, "img": "src/assets/images/home/gallery24.webp", "branchId": 3 },
+    { "id": 25, "img": "src/assets/images/home/gallery25.webp", "branchId": 4 },
+    { "id": 26, "img": "src/assets/images/home/gallery26.webp", "branchId": 4 },
+    { "id": 27, "img": "src/assets/images/home/gallery27.webp", "branchId": 4 },
+    { "id": 28, "img": "src/assets/images/home/gallery28.webp", "branchId": 4 },
+    { "id": 29, "img": "src/assets/images/home/gallery29.webp", "branchId": 4 },
+    { "id": 30, "img": "src/assets/images/home/gallery30.webp", "branchId": 4 },
+    { "id": 31, "img": "src/assets/images/home/gallery31.webp", "branchId": 4 }
   ],
   "food": [
     {
       "id": 1,
-      "topicID": 1,
-      "typeID": 1,
+      "topicId": 1,
+      "typeId": 1,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food32.webp"],
       "title": "کوفته برنجی",
@@ -74,8 +98,8 @@
     },
     {
       "id": 2,
-      "topicID": 1,
-      "typeID": 1,
+      "topicId": 1,
+      "typeId": 1,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food.webp"],
       "title": "کشک بادمجان",
@@ -89,8 +113,8 @@
     },
     {
       "id": 3,
-      "topicID": 1,
-      "typeID": 1,
+      "topicId": 1,
+      "typeId": 1,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food1.webp"],
       "title": "میرزا قاسمی",
@@ -104,8 +128,8 @@
     },
     {
       "id": 4,
-      "topicID": 1,
-      "typeID": 1,
+      "topicId": 1,
+      "typeId": 1,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food2.webp"],
       "title": "باقلاقاتوق",
@@ -119,8 +143,8 @@
     },
     {
       "id": 5,
-      "topicID": 1,
-      "typeID": 1,
+      "topicId": 1,
+      "typeId": 1,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food3.webp"],
       "title": "فلافل",
@@ -134,8 +158,8 @@
     },
     {
       "id": 6,
-      "topicID": 1,
-      "typeID": 1,
+      "topicId": 1,
+      "typeId": 1,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food4.webp"],
       "title": "کله جوش",
@@ -149,8 +173,8 @@
     },
     {
       "id": 7,
-      "topicID": 1,
-      "typeID": 1,
+      "topicId": 1,
+      "typeId": 1,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food5.webp"],
       "title": "بورانی بادمجان",
@@ -164,8 +188,8 @@
     },
     {
       "id": 8,
-      "topicID": 1,
-      "typeID": 1,
+      "topicId": 1,
+      "typeId": 1,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food6.webp"],
       "title": "بادمجان شکم‌پر",
@@ -179,8 +203,8 @@
     },
     {
       "id": 9,
-      "topicID": 1,
-      "typeID": 1,
+      "topicId": 1,
+      "typeId": 1,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food7.webp"],
       "title": "دلمه برگ کلم",
@@ -194,8 +218,8 @@
     },
     {
       "id": 10,
-      "topicID": 1,
-      "typeID": 1,
+      "topicId": 1,
+      "typeId": 1,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food8.webp"],
       "title": "دلمه برگ مو",
@@ -209,8 +233,8 @@
     },
     {
       "id": 11,
-      "topicID": 1,
-      "typeID": 1,
+      "topicId": 1,
+      "typeId": 1,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food9.webp"],
       "title": "کوکو سبزی",
@@ -224,8 +248,8 @@
     },
     {
       "id": 12,
-      "topicID": 1,
-      "typeID": 1,
+      "topicId": 1,
+      "typeId": 1,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food10.webp"],
       "title": "کوکو سیب‌زمینی و عدس",
@@ -239,8 +263,8 @@
     },
     {
       "id": 13,
-      "topicID": 1,
-      "typeID": 2,
+      "topicId": 1,
+      "typeId": 2,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food11.webp"],
       "title": "پاستا سبزیجات",
@@ -254,8 +278,8 @@
     },
     {
       "id": 14,
-      "topicID": 1,
-      "typeID": 2,
+      "topicId": 1,
+      "typeId": 2,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food12.webp"],
       "title": "پاستا بلونز",
@@ -269,8 +293,8 @@
     },
     {
       "id": 15,
-      "topicID": 1,
-      "typeID": 2,
+      "topicId": 1,
+      "typeId": 2,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food13.webp"],
       "title": "راتاتویی",
@@ -284,8 +308,8 @@
     },
     {
       "id": 16,
-      "topicID": 1,
-      "typeID": 2,
+      "topicId": 1,
+      "typeId": 2,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food14.webp"],
       "title": "لازانیا",
@@ -299,8 +323,8 @@
     },
     {
       "id": 17,
-      "topicID": 1,
-      "typeID": 2,
+      "topicId": 1,
+      "typeId": 2,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food15.webp"],
       "title": "سوشی",
@@ -314,8 +338,8 @@
     },
     {
       "id": 18,
-      "topicID": 1,
-      "typeID": 2,
+      "topicId": 1,
+      "typeId": 2,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food16.webp"],
       "title": "پاکورا سبزیجات",
@@ -329,8 +353,8 @@
     },
     {
       "id": 19,
-      "topicID": 1,
-      "typeID": 2,
+      "topicId": 1,
+      "typeId": 2,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food17.webp"],
       "title": "کالزونه اسفناج",
@@ -344,8 +368,8 @@
     },
     {
       "id": 20,
-      "topicID": 1,
-      "typeID": 2,
+      "topicId": 1,
+      "typeId": 2,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food18.webp"],
       "title": "پالاک پنیر",
@@ -359,8 +383,8 @@
     },
     {
       "id": 21,
-      "topicID": 1,
-      "typeID": 3,
+      "topicId": 1,
+      "typeId": 3,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food19.webp"],
       "title": "پیتزا روکولا",
@@ -374,8 +398,8 @@
     },
     {
       "id": 22,
-      "topicID": 1,
-      "typeID": 3,
+      "topicId": 1,
+      "typeId": 3,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food20.webp"],
       "title": "پیتزا بادمجان و زیتون",
@@ -389,8 +413,8 @@
     },
     {
       "id": 23,
-      "topicID": 1,
-      "typeID": 3,
+      "topicId": 1,
+      "typeId": 3,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food21.webp"],
       "title": "پیتزا سبزیجات و خامه",
@@ -404,8 +428,8 @@
     },
     {
       "id": 24,
-      "topicID": 1,
-      "typeID": 3,
+      "topicId": 1,
+      "typeId": 3,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food22.webp"],
       "title": "پیتزا قارچ",
@@ -419,8 +443,8 @@
     },
     {
       "id": 25,
-      "topicID": 1,
-      "typeID": 3,
+      "topicId": 1,
+      "typeId": 3,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food23.webp"],
       "title": "پیتزا پپرونی",
@@ -434,8 +458,8 @@
     },
     {
       "id": 26,
-      "topicID": 1,
-      "typeID": 3,
+      "topicId": 1,
+      "typeId": 3,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food24.webp"],
       "title": "پیتزا اسفناج",
@@ -449,8 +473,8 @@
     },
     {
       "id": 27,
-      "topicID": 1,
-      "typeID": 3,
+      "topicId": 1,
+      "typeId": 3,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food25.webp"],
       "title": "پیتزا مارگاریتا",
@@ -464,8 +488,8 @@
     },
     {
       "id": 28,
-      "topicID": 1,
-      "typeID": 3,
+      "topicId": 1,
+      "typeId": 3,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food26.webp"],
       "title": "پیتزا پنیر",
@@ -479,8 +503,8 @@
     },
     {
       "id": 29,
-      "topicID": 1,
-      "typeID": 4,
+      "topicId": 1,
+      "typeId": 4,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food27.webp"],
       "title": "ساندویچ کتلت مخصوص",
@@ -494,8 +518,8 @@
     },
     {
       "id": 30,
-      "topicID": 1,
-      "typeID": 4,
+      "topicId": 1,
+      "typeId": 4,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food28.webp"],
       "title": "ساندویچ سوسیس کوکتل",
@@ -509,8 +533,8 @@
     },
     {
       "id": 31,
-      "topicID": 1,
-      "typeID": 4,
+      "topicId": 1,
+      "typeId": 4,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food29.webp"],
       "title": "ساندویچ کتلت کدو سبز",
@@ -524,8 +548,8 @@
     },
     {
       "id": 32,
-      "topicID": 1,
-      "typeID": 4,
+      "topicId": 1,
+      "typeId": 4,
       "isFavorite": false,
       "img": ["src/assets/images/menu/food30.webp"],
       "title": "پنینی اسفناج",
@@ -547,27 +571,27 @@
   "comment": [
     {
       "id": 1,
-      "userID": 1,
+      "userId": 1,
       "text": "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم.",
       "star": "۳",
       "date": "۲۳ اسفند ۱۴۰۱"
     },
     {
       "id": 2,
-      "userID": 2,
+      "userId": 2,
       "text": "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم.",
       "star": "۳",
       "date": "۲۳ اسفند ۱۴۰۱"
     },
     {
       "id": 3,
-      "userID": 1,
+      "userId": 1,
       "text": "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم.",
       "star": "۳",
       "date": "۲۳ اسفند ۱۴۰۱"
     }
   ],
-  "basket": [{ "id": 1, "foodID": 25, "count": 1 }],
+  "basket": [{ "id": 1, "foodId": 25, "count": 1 }],
   "user": [
     {
       "id": 1,
@@ -583,20 +607,20 @@
   "order": [
     {
       "id": 1,
-      "userID": 1,
+      "userId": 1,
       "list": [{ "id": 1, "foodID": 23, "count": 2 }],
       "state": "جاری",
       "send": "حضوری",
-      "branchID": 1,
+      "branchesId": 1,
       "date": "شنبه، ۸ مرداد",
       "hour": "۱۸:۵۳"
     }
   ],
-  "favorite": [{ "id": 1, "foodID": 26 }],
+  "favorite": [{ "id": 1, "foodId": 26 }],
   "address": [
     {
       "id": 1,
-      "userID": 1,
+      "userId": 1,
       "text": "تهران: اقدسیه، بزرگراه ارتش، مجتمع شمیران سنتر، طبقه ۱۰",
       "name": "محل کار"
     }

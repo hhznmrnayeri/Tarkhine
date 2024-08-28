@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Overlay from "../share/Overlay";
 import { IoMdClose } from "react-icons/io";
 import { NavLink } from "react-router-dom";
-export default function Topic() {
+export default function Topic({ topicArray }) {
   const [showModal, setShowModal] = useState(false);
   const closeModal = () => {
     setShowModal(false);
@@ -20,70 +20,26 @@ export default function Topic() {
           </h2>
           {/* topic wrapper */}
           <div className="flex-center md:justify-between gap-x-4 gap-y-36 md:gap-y-52 md:gap-x-6 mt-20 md:mt-40 flex-wrap">
-            {/* topic item */}
-            <div className="bg-primary rounded relative h-20 w-36 shadow-card md:h-40 md:w-72 flex items-end justify-center gap-3">
-              {/* topic img */}
-              <img
-                src="src/assets/images/home/menu.webp"
-                alt="topic"
-                className="absolute left-0 right-0 -top-16 md:-top-36 mx-auto w-11/12"
-              />
-              {/* topic btn */}
-              <button
-                onClick={openModal}
-                className="bg-gray-100 text-xs md:text-xl rounded p-2 px-4 w-24 h-8 md:h-12 md:w-36 -mb-6 shadow-card"
+            {topicArray.map((topic) => (
+              <div
+                key={topic.id}
+                className="bg-primary rounded relative h-20 w-36 shadow-card md:h-40 md:w-72 flex items-end justify-center gap-3"
               >
-                غذای اصلی
-              </button>
-            </div>
-            {/* topic item */}
-            <div className="bg-primary rounded relative h-20 w-36 shadow-card md:h-40 md:w-72 flex items-end justify-center gap-3">
-              {/* topic img */}
-              <img
-                src="src/assets/images/home/menu1.webp"
-                alt="topic"
-                className="absolute left-0 right-0 -top-16 md:-top-36 mx-auto w-11/12"
-              />
-              {/* topic btn */}
-              <button
-                onClick={openModal}
-                className="bg-gray-100 text-xs md:text-xl rounded p-2 px-4 w-24 h-8 md:h-12 md:w-36 -mb-6 shadow-card"
-              >
-                پیش غذا
-              </button>
-            </div>
-            {/* topic item */}
-            <div className="bg-primary rounded relative h-20 w-36 shadow-card md:h-40 md:w-72 flex items-end justify-center gap-3">
-              {/* topic img */}
-              <img
-                src="src/assets/images/home/menu2.webp"
-                alt="topic"
-                className="absolute left-0 right-0 -top-16 md:-top-36 mx-auto w-11/12"
-              />
-              {/* topic btn */}
-              <button
-                onClick={openModal}
-                className="bg-gray-100 text-xs md:text-xl rounded p-2 px-4 w-24 h-8 md:h-12 md:w-36 -mb-6 shadow-card"
-              >
-                دسر
-              </button>
-            </div>
-            {/* topic item */}
-            <div className="bg-primary rounded relative h-20 w-36 shadow-card md:h-40 md:w-72 flex items-end justify-center gap-3">
-              {/* topic img */}
-              <img
-                src="src/assets/images/home/menu4.webp"
-                alt="topic"
-                className="absolute left-0 right-0 -top-24 md:-top-44 mx-auto w-11/12"
-              />
-              {/* topic btn */}
-              <button
-                onClick={openModal}
-                className="bg-gray-100 text-xs md:text-xl rounded p-2 px-4 w-24 h-8 md:h-12 md:w-36 -mb-6 shadow-card"
-              >
-                نوشیدنی
-              </button>
-            </div>
+                {/* topic img */}
+                <img
+                  src={`${topic.img}`}
+                  alt="topic"
+                  className="absolute left-0 right-0 -top-16 md:-top-36 mx-auto w-11/12 h-32 md:h-64"
+                />
+                {/* topic btn */}
+                <button
+                  onClick={openModal}
+                  className="bg-gray-100 text-xs md:text-xl rounded p-2 px-4 w-24 h-8 md:h-12 md:w-36 -mb-6 shadow-card"
+                >
+                  {topic.title}
+                </button>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -9,7 +9,7 @@
     { "id": 3, "title": "دسر", "img": "src/assets/images/home/menu2.webp" },
     { "id": 4, "title": "نوشیدنی", "img": "src/assets/images/home/menu4.webp" }
   ],
-  "branch": [
+  "branches": [
     {
       "id": 1,
       "title": "اکباتان",

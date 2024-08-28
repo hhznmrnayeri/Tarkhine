@@ -9,20 +9,27 @@ import Branch from "./Branch";
 import BaseUrl from "../share/BaseUrl";
 export default function Index() {
   const [topicArray, setTopicArray] = useState([]);
+  const [branchArray, setBranchArray] = useState([]);
   function getTopic() {
     fetch(`${BaseUrl}/topic`)
       .then((res) => res.json())
       .then((data) => setTopicArray(data));
   }
+  function getBranch() {
+    fetch(`${BaseUrl}/branches`)
+      .then((res) => res.json())
+      .then((data) => setBranchArray(data));
+  }
   useEffect(() => {
     getTopic();
+    getBranch();
   }, []);
   return (
     <div>
       <Nav title="home" />
       <HeaderSlider title="تجربه غذای سالم گیاهی به سبک ترخینه" />
       <SearchBox />
-      <Topic topicArray={topicArray} />
+      <Topic topicArray={topicArray} branchArray={branchArray} />
       <Intro />
       <Branch />
       <Footer />

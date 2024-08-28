@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Overlay from "../share/Overlay";
 import { IoMdClose } from "react-icons/io";
 import { NavLink } from "react-router-dom";
-export default function Topic({ topicArray }) {
+export default function Topic({ topicArray, branchArray }) {
   const [showModal, setShowModal] = useState(false);
   const closeModal = () => {
     setShowModal(false);
@@ -64,99 +64,31 @@ export default function Topic({ topicArray }) {
               </p>
               {/* branch wrapper */}
               <div className="grid grid-cols-1 md:grid-cols-12  gap-2 lg:gap-5 mt-4 md:mt-5 ">
-                {/* branch item */}
-                <NavLink
-                  to="/branch"
-                  className="col-span-1 md:col-span-3 flex md:flex-col rounded-lg md:rounded border border-gray-400 h-auto "
-                >
-                  {/* branch img */}
-                  <img
-                    src="src/assets/images/home/branch.webp"
-                    alt="branch"
-                    className="w-20 md:w-full"
-                  />
-                  {/* branch content */}
-                  <div className="p-2 text-center flex items-center flex-col flex-grow">
-                    {/* branch title */}
-                    <h4 className="text-xs lg:text-base md:font-estedadMedium md:text-nowrap">
-                      شعبه اکباتان
-                    </h4>
-                    {/* branch caption */}
-                    <p className="text-gray-700 text-2xs lg:text-xs">
-                      شهرک اکباتان، فاز ۳، مجتمع تجاری کوروش، طبقه سوم
-                    </p>
-                  </div>
-                </NavLink>
-                {/* branch item */}
-                <NavLink
-                  to="/branch"
-                  className="col-span-1 md:col-span-3 flex md:flex-col rounded-lg md:rounded border border-gray-400 h-auto "
-                >
-                  {/* branch img */}
-                  <img
-                    src="src/assets/images/home/branch1.webp"
-                    alt="branch"
-                    className="w-20 md:w-full"
-                  />
-                  {/* branch content */}
-                  <div className="p-2 text-center flex items-center flex-col flex-grow">
-                    {/* branch title */}
-                    <h4 className="text-xs lg:text-base md:font-estedadMedium md:text-nowrap">
-                      شعبه چالوس
-                    </h4>
-                    {/* branch caption */}
-                    <p className="text-gray-700 text-2xs lg:text-xs">
-                      چالوس، خیابان ۱۷ شهریور، بعد کوچه کوروش، جنب داروخانه دکتر
-                      میلانی
-                    </p>
-                  </div>
-                </NavLink>
-                {/* branch item */}
-                <NavLink
-                  to="/branch"
-                  className="col-span-1 md:col-span-3 flex md:flex-col rounded-lg md:rounded border border-gray-400 h-auto "
-                >
-                  {/* branch img */}
-                  <img
-                    src="src/assets/images/home/branch2.webp"
-                    alt="branch"
-                    className="w-20 md:w-full"
-                  />
-                  {/* branch content */}
-                  <div className="p-2 text-center flex items-center flex-col flex-grow">
-                    {/* branch title */}
-                    <h4 className="text-xs lg:text-base md:font-estedadMedium md:text-nowrap">
-                      شعبه اقدسیه
-                    </h4>
-                    {/* branch caption */}
-                    <p className="text-gray-700 text-2xs lg:text-xs">
-                      خیابان اقدسیه ، نرسیده به میدان خیام، پلاک ۸
-                    </p>
-                  </div>
-                </NavLink>
-                {/* branch item */}
-                <NavLink
-                  to="/branch"
-                  className="col-span-1 md:col-span-3 flex md:flex-col rounded-lg md:rounded border border-gray-400 h-auto "
-                >
-                  {/* branch img */}
-                  <img
-                    src="src/assets/images/home/branch3.webp"
-                    alt="branch"
-                    className="w-20 md:w-full"
-                  />
-                  {/* branch content */}
-                  <div className="p-2 text-center flex items-center flex-col flex-grow">
-                    {/* branch title */}
-                    <h4 className="text-xs lg:text-base md:font-estedadMedium md:text-nowrap">
-                      شعبه ونک
-                    </h4>
-                    {/* branch caption */}
-                    <p className="text-gray-700 text-2xs lg:text-xs">
-                      میدان ونک، خیابان فردوسی، نبش کوچه نیلوفر، پلاک ۲۶
-                    </p>
-                  </div>
-                </NavLink>
+                {branchArray.map((branch) => (
+                  <NavLink
+                    key={branch.id}
+                    to="/branch"
+                    className="col-span-1 md:col-span-3 flex md:flex-col rounded-lg md:rounded border border-gray-400 h-auto "
+                  >
+                    {/* branch img */}
+                    <img
+                      src={`${branch.img}`}
+                      alt="branch"
+                      className="w-20 md:w-full"
+                    />
+                    {/* branch content */}
+                    <div className="p-2 text-center flex items-center flex-col flex-grow">
+                      {/* branch title */}
+                      <h4 className="text-xs lg:text-base md:font-estedadMedium md:text-nowrap">
+                        شعبه {branch.title}
+                      </h4>
+                      {/* branch caption */}
+                      <p className="text-gray-700 text-2xs lg:text-xs mt-0.5">
+                        {branch.address}
+                      </p>
+                    </div>
+                  </NavLink>
+                ))}
               </div>
             </div>
           </div>

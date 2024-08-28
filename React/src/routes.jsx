@@ -15,29 +15,33 @@ import PrivacySection from "./components/Question/PrivacySection";
 import Basket from "./components/Buy/Basket";
 import Complete from "./components/Buy/Complete";
 import Pay from "./components/Buy/Pay";
-const routes=[
-    {path:"/",element: <Index />},
-    {path:"about",element: <About />},
-    {path:"branch",element: <Branch />},
-    {path:"buy",element: <Buy />,
-        children:[
-            {path:'',element:<Basket/>},
-            {path:'complete',element:<Complete/>},
-            {path:'pay',element:<Pay/>},
-        ]
-    },
-    {path:"contact",element: <Contact />},
-    {path:"menu",element: <Menu />},
-    {path:"payment",element: <Payment />},
-    {path:"profile",element: <Profile />},
-    {path:"question",element: <Question />,
-        children:[
-            {path:'',element:<QuestionSection/>},
-            {path:'rules',element:<RuleSection/>},
-            {path:'privacy',element:<PrivacySection/>},
-        ],
-    },
-    {path:"representation",element: <Representation />},
-    {path:"search",element: <Search />},
+const routes = [
+  { path: "/", element: <Index /> },
+  { path: "about", element: <About /> },
+  { path: "branch", element: <Branch /> },
+  {
+    path: "buy",
+    element: <Buy />,
+    children: [
+      { path: "", element: <Basket /> },
+      { path: "complete", element: <Complete /> },
+      { path: "pay", element: <Pay /> },
+    ],
+  },
+  { path: "contact", element: <Contact /> },
+  { path: "menu", element: <Menu /> },
+  { path: "payment", element: <Payment /> },
+  { path: "profile", element: <Profile /> },
+  {
+    path: "question",
+    element: <Question />,
+    children: [
+      { path: "", element: <QuestionSection /> },
+      { path: "rules", element: <RuleSection /> },
+      { path: "privacy", element: <PrivacySection /> },
+    ],
+  },
+  { path: "representation", element: <Representation /> },
+  { path: "search", element: <Search /> },
 ];
 export default routes;

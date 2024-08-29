@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Nav from "../share/Nav";
 import HeaderSlider from "../share/HeaderSlider";
 import Footer from "../share/Footer";
@@ -11,7 +11,17 @@ import Gallery from "./Gallery";
 import About from "./About";
 import Comment from "./Comment";
 import { NavLink } from "react-router-dom";
+import BaseUrl from "../share/BaseUrl";
 export default function Branch() {
+  const [listAlbum, setListAlbum] = useState([]);
+  function getListAlbum() {
+    fetch(`${BaseUrl}/albums`)
+      .then((res) => res.json())
+      .then((data) => setListAlbum(data));
+  }
+  useEffect(() => {
+    getListAlbum();
+  }, []);
   return (
     <div>
       <Nav title="branch" />
@@ -27,7 +37,7 @@ export default function Branch() {
         <LiaClipboardListSolid className="w-4 h-4 md:w-6 md:h-6" />
         مشاهده منوی کامل
       </NavLink>
-      <Gallery />
+      <Gallery listAlbum={listAlbum} />
       <About />
       <Comment />
       <Footer />

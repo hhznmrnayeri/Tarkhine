@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { GoChevronRight } from "react-icons/go";
 import { GoChevronLeft } from "react-icons/go";
-export default function Gallery() {
+export default function Gallery({ listAlbum }) {
   return (
     <section className="mt-6 md:mt-12">
       <SectionTitle title="شعبه اکباتان" center="true" />
@@ -19,13 +19,12 @@ export default function Gallery() {
         modules={[Navigation]}
         className="h-44 md:h-80 relative mt-3 md:mt-5"
       >
-        <SwiperSlide className="bg-slide__gallery1 w-full h-full bg-center object-cover bg-cover"></SwiperSlide>
-        <SwiperSlide className="bg-slide__gallery2 w-full h-full bg-center object-cover bg-cover"></SwiperSlide>
-        <SwiperSlide className="bg-slide__gallery3 w-full h-full bg-center object-cover bg-cover"></SwiperSlide>
-        <SwiperSlide className="bg-slide__gallery4 w-full h-full bg-center object-cover bg-cover"></SwiperSlide>
-        <SwiperSlide className="bg-slide__gallery5 w-full h-full bg-center object-cover bg-cover"></SwiperSlide>
-        <SwiperSlide className="bg-slide__gallery6 w-full h-full bg-center object-cover bg-cover"></SwiperSlide>
-        <SwiperSlide className="bg-slide__gallery7 w-full h-full bg-center object-cover bg-cover"></SwiperSlide>
+        {listAlbum.map((item) => (
+          <SwiperSlide
+            key={item.id}
+            className={`bg-${item.className} w-full h-full bg-center object-cover bg-cover`}
+          ></SwiperSlide>
+        ))}
         <button className="next__btn--swiper4 absolute z-10 w-6 h-6 md:w-12 md:h-12 top-0 bottom-0 m-auto left-3 md:left-6 text-white">
           <GoChevronLeft className="w-6 h-6 md:w-12 md:h-12" />
         </button>

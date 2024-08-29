@@ -38,7 +38,7 @@ export default function SlideItem(props) {
                 {props.star}
               </span>
               {/* points */}
-              <span className="hidden md:flex">({props.points} امتیاز)</span>
+              <span className="hidden md:flex">({props.comment} امتیاز)</span>
             </div>
           </div>
           {/* left box */}
@@ -47,21 +47,23 @@ export default function SlideItem(props) {
             <div className="flex items-center gap-2 text-2xs">
               {/* main price */}
               <span className="main__price text-gray-500 line-through">
-                {props.price}
+                {props.offerPrice}
               </span>
               {/* count offer */}
               <span
                 className={`${
-                  props.discount
+                  props.offerCount
                     ? "count__offer text-error px-1.5 rounded-lg bg-error-200"
                     : ""
                 }`}
               >
-                {props.discount ? `% ${props.discount}` : ""}
+                {props.offerCount ? `% ${props.offerCount}` : ""}
               </span>
             </div>
             {/* offer price */}
-            <span className="text-2xs md:text-base">{props.offer} تومان</span>
+            <span className="text-2xs md:text-base">
+              {props.priceValue} تومان
+            </span>
           </div>
         </div>
         {/* btn result */}

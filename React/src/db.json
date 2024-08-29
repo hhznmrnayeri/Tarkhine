@@ -723,31 +723,28 @@
     { "id": 3, "title": "پیتزاها", "value": "pizza", "btn": null },
     { "id": 4, "title": "ساندویچ‌ها", "value": "sandwich", "btn": null }
   ],
-  "comment": [
+  "comments": [
     {
       "id": 1,
-      "userId": 1,
       "text": "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم.",
       "star": "۳",
       "date": "۲۳ اسفند ۱۴۰۱"
     },
     {
       "id": 2,
-      "userId": 2,
       "text": "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم.",
       "star": "۳",
       "date": "۲۳ اسفند ۱۴۰۱"
     },
     {
       "id": 3,
-      "userId": 1,
       "text": "از با صفا بودن شعبه اکباتان هر چی بگم کم گفتم. بهترین غذاهای گیاهی عمرمو اینجا خوردم. از مدیریت شعبه اکباتان رستوران‌های ترخینه واقعا تشکر میکنم.",
       "star": "۳",
       "date": "۲۳ اسفند ۱۴۰۱"
     }
   ],
   "basket": [{ "id": 1, "foodId": 25, "count": 1 }],
-  "user": [
+  "users": [
     {
       "id": 1,
       "firstName": "heydar",
@@ -755,8 +752,31 @@
       "username": "heydar_nayeri",
       "phoneNumber": "09123456789",
       "email": "h_h_z_n@yahoo.com",
+      "photo": "src/assets/images/branch/user1.webp",
+      "birthday": "6/25/2000",
+      "commentId": 1
+    },
+    {
+      "id": 2,
+      "firstName": "arezoo",
+      "lastName": "mohammad alizade",
+      "username": "rwish",
+      "phoneNumber": "09123456789",
+      "email": "rwish@yahoo.com",
       "photo": "src/assets/images/branch/user.webp",
-      "birthday": "6/25/2000"
+      "birthday": "6/25/2000",
+      "commentId": 2
+    },
+    {
+      "id": 3,
+      "firstName": "sardar",
+      "lastName": "vazife",
+      "username": "sardar_vazife",
+      "phoneNumber": "09123456789",
+      "email": "sardarvazife@yahoo.com",
+      "photo": "src/assets/images/branch/user2.webp",
+      "birthday": "6/25/2000",
+      "commentId": 3
     }
   ],
   "order": [

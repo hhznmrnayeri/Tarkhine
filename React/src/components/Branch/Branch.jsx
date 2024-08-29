@@ -14,13 +14,23 @@ import { NavLink } from "react-router-dom";
 import BaseUrl from "../share/BaseUrl";
 export default function Branch() {
   const [listAlbum, setListAlbum] = useState([]);
+  const [commentArray, setCommentArray] = useState([]);
   function getListAlbum() {
     fetch(`${BaseUrl}/albums`)
       .then((res) => res.json())
       .then((data) => setListAlbum(data));
   }
+  function getComments() {
+    fetch(`${BaseUrl}/comments?_embed=users`)
+      .then((res) => res.json())
+      .then((data) => {
+        setCommentArray(data);
+        console.log(data);
+      });
+  }
   useEffect(() => {
     getListAlbum();
+    getComments();
   }, []);
   return (
     <div>
@@ -39,7 +49,7 @@ export default function Branch() {
       </NavLink>
       <Gallery listAlbum={listAlbum} />
       <About />
-      <Comment />
+      <Comment commentArray={commentArray} />
       <Footer />
     </div>
   );

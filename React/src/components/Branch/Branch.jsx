@@ -16,6 +16,7 @@ export default function Branch() {
   const [listAlbum, setListAlbum] = useState([]);
   const [commentArray, setCommentArray] = useState([]);
   const [specialArray, setSpecialArray] = useState([]);
+  const [popularArray, setPopularArray] = useState([]);
   function getListAlbum() {
     fetch(`${BaseUrl}/albums`)
       .then((res) => res.json())
@@ -31,10 +32,16 @@ export default function Branch() {
       .then((res) => res.json())
       .then((data) => setSpecialArray(data));
   }
+  function getPopular() {
+    fetch(`${BaseUrl}/popular?_embed=foods`)
+      .then((res) => res.json())
+      .then((data) => setPopularArray(data));
+  }
   useEffect(() => {
     getListAlbum();
     getComments();
     getSpecial();
+    getPopular();
   }, []);
   return (
     <div>
@@ -42,7 +49,7 @@ export default function Branch() {
       <HeaderSlider title="طعم بی‌نظیر طبیعت!" />
       <SearchBox />
       <Special specialArray={specialArray} />
-      <Popular />
+      <Popular popularArray={popularArray} />
       <Foreign />
       <NavLink
         to="/menu"

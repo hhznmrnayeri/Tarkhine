@@ -17,7 +17,7 @@ export default function SlideItem(props) {
           {props.title}
         </h2>
         {/* result content wrapper */}
-        <div className="flex items-start justify-between w-full">
+        <div className="flex items-start justify-between w-full h-11">
           {/* right box */}
           <div className="flex flex-col items-start gap-1 text-2xs text-gray-500">
             {/* top box */}

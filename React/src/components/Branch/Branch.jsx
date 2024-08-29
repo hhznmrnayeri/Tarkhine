@@ -23,10 +23,7 @@ export default function Branch() {
   function getComments() {
     fetch(`${BaseUrl}/comments?_embed=users`)
       .then((res) => res.json())
-      .then((data) => {
-        setCommentArray(data);
-        console.log(data);
-      });
+      .then((data) => setCommentArray(data));
   }
   useEffect(() => {
     getListAlbum();

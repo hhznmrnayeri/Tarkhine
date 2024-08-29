@@ -52,187 +52,187 @@
       "id": 1,
       "img": "src/assets/images/home/gallery1.webp",
       "branchId": 1,
-      "className": "slide__gallery1"
+      "className": "bg-slide__gallery1"
     },
     {
       "id": 2,
       "img": "src/assets/images/home/gallery2.webp",
       "branchId": 1,
-      "className": "slide__gallery2"
+      "className": "bg-slide__gallery2"
     },
     {
       "id": 3,
       "img": "src/assets/images/home/gallery3.webp",
       "branchId": 1,
-      "className": "slide__gallery3"
+      "className": "bg-slide__gallery3"
     },
     {
       "id": 4,
       "img": "src/assets/images/home/gallery4.webp",
       "branchId": 1,
-      "className": "slide__gallery4"
+      "className": "bg-slide__gallery4"
     },
     {
       "id": 5,
       "img": "src/assets/images/home/gallery5.webp",
       "branchId": 1,
-      "className": "slide__gallery5"
+      "className": "bg-slide__gallery5"
     },
     {
       "id": 6,
       "img": "src/assets/images/home/gallery6.webp",
       "branchId": 1,
-      "className": "slide__gallery6"
+      "className": "bg-slide__gallery6"
     },
     {
       "id": 7,
       "img": "src/assets/images/home/gallery7.webp",
       "branchId": 1,
-      "className": "slide__gallery7"
+      "className": "bg-slide__gallery7"
     },
     {
       "id": 8,
       "img": "src/assets/images/home/gallery8.webp",
       "branchId": 1,
-      "className": "slide__gallery8"
+      "className": "bg-slide__gallery8"
     },
     {
       "id": 9,
       "img": "src/assets/images/home/gallery9.webp",
       "branchId": 2,
-      "className": "slide__gallery9"
+      "className": "bg-slide__gallery9"
     },
     {
       "id": 10,
       "img": "src/assets/images/home/gallery10.webp",
       "branchId": 2,
-      "className": "slide__gallery10"
+      "className": "bg-slide__gallery10"
     },
     {
       "id": 11,
       "img": "src/assets/images/home/gallery11.webp",
       "branchId": 2,
-      "className": "slide__gallery11"
+      "className": "bg-slide__gallery11"
     },
     {
       "id": 12,
       "img": "src/assets/images/home/gallery12.webp",
       "branchId": 2,
-      "className": "slide__gallery12"
+      "className": "bg-slide__gallery12"
     },
     {
       "id": 13,
       "img": "src/assets/images/home/gallery13.webp",
       "branchId": 2,
-      "className": "slide__gallery13"
+      "className": "bg-slide__gallery13"
     },
     {
       "id": 14,
       "img": "src/assets/images/home/gallery14.webp",
       "branchId": 2,
-      "className": "slide__gallery14"
+      "className": "bg-slide__gallery14"
     },
     {
       "id": 15,
       "img": "src/assets/images/home/gallery15.webp",
       "branchId": 2,
-      "className": "slide__gallery15"
+      "className": "bg-slide__gallery15"
     },
     {
       "id": 16,
       "img": "src/assets/images/home/gallery16.webp",
       "branchId": 2,
-      "className": "slide__gallery16"
+      "className": "bg-slide__gallery16"
     },
     {
       "id": 17,
       "img": "src/assets/images/home/gallery17.webp",
       "branchId": 3,
-      "className": "slide__gallery17"
+      "className": "bg-slide__gallery17"
     },
     {
       "id": 18,
       "img": "src/assets/images/home/gallery18.webp",
       "branchId": 3,
-      "className": "slide__gallery18"
+      "className": "bg-slide__gallery18"
     },
     {
       "id": 19,
       "img": "src/assets/images/home/gallery19.webp",
       "branchId": 3,
-      "className": "slide__gallery19"
+      "className": "bg-slide__gallery19"
     },
     {
       "id": 20,
       "img": "src/assets/images/home/gallery20.webp",
       "branchId": 3,
-      "className": "slide__gallery20"
+      "className": "bg-slide__gallery20"
     },
     {
       "id": 21,
       "img": "src/assets/images/home/gallery21.webp",
       "branchId": 3,
-      "className": "slide__gallery21"
+      "className": "bg-slide__gallery21"
     },
     {
       "id": 22,
       "img": "src/assets/images/home/gallery22.webp",
       "branchId": 3,
-      "className": "slide__gallery22"
+      "className": "bg-slide__gallery22"
     },
     {
       "id": 23,
       "img": "src/assets/images/home/gallery23.webp",
       "branchId": 3,
-      "className": "slide__gallery23"
+      "className": "bg-slide__gallery23"
     },
     {
       "id": 24,
       "img": "src/assets/images/home/gallery24.webp",
       "branchId": 3,
-      "className": "slide__gallery24"
+      "className": "bg-slide__gallery24"
     },
     {
       "id": 25,
       "img": "src/assets/images/home/gallery25.webp",
       "branchId": 4,
-      "className": "slide__gallery25"
+      "className": "bg-slide__gallery25"
     },
     {
       "id": 26,
       "img": "src/assets/images/home/gallery26.webp",
       "branchId": 4,
-      "className": "slide__gallery26"
+      "className": "bg-slide__gallery26"
     },
     {
       "id": 27,
       "img": "src/assets/images/home/gallery27.webp",
       "branchId": 4,
-      "className": "slide__gallery27"
+      "className": "bg-slide__gallery27"
     },
     {
       "id": 28,
       "img": "src/assets/images/home/gallery28.webp",
       "branchId": 4,
-      "className": "slide__gallery28"
+      "className": "bg-slide__gallery28"
     },
     {
       "id": 29,
       "img": "src/assets/images/home/gallery29.webp",
       "branchId": 4,
-      "className": "slide__gallery29"
+      "className": "bg-slide__gallery29"
     },
     {
       "id": 30,
       "img": "src/assets/images/home/gallery30.webp",
       "branchId": 4,
-      "className": "slide__gallery30"
+      "className": "bg-slide__gallery30"
     },
     {
       "id": 31,
       "img": "src/assets/images/home/gallery31.webp",
       "branchId": 4,
-      "className": "slide__gallery31"
+      "className": "bg-slide__gallery31"
     }
   ],
   "food": [

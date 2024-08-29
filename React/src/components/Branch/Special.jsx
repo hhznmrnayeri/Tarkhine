@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-export default function Special() {
+export default function Special({ specialArray }) {
   return (
     <section className="mt-6 md:mt-12 mb-6 md:mb-12">
       <div className="container">
@@ -50,72 +50,11 @@ export default function Special() {
             modules={[Navigation]}
             className="special"
           >
-            <SwiperSlide>
-              <SlideItem
-                img="src/assets/images/menu/food7.webp"
-                title="دلمه برگ کلم"
-                star="۳"
-                points="۴۰"
-                price="۲۲۰٬۰۰۰"
-                discount="۸"
-                offer="۲۰۹٬۰۰۰"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <SlideItem
-                img="src/assets/images/menu/food6.webp"
-                title="بادمجان شکم‌پر"
-                star="۵"
-                points="۵۲"
-                price="۱۵۰٬۰۰۰"
-                discount="۱۸"
-                offer="۱۳۶٬۰۰۰"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <SlideItem
-                img="src/assets/images/menu/food17.webp"
-                title="کالزونه اسفناج"
-                star="۵"
-                points="۶۲"
-                price="۱۹۰٬۰۰۰"
-                discount="۱۷"
-                offer="۱۷۷٬۰۰۰"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <SlideItem
-                img="src/assets/images/menu/food22.webp"
-                title="پیتزا قارچ"
-                star="۳"
-                points="۳۳"
-                price="۲۱۵٬۰۰۰"
-                discount="۲۵"
-                offer="۱۷۵٬۰۰۰"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <SlideItem
-                img="src/assets/images/menu/food2.webp"
-                title="باقلاقاتوق"
-                star="۳"
-                points="۴۰"
-                price="۲۰۵٬۰۰۰"
-                discount="۳۰"
-                offer="۱۸۰٬۰۰۰"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <SlideItem
-                img="src/assets/images/menu/food7.webp"
-                title="کوکو سبزی"
-                star="۳"
-                points="۴۰"
-                price="۳۰۰٬۰۰۰"
-                discount="۱۰"
-                offer="۲۷۰٬۰۰۰"
-              />
-            </SwiperSlide>
+            {specialArray.map((item) => (
+              <SwiperSlide key={item.id}>
+                <SlideItem {...item.foods[0]} />
+              </SwiperSlide>
+            ))}
           </Swiper>
           <button className="next__btn--swiper1 absolute top-64 -left-5 bg-white w-10 h-10 m-auto z-10 hidden lg:flex p-1 rounded-lg border border-gray-400 text-gray-600">
             <GoChevronLeft className="w-8 h-8" />

@@ -15,6 +15,7 @@ import BaseUrl from "../share/BaseUrl";
 export default function Branch() {
   const [listAlbum, setListAlbum] = useState([]);
   const [commentArray, setCommentArray] = useState([]);
+  const [specialArray, setSpecialArray] = useState([]);
   function getListAlbum() {
     fetch(`${BaseUrl}/albums`)
       .then((res) => res.json())
@@ -25,16 +26,22 @@ export default function Branch() {
       .then((res) => res.json())
       .then((data) => setCommentArray(data));
   }
+  function getSpecial() {
+    fetch(`${BaseUrl}/specials?_embed=foods`)
+      .then((res) => res.json())
+      .then((data) => setSpecialArray(data));
+  }
   useEffect(() => {
     getListAlbum();
     getComments();
+    getSpecial();
   }, []);
   return (
     <div>
       <Nav title="branch" />
       <HeaderSlider title="طعم بی‌نظیر طبیعت!" />
       <SearchBox />
-      <Special />
+      <Special specialArray={specialArray} />
       <Popular />
       <Foreign />
       <NavLink

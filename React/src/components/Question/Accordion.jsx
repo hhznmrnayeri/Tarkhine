@@ -4,7 +4,7 @@ export default function Accordion(props) {
   return (
     <div
       className={`group flex flex-col gap-2 p-5 ${
-        props.id === "1" ? "" : "border-t border-gray-400"
+        props.id === 1 ? "" : "border-t border-gray-400"
       }`}
       tabIndex={props.id}
     >

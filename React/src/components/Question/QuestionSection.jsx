@@ -1,20 +1,14 @@
 import React from "react";
 import Header from "../share/Header";
-import { NavLink } from "react-router-dom";
 import Accordion from "./Accordion";
+import State from "./State";
 export default function QuestionSection() {
   return (
     <>
       <Header title="سوالات متداول از ترخینه" background="bg-header-question" />
       <div className="bg-gray-300">
         <div className="container">
-          <div className="py-1.5 md:pt-4 flex items-center gap-4 md:gap-8 text-gray-700 text-xs md:text-xl">
-            <NavLink to="/question" className="state__question--active">
-              سوالات متداول
-            </NavLink>
-            <NavLink to="/question/rules">قوانین ترخینه</NavLink>
-            <NavLink to="/question/privacy">حریم خصوصی</NavLink>
-          </div>
+          <State title="question" />
         </div>
       </div>
       <div className="container mb-6 md:mb-12">

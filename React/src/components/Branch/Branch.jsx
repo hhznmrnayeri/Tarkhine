@@ -17,6 +17,7 @@ export default function Branch() {
   const [commentArray, setCommentArray] = useState([]);
   const [specialArray, setSpecialArray] = useState([]);
   const [popularArray, setPopularArray] = useState([]);
+  const [foreignArray, setForeignArray] = useState([]);
   function getListAlbum() {
     fetch(`${BaseUrl}/albums`)
       .then((res) => res.json())
@@ -37,11 +38,17 @@ export default function Branch() {
       .then((res) => res.json())
       .then((data) => setPopularArray(data));
   }
+  function getForeign() {
+    fetch(`${BaseUrl}/foreign?_embed=foods`)
+      .then((res) => res.json())
+      .then((data) => setForeignArray(data));
+  }
   useEffect(() => {
     getListAlbum();
     getComments();
     getSpecial();
     getPopular();
+    getForeign();
   }, []);
   return (
     <div>
@@ -50,7 +57,7 @@ export default function Branch() {
       <SearchBox />
       <Special specialArray={specialArray} />
       <Popular popularArray={popularArray} />
-      <Foreign />
+      <Foreign foreignArray={foreignArray} />
       <NavLink
         to="/menu"
         className="flex-center mx-auto border mt-3 md:mt-7 border-primary text-primary gap-2 p-2 rounded md:px-4 md:font-estedadMedium text-xs md:text-base w-52"

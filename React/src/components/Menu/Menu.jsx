@@ -10,6 +10,7 @@ import List from "./List";
 export default function Menu() {
   const [topicArray, setTopicArray] = useState([]);
   const [typeArray, setTypeArray] = useState([]);
+  const [foodList, setFoodList] = useState([]);
   function getTopics() {
     fetch(`${BaseUrl}/topics`)
       .then((res) => res.json())
@@ -20,9 +21,18 @@ export default function Menu() {
       .then((res) => res.json())
       .then((data) => setTypeArray(data));
   }
+  function getFoods() {
+    fetch(`${BaseUrl}/types?_embed=foods`)
+      .then((res) => res.json())
+      .then((data) => {
+        setFoodList(data);
+        console.log(data);
+      });
+  }
   useEffect(() => {
     getTopics();
     getType();
+    getFoods();
   }, []);
   return (
     <div>
@@ -37,7 +47,7 @@ export default function Menu() {
           </div>
         </div>
       </section>
-      <List />
+      <List foodList={foodList} />
       <Footer />
     </div>
   );

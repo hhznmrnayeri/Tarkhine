@@ -11,7 +11,7 @@ export default function Index() {
   const [topicArray, setTopicArray] = useState([]);
   const [branchArray, setBranchArray] = useState([]);
   function getTopic() {
-    fetch(`${BaseUrl}/topic`)
+    fetch(`${BaseUrl}/topics`)
       .then((res) => res.json())
       .then((data) => setTopicArray(data));
   }

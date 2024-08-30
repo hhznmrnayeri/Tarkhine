@@ -759,7 +759,7 @@
     { "id": 5, "foodId": 13 },
     { "id": 6, "foodId": 14 }
   ],
-  "type": [
+  "types": [
     { "id": 1, "title": "غذاهای ایرانی", "value": "irani", "btn": true },
     { "id": 2, "title": "غذاهای غیر ایرانی", "value": "foreign", "btn": null },
     { "id": 3, "title": "پیتزاها", "value": "pizza", "btn": null },

@@ -9,13 +9,20 @@ import Search from "./Search";
 import List from "./List";
 export default function Menu() {
   const [topicArray, setTopicArray] = useState([]);
+  const [typeArray, setTypeArray] = useState([]);
   function getTopics() {
     fetch(`${BaseUrl}/topics`)
       .then((res) => res.json())
       .then((data) => setTopicArray(data));
   }
+  function getType() {
+    fetch(`${BaseUrl}/types`)
+      .then((res) => res.json())
+      .then((data) => setTypeArray(data));
+  }
   useEffect(() => {
     getTopics();
+    getType();
   }, []);
   return (
     <div>
@@ -25,7 +32,7 @@ export default function Menu() {
       <section className="mt-2 md:mt-4">
         <div className="container">
           <div className="flex flex-col md:flex-row items-start md:items-center gap-3 justify-between">
-            <Type />
+            <Type typeArray={typeArray} />
             <Search />
           </div>
         </div>

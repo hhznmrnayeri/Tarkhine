@@ -38,12 +38,12 @@ export default function Comment({ commentArray }) {
                 <div className="flex flex-col items-center gap-1 text-gray-700 text-2xs md:text-sm md:gap-2 flex-shrink-0 child:flex-shrink-0">
                   {/* img */}
                   <img
-                    src={`${comment.users[0].photo}`}
+                    src={`${comment.user.photo}`}
                     alt="user"
                     className="w-14 h-14 md:w-24 md:h-24 rounded-full"
                   />
                   {/* name */}
-                  <h5>{comment.users[0].username}</h5>
+                  <h5>{comment.user.username}</h5>
                   {/* date */}
                   <h6>{comment.date}</h6>
                 </div>

@@ -24,7 +24,7 @@ export default function Branch() {
       .then((data) => setListAlbum(data));
   }
   function getComments() {
-    fetch(`${BaseUrl}/comments?_embed=users`)
+    fetch(`${BaseUrl}/comments?_embed=user`)
       .then((res) => res.json())
       .then((data) => setCommentArray(data));
   }

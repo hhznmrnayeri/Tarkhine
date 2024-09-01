@@ -24,10 +24,7 @@ export default function Menu() {
   function getFoods() {
     fetch(`${BaseUrl}/types?_embed=foods`)
       .then((res) => res.json())
-      .then((data) => {
-        setFoodList(data);
-        console.log(data);
-      });
+      .then((data) => setFoodList(data));
   }
   useEffect(() => {
     getTopics();

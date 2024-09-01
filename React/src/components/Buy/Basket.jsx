@@ -17,25 +17,21 @@ import { useDispatch, useSelector } from "react-redux";
 import { getBasketFromServer } from "../../Redux/store/basket";
 export default function Basket() {
   const basket = useSelector((state) => state.basket);
-  const dispath = useDispatch();
-  console.log("articles", basket);
-  useEffect(() => {
-    dispath(getBasketFromServer(`${BaseUrl}/basket`));
-  }, []);
-  const [basketArray, setBasketArray] = useState([]);
+  const dispatch = useDispatch();
+  const [basketFoodArray, setBasketFoodArray] = useState([]);
+  const [isLogin] = useState(true);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
   function getBasketArray() {
     basket.forEach((item) => {
       fetch(`${BaseUrl}/foods/${item.foodId}`)
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          setBasketFoodArray((prev) => [...prev, { ...data, ...item }]);
         });
     });
   }
-  const [isLogin] = useState(true);
-  const [showDeleteModal, setShowDeleteModal] = useState(false);
   const clearAllOrder = () => {
-    setBasketArray([]);
+    setBasketFoodArray([]);
     setShowDeleteModal(false);
   };
   const closeDeleteModal = () => {
@@ -44,18 +40,15 @@ export default function Basket() {
   const openDeleteModal = () => {
     setShowDeleteModal(true);
   };
-  // async function deleteBasketItem(id) {
-  //   const res = await fetch(`${BaseUrl}/baskets/${id}`, {
-  //     method: "DELETE",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Accept: "application/json",
-  //     },
-  //   });
-  //   const data = await res.json();
-  //   console.log(data);
-  // }
+  async function deleteBasketItem(id) {
+    const res = await fetch(`${BaseUrl}/basket/${id}`, {
+      method: "DELETE",
+    });
+    const data = await res.json();
+    getBasketArray();
+  }
   useEffect(() => {
+    dispatch(getBasketFromServer(`${BaseUrl}/basket`));
     getBasketArray();
   }, []);
   return (
@@ -94,15 +87,19 @@ export default function Basket() {
           </button>
         </div>
         <section className="my-6 md:my-10">
-          {basketArray.length ? (
+          {basket.length ? (
             <div className="basket__wrapper grid grid-cols-1 lg:grid-cols-12 gap-3 md:gap-6 p-6 md:p-0 rounded-lg md:rounded-none border md:border-none border-gray-400 overflow-hidden">
               {/* food wrapper */}
               <div
                 dir="ltr"
                 className="col-span-1 lg:col-span-7 h-44 lg:h-[554px] overflow-y-auto flex flex-col md:p-6 md:gap-4 md:border md:border-gray-400 md:rounded-lg overflow-hidden"
               >
-                {basketArray.map((item) => (
-                  <OrderItem key={item.id} {...item} />
+                {basketFoodArray.map((item) => (
+                  <OrderItem
+                    key={item.id}
+                    {...item}
+                    onDelete={deleteBasketItem}
+                  />
                 ))}
               </div>
               {/* detail wrapper */}
@@ -112,7 +109,7 @@ export default function Basket() {
                   {/* title */}
                   <h4>
                     سبد خرید(
-                    <span className="text-sm">{basketArray.length}</span>)
+                    <span className="text-sm">{basket.length}</span>)
                   </h4>
                   {/* delete all basket btn */}
                   <button className="text-gray-800" onClick={openDeleteModal}>

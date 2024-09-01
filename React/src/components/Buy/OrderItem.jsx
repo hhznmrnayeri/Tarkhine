@@ -3,6 +3,9 @@ import { IoMdStar } from "react-icons/io";
 import { IoMdStarOutline } from "react-icons/io";
 import { IoTrashOutline } from "react-icons/io5";
 export default function OrderItem(props) {
+  function deleteBasketItem(id) {
+    props.onDelete(id);
+  }
   const [starCount] = useState(props.star);
   let emptyStar = 5 - starCount;
   let emptyArray = Array(+emptyStar);
@@ -68,22 +71,27 @@ export default function OrderItem(props) {
         <div className="flex flex-col items-end gap-8 h-full justify-between">
           {/* trash btn */}
           <button className="trash__btn hidden md:block">
-            <IoTrashOutline className="w-6 h-6" />
+            <IoTrashOutline
+              className="w-6 h-6"
+              onClick={() => deleteBasketItem(props.id)}
+            />
           </button>
           {/* price content */}
           <div className="flex flex-col gap-1">
             {/* offer wrapper */}
             <div className=" items-center gap-2 justify-end hidden md:flex">
               {/* main price */}
-              <h5 className="line-through text-gray-500">{props.price}</h5>
+              <h5 className="line-through text-gray-500">{props.offerPrice}</h5>
               {/* offer count */}
-              <h6 className="text-error text-2xs bg-error-200 rounded-lg px-1.5">
-                {props.discount} %
-              </h6>
+              {props.offerCount ? (
+                <h6 className="text-error text-2xs bg-error-200 rounded-lg px-1.5">
+                  {props.offerCount} %
+                </h6>
+              ) : null}
             </div>
             {/* offer price */}
             <h5 className="text-gray-700 text-2xs md:text-gray-800 md:text-lg">
-              <span className="md:text-2xl">{props.offer}</span>تومان
+              <span className="md:text-2xl">{props.priceValue}</span>تومان
             </h5>
           </div>
         </div>

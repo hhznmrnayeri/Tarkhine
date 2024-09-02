@@ -3,10 +3,13 @@ import { IoMdStar } from "react-icons/io";
 import { IoMdStarOutline } from "react-icons/io";
 import { IoTrashOutline } from "react-icons/io5";
 export default function OrderItem(props) {
-  const deleteBasketItem = (id) => {
-    props.onDelete(id);
+  const deleteBasketItem = () => {
+    props.id;
   };
-  const [starCount] = useState(props.foodItem[0].star);
+  const minusCountItemBasket = () => {
+    props.id;
+  };
+  const [starCount] = useState(props.star);
   let emptyStar = 5 - starCount;
   let emptyArray = Array(+emptyStar);
   let fillArray = Array(+starCount);
@@ -23,7 +26,7 @@ export default function OrderItem(props) {
     >
       {/* food img */}
       <img
-        src={props.foodItem[0].img}
+        src={props.img[0]}
         alt="food"
         className="hidden md:block w-44 h-full"
       />
@@ -33,12 +36,10 @@ export default function OrderItem(props) {
         <div className="flex md:flex-col items-start justify-between gap-1 w-full h-full flex-grow ">
           {/* food name */}
           <h4 className="text-xs md:text-2xl md:font-estedadSemiBold">
-            {props.foodItem[0].title}
+            {props.title}
           </h4>
           {/* food resepi */}
-          <p className="md:text-sm hidden md:block">
-            {props.foodItem[0].resepi}
-          </p>
+          <p className="md:text-sm hidden md:block">{props.resepi}</p>
           {/* bottom wrapper */}
           <div className="flex items-center gap-6">
             {/* star wrapper */}
@@ -63,13 +64,21 @@ export default function OrderItem(props) {
               {/* count food */}
               <span className="count__food text-sm">{props.count}</span>
               {/* minus btn */}
-              <button className="minus__btn">
-                {props.count === 1 ? (
-                  <IoTrashOutline className="w-4 h-4" />
-                ) : (
-                  <span className="font-estedadBold">-</span>
-                )}
-              </button>
+              {props.count === 1 ? (
+                <button className="minus__btn">
+                  <IoTrashOutline
+                    className="w-4 h-4"
+                    onClick={deleteBasketItem}
+                  />
+                </button>
+              ) : (
+                <button
+                  className="font-estedadBold"
+                  onClick={minusCountItemBasket}
+                >
+                  -
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -78,7 +87,7 @@ export default function OrderItem(props) {
           {/* trash btn */}
           <button
             className="trash__btn hidden md:block"
-            onClick={() => deleteBasketItem(props.id)}
+            onClick={deleteBasketItem}
           >
             <IoTrashOutline className="w-6 h-6" />
           </button>
@@ -87,21 +96,17 @@ export default function OrderItem(props) {
             {/* offer wrapper */}
             <div className=" items-center gap-2 justify-end hidden md:flex">
               {/* main price */}
-              <h5 className="line-through text-gray-500">
-                {props.foodItem[0].offerPrice}
-              </h5>
+              <h5 className="line-through text-gray-500">{props.offerPrice}</h5>
               {/* offer count */}
-              {props.foodItem[0].offerCount ? (
+              {props.offerCount ? (
                 <h6 className="text-error text-2xs bg-error-200 rounded-lg px-1.5">
-                  {props.foodItem[0].offerCount} %
+                  {props.offerCount} %
                 </h6>
               ) : null}
             </div>
             {/* offer price */}
             <h5 className="text-gray-700 text-2xs md:text-gray-800 md:text-lg">
-              <span className="md:text-2xl">
-                {props.foodItem[0].priceValue}
-              </span>
+              <span className="md:text-2xl">{props.priceValue}</span>
               تومان
             </h5>
           </div>

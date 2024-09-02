@@ -10,7 +10,11 @@
       "title": "پیش غذا",
       "img": "src/assets/images/home/menu1.webp"
     },
-    { "id": "3", "title": "دسر", "img": "src/assets/images/home/menu2.webp" },
+    {
+      "id": "3",
+      "title": "دسر",
+      "img": "src/assets/images/home/menu2.webp"
+    },
     {
       "id": "4",
       "title": "نوشیدنی",
@@ -744,39 +748,108 @@
     }
   ],
   "specials": [
-    { "id": "1", "foodId": "9" },
-    { "id": "2", "foodId": "8" },
-    { "id": "3", "foodId": "19" },
-    { "id": "4", "foodId": "24" },
-    { "id": "5", "foodId": "4" },
-    { "id": "6", "foodId": "11" }
+    {
+      "id": "1",
+      "foodId": "9"
+    },
+    {
+      "id": "2",
+      "foodId": "8"
+    },
+    {
+      "id": "3",
+      "foodId": "19"
+    },
+    {
+      "id": "4",
+      "foodId": "24"
+    },
+    {
+      "id": "5",
+      "foodId": "4"
+    },
+    {
+      "id": "6",
+      "foodId": "11"
+    }
   ],
   "popular": [
-    { "id": "1", "foodId": "32" },
-    { "id": "2", "foodId": "25" },
-    { "id": "3", "foodId": "15" },
-    { "id": "4", "foodId": "7" },
-    { "id": "5", "foodId": "1" },
-    { "id": "6", "foodId": "2" }
+    {
+      "id": "1",
+      "foodId": "32"
+    },
+    {
+      "id": "2",
+      "foodId": "25"
+    },
+    {
+      "id": "3",
+      "foodId": "15"
+    },
+    {
+      "id": "4",
+      "foodId": "7"
+    },
+    {
+      "id": "5",
+      "foodId": "1"
+    },
+    {
+      "id": "6",
+      "foodId": "2"
+    }
   ],
   "foreign": [
-    { "id": "1", "foodId": "17" },
-    { "id": "2", "foodId": "15" },
-    { "id": "3", "foodId": "18" },
-    { "id": "4", "foodId": "16" },
-    { "id": "5", "foodId": "13" },
-    { "id": "6", "foodId": "14" }
+    {
+      "id": "1",
+      "foodId": "17"
+    },
+    {
+      "id": "2",
+      "foodId": "15"
+    },
+    {
+      "id": "3",
+      "foodId": "18"
+    },
+    {
+      "id": "4",
+      "foodId": "16"
+    },
+    {
+      "id": "5",
+      "foodId": "13"
+    },
+    {
+      "id": "6",
+      "foodId": "14"
+    }
   ],
   "types": [
-    { "id": "1", "title": "غذاهای ایرانی", "value": "irani", "btn": true },
+    {
+      "id": "1",
+      "title": "غذاهای ایرانی",
+      "value": "irani",
+      "btn": true
+    },
     {
       "id": "2",
       "title": "غذاهای غیر ایرانی",
       "value": "foreign",
       "btn": null
     },
-    { "id": "3", "title": "پیتزاها", "value": "pizza", "btn": null },
-    { "id": "4", "title": "ساندویچ‌ها", "value": "sandwich", "btn": null }
+    {
+      "id": "3",
+      "title": "پیتزاها",
+      "value": "pizza",
+      "btn": null
+    },
+    {
+      "id": "4",
+      "title": "ساندویچ‌ها",
+      "value": "sandwich",
+      "btn": null
+    }
   ],
   "comments": [
     {
@@ -802,8 +875,21 @@
     }
   ],
   "basket": [
-    { "id": "1", "foodId": "25", "count": 1 },
-    { "id": "2", "foodId": "22", "count": 1 }
+    {
+      "id": "1",
+      "foodId": "25",
+      "count": 1
+    },
+    {
+      "id": "2",
+      "foodId": "2",
+      "count": 2
+    },
+    {
+      "id": "4",
+      "foodId": "16",
+      "count": 2
+    }
   ],
   "users": [
     {
@@ -844,7 +930,13 @@
     {
       "id": "1",
       "userId": "1",
-      "list": [{ "id": "1", "foodID": "23", "count": 2 }],
+      "list": [
+        {
+          "id": "1",
+          "foodID": "23",
+          "count": 2
+        }
+      ],
       "state": "جاری",
       "send": "حضوری",
       "branchesId": "1",
@@ -852,7 +944,12 @@
       "hour": "۱۸:۵۳"
     }
   ],
-  "favorite": [{ "id": "1", "foodId": "26" }],
+  "favorite": [
+    {
+      "id": "1",
+      "foodId": "26"
+    }
+  ],
   "address": [
     {
       "id": "1",

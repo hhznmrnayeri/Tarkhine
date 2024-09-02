@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GoChevronRight } from "react-icons/go";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { PiCheckSquare } from "react-icons/pi";
@@ -10,26 +10,28 @@ import { LiaUserSolid } from "react-icons/lia";
 import { IoMdClose } from "react-icons/io";
 import Empty from "../share/Empty";
 import Overlay from "../share/Overlay";
+import BaseUrl from "../share/BaseUrl";
 import { NavLink } from "react-router-dom";
 import OrderItem from "./OrderItem";
 export default function Basket() {
-  const [orderArray, setOrderArray] = useState([
-    {
-      id: 1,
-      title: "پاستا سبزیجات",
-      resepi: "پاستا، قارچ، گوجه، کدوی خوردشده، پیاز خلالی‌شده",
-      img: "src/assets/images/menu/food11.webp",
-      star: "4",
-      price: "۱۷۵٬۰۰۰",
-      offer: "۱۴۰٬۰۰۰",
-      discount: "۲۰",
-      count: "۱",
-    },
-  ]);
+  const [basketArray, setBasketArray] = useState([]);
   const [isLogin] = useState(true);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  function getBasketArray() {
+    fetch(`${BaseUrl}/basket`)
+      .then((res) => res.json())
+      .then((data) => {
+        data.forEach((item) => {
+          fetch(`${BaseUrl}/foods/${item.foodId}`)
+            .then((res) => res.json())
+            .then((data) => {
+              setBasketArray((prev) => [...prev, { ...data, ...item }]);
+            });
+        });
+      });
+  }
   const clearAllOrder = () => {
-    setOrderArray([]);
+    setBasketArray([]);
     setShowDeleteModal(false);
   };
   const closeDeleteModal = () => {
@@ -38,6 +40,9 @@ export default function Basket() {
   const openDeleteModal = () => {
     setShowDeleteModal(true);
   };
+  useEffect(() => {
+    getBasketArray();
+  }, []);
   return (
     <>
       <div className="container">
@@ -74,15 +79,15 @@ export default function Basket() {
           </button>
         </div>
         <section className="my-6 md:my-10">
-          {orderArray.length ? (
+          {basketArray.length ? (
             <div className="basket__wrapper grid grid-cols-1 lg:grid-cols-12 gap-3 md:gap-6 p-6 md:p-0 rounded-lg md:rounded-none border md:border-none border-gray-400 overflow-hidden">
               {/* food wrapper */}
               <div
                 dir="ltr"
                 className="col-span-1 lg:col-span-7 h-44 lg:h-[554px] overflow-y-auto flex flex-col md:p-6 md:gap-4 md:border md:border-gray-400 md:rounded-lg overflow-hidden"
               >
-                {orderArray.map((item, index) => (
-                  <OrderItem key={index} {...item} />
+                {basketArray.map((item) => (
+                  <OrderItem key={item.id} {...item} />
                 ))}
               </div>
               {/* detail wrapper */}
@@ -92,7 +97,7 @@ export default function Basket() {
                   {/* title */}
                   <h4>
                     سبد خرید(
-                    <span className="text-sm">{orderArray.length}</span>)
+                    <span className="text-sm">{basketArray.length}</span>)
                   </h4>
                   {/* delete all basket btn */}
                   <button className="text-gray-800" onClick={openDeleteModal}>

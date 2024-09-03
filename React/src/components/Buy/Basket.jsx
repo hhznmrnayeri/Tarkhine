@@ -17,6 +17,8 @@ import ConvertToPersian from "../share/ConvertToPersian";
 export default function Basket() {
   const [basketArray, setBasketArray] = useState([]);
   const [isLogin] = useState(true);
+  const [sumPrices, setSumPrices] = useState(0);
+  const [offPrices, setOffPrices] = useState(0);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   function getBasketArray() {
     fetch(`${BaseUrl}/basket`)
@@ -26,13 +28,31 @@ export default function Basket() {
           fetch(`${BaseUrl}/foods/${item.foodId}`)
             .then((res) => res.json())
             .then((data) => {
+              setSumPrices((prev) => prev + item.count * data.priceValue);
+              if (data.offerPrice) {
+                setOffPrices(
+                  (prev) =>
+                    prev + item.count * (data.offerPrice - data.priceValue)
+                );
+              }
               setBasketArray((prev) => [...prev, { ...data, ...item }]);
             });
         });
       });
   }
-  const clearAllOrder = () => {
-    setBasketArray([]);
+  const clearAllBasket = () => {
+    fetch(`${BaseUrl}/basket`)
+      .then((res) => res.json())
+      .then((data) => {
+        data.forEach((item) => {
+          fetch(`${BaseUrl}/basket/${item.id}`, { method: "DELETE" })
+            .then((res) => res.json())
+            .then((data) => {
+              getBasketArray();
+              setBasketArray([]);
+            });
+        });
+      });
     setShowDeleteModal(false);
   };
   const closeDeleteModal = () => {
@@ -113,7 +133,9 @@ export default function Basket() {
                   {/* title */}
                   <h5 className="text-sm">تخفیف محصولات</h5>
                   {/* discount price */}
-                  <span className="text-gray-700 text-sm">۶۳٬۰۰۰ تومان</span>
+                  <span className="text-gray-700 text-sm">
+                    {ConvertToPersian(offPrices)} تومان
+                  </span>
                 </div>
                 {/* shipping wrapper */}
                 <div className="flex flex-col gap-2 py-3 border-b border-gray-400">
@@ -136,7 +158,9 @@ export default function Basket() {
                   {/* title */}
                   <h5 className="text-sm">مبلغ قابل پرداخت</h5>
                   {/* sum of price */}
-                  <span className="text-primary text-sm">۵۴۲٬۰۰۰ تومان</span>
+                  <span className="text-primary text-sm">
+                    {ConvertToPersian(sumPrices)} تومان
+                  </span>
                 </div>
                 {isLogin ? (
                   <NavLink
@@ -195,7 +219,7 @@ export default function Basket() {
               </button>
               {/* delete btn */}
               <button
-                onClick={clearAllOrder}
+                onClick={clearAllBasket}
                 className="delete__btn bg-error-200 rounded flex-center p-2 text-error text-xs md:px-4 md:text-base md:font-estedadMedium flex-1"
               >
                 حذف

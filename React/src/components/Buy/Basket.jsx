@@ -78,6 +78,13 @@ export default function Basket() {
       .then((res) => res.json())
       .then((data) => getBasketArray());
   };
+  const removeItemFromBasket = (id) => {
+    fetch(`${BaseUrl}/basket/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => getBasketArray());
+  };
   const closeDeleteModal = () => {
     setShowDeleteModal(false);
   };
@@ -136,6 +143,7 @@ export default function Basket() {
                     {...item}
                     onIncrease={increaseCount}
                     onDecrease={decreaseCount}
+                    onRemove={removeItemFromBasket}
                   />
                 ))}
               </div>

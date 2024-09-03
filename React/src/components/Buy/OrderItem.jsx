@@ -10,6 +10,9 @@ export default function OrderItem(props) {
   const decreaseCountItem = (id, count) => {
     props.onDecrease(id, count);
   };
+  const removeFromBasket = (id) => {
+    props.onRemove(id);
+  };
   const [starCount] = useState(props.star);
   let emptyStar = 5 - starCount;
   let emptyArray = Array(+emptyStar);
@@ -73,7 +76,10 @@ export default function OrderItem(props) {
               </span>
               {/* minus btn */}
               {props.count === 1 ? (
-                <button className="minus__btn">
+                <button
+                  className="minus__btn"
+                  onClick={() => removeFromBasket(props.id)}
+                >
                   <IoTrashOutline className="w-4 h-4" />
                 </button>
               ) : (
@@ -90,7 +96,10 @@ export default function OrderItem(props) {
         {/* left box */}
         <div className="flex flex-col items-end gap-8 h-full justify-between">
           {/* trash btn */}
-          <button className="trash__btn hidden md:block">
+          <button
+            className="trash__btn hidden md:block"
+            onClick={() => removeFromBasket(props.id)}
+          >
             <IoTrashOutline className="w-6 h-6" />
           </button>
           {/* price content */}

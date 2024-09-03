@@ -1,6 +1,7 @@
 import React from "react";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoMdStar } from "react-icons/io";
+import ConvertToPersian from "../share/ConvertToPersian";
 export default function SlideItem(props) {
   return (
     <div className="flex flex-col rounded md:rounded-lg border overflow-hidden border-gray-400">
@@ -35,10 +36,12 @@ export default function SlideItem(props) {
               <IoMdStar className="w-4 h-4 text-[#F4B740]" />
               {/* rate number */}
               <span className="rate__number text-2xs md:text-sm text-gray-800 font-estedadMedium">
-                {props.star}
+                {ConvertToPersian(props.star)}
               </span>
               {/* points */}
-              <span className="hidden md:flex">({props.comment} امتیاز)</span>
+              <span className="hidden md:flex">
+                ({ConvertToPersian(props.comment)} امتیاز)
+              </span>
             </div>
           </div>
           {/* left box */}
@@ -47,7 +50,7 @@ export default function SlideItem(props) {
             <div className="flex items-center gap-2 text-2xs">
               {/* main price */}
               <span className="main__price text-gray-500 line-through">
-                {props.offerPrice}
+                {ConvertToPersian(props.offerPrice)}
               </span>
               {/* count offer */}
               <span
@@ -57,12 +60,14 @@ export default function SlideItem(props) {
                     : ""
                 }`}
               >
-                {props.offerCount ? `% ${props.offerCount}` : ""}
+                {props.offerCount
+                  ? `% ${ConvertToPersian(props.offerCount)}`
+                  : ""}
               </span>
             </div>
             {/* offer price */}
             <span className="text-2xs md:text-base">
-              {props.priceValue} تومان
+              {ConvertToPersian(props.priceValue)} تومان
             </span>
           </div>
         </div>

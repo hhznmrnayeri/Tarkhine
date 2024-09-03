@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { IoMdStar } from "react-icons/io";
 import { IoMdStarOutline } from "react-icons/io";
 import { IoTrashOutline } from "react-icons/io5";
+import ConvertToPersian from "../share/ConvertToPersian";
 export default function OrderItem(props) {
   const deleteBasketItem = () => {
     props.id;
@@ -62,7 +63,9 @@ export default function OrderItem(props) {
               {/* plus btn */}
               <button className="font-estedadBold">+</button>
               {/* count food */}
-              <span className="count__food text-sm">{props.count}</span>
+              <span className="count__food text-sm">
+                {ConvertToPersian(props.count)}
+              </span>
               {/* minus btn */}
               {props.count === 1 ? (
                 <button className="minus__btn">
@@ -96,17 +99,21 @@ export default function OrderItem(props) {
             {/* offer wrapper */}
             <div className=" items-center gap-2 justify-end hidden md:flex">
               {/* main price */}
-              <h5 className="line-through text-gray-500">{props.offerPrice}</h5>
+              <h5 className="line-through text-gray-500">
+                {ConvertToPersian(props.offerPrice)}
+              </h5>
               {/* offer count */}
               {props.offerCount ? (
                 <h6 className="text-error text-2xs bg-error-200 rounded-lg px-1.5">
-                  {props.offerCount} %
+                  {ConvertToPersian(props.offerCount)} %
                 </h6>
               ) : null}
             </div>
             {/* offer price */}
             <h5 className="text-gray-700 text-2xs md:text-gray-800 md:text-lg">
-              <span className="md:text-2xl">{props.priceValue}</span>
+              <span className="md:text-2xl">
+                {ConvertToPersian(props.priceValue)}
+              </span>
               تومان
             </h5>
           </div>

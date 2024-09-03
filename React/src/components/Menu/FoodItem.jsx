@@ -9,6 +9,7 @@ import { FreeMode, Thumbs } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
+import ConvertToPersian from "../share/ConvertToPersian";
 export default function FoodItem(props) {
   const [showGalleryModal, setShowGalleryModal] = useState(false);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -58,16 +59,16 @@ export default function FoodItem(props) {
               <div className={`${props.offerWrapper} items-center gap-2`}>
                 {/* offer price */}
                 <h6 className="text-2xs md:text-base text-gray-500 line-through">
-                  {props.offerPrice}
+                  {ConvertToPersian(props.offerPrice)}
                 </h6>
                 {/* offer count */}
                 <span className="text-error text-2xs md:text-xs rounded-lg bg-error-200 px-1">
-                  {props.offerCount}%
+                  {ConvertToPersian(props.offerCount)}%
                 </span>
               </div>
               {/* price item */}
               <span className="text-2xs md:text-lg flex flex-shrink-0">
-                <span>{props.priceValue}</span> تومان
+                <span>{ConvertToPersian(props.priceValue)}</span> تومان
               </span>
             </div>
           </div>
@@ -138,7 +139,11 @@ export default function FoodItem(props) {
                   ))}
                 </div>
                 <span className="text-sm text-gray-400">
-                  (<span className="comment__count">{props.comment}</span> نظر)
+                  (
+                  <span className="comment__count">
+                    {ConvertToPersian(props.comment)}
+                  </span>{" "}
+                  نظر)
                 </span>
               </div>
             </div>

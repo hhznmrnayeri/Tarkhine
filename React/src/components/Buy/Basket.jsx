@@ -13,6 +13,7 @@ import Overlay from "../share/Overlay";
 import BaseUrl from "../share/BaseUrl";
 import { NavLink } from "react-router-dom";
 import OrderItem from "./OrderItem";
+import ConvertToPersian from "../share/ConvertToPersian";
 export default function Basket() {
   const [basketArray, setBasketArray] = useState([]);
   const [isLogin] = useState(true);
@@ -97,7 +98,10 @@ export default function Basket() {
                   {/* title */}
                   <h4>
                     سبد خرید(
-                    <span className="text-sm">{basketArray.length}</span>)
+                    <span className="text-sm">
+                      {ConvertToPersian(basketArray.length)}
+                    </span>
+                    )
                   </h4>
                   {/* delete all basket btn */}
                   <button className="text-gray-800" onClick={openDeleteModal}>

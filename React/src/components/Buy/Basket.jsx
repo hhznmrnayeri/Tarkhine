@@ -21,6 +21,9 @@ export default function Basket() {
   const [offPrices, setOffPrices] = useState(0);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   function getBasketArray() {
+    setBasketArray([]);
+    setSumPrices(0);
+    setOffPrices(0);
     fetch(`${BaseUrl}/basket`)
       .then((res) => res.json())
       .then((data) => {
@@ -54,6 +57,26 @@ export default function Basket() {
         });
       });
     setShowDeleteModal(false);
+  };
+  const increaseCount = (id, counter) => {
+    const newCount = { count: counter + 1 };
+    fetch(`${BaseUrl}/basket/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newCount),
+    })
+      .then((res) => res.json())
+      .then((data) => getBasketArray());
+  };
+  const decreaseCount = (id, counter) => {
+    const newCount = { count: counter - 1 };
+    fetch(`${BaseUrl}/basket/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newCount),
+    })
+      .then((res) => res.json())
+      .then((data) => getBasketArray());
   };
   const closeDeleteModal = () => {
     setShowDeleteModal(false);
@@ -108,7 +131,12 @@ export default function Basket() {
                 className="col-span-1 lg:col-span-7 h-44 lg:h-[554px] overflow-y-auto flex flex-col md:p-6 md:gap-4 md:border md:border-gray-400 md:rounded-lg overflow-hidden"
               >
                 {basketArray.map((item) => (
-                  <OrderItem key={item.id} {...item} />
+                  <OrderItem
+                    key={item.id}
+                    {...item}
+                    onIncrease={increaseCount}
+                    onDecrease={decreaseCount}
+                  />
                 ))}
               </div>
               {/* detail wrapper */}

@@ -4,11 +4,11 @@ import { IoMdStarOutline } from "react-icons/io";
 import { IoTrashOutline } from "react-icons/io5";
 import ConvertToPersian from "../share/ConvertToPersian";
 export default function OrderItem(props) {
-  const deleteBasketItem = () => {
-    props.id;
+  const increaseCountItem = (id, count) => {
+    props.onIncrease(id, count);
   };
-  const minusCountItemBasket = () => {
-    props.id;
+  const decreaseCountItem = (id, count) => {
+    props.onDecrease(id, count);
   };
   const [starCount] = useState(props.star);
   let emptyStar = 5 - starCount;
@@ -61,7 +61,12 @@ export default function OrderItem(props) {
             {/* count wrapper */}
             <div className="flex items-center gap-2 px-1 bg-tint-100 rounded text-primary md:text-xl">
               {/* plus btn */}
-              <button className="font-estedadBold">+</button>
+              <button
+                className="font-estedadBold"
+                onClick={() => increaseCountItem(props.id, props.count)}
+              >
+                +
+              </button>
               {/* count food */}
               <span className="count__food text-sm">
                 {ConvertToPersian(props.count)}
@@ -69,15 +74,12 @@ export default function OrderItem(props) {
               {/* minus btn */}
               {props.count === 1 ? (
                 <button className="minus__btn">
-                  <IoTrashOutline
-                    className="w-4 h-4"
-                    onClick={deleteBasketItem}
-                  />
+                  <IoTrashOutline className="w-4 h-4" />
                 </button>
               ) : (
                 <button
                   className="font-estedadBold"
-                  onClick={minusCountItemBasket}
+                  onClick={() => decreaseCountItem(props.id, props.count)}
                 >
                   -
                 </button>
@@ -88,10 +90,7 @@ export default function OrderItem(props) {
         {/* left box */}
         <div className="flex flex-col items-end gap-8 h-full justify-between">
           {/* trash btn */}
-          <button
-            className="trash__btn hidden md:block"
-            onClick={deleteBasketItem}
-          >
+          <button className="trash__btn hidden md:block">
             <IoTrashOutline className="w-6 h-6" />
           </button>
           {/* price content */}

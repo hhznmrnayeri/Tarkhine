@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GoChevronRight } from "react-icons/go";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { PiCheckSquare } from "react-icons/pi";
@@ -11,13 +11,103 @@ import { CiWallet } from "react-icons/ci";
 import { TbWallet } from "react-icons/tb";
 import { CiCreditCard1 } from "react-icons/ci";
 import { CiCreditCard2 } from "react-icons/ci";
+import { IoMdClose } from "react-icons/io";
+
 import { TbAlertHexagon } from "react-icons/tb";
 import BaseUrl from "../share/BaseUrl";
+import ConvertToPersian from "../share/ConvertToPersian";
+import Overlay from "../share/Overlay";
 export default function Pay() {
+  const [useCode, setUseCode] = useState(true);
   const [statePay, setStatePay] = useState("online");
   const [bankActive, setBankActive] = useState(1);
+  const [offerCode, setOfferCode] = useState("");
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [sumPrices, setSumPrices] = useState(0);
+  const [offPrices, setOffPrices] = useState(0);
+  const [shippingPrice, setShippingPrice] = useState(30000);
+  const [basketCountItem, setBasketCountItem] = useState(0);
+  const [sendState, setSendState] = useState("ارسال توسط پیک");
+  const [addressActive, setAddressActive] = useState("");
+  const [captionOrder, setCaptionOrder] = useState("");
+  const [basketArray, setBasketArray] = useState([]);
   const navigate = useNavigate();
+  const getPrice = async () => {
+    setSumPrices(0);
+    setOffPrices(0);
+    await fetch(`${BaseUrl}/basket`)
+      .then((res) => res.json())
+      .then((data) => {
+        setBasketCountItem(data.length);
+        data.forEach((item) => {
+          fetch(`${BaseUrl}/foods/${item.foodId}`)
+            .then((res) => res.json())
+            .then((data) => {
+              setSumPrices((prev) => prev + item.count * data.priceValue);
+              if (data.offerPrice) {
+                setOffPrices(
+                  (prev) =>
+                    prev + item.count * (data.offerPrice - data.priceValue)
+                );
+              }
+            });
+        });
+      });
+    setSumPrices((prev) => prev + shippingPrice);
+  };
+  const checkCode = (e) => {
+    e.preventDefault();
+    if (useCode) {
+      if (offerCode === "Nayeri60") {
+        setOffPrices((prev) => prev + 60000);
+        setSumPrices((prev) => prev - 60000);
+        setOfferCode("");
+        setUseCode(false);
+      } else {
+        alert("not found");
+      }
+    } else {
+      alert("just one code is available");
+    }
+  };
+  const registerOrderItem = () => {
+    fetch(`${BaseUrl}/complete/1`, {
+      method: "DELETE",
+    }).then((res) => res.json());
+    fetch(`${BaseUrl}/basket`)
+      .then((res) => res.json())
+      .then((data) => {
+        data.forEach((item) => {
+          fetch(`${BaseUrl}/basket/${item.id}`, { method: "DELETE" })
+            .then((res) => res.json())
+            .then(() => {});
+        });
+      });
+    fetch(`${BaseUrl}/order`)
+      .then((res) => res.json())
+      .then((data) => {
+        const newOrder = {
+          id: data.length + 1,
+          list: basketArray,
+          send: sendState,
+          address: addressActive,
+          caption: captionOrder,
+          offPrices,
+          sumPrices,
+          state: "جاری",
+          branchesId: "1",
+        };
+        fetch(`${BaseUrl}/order`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newOrder),
+        })
+          .then((res) => res.json())
+          .then(() => navigate("/payment"));
+      });
+  };
   const clearAllBasket = () => {
     fetch(`${BaseUrl}/basket`)
       .then((res) => res.json())
@@ -38,6 +128,22 @@ export default function Pay() {
   const openDeleteModal = () => {
     setShowDeleteModal(true);
   };
+  useEffect(() => {
+    getPrice();
+    fetch(`${BaseUrl}/complete/1`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.send === "تحویل حضوری") {
+          setShippingPrice(0);
+        } else {
+          setShippingPrice(30000);
+        }
+        setSendState(data.send);
+        setCaptionOrder(data.caption);
+        setAddressActive(data.address);
+        setBasketArray(data.list);
+      });
+  }, []);
   return (
     <>
       <div className="container">
@@ -77,7 +183,10 @@ export default function Pay() {
           <div className="basket__wrapper grid grid-cols-1 lg:grid-cols-12 gap-3 md:gap-6 p-6 md:p-0 rounded-lg md:rounded-none border md:border-none border-gray-400 overflow-hidden">
             <div className="col-span-1 lg:col-span-7 flex flex-col  overflow-hidden">
               {/* discount pay */}
-              <form className="border border-gray-400 rounded-lg p-4 md:py-8 md:px-6 flex flex-col md:flex-row items-start md:items-center md:justify-between gap-2 w-full">
+              <form
+                className="border border-gray-400 rounded-lg p-4 md:py-8 md:px-6 flex flex-col md:flex-row items-start md:items-center md:justify-between gap-2 w-full"
+                onSubmit={checkCode}
+              >
                 {/* title */}
                 <h3 className="flex gap-1 items-center text-sm md:text-base pb-2 mb-2 md:mb-0 md:pb-0 border-b md:border-none border-gray-400 w-full md:w-auto">
                   <CiDiscount1 className="w-4 md:w-6 h-4 md:h-6" />
@@ -89,6 +198,8 @@ export default function Pay() {
                   <input
                     type="text"
                     className="outline-none p-2 md:px-4 flex-1 border border-gray-400 rounded-lg text-sm text-gray-700"
+                    value={offerCode}
+                    onChange={(e) => setOfferCode(e.target.value)}
                     placeholder="کد تخفیف:(Nayeri60)"
                   />
                   {/* submit discount */}
@@ -229,9 +340,7 @@ export default function Pay() {
               {/* title wrapper */}
               <div className="hidden md:flex items-center justify-between pb-3 md:border-b md:border-gray-400">
                 {/* title */}
-                <h4>
-                  سبد خرید(<span className="text-sm">1</span>)
-                </h4>
+                <h4>سبد خرید({ConvertToPersian(basketCountItem)})</h4>
                 {/* delete all basket btn */}
                 <button className="text-gray-800" onClick={openDeleteModal}>
                   <IoTrashOutline className="w-6 h-6" />
@@ -242,7 +351,9 @@ export default function Pay() {
                 {/* title */}
                 <h5 className="text-sm">تخفیف محصولات</h5>
                 {/* discount price */}
-                <span className="text-gray-700 text-sm">۶۳٬۰۰۰ تومان</span>
+                <span className="text-gray-700 text-sm">
+                  {ConvertToPersian(offPrices)} تومان
+                </span>
               </div>
               {/* shipping wrapper */}
               <div className="py-3 border-b border-gray-400">
@@ -251,7 +362,9 @@ export default function Pay() {
                   {/* title */}
                   <h5 className="text-sm">هزینه ارسال</h5>
                   {/* shipping price */}
-                  <span className="text-gray-700 text-sm">۰ تومان</span>
+                  <span className="text-gray-700 text-sm">
+                    {ConvertToPersian(shippingPrice)} تومان
+                  </span>
                 </div>
               </div>
               {/* price wrapper */}
@@ -259,17 +372,19 @@ export default function Pay() {
                 {/* title */}
                 <h5 className="text-sm">مبلغ قابل پرداخت</h5>
                 {/* sum of price */}
-                <span className="text-primary text-sm">۵۴۲٬۰۰۰ تومان</span>
+                <span className="text-primary text-sm">
+                  {ConvertToPersian(sumPrices)} تومان
+                </span>
               </div>
-              <NavLink
-                to="/payment"
+              <button
                 className="state__btn2 w-full text-white bg-primary flex-center gap-1 md:gap-2 rounded p-2 md:px-4 text-xs md:text-base md:font-estedadMedium"
+                onClick={registerOrderItem}
               >
                 <span className=" flex items-center gap-2">
                   <LuCreditCard className="w-4 md:w-6 h-4 md:h-6" />
                   ثبت سفارش
                 </span>
-              </NavLink>
+              </button>
             </div>
           </div>
         </section>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GoChevronRight } from "react-icons/go";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { PiCheckSquare } from "react-icons/pi";
@@ -15,27 +15,101 @@ import { PiGpsFix } from "react-icons/pi";
 import Empty from "../share/Empty";
 import AddressItem from "../share/AddressItem";
 import Overlay from "../share/Overlay";
+import BaseUrl from "../share/BaseUrl";
 export default function Complete() {
   const [stateDelivery, setStateDelivery] = useState("courier");
-  const [addressArray, setAddressArray] = useState([
-    {
-      caption: "تهران: اقدسیه، بزرگراه ارتش، مجتمع شمیران سنتر، طبقه ۱۰",
-      name: "محل کار",
-      user: "سردار وظیفه",
-      phone: "۰۹۱۴ ۸۶۴ ۳۳۵۰",
-      active: true,
-    },
-  ]);
+  const [addressArray, setAddressArray] = useState([]);
   const [showLocationModal, setShowLocationModal] = useState(false);
   const [showAddressModal, setShowAddressModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
   const [nameAddress, setNameAddress] = useState("");
   const [phoneAddress, setPhoneAddress] = useState("");
   const [captionAddress, setCaptionAddress] = useState("");
+  const [mainId, setMainId] = useState(null);
+  const getAddress = () => {
+    fetch(`${BaseUrl}/address`)
+      .then((res) => res.json())
+      .then((data) => setAddressArray(data));
+  };
+  const openEditModal = (id) => {
+    fetch(`${BaseUrl}/address/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setNameAddress(data.name);
+        setCaptionAddress(data.caption);
+        setPhoneAddress(data.phone);
+        setMainId(data.id);
+        setShowEditModal(true);
+      });
+  };
+  const editAddressItem = () => {
+    const newAddress = {
+      userId: "1",
+      caption: captionAddress,
+      name: nameAddress,
+      phone: phoneAddress,
+      active: true,
+    };
+    fetch(`${BaseUrl}/address/${mainId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newAddress),
+    })
+      .then((res) => res.json())
+      .then(() => {
+        setCaptionAddress("");
+        setNameAddress("");
+        setPhoneAddress("");
+        setMainId(null);
+        getAddress();
+        closeEditModal();
+      });
+  };
+  const activeAddressItem = (id) => {
+    addressArray.forEach((item) => {
+      const newItem = { active: false };
+      fetch(`${BaseUrl}/address/${item.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newItem),
+      })
+        .then((res) => res.json())
+        .then(() => {});
+    });
+    const newItem = { active: true };
+    fetch(`${BaseUrl}/address/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newItem),
+    })
+      .then((res) => res.json())
+      .then(() => {
+        getAddress();
+      });
+  };
+  const removeAddressItem = (id) => {
+    fetch(`${BaseUrl}/address/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => getAddress());
+  };
   const closeLocationModal = () => {
     setShowLocationModal(false);
   };
   const openLocationModal = () => {
     setShowLocationModal(true);
+  };
+  const closeEditModal = () => {
+    setShowEditModal(false);
+    setShowAddressModal(false);
+    setShowLocationModal(false);
   };
   const closeAddressModal = () => {
     setShowAddressModal(false);
@@ -59,6 +133,9 @@ export default function Complete() {
     setPhoneAddress("");
     setCaptionAddress("");
   };
+  useEffect(() => {
+    getAddress();
+  }, []);
   return (
     <>
       <div className="container">
@@ -165,7 +242,13 @@ export default function Complete() {
                     {addressArray.length ? (
                       <div className="flex items-start justify-between flex-col xl:flex-row flex-wrap pt-4 gap-2 md:gap-4">
                         {addressArray.map((item, index) => (
-                          <AddressItem key={index + 1} {...item} />
+                          <AddressItem
+                            key={index + 1}
+                            {...item}
+                            onEdit={openEditModal}
+                            onRemove={removeAddressItem}
+                            onActive={activeAddressItem}
+                          />
                         ))}
                         {/* <AddressItem caption='' name='' user='' phone=''/> */}
                       </div>
@@ -379,6 +462,78 @@ export default function Complete() {
                 {/* submit address */}
                 <button
                   onClick={addAddressItem}
+                  className="text-white bg-primary flex-1 flex-center rounded p-2"
+                >
+                  ثبت آدرس
+                </button>
+              </div>
+            </form>
+          </div>
+        </Overlay>
+      )}
+      {showEditModal && (
+        <Overlay onHide={closeEditModal}>
+          <div className="fixed overflow-hidden rounded-lg bg-white w-full flex flex-col md:w-7/12 h-full md:h-5/6 inset-0 m-auto z-30 overflow-y-auto">
+            {/* top wrapper */}
+            <div className="bg-gray-100 flex items-center justify-between py-4 px-6 text-sm font-estedadMedium md:text-2xl md:font-estedadSemiBold">
+              <h3 className="mx-auto">ثبت آدرس</h3>
+              <button onClick={closeEditModal} className="text-gray-700">
+                <IoMdClose className="w-6 h-6" />
+              </button>
+            </div>
+            <img
+              src="../src/assets/images/buy/map.webp"
+              alt="map"
+              className="md:hidden h-60"
+            />
+            {/* form address */}
+            <form
+              className="flex flex-col mt-3 md:mt-6 text-xs md:text-sm px-6"
+              onSubmit={(e) => {
+                e.preventDefault();
+              }}
+            >
+              {/* address name */}
+              <input
+                type="text"
+                className="w-full outline-none border border-gray-400 rounded p-2"
+                placeholder="عنوان آدرس"
+                value={nameAddress}
+                onChange={(e) => setNameAddress(e.target.value)}
+              />
+              {/* checkbox input */}
+              <div className="flex items-center gap-1 mt-3 md:mt-4">
+                <input type="checkbox" name="address" />
+                <label htmlFor="address">تحویل گیرنده خودم هستم.</label>
+              </div>
+              {/* phone */}
+              <input
+                type="text"
+                className="w-full outline-none border border-gray-400 rounded p-2 mt-2"
+                placeholder="شماره همراه"
+                value={phoneAddress}
+                onChange={(e) => setPhoneAddress(e.target.value)}
+              />
+              {/* address text */}
+              <input
+                type="text"
+                className="w-full outline-none border border-gray-400 rounded px-2 mt-3 md:mt-4 pt-2 pb-24 md:pb-44 align-top"
+                placeholder="آدرس دقیق شما"
+                value={captionAddress}
+                onChange={(e) => setCaptionAddress(e.target.value)}
+              />
+              {/* btn wrapper */}
+              <div className="flex items-center gap-6 mt-6 md:mt-4 mb-2">
+                {/* close */}
+                <button
+                  onClick={closeEditModal}
+                  className="text-primary flex-1"
+                >
+                  انصراف
+                </button>
+                {/* submit address */}
+                <button
+                  onClick={editAddressItem}
                   className="text-white bg-primary flex-1 flex-center rounded p-2"
                 >
                   ثبت آدرس

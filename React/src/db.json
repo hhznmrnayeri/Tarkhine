@@ -941,10 +941,11 @@
   "basket": [
     {
       "id": "1",
-      "foodId": "28",
-      "count": 2
+      "foodId": "10",
+      "count": 1
     }
   ],
+  "complete": [],
   "users": [
     {
       "id": "1",

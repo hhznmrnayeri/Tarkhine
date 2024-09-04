@@ -4,7 +4,7 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { PiCheckSquare } from "react-icons/pi";
 import { IoWalletOutline } from "react-icons/io5";
 import { IoTrashOutline } from "react-icons/io5";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FaRegCircleCheck } from "react-icons/fa6";
 import { PiTruck } from "react-icons/pi";
 import { AiOutlineTruck } from "react-icons/ai";
@@ -16,16 +16,46 @@ import Empty from "../share/Empty";
 import AddressItem from "../share/AddressItem";
 import Overlay from "../share/Overlay";
 import BaseUrl from "../share/BaseUrl";
+import ConvertToPersian from "../share/ConvertToPersian";
 export default function Complete() {
   const [stateDelivery, setStateDelivery] = useState("courier");
   const [addressArray, setAddressArray] = useState([]);
   const [showLocationModal, setShowLocationModal] = useState(false);
   const [showAddressModal, setShowAddressModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [nameAddress, setNameAddress] = useState("");
   const [phoneAddress, setPhoneAddress] = useState("");
   const [captionAddress, setCaptionAddress] = useState("");
   const [mainId, setMainId] = useState(null);
+  const [sumPrices, setSumPrices] = useState(0);
+  const [offPrices, setOffPrices] = useState(0);
+  const [shippingPrice, setShippingPrice] = useState(30000);
+  const [basketCountItem, setBasketCountItem] = useState(0);
+  const navigate = useNavigate();
+  const getPrice = async () => {
+    setSumPrices(0);
+    setOffPrices(0);
+    await fetch(`${BaseUrl}/basket`)
+      .then((res) => res.json())
+      .then((data) => {
+        setBasketCountItem(data.length);
+        data.forEach((item) => {
+          fetch(`${BaseUrl}/foods/${item.foodId}`)
+            .then((res) => res.json())
+            .then((data) => {
+              setSumPrices((prev) => prev + item.count * data.priceValue);
+              if (data.offerPrice) {
+                setOffPrices(
+                  (prev) =>
+                    prev + item.count * (data.offerPrice - data.priceValue)
+                );
+              }
+            });
+        });
+      });
+    setSumPrices((prev) => prev + shippingPrice);
+  };
   const getAddress = () => {
     fetch(`${BaseUrl}/address`)
       .then((res) => res.json())
@@ -133,9 +163,32 @@ export default function Complete() {
     setPhoneAddress("");
     setCaptionAddress("");
   };
+  const clearAllBasket = () => {
+    fetch(`${BaseUrl}/basket`)
+      .then((res) => res.json())
+      .then((data) => {
+        data.forEach((item) => {
+          fetch(`${BaseUrl}/basket/${item.id}`, { method: "DELETE" })
+            .then((res) => res.json())
+            .then((data) => {
+              navigate("/buy");
+            });
+        });
+      });
+    setShowDeleteModal(false);
+  };
+  const closeDeleteModal = () => {
+    setShowDeleteModal(false);
+  };
+  const openDeleteModal = () => {
+    setShowDeleteModal(true);
+  };
   useEffect(() => {
     getAddress();
   }, []);
+  useEffect(() => {
+    getPrice();
+  }, [shippingPrice]);
   return (
     <>
       <div className="container">
@@ -185,6 +238,7 @@ export default function Complete() {
                 <button
                   onClick={() => {
                     setStateDelivery("courier");
+                    setShippingPrice(30000);
                   }}
                   className={`${
                     stateDelivery === "courier" ? "state__delivery--active" : ""
@@ -200,6 +254,7 @@ export default function Complete() {
                 <button
                   onClick={() => {
                     setStateDelivery("person");
+                    setShippingPrice(0);
                   }}
                   className={`${
                     stateDelivery === "person" ? "state__delivery--active" : ""
@@ -306,11 +361,9 @@ export default function Complete() {
               {/* title wrapper */}
               <div className="hidden md:flex items-center justify-between pb-3 md:border-b md:border-gray-400">
                 {/* title */}
-                <h4>
-                  سبد خرید(<span className="text-sm">1</span>)
-                </h4>
+                <h4>سبد خرید({ConvertToPersian(basketCountItem)})</h4>
                 {/* delete all basket btn */}
-                <button className="text-gray-800">
+                <button className="text-gray-800" onClick={openDeleteModal}>
                   <IoTrashOutline className="w-6 h-6" />
                 </button>
               </div>
@@ -319,7 +372,9 @@ export default function Complete() {
                 {/* title */}
                 <h5 className="text-sm">تخفیف محصولات</h5>
                 {/* discount price */}
-                <span className="text-gray-700 text-sm">۶۳٬۰۰۰ تومان</span>
+                <span className="text-gray-700 text-sm">
+                  {ConvertToPersian(offPrices)} تومان
+                </span>
               </div>
               {/* shipping wrapper */}
               <div className="py-3 border-b border-gray-400">
@@ -328,7 +383,9 @@ export default function Complete() {
                   {/* title */}
                   <h5 className="text-sm">هزینه ارسال</h5>
                   {/* shipping price */}
-                  <span className="text-gray-700 text-sm">۰ تومان</span>
+                  <span className="text-gray-700 text-sm">
+                    {ConvertToPersian(shippingPrice)} تومان
+                  </span>
                 </div>
               </div>
               {/* price wrapper */}
@@ -336,7 +393,9 @@ export default function Complete() {
                 {/* title */}
                 <h5 className="text-sm">مبلغ قابل پرداخت</h5>
                 {/* sum of price */}
-                <span className="text-primary text-sm">۵۴۲٬۰۰۰ تومان</span>
+                <span className="text-primary text-sm">
+                  {ConvertToPersian(sumPrices)} تومان
+                </span>
               </div>
               <NavLink
                 to="/buy/pay"
@@ -540,6 +599,43 @@ export default function Complete() {
                 </button>
               </div>
             </form>
+          </div>
+        </Overlay>
+      )}
+      {showDeleteModal && (
+        <Overlay onHide={closeDeleteModal}>
+          <div className="deleteAll__modal fixed overflow-hidden rounded-lg bg-white w-11/12 md:w-5/12 h-48 md:h-56 inset-0 m-auto z-30">
+            {/* top wrapper */}
+            <div className="bg-gray-100 flex items-center justify-between py-4 px-6 text-sm font-estedadMedium md:text-2xl md:font-estedadSemiBold">
+              <h3 className="mx-auto">حذف محصولات</h3>
+              <button
+                onClick={closeDeleteModal}
+                className="close__deleteAll--modal text-gray-700"
+              >
+                <IoMdClose className="w-6 h-6" />
+              </button>
+            </div>
+            {/* caption */}
+            <p className="mt-3 md:mt-8 text-xs md:text-base text-center">
+              همه محصولات سبد خرید شما حذف شود؟
+            </p>
+            {/* btn wrapper */}
+            <div className="mt-8 flex-center gap-4 md:gap-5 px-16">
+              {/* back btn */}
+              <button
+                onClick={closeDeleteModal}
+                className="back__btn border border-primary rounded flex-center p-2 text-primary text-xs md:px-4 md:text-base md:font-estedadMedium flex-1"
+              >
+                بازگشت
+              </button>
+              {/* delete btn */}
+              <button
+                onClick={clearAllBasket}
+                className="delete__btn bg-error-200 rounded flex-center p-2 text-error text-xs md:px-4 md:text-base md:font-estedadMedium flex-1"
+              >
+                حذف
+              </button>
+            </div>
           </div>
         </Overlay>
       )}

@@ -32,7 +32,27 @@ export default function Complete() {
   const [offPrices, setOffPrices] = useState(0);
   const [shippingPrice, setShippingPrice] = useState(30000);
   const [basketCountItem, setBasketCountItem] = useState(0);
+  const [basketArray, setBasketArray] = useState([]);
+  const [sendState, setSendState] = useState("ارسال توسط پیک");
+  const [addressActive, setAddressActive] = useState("");
+  const [captionOrder, setCaptionOrder] = useState("");
   const navigate = useNavigate();
+  const makeOrderItem = () => {
+    const newOrder = {
+      id: "1",
+      list: basketArray,
+      send: sendState,
+      address: addressActive,
+      caption: captionOrder,
+    };
+    fetch(`${BaseUrl}/complete`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newOrder),
+    }).then((res) => res.json());
+  };
   const getPrice = async () => {
     setSumPrices(0);
     setOffPrices(0);
@@ -40,6 +60,7 @@ export default function Complete() {
       .then((res) => res.json())
       .then((data) => {
         setBasketCountItem(data.length);
+        setBasketArray(data);
         data.forEach((item) => {
           fetch(`${BaseUrl}/foods/${item.foodId}`)
             .then((res) => res.json())
@@ -59,7 +80,14 @@ export default function Complete() {
   const getAddress = () => {
     fetch(`${BaseUrl}/address`)
       .then((res) => res.json())
-      .then((data) => setAddressArray(data));
+      .then((data) => {
+        setAddressArray(data);
+        data.forEach((item) => {
+          if (item.active) {
+            setAddressActive(item.caption);
+          }
+        });
+      });
   };
   const openEditModal = (id) => {
     fetch(`${BaseUrl}/address/${id}`)
@@ -239,6 +267,7 @@ export default function Complete() {
                   onClick={() => {
                     setStateDelivery("courier");
                     setShippingPrice(30000);
+                    setSendState("ارسال توسط پیک");
                   }}
                   className={`${
                     stateDelivery === "courier" ? "state__delivery--active" : ""
@@ -255,6 +284,7 @@ export default function Complete() {
                   onClick={() => {
                     setStateDelivery("person");
                     setShippingPrice(0);
+                    setSendState("تحویل حضوری");
                   }}
                   className={`${
                     stateDelivery === "person" ? "state__delivery--active" : ""
@@ -353,6 +383,8 @@ export default function Complete() {
               <textarea
                 name="address"
                 className="border border-gray-400 outline-none text-gray-700 mt-3 md:mt-6 rounded-lg p-4 text-sm"
+                value={captionOrder}
+                onChange={(e) => setCaptionOrder(e.target.value)}
                 rows="4"
                 placeholder="توضیحات سفارش"
               ></textarea>
@@ -400,6 +432,7 @@ export default function Complete() {
               <NavLink
                 to="/buy/pay"
                 className="state__btn2 w-full text-white bg-primary flex-center gap-1 md:gap-2 rounded p-2 md:px-4 text-xs md:text-base md:font-estedadMedium"
+                onClick={makeOrderItem}
               >
                 <span className=" flex items-center gap-2">
                   <FaRegCircleCheck className="w-4 md:w-6 h-4 md:h-6" />

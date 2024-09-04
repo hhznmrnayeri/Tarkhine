@@ -7,7 +7,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import AddToBasket from "../share/AddToBasket";
 export default function Foreign({ foreignArray }) {
+  const addToBasket = (id) => {
+    AddToBasket(id);
+  };
   return (
     <section className="mt-6 md:mt-12 mb-6 md:mb-12">
       <div className="container">
@@ -52,7 +56,7 @@ export default function Foreign({ foreignArray }) {
           >
             {foreignArray.map((item) => (
               <SwiperSlide key={item.id}>
-                <SlideItem {...item.foods[0]} />
+                <SlideItem {...item.foods[0]} onPlus={addToBasket} />
               </SwiperSlide>
             ))}
           </Swiper>

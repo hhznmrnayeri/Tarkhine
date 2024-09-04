@@ -3,6 +3,9 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import { IoMdStar } from "react-icons/io";
 import ConvertToPersian from "../share/ConvertToPersian";
 export default function SlideItem(props) {
+  const addItemToBasket = (id) => {
+    props.onPlus(id);
+  };
   return (
     <div className="flex flex-col rounded md:rounded-lg border overflow-hidden border-gray-400">
       {/* result img */}
@@ -72,7 +75,10 @@ export default function SlideItem(props) {
           </div>
         </div>
         {/* btn result */}
-        <button className="text-2xs md:text-base md:font-estedadMedium text-white px-4 py-2 w-full bg-primary flex-center rounded">
+        <button
+          className="text-2xs md:text-base md:font-estedadMedium text-white px-4 py-2 w-full bg-primary flex-center rounded"
+          onClick={() => addItemToBasket(props.id)}
+        >
           افزودن به سبد خرید
         </button>
       </div>

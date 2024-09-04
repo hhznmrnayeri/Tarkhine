@@ -11,6 +11,9 @@ import "swiper/css/free-mode";
 import "swiper/css/thumbs";
 import ConvertToPersian from "../share/ConvertToPersian";
 export default function FoodItem(props) {
+  const addItemToBasket = (id) => {
+    props.onPlus(id);
+  };
   const [showGalleryModal, setShowGalleryModal] = useState(false);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const openGalleryModal = () => {
@@ -90,7 +93,10 @@ export default function FoodItem(props) {
               ))}
             </div>
             {/* item btn */}
-            <button className="item__btn flex-center p-2 md:w-60 text-white bg-primary rounded text-2xs md:text-base md:font-estedadMedium md:px-4">
+            <button
+              className="item__btn flex-center p-2 md:w-60 text-white bg-primary rounded text-2xs md:text-base md:font-estedadMedium md:px-4"
+              onClick={() => addItemToBasket(props.id)}
+            >
               افزودن به سبد خرید
             </button>
           </div>

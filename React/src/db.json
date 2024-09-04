@@ -941,18 +941,8 @@
   "basket": [
     {
       "id": "1",
-      "foodId": "25",
+      "foodId": "28",
       "count": 2
-    },
-    {
-      "id": "2",
-      "foodId": "2",
-      "count": 3
-    },
-    {
-      "id": "3",
-      "foodId": "1",
-      "count": 1
     }
   ],
   "users": [

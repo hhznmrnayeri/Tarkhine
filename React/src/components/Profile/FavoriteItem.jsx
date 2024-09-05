@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import { IoMdStar } from "react-icons/io";
 import { IoMdStarOutline } from "react-icons/io";
-import { FaHeart } from "react-icons/fa";
+import { IoMdHeart } from "react-icons/io";
+import ConvertToPersian from "./../share/ConvertToPersian";
 export default function FavoriteItem(props) {
   const [starCount] = useState(props.star);
+  const addItemToBasket = (id) => {
+    props.onPlus(id);
+  };
+  const removeFavorite = (id) => {
+    props.onDisLike(id);
+  };
   let emptyStar = 5 - starCount;
   let emptyArray = Array(+emptyStar);
   let fillArray = Array(+starCount);
@@ -19,7 +26,7 @@ export default function FavoriteItem(props) {
       <img
         src={props.img}
         alt="food"
-        className="w-full rounded md:rounded-lg"
+        className="w-full rounded md:rounded-lg h-72"
       />
       {/* favorite content */}
       <div className="p-2 md:p-4">
@@ -27,12 +34,14 @@ export default function FavoriteItem(props) {
         <div className="flex items-center justify-between">
           {/* favorite title */}
           <h4 className="text-xs md:text-xl md:font-estedadSemiBold">
-            {props.name}
+            {props.title}
           </h4>
           {/* heart btn */}
-          <button className="text-error">
-            <FaHeart className="w-4 h-4 md:w-6 md:h-6" />
-          </button>
+          {props.isFavorite ? (
+            <button className="" onClick={() => removeFavorite(props.id)}>
+              <IoMdHeart className="w-4 h-4 md:w-6 md:h-6 text-error" />
+            </button>
+          ) : null}
         </div>
         {/* center wrapper */}
         <div className="flex items-center justify-between mt-1 md:mt-2">
@@ -59,10 +68,15 @@ export default function FavoriteItem(props) {
             <span>۴</span>
           </div>
           {/* price wrapper */}
-          <span className="text-xs md:text-base">{props.price} تومان</span>
+          <span className="text-xs md:text-base">
+            {ConvertToPersian(props.priceValue)} تومان
+          </span>
         </div>
         {/* btn */}
-        <button className="text-2xs text-white bg-primary md:font-estedadMedium md:text-base rounded p-2 md:px-4 w-full h-10 mt-2 md:mt-6">
+        <button
+          className="text-2xs text-white bg-primary md:font-estedadMedium md:text-base rounded p-2 md:px-4 w-full h-10 mt-2 md:mt-6"
+          onClick={() => addItemToBasket(props.id)}
+        >
           افزودن به سبد خرید
         </button>
       </div>

@@ -1,20 +1,63 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FavoriteItem from "./FavoriteItem";
 import Empty from "../share/Empty";
 import { IoMdCheckmark } from "react-icons/io";
 import { GoChevronLeft } from "react-icons/go";
 import { RiSearchLine } from "react-icons/ri";
+import BaseUrl from "../share/BaseUrl";
+import AddToBasket from "../share/AddToBasket";
+import RemoveFavorite from "../share/RemoveFavorite";
 export default function HeartSection() {
-  const [favoriteArray] = useState([
-    {
-      img: "src/assets/images/menu/food11.webp",
-      name: "پاستا سبزیجات",
-      star: "4",
-      price: "۱۵۰٬۰۰۰",
-    },
-  ]);
-  const [filteredArray] = useState([]);
+  const [favoriteArray, setFavoriteArray] = useState([]);
+  const [filteredArray, setFilteredArray] = useState([]);
   const [filterItemActive, setFilterItemActive] = useState("همه");
+  const addToBasket = (id) => {
+    AddToBasket(id);
+  };
+  const removeFavorite = (id) => {
+    RemoveFavorite(id, getFavorites);
+  };
+  const changeFilterItemActive = () => {
+    setFilteredArray([]);
+    if (filterItemActive === "همه") {
+      favoriteArray.forEach((food) => {
+        setFilteredArray((prev) => [...prev, food]);
+      });
+    } else {
+      fetch(`${BaseUrl}/topics`)
+        .then((res) => res.json())
+        .then((arr) => {
+          arr.forEach((topic) => {
+            if (filterItemActive === topic.title) {
+              favoriteArray.forEach((food) => {
+                if (food.topicId === topic.id) {
+                  setFilteredArray((prev) => [...prev, food]);
+                }
+              });
+            }
+          });
+        });
+    }
+  };
+  const getFavorites = () => {
+    setFavoriteArray([]);
+    fetch(`${BaseUrl}/foods`)
+      .then((res) => res.json())
+      .then((data) => {
+        data.forEach((item) => {
+          if (item.isFavorite) {
+            setFavoriteArray((prev) => [...prev, item]);
+          }
+        });
+        changeFilterItemActive();
+      });
+  };
+  useEffect(() => {
+    getFavorites();
+  }, []);
+  useEffect(() => {
+    changeFilterItemActive();
+  }, [filterItemActive]);
   return (
     <section>
       {favoriteArray.length ? (
@@ -101,10 +144,15 @@ export default function HeartSection() {
           {/* bottom wrapper */}
           <div className="flex flex-col w-full">
             {/* undefined box */}
-            {!filteredArray.length ? (
+            {filteredArray.length ? (
               <div className="grid grid-cols-12 gap-x-4 gap-y-5 md:gap-y-6 mt-6 md:mt-11">
-                {favoriteArray.map((item, index) => (
-                  <FavoriteItem key={index + 1} {...item} />
+                {filteredArray.map((item, index) => (
+                  <FavoriteItem
+                    key={index + 1}
+                    {...item}
+                    onPlus={addToBasket}
+                    onDisLike={removeFavorite}
+                  />
                 ))}
               </div>
             ) : (

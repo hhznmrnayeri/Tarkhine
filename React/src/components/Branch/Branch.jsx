@@ -28,36 +28,39 @@ export default function Branch() {
       .then((res) => res.json())
       .then((data) => setCommentArray(data));
   }
-  function getSpecial() {
-    fetch(`${BaseUrl}/specials?_embed=foods`)
+  function getFoods() {
+    setSpecialArray([]);
+    setForeignArray([]);
+    setPopularArray([]);
+    fetch(`${BaseUrl}/foods`)
       .then((res) => res.json())
-      .then((data) => setSpecialArray(data));
-  }
-  function getPopular() {
-    fetch(`${BaseUrl}/popular?_embed=foods`)
-      .then((res) => res.json())
-      .then((data) => setPopularArray(data));
-  }
-  function getForeign() {
-    fetch(`${BaseUrl}/foreign?_embed=foods`)
-      .then((res) => res.json())
-      .then((data) => setForeignArray(data));
+      .then((data) => {
+        data.forEach((item) => {
+          if (item.isSpecial) {
+            setSpecialArray((prev) => [...prev, item]);
+          }
+          if (item.isPopular) {
+            setPopularArray((prev) => [...prev, item]);
+          }
+          if (item.isForeign) {
+            setForeignArray((prev) => [...prev, item]);
+          }
+        });
+      });
   }
   useEffect(() => {
     getListAlbum();
     getComments();
-    getSpecial();
-    getPopular();
-    getForeign();
+    getFoods();
   }, []);
   return (
     <div>
       <Nav title="branch" />
       <HeaderSlider title="طعم بی‌نظیر طبیعت!" />
       <SearchBox />
-      <Special specialArray={specialArray} />
-      <Popular popularArray={popularArray} />
-      <Foreign foreignArray={foreignArray} />
+      <Special specialArray={specialArray} getFoods={getFoods} />
+      <Popular popularArray={popularArray} getFoods={getFoods} />
+      <Foreign foreignArray={foreignArray} getFoods={getFoods} />
       <NavLink
         to="/menu"
         className="flex-center mx-auto border mt-3 md:mt-7 border-primary text-primary gap-2 p-2 rounded md:px-4 md:font-estedadMedium text-xs md:text-base w-52"

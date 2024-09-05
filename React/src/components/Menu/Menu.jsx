@@ -26,7 +26,6 @@ export default function Menu() {
       .then((res) => res.json())
       .then((data) => {
         setFoodList(data);
-        console.log(data);
       });
   }
   useEffect(() => {
@@ -47,7 +46,7 @@ export default function Menu() {
           </div>
         </div>
       </section>
-      <List foodList={foodList} />
+      <List foodList={foodList} getFoods={getFoods} />
       <Footer />
     </div>
   );

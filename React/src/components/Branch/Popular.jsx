@@ -8,9 +8,17 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import AddToBasket from "../share/AddToBasket";
-export default function Popular({ popularArray }) {
+import AddFavorite from "../share/AddFavorite";
+import RemoveFavorite from "../share/RemoveFavorite";
+export default function Popular({ popularArray, getFoods }) {
   const addToBasket = (id) => {
     AddToBasket(id);
+  };
+  const addFavorite = (id) => {
+    AddFavorite(id, getFoods);
+  };
+  const removeFavorite = (id) => {
+    RemoveFavorite(id, getFoods);
   };
   return (
     <section className="mt-6 md:mt-12 mb-6 md:mb-12 bg-primary py-6">
@@ -56,7 +64,12 @@ export default function Popular({ popularArray }) {
           >
             {popularArray.map((item) => (
               <SwiperSlide key={item.id}>
-                <SlideItem {...item.foods[0]} onPlus={addToBasket} />
+                <SlideItem
+                  {...item}
+                  onPlus={addToBasket}
+                  onLike={addFavorite}
+                  onDisLike={removeFavorite}
+                />
               </SwiperSlide>
             ))}
           </Swiper>

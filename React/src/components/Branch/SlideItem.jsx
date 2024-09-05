@@ -1,10 +1,17 @@
 import React from "react";
 import { IoMdHeartEmpty } from "react-icons/io";
+import { IoMdHeart } from "react-icons/io";
 import { IoMdStar } from "react-icons/io";
 import ConvertToPersian from "../share/ConvertToPersian";
 export default function SlideItem(props) {
   const addItemToBasket = (id) => {
     props.onPlus(id);
+  };
+  const addFavorite = (id) => {
+    props.onLike(id);
+  };
+  const removeFavorite = (id) => {
+    props.onDisLike(id);
   };
   return (
     <div className="flex flex-col rounded md:rounded-lg border overflow-hidden border-gray-400">
@@ -25,14 +32,20 @@ export default function SlideItem(props) {
           {/* right box */}
           <div className="flex flex-col items-start gap-1 text-2xs text-gray-500">
             {/* top box */}
-            <div className="flex items-center gap-1">
-              {/* add favorite */}
-              <button className="add__favorite">
-                <IoMdHeartEmpty className="w-4 h-4" />
+            {props.isFavorite ? (
+              <button className="" onClick={() => removeFavorite(props.id)}>
+                <IoMdHeart className="w-4 h-4 text-error-100" />
               </button>
-              {/* text favorite */}
-              <span className="hidden md:block">افزودن به علاقمندی‌ها</span>
-            </div>
+            ) : (
+              <div className="flex items-center gap-1">
+                {/* add favorite */}
+                <button className="" onClick={() => addFavorite(props.id)}>
+                  <IoMdHeartEmpty className="w-4 h-4" />
+                </button>
+                {/* text favorite */}
+                <span className="hidden md:block">افزودن به علاقمندی‌ها</span>
+              </div>
+            )}
             {/* bottom box */}
             <div className="flex items-center gap-1">
               {/* star */}

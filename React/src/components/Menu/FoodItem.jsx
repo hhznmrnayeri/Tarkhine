@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { IoMdStar } from "react-icons/io";
 import { IoMdStarOutline } from "react-icons/io";
 import { IoMdHeartEmpty } from "react-icons/io";
+import { IoMdHeart } from "react-icons/io";
 import Overlay from "../share/Overlay";
 import { IoMdClose } from "react-icons/io";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,6 +14,12 @@ import ConvertToPersian from "../share/ConvertToPersian";
 export default function FoodItem(props) {
   const addItemToBasket = (id) => {
     props.onPlus(id);
+  };
+  const addFavorite = (id) => {
+    props.onLike(id);
+  };
+  const removeFavorite = (id) => {
+    props.onDisLike(id);
   };
   const [showGalleryModal, setShowGalleryModal] = useState(false);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -101,9 +108,21 @@ export default function FoodItem(props) {
             </button>
           </div>
           {/* favorite btn */}
-          <button className="absolute w-4 h-4 md:w-6 md:h-6 bottom-1.5 right-0 top-auto left-auto md:left-4 md:top-0.5 md:bottom-auto md:right-auto md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 transition-all duration-300 ">
-            <IoMdHeartEmpty className="w-4 h-4 md:w-6 md:h-6" />
-          </button>
+          {props.isFavorite ? (
+            <button
+              className="absolute w-4 h-4 md:w-6 md:h-6 bottom-1.5 right-0 top-auto left-auto md:left-4 md:top-0.5 md:bottom-auto md:right-auto md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 transition-all duration-300"
+              onClick={() => removeFavorite(props.id)}
+            >
+              <IoMdHeart className="w-4 h-4 md:w-6 md:h-6 text-error-100" />
+            </button>
+          ) : (
+            <button
+              className="absolute w-4 h-4 md:w-6 md:h-6 bottom-1.5 right-0 top-auto left-auto md:left-4 md:top-0.5 md:bottom-auto md:right-auto md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 transition-all duration-300"
+              onClick={() => addFavorite(props.id)}
+            >
+              <IoMdHeartEmpty className="w-4 h-4 md:w-6 md:h-6" />
+            </button>
+          )}
         </div>
       </div>
       {showGalleryModal && (

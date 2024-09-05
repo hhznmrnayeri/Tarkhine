@@ -252,8 +252,10 @@
       "id": "1",
       "topicId": "1",
       "typeId": "1",
-      "popularId": "5",
-      "isFavorite": false,
+      "isFavorite": true,
+      "isSpecial": false,
+      "isPopular": true,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food32.webp"
       ],
@@ -270,8 +272,10 @@
       "id": "2",
       "topicId": "1",
       "typeId": "1",
-      "popularId": "6",
       "isFavorite": false,
+      "isSpecial": false,
+      "isPopular": true,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food.webp"
       ],
@@ -289,6 +293,9 @@
       "topicId": "1",
       "typeId": "1",
       "isFavorite": false,
+      "isSpecial": false,
+      "isPopular": false,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food1.webp"
       ],
@@ -305,8 +312,10 @@
       "id": "4",
       "topicId": "1",
       "typeId": "1",
-      "specialId": "5",
       "isFavorite": false,
+      "isSpecial": true,
+      "isPopular": false,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food2.webp"
       ],
@@ -324,6 +333,9 @@
       "topicId": "1",
       "typeId": "1",
       "isFavorite": false,
+      "isSpecial": false,
+      "isPopular": false,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food3.webp"
       ],
@@ -341,6 +353,9 @@
       "topicId": "1",
       "typeId": "1",
       "isFavorite": false,
+      "isSpecial": false,
+      "isPopular": false,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food4.webp"
       ],
@@ -357,8 +372,10 @@
       "id": "7",
       "topicId": "1",
       "typeId": "1",
-      "popularId": "4",
       "isFavorite": false,
+      "isSpecial": false,
+      "isPopular": true,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food5.webp"
       ],
@@ -375,8 +392,10 @@
       "id": "8",
       "topicId": "1",
       "typeId": "1",
-      "specialId": "2",
-      "isFavorite": false,
+      "isFavorite": true,
+      "isSpecial": true,
+      "isPopular": false,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food6.webp"
       ],
@@ -393,8 +412,10 @@
       "id": "9",
       "topicId": "1",
       "typeId": "1",
-      "specialId": "1",
       "isFavorite": false,
+      "isSpecial": true,
+      "isPopular": false,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food7.webp"
       ],
@@ -412,6 +433,9 @@
       "topicId": "1",
       "typeId": "1",
       "isFavorite": false,
+      "isSpecial": false,
+      "isPopular": false,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food8.webp"
       ],
@@ -428,8 +452,10 @@
       "id": "11",
       "topicId": "1",
       "typeId": "1",
-      "specialId": "6",
       "isFavorite": false,
+      "isSpecial": true,
+      "isPopular": false,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food9.webp"
       ],
@@ -447,6 +473,9 @@
       "topicId": "1",
       "typeId": "1",
       "isFavorite": false,
+      "isSpecial": false,
+      "isPopular": false,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food10.webp"
       ],
@@ -463,8 +492,10 @@
       "id": "13",
       "topicId": "1",
       "typeId": "2",
-      "foreignId": "5",
       "isFavorite": false,
+      "isSpecial": false,
+      "isPopular": false,
+      "isForeign": true,
       "img": [
         "src/assets/images/menu/food11.webp"
       ],
@@ -481,8 +512,10 @@
       "id": "14",
       "topicId": "1",
       "typeId": "2",
-      "foreignId": "6",
       "isFavorite": false,
+      "isSpecial": false,
+      "isPopular": false,
+      "isForeign": true,
       "img": [
         "src/assets/images/menu/food12.webp"
       ],
@@ -499,9 +532,10 @@
       "id": "15",
       "topicId": "1",
       "typeId": "2",
-      "popularId": "3",
-      "foreignId": "2",
-      "isFavorite": false,
+      "isFavorite": true,
+      "isSpecial": false,
+      "isPopular": true,
+      "isForeign": true,
       "img": [
         "src/assets/images/menu/food13.webp"
       ],
@@ -518,8 +552,10 @@
       "id": "16",
       "topicId": "1",
       "typeId": "2",
-      "foreignId": "4",
       "isFavorite": false,
+      "isSpecial": false,
+      "isPopular": false,
+      "isForeign": true,
       "img": [
         "src/assets/images/menu/food14.webp"
       ],
@@ -536,8 +572,10 @@
       "id": "17",
       "topicId": "1",
       "typeId": "2",
-      "foreignId": "1",
       "isFavorite": false,
+      "isSpecial": false,
+      "isPopular": false,
+      "isForeign": true,
       "img": [
         "src/assets/images/menu/food15.webp"
       ],
@@ -554,8 +592,10 @@
       "id": "18",
       "topicId": "1",
       "typeId": "2",
-      "foreignId": "3",
       "isFavorite": false,
+      "isSpecial": false,
+      "isPopular": false,
+      "isForeign": true,
       "img": [
         "src/assets/images/menu/food16.webp"
       ],
@@ -572,8 +612,10 @@
       "id": "19",
       "topicId": "1",
       "typeId": "2",
-      "specialId": "3",
       "isFavorite": false,
+      "isSpecial": true,
+      "isPopular": false,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food17.webp"
       ],
@@ -591,6 +633,9 @@
       "topicId": "1",
       "typeId": "2",
       "isFavorite": false,
+      "isSpecial": false,
+      "isPopular": false,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food18.webp"
       ],
@@ -608,6 +653,9 @@
       "topicId": "1",
       "typeId": "3",
       "isFavorite": false,
+      "isSpecial": false,
+      "isPopular": false,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food19.webp"
       ],
@@ -625,6 +673,9 @@
       "topicId": "1",
       "typeId": "3",
       "isFavorite": false,
+      "isSpecial": false,
+      "isPopular": false,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food20.webp"
       ],
@@ -642,6 +693,9 @@
       "topicId": "1",
       "typeId": "3",
       "isFavorite": false,
+      "isSpecial": false,
+      "isPopular": false,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food21.webp"
       ],
@@ -658,8 +712,10 @@
       "id": "24",
       "topicId": "1",
       "typeId": "3",
-      "specialId": "4",
       "isFavorite": false,
+      "isSpecial": true,
+      "isPopular": false,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food22.webp"
       ],
@@ -676,8 +732,10 @@
       "id": "25",
       "topicId": "1",
       "typeId": "3",
-      "popularId": "2",
       "isFavorite": false,
+      "isSpecial": false,
+      "isPopular": true,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food23.webp"
       ],
@@ -695,6 +753,9 @@
       "topicId": "1",
       "typeId": "3",
       "isFavorite": false,
+      "isSpecial": false,
+      "isPopular": false,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food24.webp"
       ],
@@ -712,6 +773,9 @@
       "topicId": "1",
       "typeId": "3",
       "isFavorite": false,
+      "isSpecial": false,
+      "isPopular": false,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food25.webp"
       ],
@@ -729,6 +793,9 @@
       "topicId": "1",
       "typeId": "3",
       "isFavorite": false,
+      "isSpecial": false,
+      "isPopular": false,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food26.webp"
       ],
@@ -746,6 +813,9 @@
       "topicId": "1",
       "typeId": "4",
       "isFavorite": false,
+      "isSpecial": false,
+      "isPopular": false,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food27.webp"
       ],
@@ -763,6 +833,9 @@
       "topicId": "1",
       "typeId": "4",
       "isFavorite": false,
+      "isSpecial": false,
+      "isPopular": false,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food28.webp"
       ],
@@ -780,6 +853,9 @@
       "topicId": "1",
       "typeId": "4",
       "isFavorite": false,
+      "isSpecial": false,
+      "isPopular": false,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food29.webp"
       ],
@@ -798,6 +874,9 @@
       "typeId": "4",
       "popularId": "1",
       "isFavorite": false,
+      "isSpecial": false,
+      "isPopular": true,
+      "isForeign": false,
       "img": [
         "src/assets/images/menu/food30.webp"
       ],
@@ -809,84 +888,6 @@
       "priceValue": "190000",
       "comment": "45",
       "star": "3"
-    }
-  ],
-  "specials": [
-    {
-      "id": "1",
-      "foodId": "9"
-    },
-    {
-      "id": "2",
-      "foodId": "8"
-    },
-    {
-      "id": "3",
-      "foodId": "19"
-    },
-    {
-      "id": "4",
-      "foodId": "24"
-    },
-    {
-      "id": "5",
-      "foodId": "4"
-    },
-    {
-      "id": "6",
-      "foodId": "11"
-    }
-  ],
-  "popular": [
-    {
-      "id": "1",
-      "foodId": "32"
-    },
-    {
-      "id": "2",
-      "foodId": "25"
-    },
-    {
-      "id": "3",
-      "foodId": "15"
-    },
-    {
-      "id": "4",
-      "foodId": "7"
-    },
-    {
-      "id": "5",
-      "foodId": "1"
-    },
-    {
-      "id": "6",
-      "foodId": "2"
-    }
-  ],
-  "foreign": [
-    {
-      "id": "1",
-      "foodId": "17"
-    },
-    {
-      "id": "2",
-      "foodId": "15"
-    },
-    {
-      "id": "3",
-      "foodId": "18"
-    },
-    {
-      "id": "4",
-      "foodId": "16"
-    },
-    {
-      "id": "5",
-      "foodId": "13"
-    },
-    {
-      "id": "6",
-      "foodId": "14"
     }
   ],
   "types": [
@@ -942,7 +943,7 @@
   "complete": [],
   "order": [
     {
-      "id": 1,
+      "id": "1",
       "list": [
         {
           "id": "1",
@@ -959,7 +960,7 @@
       "branchesId": "1"
     },
     {
-      "id": 2,
+      "id": "2",
       "list": [
         {
           "id": "1",
@@ -1024,12 +1025,6 @@
       "photo": "src/assets/images/branch/user2.webp",
       "birthday": "6/25/2000",
       "commentId": "3"
-    }
-  ],
-  "favorite": [
-    {
-      "id": "1",
-      "foodId": "26"
     }
   ],
   "address": [

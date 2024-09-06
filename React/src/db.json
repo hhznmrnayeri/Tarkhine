@@ -832,7 +832,7 @@
       "id": "30",
       "topicId": "1",
       "typeId": "4",
-      "isFavorite": false,
+      "isFavorite": true,
       "isSpecial": false,
       "isPopular": false,
       "isForeign": false,

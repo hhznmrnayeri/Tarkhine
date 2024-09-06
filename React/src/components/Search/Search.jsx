@@ -1,12 +1,41 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Nav from "../share/Nav";
 import ResultItem from "./ResultItem";
 import Footer from "../share/Footer";
+import BaseUrl from "../share/BaseUrl";
+import AddToBasket from "../share/AddToBasket";
+import AddFavorite from "../share/AddFavorite";
+import RemoveFavorite from "../share/RemoveFavorite";
 import { RiSearchLine } from "react-icons/ri";
 export default function Search() {
-  const [resultArray] = useState([]);
-  // const [resultArray]=useState([{img:['src/assets/images/menu/food32.webp',], title:'کوفته برنجی', resepi:'برنج سبزی کوفته لپه آرد نخودچی، گردو و زرشک و آلو پیاز', offerWrapper:'flex', price:'۱۸۰٬۰۰۰', discount:'۳۵', offer:'۱۴۵٬۰۰۰', comment:'12', star:'4'}]);
-  const [searchValue, setSearchValue] = useState("پاستا");
+  const [resultArray, setResultArray] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
+  function searchFood() {
+    setResultArray([]);
+    if (searchValue) {
+      fetch(`${BaseUrl}/foods`)
+        .then((res) => res.json())
+        .then((data) => {
+          data.forEach((item) => {
+            if (item.title.includes(searchValue)) {
+              setResultArray((prev) => [...prev, item]);
+            }
+          });
+        });
+    }
+  }
+  const addToBasket = (id) => {
+    AddToBasket(id);
+  };
+  const addFavorite = (id) => {
+    AddFavorite(id, searchFood);
+  };
+  const removeFavorite = (id) => {
+    RemoveFavorite(id, searchFood);
+  };
+  useEffect(() => {
+    searchFood();
+  }, []);
   return (
     <div>
       <Nav title="search" />
@@ -22,14 +51,17 @@ export default function Search() {
             <span className="food__result text-primary">{searchValue}</span>
           </h1>
         ) : null}
-        <form className="border border-gray-400 rounded-lg mt-6 flex-center px-4 py-2 text-gray-800 text-sm font-estedadMedium w-full xs:w-96 mx-auto">
+        <form
+          className="border border-gray-400 rounded-lg mt-6 flex-center px-4 py-2 text-gray-800 text-sm font-estedadMedium w-full xs:w-96 mx-auto"
+          onSubmit={(e) => e.preventDefault()}
+        >
           <input
             type="text"
             className="w-full h-full outline-none"
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
           />
-          <button>
+          <button onClick={() => searchFood()}>
             <RiSearchLine className="w-6 h-6" />
           </button>
         </form>
@@ -42,7 +74,13 @@ export default function Search() {
         )}
         <div className="result__wrapper grid grid-cols-1 sm:grid-cols-12 gap-6 items-center justify-items-center content-center w-full justify-center mt-12">
           {resultArray.map((item, index) => (
-            <ResultItem key={index + 1} {...item} />
+            <ResultItem
+              key={index + 1}
+              {...item}
+              onPlus={addToBasket}
+              onLike={addFavorite}
+              onDisLike={removeFavorite}
+            />
           ))}
         </div>
       </div>

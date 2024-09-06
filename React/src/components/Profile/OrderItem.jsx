@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MdOutlineCalendarMonth } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
 import { LuWallet } from "react-icons/lu";
@@ -10,7 +10,22 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper/modules";
 import "swiper/css";
 import FoodItem from "./FoodItem";
+import ConvertToPersian from "./../share/ConvertToPersian";
+import BaseUrl from "../share/BaseUrl";
 export default function OrderItem(props) {
+  const [foodList, setFoodList] = useState([]);
+  function getFood() {
+    props.list.forEach((item) => {
+      fetch(`${BaseUrl}/foods/${item.foodId}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setFoodList((prev) => [...prev, { ...data, count: item.count }]);
+        });
+    });
+  }
+  useEffect(() => {
+    getFood();
+  }, []);
   return (
     <div className="order__item col-span-12 w-full border border-gray-400 rounded px-3 pt-2 pb-4 md:px-6 md:pb-6 md:pt-4">
       {/* top wrapper */}
@@ -19,7 +34,7 @@ export default function OrderItem(props) {
         <div className="flex flex-col items-start gap-4 md:gap-2">
           {/* branch name */}
           <span className="md:mt-2 text-xs md:text-sm text-gray-600">
-            {props.branchName}
+            شعبه اقدسیه
           </span>
           {/* detail wrapper */}
           <div className="flex flex-col md:flex-row flex-wrap items-start gap-2 text-gray-600 md:text-gray-700 text-2xs">
@@ -28,7 +43,7 @@ export default function OrderItem(props) {
               {/* detail icon */}
               <MdOutlineCalendarMonth className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
               {/* detail text */}
-              <p>{props.date}</p>
+              <p>شنبه، ۸ مرداد، ساعت ۱۸:۵۳</p>
             </div>
             {/* detail item */}
             <div className="flex items-center gap-1 md:order-2">
@@ -43,8 +58,8 @@ export default function OrderItem(props) {
               <LuWallet className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0 md:hidden" />
               {/* detail text */}
               <p>
-                مبلغ: <span>{props.price}</span>تومان تخفیف:{" "}
-                <span>{props.off}</span>تومان
+                مبلغ: <span>{ConvertToPersian(props.sumPrices)}</span> تومان /
+                تخفیف: <span>{ConvertToPersian(props.offPrices)}</span> تومان
               </p>
             </div>
           </div>
@@ -55,10 +70,12 @@ export default function OrderItem(props) {
           <div className="flex items-center gap-2 text-2xs md:text-xs">
             {/* delivery label */}
             <span className="delivery__label">
-              {props.delivery === "courier" ? "ارسال توسط پیک" : "تحویل حضوری"}
+              {props.send === "ارسال توسط پیک"
+                ? "ارسال توسط پیک"
+                : "تحویل حضوری"}
             </span>
             {/* order state */}
-            {props.active ? (
+            {props.state === "جاری" ? (
               <span className="order__state">جاری</span>
             ) : props.isComplete ? (
               <span className="delivered">تحویل شده</span>
@@ -67,7 +84,7 @@ export default function OrderItem(props) {
             )}
           </div>
           {/* detail item */}
-          {props.active ? (
+          {props.state === "جاری" ? (
             <div className="flex items-center gap-1 text-gray-600 md:text-gray-700 text-2xs md:text-xs">
               {/* detail icon */}
               <FaRegClock className="w-3 h-3 md:w-4 md:h-4" />
@@ -75,7 +92,7 @@ export default function OrderItem(props) {
               <p>
                 آماده تحویل تا{" "}
                 <span className="text-primary" dir="ltr">
-                  {props.hour}
+                  ۲۵:۳۳
                 </span>
               </p>
             </div>
@@ -83,7 +100,7 @@ export default function OrderItem(props) {
         </div>
       </div>
       {/* order state */}
-      {props.active ? (
+      {props.state === "جاری" ? (
         <div className="flex items-center gap-1 md:gap-2 justify-between px-2 lg:px-10 text-gray-400 text-sm">
           {/* state item */}
           <span className="state__order state__order--active flex items-center">
@@ -134,14 +151,14 @@ export default function OrderItem(props) {
         }}
         className="mt-4"
       >
-        {props.foodArray.map((item, index) => (
+        {foodList.map((item, index) => (
           <SwiperSlide key={index}>
             <FoodItem {...item} />
           </SwiperSlide>
         ))}
       </Swiper>
       {/* btn */}
-      {props.active ? (
+      {props.state === "جاری" ? (
         <button className="cancel__order mx-auto md:ml-0 md:mr-auto border rounded p-2 text-xs flex-center h-8 w-24 md:w-30 text-error border-error mt-4">
           لغو سفارش
         </button>

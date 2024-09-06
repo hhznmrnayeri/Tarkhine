@@ -1,108 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Empty from "../share/Empty";
+import BaseUrl from "../share/BaseUrl";
 import { IoMdCheckmark } from "react-icons/io";
 import { GoChevronLeft } from "react-icons/go";
 import OrderItem from "./OrderItem";
 export default function WalletSection() {
-  const [orderArray] = useState([
-    {
-      branchName: "شعبه اقدسیه",
-      date: "شنبه، ۸ مرداد، ساعت ۱۸:۵۳",
-      price: "۲۲۸٬۵۰۰",
-      off: "۲۸٬۵۰۰",
-      address: "تهران: اقدسیه، بزرگراه ارتش، مجتمع شمیران سنتر، طبقه ۱۰",
-      hour: "۲۵:۳۳",
-      active: true,
-      foodArray: [
-        {
-          img: "src/assets/images/menu/food9.webp",
-          price: "۲۷۰٬۰۰۰",
-          count: "۳",
-          name: "کوکو سبزی",
-        },
-        {
-          img: "src/assets/images/menu/food8.webp",
-          price: "۱۹۵٬۰۰۰",
-          count: "۱",
-          name: "دلمه برگ مو",
-        },
-        {
-          img: "src/assets/images/menu/food7.webp",
-          price: "۲۰۹٬۰۰۰",
-          count: "۲",
-          name: "دلمه کلم برگ",
-        },
-        {
-          img: "src/assets/images/menu/food6.webp",
-          price: "۱۳۶٬۰۰۰",
-          count: "۱",
-          name: "بادمجان شکم‌پر",
-        },
-        {
-          img: "src/assets/images/menu/food5.webp",
-          price: "۱۴۸٬۰۰۰",
-          count: "۲",
-          name: "بورانی بادمجان",
-        },
-        {
-          img: "src/assets/images/menu/food4.webp",
-          price: "۲۰۳٬۰۰۰",
-          count: "۱",
-          name: "کله جوش",
-        },
-      ],
-    },
-  ]);
-  const [filteredOrder] = useState([
-    {
-      branchName: "شعبه اقدسیه",
-      date: "شنبه، ۸ مرداد، ساعت ۱۸:۵۳",
-      price: "۲۲۸٬۵۰۰",
-      off: "۲۸٬۵۰۰",
-      address: "تهران: اقدسیه، بزرگراه ارتش، مجتمع شمیران سنتر، طبقه ۱۰",
-      hour: "۲۵:۳۳",
-      active: true,
-      foodArray: [
-        {
-          img: "src/assets/images/menu/food9.webp",
-          price: "۲۷۰٬۰۰۰",
-          count: "۳",
-          name: "کوکو سبزی",
-        },
-        {
-          img: "src/assets/images/menu/food8.webp",
-          price: "۱۹۵٬۰۰۰",
-          count: "۱",
-          name: "دلمه برگ مو",
-        },
-        {
-          img: "src/assets/images/menu/food7.webp",
-          price: "۲۰۹٬۰۰۰",
-          count: "۲",
-          name: "دلمه کلم برگ",
-        },
-        {
-          img: "src/assets/images/menu/food6.webp",
-          price: "۱۳۶٬۰۰۰",
-          count: "۱",
-          name: "بادمجان شکم‌پر",
-        },
-        {
-          img: "src/assets/images/menu/food5.webp",
-          price: "۱۴۸٬۰۰۰",
-          count: "۲",
-          name: "بورانی بادمجان",
-        },
-        {
-          img: "src/assets/images/menu/food4.webp",
-          price: "۲۰۳٬۰۰۰",
-          count: "۱",
-          name: "کله جوش",
-        },
-      ],
-    },
-  ]);
+  const [orderArray, setOrderArray] = useState([]);
+  const [filteredOrder, setFilteredOrder] = useState([]);
   const [filterItemActive, setFilterItemActive] = useState("همه");
+  function getOrders() {
+    fetch(`${BaseUrl}/order`)
+      .then((res) => res.json())
+      .then((data) => {
+        setOrderArray(data);
+        setFilteredOrder(data);
+      });
+  }
+  useEffect(() => {
+    getOrders();
+  }, []);
   return (
     <>
       <section>

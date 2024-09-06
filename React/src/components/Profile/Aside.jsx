@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import UserSection from "./UserSection";
 import WalletSection from "./WalletSection";
 import HeartSection from "./HeartSection";
@@ -16,10 +16,18 @@ import { GoChevronRight } from "react-icons/go";
 import Overlay from "../share/Overlay";
 import { IoMdClose } from "react-icons/io";
 import { NavLink } from "react-router-dom";
+import BaseUrl from "../share/BaseUrl";
+import ConvertToPersian from "../share/ConvertToPersian";
 export default function Aside() {
+  const [userInfo, setUserInfo] = useState({});
   const [menuItemActive, setMenuItemActive] = useState("user");
   const [showMenu, setShowMenu] = useState(false);
   const [showLogoutModal, setShowLogoutModal] = useState(false);
+  function getUserInfo() {
+    fetch(`${BaseUrl}/users/1`)
+      .then((res) => res.json())
+      .then((data) => setUserInfo(data));
+  }
   const openAsideMenu = () => {
     setShowMenu(true);
   };
@@ -32,6 +40,9 @@ export default function Aside() {
   const closeLogoutModal = () => {
     setShowLogoutModal(false);
   };
+  useEffect(() => {
+    getUserInfo();
+  }, []);
   return (
     <>
       <div className="container">
@@ -46,20 +57,28 @@ export default function Aside() {
             {/* top wrapper */}
             <div className="flex items-center md:items-end gap-2 md:gap-5 pb-2 border-b border-gray-600">
               {/* img */}
-              <img
-                src="src/assets/images/profile/Ellipse.webp"
-                alt="user"
-                className="w-12 h-12 lg:w-20 lg:h-20"
-              />
+              {userInfo.photo ? (
+                <img
+                  src={`${userInfo.photo}`}
+                  alt="user"
+                  className="w-12 h-12 lg:w-20 lg:h-20 rounded-full"
+                />
+              ) : (
+                <img
+                  src="src/assets/images/profile/Ellipse.webp"
+                  alt="user"
+                  className="w-12 h-12 lg:w-20 lg:h-20"
+                />
+              )}
               {/* user content */}
-              <div className="flex flex-col items-start">
+              <div className="flex flex-col items-start self-center">
                 {/* user name */}
                 <h4 className="user__name text-sm lg:text-base">
-                  کاربر ترخینه
+                  {userInfo.username}
                 </h4>
                 {/* user phone */}
                 <h5 className="text-gray-700 text-2xs lg:text-xs" dir="ltr">
-                  ۰۹۱۴ ۸۶۴ ۳۳۵۰
+                  0{userInfo.phoneNumber}
                 </h5>
               </div>
             </div>
@@ -159,7 +178,7 @@ export default function Aside() {
                   {menuItemActive === "location" ? "آدرس‌ها" : ""}
                 </h2>
               </div>
-              {menuItemActive === "user" && <UserSection />}
+              {menuItemActive === "user" && <UserSection userInfo={userInfo} />}
               {menuItemActive === "wallet" && <WalletSection />}
               {menuItemActive === "heart" && <HeartSection />}
               {menuItemActive === "location" && <LocationSection />}

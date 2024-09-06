@@ -2,15 +2,16 @@ import React, { useState } from "react";
 import Calendar from "../share/Calendar";
 import { BiEditAlt } from "react-icons/bi";
 import Overlay from "../share/Overlay";
-export default function UserSection() {
+import BaseUrl from "../share/BaseUrl";
+export default function UserSection({ userInfo }) {
   const [isShowEditBox, setIsShowEditBox] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [date, setDate] = useState("");
-  const [userName, setUserName] = useState("");
+  const [firstName, setFirstName] = useState(userInfo.firstName);
+  const [lastName, setLastName] = useState(userInfo.lastName);
+  const [email, setEmail] = useState(userInfo.email);
+  const [phoneNumber, setPhoneNumber] = useState(userInfo.phoneNumber);
+  const [date, setDate] = useState(userInfo.birthday);
+  const [userName, setUserName] = useState(userInfo.username);
   const openEditBox = () => {
     setIsShowEditBox(true);
   };
@@ -20,7 +21,27 @@ export default function UserSection() {
   };
   const editHandler = (e) => {
     e.preventDefault();
-    setIsShowEditBox(false);
+    const updateUser = {
+      firstName: firstName,
+      lastName: lastName,
+      username: userName,
+      phoneNumber: phoneNumber,
+      email: email,
+      photo: "src/assets/images/branch/user1.webp",
+      birthday: "6/25/2000",
+      commentId: "1",
+    };
+    fetch(`${BaseUrl}/users/1`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updateUser),
+    })
+      .then((res) => res.json())
+      .then(() => {
+        setIsShowEditBox(false);
+      });
   };
   const closeCalendar = () => {
     setShowCalendar(false);
@@ -140,32 +161,32 @@ export default function UserSection() {
             <div className="flex-center flex-col md:flex-row gap-3 md:gap-4 w-full">
               {/* detail item */}
               <span className="border border-gray-400 h-8 md:h-10 w-full flex items-center text-gray-400 text-2xs px-4 py-1 rounded md:rounded-lg">
-                {firstName.length ? firstName : "نام"}
+                {firstName ? firstName : "نام"}
               </span>
               {/* detail item */}
               <span className="border border-gray-400 h-8 md:h-10 w-full flex items-center text-gray-400 text-2xs px-4 py-1 rounded md:rounded-lg">
-                {lastName.length ? lastName : "نام خانوادگی"}
+                {lastName ? lastName : "نام خانوادگی"}
               </span>
             </div>
             {/* detail wrapper */}
             <div className="flex-center flex-col md:flex-row gap-3 md:gap-4 w-full">
               {/* detail item */}
               <span className="border border-gray-400 h-8 md:h-10 w-full flex items-center text-gray-400 text-2xs px-4 py-1 rounded md:rounded-lg">
-                {email.length ? email : "آدرس ایمیل"}
+                {email ? email : "آدرس ایمیل"}
               </span>
               {/* detail item */}
               <span
                 className="border border-gray-400 h-8 md:h-10 w-full flex items-center text-gray-400 text-2xs px-4 py-1 rounded md:rounded-lg"
-                dir={phoneNumber.length ? "ltr" : "rtl"}
+                dir={phoneNumber ? "ltr" : "rtl"}
               >
-                {phoneNumber.length ? phoneNumber : "شماره همراه"}
+                {phoneNumber ? phoneNumber : "شماره همراه"}
               </span>
             </div>
             {/* detail wrapper */}
             <div className="flex-center flex-col md:flex-row gap-3 md:gap-4 w-full">
               {/* detail item */}
               <span className="border border-gray-400 h-8 md:h-10 w-full flex items-center text-gray-400 text-2xs px-4 py-1 rounded md:rounded-lg">
-                {date.length ? (
+                {date ? (
                   date
                 ) : (
                   <span>
@@ -175,7 +196,7 @@ export default function UserSection() {
               </span>
               {/* detail item */}
               <span className="border border-gray-400 h-8 md:h-10 w-full flex items-center text-gray-400 text-2xs px-4 py-1 rounded md:rounded-lg">
-                {userName.length ? userName : "نام نمایشی"}
+                {userName ? userName : "نام نمایشی"}
               </span>
             </div>
             {/* edit btn */}

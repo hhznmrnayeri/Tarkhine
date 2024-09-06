@@ -30,16 +30,6 @@ export default function FoodItem(props) {
     setShowGalleryModal(false);
     setThumbsSwiper(null);
   };
-  const [starCount] = useState(props.star);
-  let emptyStar = 5 - starCount;
-  let emptyArray = Array(+emptyStar);
-  let fillArray = Array(+starCount);
-  for (let i = 0; i < emptyStar; i++) {
-    emptyArray.push("empty");
-  }
-  for (let i = 0; i < starCount; i++) {
-    fillArray.push("fill");
-  }
   return (
     <>
       <div className="group col-span-1 xl:col-span-6 flex gap-2 md:gap-8 rounded md:rounded-lg border border-gray-400 shadow-none md:hover:shadow-card transition-all duration-300 overflow-hidden h-28 md:h-40">
@@ -86,18 +76,22 @@ export default function FoodItem(props) {
           <div className="flex items-center gap-2 xl:gap-6 mr-4">
             {/* star wrapper */}
             <div className="flex items-center">
-              {emptyArray.map((item, index) => (
-                <IoMdStarOutline
-                  key={index}
-                  className={`w-4 h-4 md:w-6 md:h-6 ${item} text-[#F4B740]`}
-                />
-              ))}
-              {fillArray.map((item, index) => (
-                <IoMdStar
-                  key={index}
-                  className={`w-4 h-4 md:w-6 md:h-6 ${item} text-[#F4B740]`}
-                />
-              ))}
+              {Array(5 - props.star)
+                .fill(0)
+                .map((_i, index) => (
+                  <IoMdStarOutline
+                    key={index + 1}
+                    className={`w-4 h-4 md:w-6 md:h-6 text-[#F4B740]`}
+                  />
+                ))}
+              {Array(props.star)
+                .fill(0)
+                .map((_i, index) => (
+                  <IoMdStar
+                    key={index + 1}
+                    className={`w-4 h-4 md:w-6 md:h-6 text-[#F4B740]`}
+                  />
+                ))}
             </div>
             {/* item btn */}
             <button
@@ -150,18 +144,22 @@ export default function FoodItem(props) {
               </div>
               <div className="flex flex-col items-end gap-1">
                 <div className="flex items-center">
-                  {emptyArray.map((item, index) => (
-                    <IoMdStarOutline
-                      key={index}
-                      className={`w-4 h-4 md:w-6 md:h-6 ${item} text-[#F4B740]`}
-                    />
-                  ))}
-                  {fillArray.map((item, index) => (
-                    <IoMdStar
-                      key={index}
-                      className={`w-4 h-4 md:w-6 md:h-6 ${item} text-[#F4B740]`}
-                    />
-                  ))}
+                  {Array(5 - props.star)
+                    .fill(0)
+                    .map((_i, index) => (
+                      <IoMdStarOutline
+                        key={index + 1}
+                        className={`w-4 h-4 md:w-6 md:h-6 text-[#F4B740]`}
+                      />
+                    ))}
+                  {Array(props.star)
+                    .fill(0)
+                    .map((_i, index) => (
+                      <IoMdStar
+                        key={index + 1}
+                        className={`w-4 h-4 md:w-6 md:h-6 text-[#F4B740]`}
+                      />
+                    ))}
                 </div>
                 <span className="text-sm text-gray-400">
                   (

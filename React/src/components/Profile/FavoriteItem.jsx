@@ -1,25 +1,16 @@
-import React, { useState } from "react";
+import React, { useId } from "react";
 import { IoMdStar } from "react-icons/io";
-import { IoMdStarOutline } from "react-icons/io";
 import { IoMdHeart } from "react-icons/io";
+import { IoMdStarOutline } from "react-icons/io";
 import ConvertToPersian from "./../share/ConvertToPersian";
+import Rating from "../share/Rating";
 export default function FavoriteItem(props) {
-  const [starCount] = useState(props.star);
   const addItemToBasket = (id) => {
     props.onPlus(id);
   };
   const removeFavorite = (id) => {
     props.onDisLike(id);
   };
-  let emptyStar = 5 - starCount;
-  let emptyArray = Array(+emptyStar);
-  let fillArray = Array(+starCount);
-  for (let i = 0; i < emptyStar; i++) {
-    emptyArray.push("empty");
-  }
-  for (let i = 0; i < starCount; i++) {
-    fillArray.push("fill");
-  }
   return (
     <div className="col-span-6 md:col-span-12 lg:col-span-6 xl:col-span-4 flex flex-col overflow-hidden rounded md:rounded-lg border border-gray-400">
       {/* img */}
@@ -45,27 +36,24 @@ export default function FavoriteItem(props) {
         </div>
         {/* center wrapper */}
         <div className="flex items-center justify-between mt-1 md:mt-2">
-          {/* desktop star */}
-          <div className="hidden md:flex items-center">
-            {emptyArray.map((item, index) => (
-              <IoMdStarOutline
-                key={index}
-                className={`w-4 h-4 md:w-6 md:h-6 ${item} text-[#F4B740]`}
-              />
-            ))}
-            {fillArray.map((item, index) => (
-              <IoMdStar
-                key={index}
-                className={`w-4 h-4 md:w-6 md:h-6 ${item} text-[#F4B740]`}
-              />
-            ))}
+          <div className="hidden md:flex items-center text-[#F4B740] child:w-4 child:h-4 child:md:w-6 child:md:h-6">
+            {Array(5 - props.star)
+              .fill(0)
+              .map((_i, index) => (
+                <IoMdStarOutline key={index + 1} />
+              ))}
+            {Array(props.star)
+              .fill(0)
+              .map((_i, index) => (
+                <IoMdStar key={index + 1} />
+              ))}
           </div>
           {/* mobile star */}
           <div className="flex md:hidden items-center gap-0.5 text-xs">
             {/* star */}
             <IoMdStar className={`w-4 h-4 md:w-6 md:h-6 text-[#F4B740]`} />
             {/* star count */}
-            <span>۴</span>
+            <span>{ConvertToPersian(props.star)}</span>
           </div>
           {/* price wrapper */}
           <span className="text-xs md:text-base">

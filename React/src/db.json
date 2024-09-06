@@ -266,7 +266,7 @@
       "offerCount": "35",
       "priceValue": "145000",
       "comment": "12",
-      "star": "4"
+      "star": 4
     },
     {
       "id": "2",
@@ -286,7 +286,7 @@
       "offerCount": "",
       "priceValue": "95000",
       "comment": "5",
-      "star": "5"
+      "star": 5
     },
     {
       "id": "3",
@@ -306,7 +306,7 @@
       "offerCount": "10",
       "priceValue": "142500",
       "comment": "75",
-      "star": "5"
+      "star": 5
     },
     {
       "id": "4",
@@ -326,7 +326,7 @@
       "offerCount": "30",
       "priceValue": "180000",
       "comment": "86",
-      "star": "4"
+      "star": 4
     },
     {
       "id": "5",
@@ -346,7 +346,7 @@
       "offerCount": "",
       "priceValue": "80000",
       "comment": "24",
-      "star": "3"
+      "star": 3
     },
     {
       "id": "6",
@@ -366,7 +366,7 @@
       "offerCount": "5",
       "priceValue": "203000",
       "comment": "36",
-      "star": "4"
+      "star": 4
     },
     {
       "id": "7",
@@ -386,7 +386,7 @@
       "offerCount": "22",
       "priceValue": "148000",
       "comment": "9",
-      "star": "5"
+      "star": 5
     },
     {
       "id": "8",
@@ -406,7 +406,7 @@
       "offerCount": "18",
       "priceValue": "136000",
       "comment": "41",
-      "star": "4"
+      "star": 4
     },
     {
       "id": "9",
@@ -426,7 +426,7 @@
       "offerCount": "8",
       "priceValue": "209000",
       "comment": "54",
-      "star": "5"
+      "star": 5
     },
     {
       "id": "10",
@@ -446,7 +446,7 @@
       "offerCount": "",
       "priceValue": "195000",
       "comment": "20",
-      "star": "2"
+      "star": 2
     },
     {
       "id": "11",
@@ -466,7 +466,7 @@
       "offerCount": "10",
       "priceValue": "270000",
       "comment": "71",
-      "star": "5"
+      "star": 5
     },
     {
       "id": "12",
@@ -486,7 +486,7 @@
       "offerCount": "20",
       "priceValue": "105000",
       "comment": "68",
-      "star": "1"
+      "star": 1
     },
     {
       "id": "13",
@@ -506,7 +506,7 @@
       "offerCount": "20",
       "priceValue": "140000",
       "comment": "81",
-      "star": "5"
+      "star": 5
     },
     {
       "id": "14",
@@ -526,7 +526,7 @@
       "offerCount": "12",
       "priceValue": "160000",
       "comment": "43",
-      "star": "4"
+      "star": 4
     },
     {
       "id": "15",
@@ -546,7 +546,7 @@
       "offerCount": "45",
       "priceValue": "95000",
       "comment": "56",
-      "star": "4"
+      "star": 4
     },
     {
       "id": "16",
@@ -566,7 +566,7 @@
       "offerCount": "",
       "priceValue": "150000",
       "comment": "50",
-      "star": "5"
+      "star": 5
     },
     {
       "id": "17",
@@ -586,7 +586,7 @@
       "offerCount": "15",
       "priceValue": "85000",
       "comment": "98",
-      "star": "4"
+      "star": 4
     },
     {
       "id": "18",
@@ -606,7 +606,7 @@
       "offerCount": "8",
       "priceValue": "110000",
       "comment": "75",
-      "star": "4"
+      "star": 4
     },
     {
       "id": "19",
@@ -626,7 +626,7 @@
       "offerCount": "17",
       "priceValue": "177000",
       "comment": "124",
-      "star": "5"
+      "star": 5
     },
     {
       "id": "20",
@@ -646,7 +646,7 @@
       "offerCount": "15",
       "priceValue": "180000",
       "comment": "73",
-      "star": "4"
+      "star": 4
     },
     {
       "id": "21",
@@ -666,7 +666,7 @@
       "offerCount": "12",
       "priceValue": "188000",
       "comment": "59",
-      "star": "5"
+      "star": 5
     },
     {
       "id": "22",
@@ -686,7 +686,7 @@
       "offerCount": "",
       "priceValue": "150000",
       "comment": "31",
-      "star": "4"
+      "star": 4
     },
     {
       "id": "23",
@@ -706,7 +706,7 @@
       "offerCount": "21",
       "priceValue": "185000",
       "comment": "47",
-      "star": "4"
+      "star": 4
     },
     {
       "id": "24",
@@ -726,7 +726,7 @@
       "offerCount": "25",
       "priceValue": "175000",
       "comment": "35",
-      "star": "3"
+      "star": 3
     },
     {
       "id": "25",
@@ -746,7 +746,7 @@
       "offerCount": "",
       "priceValue": "100000",
       "comment": "87",
-      "star": "4"
+      "star": 4
     },
     {
       "id": "26",
@@ -766,7 +766,7 @@
       "offerCount": "10",
       "priceValue": "252000",
       "comment": "35",
-      "star": "5"
+      "star": 5
     },
     {
       "id": "27",
@@ -786,7 +786,7 @@
       "offerCount": "13",
       "priceValue": "147000",
       "comment": "61",
-      "star": "2"
+      "star": 2
     },
     {
       "id": "28",
@@ -806,7 +806,7 @@
       "offerCount": "16",
       "priceValue": "105000",
       "comment": "39",
-      "star": "3"
+      "star": 3
     },
     {
       "id": "29",
@@ -826,7 +826,7 @@
       "offerCount": "18",
       "priceValue": "205000",
       "comment": "19",
-      "star": "5"
+      "star": 5
     },
     {
       "id": "30",
@@ -846,7 +846,7 @@
       "offerCount": "35",
       "priceValue": "165000",
       "comment": "34",
-      "star": "4"
+      "star": 4
     },
     {
       "id": "31",
@@ -866,7 +866,7 @@
       "offerCount": "",
       "priceValue": "145000",
       "comment": "92",
-      "star": "5"
+      "star": 5
     },
     {
       "id": "32",
@@ -887,7 +887,7 @@
       "offerCount": "15",
       "priceValue": "190000",
       "comment": "45",
-      "star": "3"
+      "star": 3
     }
   ],
   "types": [

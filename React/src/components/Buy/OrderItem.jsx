@@ -13,16 +13,6 @@ export default function OrderItem(props) {
   const removeFromBasket = (id) => {
     props.onRemove(id);
   };
-  const [starCount] = useState(props.star);
-  let emptyStar = 5 - starCount;
-  let emptyArray = Array(+emptyStar);
-  let fillArray = Array(+starCount);
-  for (let i = 0; i < emptyStar; i++) {
-    emptyArray.push("empty");
-  }
-  for (let i = 0; i < starCount; i++) {
-    fillArray.push("fill");
-  }
   return (
     <div
       dir="rtl"
@@ -48,18 +38,22 @@ export default function OrderItem(props) {
           <div className="flex items-center gap-6">
             {/* star wrapper */}
             <div className=" items-center hidden md:flex">
-              {emptyArray.map((item, index) => (
-                <IoMdStarOutline
-                  key={index}
-                  className={`w-4 h-4 md:w-6 md:h-6 ${item} text-[#F4B740]`}
-                />
-              ))}
-              {fillArray.map((item, index) => (
-                <IoMdStar
-                  key={index}
-                  className={`w-4 h-4 md:w-6 md:h-6 ${item} text-[#F4B740]`}
-                />
-              ))}
+              {Array(5 - props.star)
+                .fill(0)
+                .map((_i, index) => (
+                  <IoMdStarOutline
+                    key={index + 1}
+                    className={`w-4 h-4 md:w-6 md:h-6 text-[#F4B740]`}
+                  />
+                ))}
+              {Array(props.star)
+                .fill(0)
+                .map((_i, index) => (
+                  <IoMdStar
+                    key={index + 1}
+                    className={`w-4 h-4 md:w-6 md:h-6 text-[#F4B740]`}
+                  />
+                ))}
             </div>
             {/* count wrapper */}
             <div className="flex items-center gap-2 px-1 bg-tint-100 rounded text-primary md:text-xl">

@@ -1,5 +1,5 @@
 import React from "react";
-import BaseUrl from "./BaseUrl";
+import BaseUrl from "../components/share/BaseUrl";
 
 export default async function AddFavorite(id, func) {
   const newItem = { isFavorite: true };

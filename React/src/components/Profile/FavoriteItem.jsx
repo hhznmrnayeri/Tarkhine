@@ -1,9 +1,8 @@
-import React, { useId } from "react";
+import React from "react";
 import { IoMdStar } from "react-icons/io";
 import { IoMdHeart } from "react-icons/io";
 import { IoMdStarOutline } from "react-icons/io";
-import ConvertToPersian from "./../share/ConvertToPersian";
-import Rating from "../share/Rating";
+import ConvertToPersian from "../../hooks/ConvertToPersian";
 export default function FavoriteItem(props) {
   const addItemToBasket = (id) => {
     props.onPlus(id);

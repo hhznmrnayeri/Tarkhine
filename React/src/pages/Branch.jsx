@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
-import Nav from "../share/Nav";
-import HeaderSlider from "../share/HeaderSlider";
-import Footer from "../share/Footer";
-import SearchBox from "../share/SearchBox";
-import Special from "./Special";
-import Popular from "./Popular";
-import Foreign from "./Foreign";
+import Nav from "../components/share/Nav";
+import HeaderSlider from "../components/share/HeaderSlider";
+import Footer from "../components/share/Footer";
+import SearchBox from "../components/share/SearchBox";
+import Special from "../components/Branch/Special";
+import Popular from "../components/Branch/Popular";
+import Foreign from "../components/Branch/Foreign";
 import { LiaClipboardListSolid } from "react-icons/lia";
-import Gallery from "./Gallery";
-import About from "./About";
-import Comment from "./Comment";
+import Gallery from "../components/Branch/Gallery";
+import About from "../components/Branch/About";
+import Comment from "../components/Branch/Comment";
 import { NavLink } from "react-router-dom";
-import BaseUrl from "../share/BaseUrl";
+import BaseUrl from "../components/share/BaseUrl";
 export default function Branch() {
   const [listAlbum, setListAlbum] = useState([]);
   const [commentArray, setCommentArray] = useState([]);

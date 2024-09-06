@@ -8,12 +8,12 @@ import { TbAlertHexagon } from "react-icons/tb";
 import { GoChevronLeft } from "react-icons/go";
 import { LiaUserSolid } from "react-icons/lia";
 import { IoMdClose } from "react-icons/io";
-import Empty from "../share/Empty";
-import Overlay from "../share/Overlay";
-import BaseUrl from "../share/BaseUrl";
+import Empty from "../components/share/Empty";
+import Overlay from "../components/share/Overlay";
+import BaseUrl from "../components/share/BaseUrl";
 import { NavLink } from "react-router-dom";
-import OrderItem from "./OrderItem";
-import ConvertToPersian from "../share/ConvertToPersian";
+import OrderItem from "../components/Buy/OrderItem";
+import ConvertToPersian from "../hooks/ConvertToPersian";
 export default function Basket() {
   const [basketArray, setBasketArray] = useState([]);
   const [isLogin] = useState(true);
@@ -50,7 +50,7 @@ export default function Basket() {
         data.forEach((item) => {
           fetch(`${BaseUrl}/basket/${item.id}`, { method: "DELETE" })
             .then((res) => res.json())
-            .then((data) => {
+            .then(() => {
               getBasketArray();
               setBasketArray([]);
             });
@@ -66,7 +66,7 @@ export default function Basket() {
       body: JSON.stringify(newCount),
     })
       .then((res) => res.json())
-      .then((data) => getBasketArray());
+      .then(() => getBasketArray());
   };
   const decreaseCount = (id, counter) => {
     const newCount = { count: counter - 1 };
@@ -76,14 +76,14 @@ export default function Basket() {
       body: JSON.stringify(newCount),
     })
       .then((res) => res.json())
-      .then((data) => getBasketArray());
+      .then(() => getBasketArray());
   };
   const removeItemFromBasket = (id) => {
     fetch(`${BaseUrl}/basket/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
-      .then((data) => getBasketArray());
+      .then(() => getBasketArray());
   };
   const closeDeleteModal = () => {
     setShowDeleteModal(false);

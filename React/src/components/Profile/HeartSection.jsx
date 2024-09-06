@@ -5,8 +5,8 @@ import { IoMdCheckmark } from "react-icons/io";
 import { GoChevronLeft } from "react-icons/go";
 import { RiSearchLine } from "react-icons/ri";
 import BaseUrl from "../share/BaseUrl";
-import AddToBasket from "../share/AddToBasket";
-import RemoveFavorite from "../share/RemoveFavorite";
+import AddToBasket from "../../hooks/AddToBasket";
+import RemoveFavorite from "../../hooks/RemoveFavorite";
 export default function HeartSection() {
   const [favoriteArray, setFavoriteArray] = useState([]);
   const [filteredArray, setFilteredArray] = useState([]);

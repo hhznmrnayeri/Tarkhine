@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { IoMdStar } from "react-icons/io";
 import { IoMdStarOutline } from "react-icons/io";
 import { IoTrashOutline } from "react-icons/io5";
-import ConvertToPersian from "../share/ConvertToPersian";
+import ConvertToPersian from "../../hooks/ConvertToPersian";
 export default function OrderItem(props) {
   const increaseCountItem = (id, count) => {
     props.onIncrease(id, count);

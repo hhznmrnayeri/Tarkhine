@@ -1,9 +1,9 @@
 import React from "react";
 import ListSection from "./ListSection";
 import FoodItem from "./FoodItem";
-import AddToBasket from "../share/AddToBasket";
-import AddFavorite from "../share/AddFavorite";
-import RemoveFavorite from "../share/RemoveFavorite";
+import AddToBasket from "../../hooks/AddToBasket";
+import AddFavorite from "../../hooks/AddFavorite";
+import RemoveFavorite from "../../hooks/RemoveFavorite";
 export default function List({ foodList, getFoods }) {
   const addToBasket = (id) => {
     AddToBasket(id);

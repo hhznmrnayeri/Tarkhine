@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Nav from "../share/Nav";
-import ResultItem from "./ResultItem";
-import Footer from "../share/Footer";
-import BaseUrl from "../share/BaseUrl";
-import AddToBasket from "../share/AddToBasket";
-import AddFavorite from "../share/AddFavorite";
-import RemoveFavorite from "../share/RemoveFavorite";
+import Nav from "../components/share/Nav";
+import ResultItem from "../components/Search/ResultItem";
+import Footer from "../components/share/Footer";
+import BaseUrl from "../components/share/BaseUrl";
+import AddToBasket from "../hooks/AddToBasket";
+import AddFavorite from "../hooks/AddFavorite";
+import RemoveFavorite from "../hooks/RemoveFavorite";
 import { RiSearchLine } from "react-icons/ri";
 export default function Search() {
   const [resultArray, setResultArray] = useState([]);

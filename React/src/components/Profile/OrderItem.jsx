@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper/modules";
 import "swiper/css";
 import FoodItem from "./FoodItem";
-import ConvertToPersian from "./../share/ConvertToPersian";
+import ConvertToPersian from "../../hooks/ConvertToPersian";
 import BaseUrl from "../share/BaseUrl";
 export default function OrderItem(props) {
   const [foodList, setFoodList] = useState([]);

@@ -12,11 +12,11 @@ import { BsHandbag } from "react-icons/bs";
 import { IoLocationOutline } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { PiGpsFix } from "react-icons/pi";
-import Empty from "../share/Empty";
-import AddressItem from "../share/AddressItem";
-import Overlay from "../share/Overlay";
-import BaseUrl from "../share/BaseUrl";
-import ConvertToPersian from "../share/ConvertToPersian";
+import Empty from "../components/share/Empty";
+import AddressItem from "../components/share/AddressItem";
+import Overlay from "../components/share/Overlay";
+import BaseUrl from "../components/share/BaseUrl";
+import ConvertToPersian from "../hooks/ConvertToPersian";
 export default function Complete() {
   const [stateDelivery, setStateDelivery] = useState("courier");
   const [addressArray, setAddressArray] = useState([]);
@@ -156,7 +156,7 @@ export default function Complete() {
       method: "DELETE",
     })
       .then((res) => res.json())
-      .then((data) => getAddress());
+      .then(() => getAddress());
   };
   const closeLocationModal = () => {
     setShowLocationModal(false);
@@ -198,7 +198,7 @@ export default function Complete() {
         data.forEach((item) => {
           fetch(`${BaseUrl}/basket/${item.id}`, { method: "DELETE" })
             .then((res) => res.json())
-            .then((data) => {
+            .then(() => {
               navigate("/buy");
             });
         });

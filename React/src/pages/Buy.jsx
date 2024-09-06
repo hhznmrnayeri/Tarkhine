@@ -1,6 +1,6 @@
 import React from "react";
-import Nav from "../share/Nav";
-import Footer from "../share/Footer";
+import Nav from "../components/share/Nav";
+import Footer from "../components/share/Footer";
 import { Outlet } from "react-router-dom";
 export default function Buy() {
   return (

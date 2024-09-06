@@ -1,29 +1,29 @@
 import React, { useEffect, useState } from "react";
-import Header from "../share/Header";
-import BaseUrl from "../share/BaseUrl";
-import Accordion from "./Accordion";
-import State from "./State";
-export default function QuestionSection() {
-  const [questionList, setQuestionList] = useState([]);
+import Header from "../components/share/Header";
+import Accordion from "../components/Question/Accordion";
+import State from "../components/Question/State";
+import BaseUrl from "../components/share/BaseUrl";
+export default function PrivacySection() {
+  const [privacyList, setPrivacyList] = useState([]);
   function getQuestions() {
-    fetch(`${BaseUrl}/questions`)
+    fetch(`${BaseUrl}/privacy`)
       .then((res) => res.json())
-      .then((data) => setQuestionList(data));
+      .then((data) => setPrivacyList(data));
   }
   useEffect(() => {
     getQuestions();
   }, []);
   return (
     <>
-      <Header title="سوالات متداول از ترخینه" background="bg-header-question" />
+      <Header title="حریم شخصی کاربران" background="bg-header-privacy" />
       <div className="bg-gray-300">
         <div className="container">
-          <State title="question" />
+          <State />
         </div>
       </div>
       <div className="container mb-6 md:mb-12">
         <div className="transition-all duration-300 mt-3 md:mt-6 visible opacity-100 h-auto border border-gray-400 rounded overflow-hidden">
-          {questionList.map((item) => (
+          {privacyList.map((item) => (
             <Accordion key={item.id} {...item} />
           ))}
         </div>

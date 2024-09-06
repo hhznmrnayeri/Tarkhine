@@ -7,9 +7,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import AddToBasket from "../share/AddToBasket";
-import AddFavorite from "../share/AddFavorite";
-import RemoveFavorite from "../share/RemoveFavorite";
+import AddToBasket from "../../hooks/AddToBasket";
+import AddFavorite from "../../hooks/AddFavorite";
+import RemoveFavorite from "../../hooks/RemoveFavorite";
 export default function Foreign({ foreignArray, getFoods }) {
   const addToBasket = (id) => {
     AddToBasket(id);

@@ -1,5 +1,5 @@
 import React from "react";
-import ConvertToPersian from "../share/ConvertToPersian";
+import ConvertToPersian from "../../hooks/ConvertToPersian";
 export default function FoodItem(props) {
   return (
     <div className="border border-gray-400 rounded-lg flex flex-col h-24 md:h-32 relative overflow-hidden  flex-grow">

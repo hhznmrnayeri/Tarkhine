@@ -10,7 +10,7 @@ import { FreeMode, Thumbs } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
-import ConvertToPersian from "../share/ConvertToPersian";
+import ConvertToPersian from "../../hooks/ConvertToPersian";
 export default function FoodItem(props) {
   const addItemToBasket = (id) => {
     props.onPlus(id);

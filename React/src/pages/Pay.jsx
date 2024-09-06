@@ -14,9 +14,9 @@ import { CiCreditCard2 } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
 
 import { TbAlertHexagon } from "react-icons/tb";
-import BaseUrl from "../share/BaseUrl";
-import ConvertToPersian from "../share/ConvertToPersian";
-import Overlay from "../share/Overlay";
+import BaseUrl from "../components/share/BaseUrl";
+import ConvertToPersian from "../hooks/ConvertToPersian";
+import Overlay from "../components/share/Overlay";
 export default function Pay() {
   const [useCode, setUseCode] = useState(true);
   const [statePay, setStatePay] = useState("online");

@@ -2,7 +2,7 @@ import React from "react";
 import { IoMdStar } from "react-icons/io";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoMdHeart } from "react-icons/io";
-import ConvertToPersian from "./../share/ConvertToPersian";
+import ConvertToPersian from "../../hooks/ConvertToPersian";
 export default function ResultItem(props) {
   const addItemToBasket = (id) => {
     props.onPlus(id);

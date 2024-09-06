@@ -2,7 +2,7 @@ import React from "react";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoMdHeart } from "react-icons/io";
 import { IoMdStar } from "react-icons/io";
-import ConvertToPersian from "../share/ConvertToPersian";
+import ConvertToPersian from "../../hooks/ConvertToPersian";
 export default function SlideItem(props) {
   const addItemToBasket = (id) => {
     props.onPlus(id);

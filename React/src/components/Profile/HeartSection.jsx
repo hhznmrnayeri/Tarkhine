@@ -10,6 +10,7 @@ import RemoveFavorite from "../share/RemoveFavorite";
 export default function HeartSection() {
   const [favoriteArray, setFavoriteArray] = useState([]);
   const [filteredArray, setFilteredArray] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
   const [filterItemActive, setFilterItemActive] = useState("همه");
   const addToBasket = (id) => {
     AddToBasket(id);
@@ -17,30 +18,9 @@ export default function HeartSection() {
   const removeFavorite = (id) => {
     RemoveFavorite(id, getFavorites);
   };
-  const changeFilterItemActive = () => {
-    setFilteredArray([]);
-    if (filterItemActive === "همه") {
-      favoriteArray.forEach((food) => {
-        setFilteredArray((prev) => [...prev, food]);
-      });
-    } else {
-      fetch(`${BaseUrl}/topics`)
-        .then((res) => res.json())
-        .then((arr) => {
-          arr.forEach((topic) => {
-            if (filterItemActive === topic.title) {
-              favoriteArray.forEach((food) => {
-                if (food.topicId === topic.id) {
-                  setFilteredArray((prev) => [...prev, food]);
-                }
-              });
-            }
-          });
-        });
-    }
-  };
   const getFavorites = () => {
     setFavoriteArray([]);
+    setFilteredArray([]);
     fetch(`${BaseUrl}/foods`)
       .then((res) => res.json())
       .then((data) => {
@@ -49,14 +29,36 @@ export default function HeartSection() {
             setFavoriteArray((prev) => [...prev, item]);
           }
         });
-        changeFilterItemActive();
+        if (filterItemActive === "همه") {
+          favoriteArray.forEach((food) => {
+            setFilteredArray((prev) => [...prev, food]);
+          });
+        } else {
+          fetch(`${BaseUrl}/topics`)
+            .then((res) => res.json())
+            .then((arr) => {
+              arr.forEach((topic) => {
+                if (filterItemActive === topic.title) {
+                  favoriteArray.forEach((food) => {
+                    if (food.topicId === topic.id) {
+                      setFilteredArray((prev) => [...prev, food]);
+                    }
+                  });
+                }
+              });
+            });
+        }
       });
+  };
+  const searchFavorite = (e) => {
+    e.preventDefault();
+    const resultArray = filteredArray.filter((item) => {
+      return item.title.includes(searchValue);
+    });
+    setFilteredArray(resultArray);
   };
   useEffect(() => {
     getFavorites();
-  }, []);
-  useEffect(() => {
-    changeFilterItemActive();
   }, [filterItemActive]);
   return (
     <section>
@@ -128,12 +130,22 @@ export default function HeartSection() {
               </button>
             </div>
             {/* search wrapper */}
-            <form className="flex items-center justify-between px-4 py-2 border border-gray-400 rounded w-full overflow-hidden flex-grow">
+            <form
+              className="flex items-center justify-between px-4 py-2 border border-gray-400 rounded w-full overflow-hidden flex-grow"
+              onSubmit={searchFavorite}
+            >
               {/* search input */}
               <input
                 type="text"
                 className="border-none outline-none text-2xs md:text-xs flex-grow"
                 placeholder="جستجو"
+                value={searchValue}
+                onChange={(e) => {
+                  setSearchValue(e.target.value);
+                  if (!e.target.value) {
+                    getFavorites();
+                  }
+                }}
               />
               {/* search btn */}
               <button className="search__btn">

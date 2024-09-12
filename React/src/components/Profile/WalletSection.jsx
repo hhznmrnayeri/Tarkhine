@@ -76,7 +76,7 @@ export default function WalletSection() {
           <div className="flex flex-col gap-3 md:gap-4 w-full ">
             {filteredOrder.length ? (
               <div className="grid grid-cols-12 gap-x-4 gap-y-5 md:gap-y-6 mt-6 md:mt-8">
-                {filteredOrder.map((item, index) => (
+                {filteredOrder.reverse().map((item, index) => (
                   <OrderItem key={index + 1} {...item} />
                 ))}
               </div>

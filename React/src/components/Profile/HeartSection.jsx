@@ -7,8 +7,7 @@ import { RiSearchLine } from "react-icons/ri";
 import BaseUrl from "../share/BaseUrl";
 import AddToBasket from "../../hooks/AddToBasket";
 import RemoveFavorite from "../../hooks/RemoveFavorite";
-export default function HeartSection() {
-  const [favoriteArray, setFavoriteArray] = useState([]);
+export default function HeartSection({ topicArray, favoriteArray }) {
   const [filteredArray, setFilteredArray] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [filterItemActive, setFilterItemActive] = useState("همه");
@@ -18,37 +17,24 @@ export default function HeartSection() {
   const removeFavorite = (id) => {
     RemoveFavorite(id, getFavorites);
   };
-  const getFavorites = () => {
-    setFavoriteArray([]);
-    setFilteredArray([]);
-    fetch(`${BaseUrl}/foods`)
-      .then((res) => res.json())
-      .then((data) => {
-        data.forEach((item) => {
-          if (item.isFavorite) {
-            setFavoriteArray((prev) => [...prev, item]);
-          }
-        });
-        if (filterItemActive === "همه") {
+  const getFavorites = async () => {
+    if (filterItemActive === "همه") {
+      setFilteredArray([]);
+      favoriteArray.forEach((food) => {
+        setFilteredArray((prev) => [...prev, food]);
+      });
+    } else {
+      setFilteredArray([]);
+      topicArray.forEach((topic) => {
+        if (topic.title === filterItemActive) {
           favoriteArray.forEach((food) => {
-            setFilteredArray((prev) => [...prev, food]);
+            if (food.topicId === topic.id) {
+              setFilteredArray((prev) => [...prev, food]);
+            }
           });
-        } else {
-          fetch(`${BaseUrl}/topics`)
-            .then((res) => res.json())
-            .then((arr) => {
-              arr.forEach((topic) => {
-                if (filterItemActive === topic.title) {
-                  favoriteArray.forEach((food) => {
-                    if (food.topicId === topic.id) {
-                      setFilteredArray((prev) => [...prev, food]);
-                    }
-                  });
-                }
-              });
-            });
         }
       });
+    }
   };
   const searchFavorite = (e) => {
     e.preventDefault();

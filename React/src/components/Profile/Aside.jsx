@@ -23,6 +23,24 @@ export default function Aside() {
   const [menuItemActive, setMenuItemActive] = useState("user");
   const [showMenu, setShowMenu] = useState(false);
   const [showLogoutModal, setShowLogoutModal] = useState(false);
+  const [favoriteArray, setFavoriteArray] = useState([]);
+  const [topicArray, setTopicArray] = useState([]);
+  const getTopics = () => {
+    fetch(`${BaseUrl}/topics`)
+      .then((res) => res.json())
+      .then((data) => setTopicArray(data));
+  };
+  const getFavorites = () => {
+    fetch(`${BaseUrl}/foods`)
+      .then((res) => res.json())
+      .then((data) =>
+        data.forEach((item) => {
+          if (item.isFavorite) {
+            setFavoriteArray((prev) => [...prev, item]);
+          }
+        })
+      );
+  };
   function getUserInfo() {
     fetch(`${BaseUrl}/users/1`)
       .then((res) => res.json())
@@ -42,6 +60,8 @@ export default function Aside() {
   };
   useEffect(() => {
     getUserInfo();
+    getFavorites();
+    getTopics();
   }, []);
   return (
     <>
@@ -180,7 +200,12 @@ export default function Aside() {
               </div>
               {menuItemActive === "user" && <UserSection userInfo={userInfo} />}
               {menuItemActive === "wallet" && <WalletSection />}
-              {menuItemActive === "heart" && <HeartSection />}
+              {menuItemActive === "heart" && (
+                <HeartSection
+                  favoriteArray={favoriteArray}
+                  topicArray={topicArray}
+                />
+              )}
               {menuItemActive === "location" && <LocationSection />}
             </div>
           </div>

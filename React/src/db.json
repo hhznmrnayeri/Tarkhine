@@ -252,7 +252,7 @@
       "id": "1",
       "topicId": "1",
       "typeId": "1",
-      "isFavorite": false,
+      "isFavorite": true,
       "isSpecial": false,
       "isPopular": true,
       "isForeign": false,
@@ -292,7 +292,7 @@
       "id": "3",
       "topicId": "1",
       "typeId": "1",
-      "isFavorite": false,
+      "isFavorite": true,
       "isSpecial": false,
       "isPopular": false,
       "isForeign": false,
@@ -352,7 +352,7 @@
       "id": "6",
       "topicId": "1",
       "typeId": "1",
-      "isFavorite": false,
+      "isFavorite": true,
       "isSpecial": false,
       "isPopular": false,
       "isForeign": false,
@@ -1010,7 +1010,7 @@
       "branchesId": "1"
     },
     {
-      "id": 4,
+      "id": "4",
       "list": [
         {
           "id": "1",

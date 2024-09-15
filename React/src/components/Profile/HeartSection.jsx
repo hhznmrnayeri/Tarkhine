@@ -4,20 +4,21 @@ import Empty from "../share/Empty";
 import { IoMdCheckmark } from "react-icons/io";
 import { GoChevronLeft } from "react-icons/go";
 import { RiSearchLine } from "react-icons/ri";
-import BaseUrl from "../share/BaseUrl";
 import AddToBasket from "../../hooks/AddToBasket";
 import RemoveFavorite from "../../hooks/RemoveFavorite";
-export default function HeartSection({ topicArray, favoriteArray }) {
+export default function HeartSection({
+  topicArray,
+  setFavoriteArray,
+  favoriteArray,
+  getFavorites,
+}) {
   const [filteredArray, setFilteredArray] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [filterItemActive, setFilterItemActive] = useState("همه");
   const addToBasket = (id) => {
     AddToBasket(id);
   };
-  const removeFavorite = (id) => {
-    RemoveFavorite(id, getFavorites);
-  };
-  const getFavorites = async () => {
+  const setFavorites = () => {
     if (filterItemActive === "همه") {
       setFilteredArray([]);
       favoriteArray.forEach((food) => {
@@ -36,6 +37,13 @@ export default function HeartSection({ topicArray, favoriteArray }) {
       });
     }
   };
+  const removeFavorite = (id) => {
+    RemoveFavorite(id, () => {
+      const newResult = favoriteArray.filter((item) => item.id !== id);
+      setFilteredArray(newResult);
+      setFavoriteArray(newResult);
+    });
+  };
   const searchFavorite = (e) => {
     e.preventDefault();
     const resultArray = filteredArray.filter((item) => {
@@ -45,6 +53,7 @@ export default function HeartSection({ topicArray, favoriteArray }) {
   };
   useEffect(() => {
     getFavorites();
+    setFavorites();
   }, [filterItemActive]);
   return (
     <section>
@@ -129,7 +138,7 @@ export default function HeartSection({ topicArray, favoriteArray }) {
                 onChange={(e) => {
                   setSearchValue(e.target.value);
                   if (!e.target.value) {
-                    getFavorites();
+                    setFavorites();
                   }
                 }}
               />

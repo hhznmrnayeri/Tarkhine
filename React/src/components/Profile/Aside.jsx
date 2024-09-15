@@ -31,6 +31,7 @@ export default function Aside() {
       .then((data) => setTopicArray(data));
   };
   const getFavorites = () => {
+    setFavoriteArray([]);
     fetch(`${BaseUrl}/foods`)
       .then((res) => res.json())
       .then((data) =>
@@ -203,7 +204,9 @@ export default function Aside() {
               {menuItemActive === "heart" && (
                 <HeartSection
                   favoriteArray={favoriteArray}
+                  setFavoriteArray={setFavoriteArray}
                   topicArray={topicArray}
+                  getFavorites={getFavorites}
                 />
               )}
               {menuItemActive === "location" && <LocationSection />}

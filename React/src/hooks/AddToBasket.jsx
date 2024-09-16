@@ -1,7 +1,19 @@
 import React from "react";
 import BaseUrl from "../components/share/BaseUrl";
+import Swal from "sweetalert2";
 
 export default async function AddToBasket(id) {
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    },
+  });
   let basketItem = null;
   const res = await fetch(`${BaseUrl}/basket`);
   const basketArray = await res.json();
@@ -19,7 +31,10 @@ export default async function AddToBasket(id) {
     })
       .then((res) => res.json())
       .then(() => {
-        alert("plus to basket");
+        Toast.fire({
+          icon: "success",
+          title: "1عدد به تعداد غذای انتخابی شما در سبد خرید اضافه شد.",
+        });
       });
   } else {
     const newItem = {
@@ -36,7 +51,10 @@ export default async function AddToBasket(id) {
     })
       .then((res) => res.json())
       .then(() => {
-        alert("add to basket");
+        Swal.fire({
+          title: "غذای انتخابی شما به سبد خرید اضافه شد",
+          icon: "success",
+        });
       });
   }
 }

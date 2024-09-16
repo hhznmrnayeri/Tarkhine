@@ -128,10 +128,18 @@ export default function Pay() {
             .then((res) => res.json())
             .then(() => {});
         });
-        fetch(`${BaseUrl}/complete/1`, { method: "DELETE" })
+        fetch(`${BaseUrl}/complete`)
           .then((res) => res.json())
-          .then(() => {
-            navigate("/buy");
+          .then((data) => {
+            data.forEach((completeItem) => {
+              fetch(`${BaseUrl}/complete/${completeItem.id}`, {
+                method: "DELETE",
+              })
+                .then((res) => res.json())
+                .then(() => {
+                  navigate("/buy");
+                });
+            });
           });
       });
     setShowDeleteModal(false);

@@ -5,6 +5,7 @@ import Overlay from "../share/Overlay";
 import BaseUrl from "../share/BaseUrl";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import Swal from "sweetalert2";
 import * as yup from "yup";
 export default function Advice() {
   const [showCalendar, setShowCalendar] = useState(false);
@@ -45,9 +46,13 @@ export default function Advice() {
     })
       .then((res) => res.json())
       .then(() => {
-        alert("added to advice");
-        setValue("name", "");
-        setValue("phone", "");
+        Swal.fire({
+          title: "added to advice",
+          icon: "success",
+        }).then(() => {
+          setValue("name", "");
+          setValue("phone", "");
+        });
       });
   };
   return (

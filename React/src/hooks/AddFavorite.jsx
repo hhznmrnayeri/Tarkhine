@@ -1,6 +1,6 @@
 import React from "react";
 import BaseUrl from "../components/share/BaseUrl";
-
+import Swal from "sweetalert2";
 export default async function AddFavorite(id, func) {
   const newItem = { isFavorite: true };
   const res = await fetch(`${BaseUrl}/foods/${id}`, {
@@ -10,5 +10,10 @@ export default async function AddFavorite(id, func) {
     },
     body: JSON.stringify(newItem),
   });
-  const data = await res.json().then(func);
+  const data = await res.json().then(() => {
+    Swal.fire({
+      icon: "success",
+      title: "غذای انتخابی شما به لیست علاقه مندی ها اضافه شد.",
+    }).then(func);
+  });
 }

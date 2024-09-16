@@ -17,6 +17,7 @@ import { TbAlertHexagon } from "react-icons/tb";
 import BaseUrl from "../components/share/BaseUrl";
 import ConvertToPersian from "../hooks/ConvertToPersian";
 import Overlay from "../components/share/Overlay";
+import Swal from "sweetalert2";
 export default function Pay() {
   const [useCode, setUseCode] = useState(true);
   const [statePay, setStatePay] = useState("online");
@@ -63,11 +64,21 @@ export default function Pay() {
         setSumPrices((prev) => prev - 60000);
         setOfferCode("");
         setUseCode(false);
+        Swal.fire({
+          title: "مبلغ 60000 به تخفیفات این سفارش اضافه شد",
+          icon: "success",
+        });
       } else {
-        alert("not found");
+        Swal.fire({
+          title: "کد تخفیف وارد شده معتبر نیست",
+          icon: "error",
+        });
       }
     } else {
-      alert("just one code is available");
+      Swal.fire({
+        title: "شما تنها از یک کد تخفیف می توانید استفاده کنید",
+        icon: "warning",
+      });
     }
   };
   const registerOrderItem = () => {
@@ -115,10 +126,13 @@ export default function Pay() {
         data.forEach((item) => {
           fetch(`${BaseUrl}/basket/${item.id}`, { method: "DELETE" })
             .then((res) => res.json())
-            .then((data) => {
-              navigate("/buy");
-            });
+            .then(() => {});
         });
+        fetch(`${BaseUrl}/complete/1`, { method: "DELETE" })
+          .then((res) => res.json())
+          .then(() => {
+            navigate("/buy");
+          });
       });
     setShowDeleteModal(false);
   };

@@ -198,10 +198,13 @@ export default function Complete() {
         data.forEach((item) => {
           fetch(`${BaseUrl}/basket/${item.id}`, { method: "DELETE" })
             .then((res) => res.json())
-            .then(() => {
-              navigate("/buy");
-            });
+            .then(() => {});
         });
+        fetch(`${BaseUrl}/complete/1`, { method: "DELETE" })
+          .then((res) => res.json())
+          .then(() => {
+            navigate("/buy");
+          });
       });
     setShowDeleteModal(false);
   };

@@ -65,21 +65,23 @@ export default function SlideItem(props) {
             {/* top box */}
             <div className="flex items-center gap-2 text-2xs">
               {/* main price */}
-              <span className="main__price text-gray-500 line-through">
-                {ConvertToPersian(props.offerPrice)}
-              </span>
+              {props.offerPrice ? (
+                <span className="main__price text-gray-500 line-through">
+                  {ConvertToPersian(props.offerPrice)}
+                </span>
+              ) : null}
               {/* count offer */}
-              <span
-                className={`${
-                  props.offerCount
-                    ? "count__offer text-error px-1.5 rounded-lg bg-error-200"
-                    : ""
-                }`}
-              >
-                {props.offerCount
-                  ? `% ${ConvertToPersian(props.offerCount)}`
-                  : ""}
-              </span>
+              {props.offerCount ? (
+                <span
+                  className={`${
+                    props.offerCount
+                      ? "count__offer text-error px-1.5 rounded-lg bg-error-200"
+                      : ""
+                  }`}
+                >
+                  % {ConvertToPersian(props.offerCount)}
+                </span>
+              ) : null}
             </div>
             {/* offer price */}
             <span className="text-2xs md:text-base">

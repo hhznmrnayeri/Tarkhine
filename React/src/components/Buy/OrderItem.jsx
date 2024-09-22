@@ -101,9 +101,11 @@ export default function OrderItem(props) {
             {/* offer wrapper */}
             <div className=" items-center gap-2 justify-end hidden md:flex">
               {/* main price */}
-              <h5 className="line-through text-gray-500">
-                {ConvertToPersian(props.offerPrice)}
-              </h5>
+              {props.offerPrice && (
+                <h5 className="line-through text-gray-500">
+                  {ConvertToPersian(props.offerPrice)}
+                </h5>
+              )}
               {/* offer count */}
               {props.offerCount ? (
                 <h6 className="text-error text-2xs bg-error-200 rounded-lg px-1.5">

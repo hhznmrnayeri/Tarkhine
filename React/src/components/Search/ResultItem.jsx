@@ -50,7 +50,6 @@ export default function ResultItem(props) {
                   <span>افزودن به علاقمندی‌ها</span>
                 </button>
               )}
-
               {/* text favorite */}
             </div>
             {/* bottom box */}
@@ -71,10 +70,11 @@ export default function ResultItem(props) {
           <div className="flex flex-col items-end gap-1">
             {/* top box */}
             <div className="flex items-center gap-2 text-2xs">
-              {/* main price */}
-              <span className="main__price text-gray-500 line-through">
-                {ConvertToPersian(props.offerPrice)}
-              </span>
+              {props.offerPrice && (
+                <span className="main__price text-gray-500 line-through">
+                  {ConvertToPersian(props.offerPrice)}
+                </span>
+              )}
               {/* count offer */}
               <span
                 className={`${

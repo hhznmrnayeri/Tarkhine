@@ -1,7 +1,6 @@
 import React from "react";
 import BaseUrl from "../components/share/BaseUrl";
 import Swal from "sweetalert2";
-
 export default async function AddToBasket(id) {
   const Toast = Swal.mixin({
     toast: true,

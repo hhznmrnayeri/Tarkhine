@@ -31,6 +31,6 @@ const routes = [
     ],
   },
   { path: "representation", element: <Representation /> },
-  { path: "search", element: <Search /> },
+  { path: "search/:food", element: <Search /> },
 ];
 export default routes;

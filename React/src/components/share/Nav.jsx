@@ -176,7 +176,7 @@ export default function Nav(props) {
             </button>
             {/* logo */}
             <NavLink to="/">
-              <img src="src/assets/images/home/Logo.webp" alt="logo" />
+              <img src="../src/assets/images/home/Logo.webp" alt="logo" />
             </NavLink>
             {/* nav menu */}
             <ul className="text-gray-700 lg:text-xl hidden md:flex items-center gap-2 md:gap-1 lg:gap-6 ">

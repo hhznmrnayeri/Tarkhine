@@ -17,7 +17,7 @@ export default function ResultItem(props) {
     <div className="col-span-1 sm:col-span-6 xl:col-span-3 flex flex-col rounded md:rounded-lg border border-gray-400 overflow-hidden">
       {/* result img */}
       <img
-        src={props.img[0]}
+        src={`../${props.img[0]}`}
         alt="result"
         className="result__img object-cover w-full h-72"
       />

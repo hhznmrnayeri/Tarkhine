@@ -7,9 +7,11 @@ import AddToBasket from "../hooks/AddToBasket";
 import AddFavorite from "../hooks/AddFavorite";
 import RemoveFavorite from "../hooks/RemoveFavorite";
 import { RiSearchLine } from "react-icons/ri";
+import { useParams } from "react-router-dom";
 export default function Search() {
   const [resultArray, setResultArray] = useState([]);
-  const [searchValue, setSearchValue] = useState("");
+  const { food } = useParams();
+  const [searchValue, setSearchValue] = useState(food);
   function searchFood() {
     setResultArray([]);
     if (searchValue) {

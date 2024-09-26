@@ -14,6 +14,29 @@ import ConvertToPersian from "../../hooks/ConvertToPersian";
 import BaseUrl from "../share/BaseUrl";
 export default function OrderItem(props) {
   const [foodList, setFoodList] = useState([]);
+  const week = [
+    "یکشنبه",
+    "دوشنبه",
+    "سه شنبه",
+    "چهارشنبه",
+    "پنج شنبه",
+    "جمعه",
+    "شنبه",
+  ];
+  const [hourOrder] = useState(
+    Math.floor((Date.now() - props.time) / (1000 * 60 * 60))
+  );
+  const [dateItem] = useState(new Date(props.time));
+  const weekDay = week[dateItem.getDay()];
+  const dateOrder = dateItem.toLocaleDateString("fa-IR");
+  const hour = dateItem.getHours().toString().padStart(2, 0);
+  const minute = dateItem.getMinutes().toString().padStart(2, 0);
+  const deliveredTime = useState(new Date(props.time + 1000 * 60 * 60));
+  const deliveredHour = deliveredTime[0].getHours().toString().padStart(2, 0);
+  const deliveredMinute = deliveredTime[0]
+    .getMinutes()
+    .toString()
+    .padStart(2, 0);
   function getFood() {
     props.list.forEach((item) => {
       fetch(`${BaseUrl}/foods/${item.foodId}`)
@@ -43,15 +66,19 @@ export default function OrderItem(props) {
               {/* detail icon */}
               <MdOutlineCalendarMonth className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
               {/* detail text */}
-              <p>شنبه، ۸ مرداد، ساعت ۱۸:۵۳</p>
+              <p>
+                {weekDay}، {dateOrder}، ساعت {hour}:{minute}
+              </p>
             </div>
             {/* detail item */}
-            <div className="flex items-center gap-1 md:order-2">
-              {/* detail icon */}
-              <IoLocationOutline className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
-              {/* detail text */}
-              <p>{props.address}</p>
-            </div>
+            {props.sendState === "courier" && (
+              <div className="flex items-center gap-1 md:order-2">
+                {/* detail icon */}
+                <IoLocationOutline className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
+                {/* detail text */}
+                <p>{props.address}</p>
+              </div>
+            )}
             {/* detail item */}
             <div className="flex items-center gap-1 md:order-1 ">
               {/* detail icon */}
@@ -70,12 +97,10 @@ export default function OrderItem(props) {
           <div className="flex items-center gap-2 text-2xs md:text-xs">
             {/* delivery label */}
             <span className="delivery__label">
-              {props.send === "ارسال توسط پیک"
-                ? "ارسال توسط پیک"
-                : "تحویل حضوری"}
+              {props.sendState === "courier" ? "ارسال توسط پیک" : "تحویل حضوری"}
             </span>
             {/* order state */}
-            {props.state === "جاری" ? (
+            {hourOrder === 0 ? (
               <span className="order__state">جاری</span>
             ) : props.isComplete ? (
               <span className="delivered">تحویل شده</span>
@@ -84,7 +109,7 @@ export default function OrderItem(props) {
             )}
           </div>
           {/* detail item */}
-          {props.state === "جاری" ? (
+          {hourOrder === 0 ? (
             <div className="flex items-center gap-1 text-gray-600 md:text-gray-700 text-2xs md:text-xs">
               {/* detail icon */}
               <FaRegClock className="w-3 h-3 md:w-4 md:h-4" />
@@ -92,7 +117,7 @@ export default function OrderItem(props) {
               <p>
                 آماده تحویل تا{" "}
                 <span className="text-primary" dir="ltr">
-                  ۲۵:۳۳
+                  {deliveredHour}:{deliveredMinute}
                 </span>
               </p>
             </div>
@@ -100,7 +125,7 @@ export default function OrderItem(props) {
         </div>
       </div>
       {/* order state */}
-      {props.state === "جاری" ? (
+      {hourOrder === 0 ? (
         <div className="flex items-center gap-1 md:gap-2 justify-between px-2 lg:px-10 text-gray-400 text-sm">
           {/* state item */}
           <span className="state__order state__order--active flex items-center">
@@ -158,7 +183,7 @@ export default function OrderItem(props) {
         ))}
       </Swiper>
       {/* btn */}
-      {props.state === "جاری" ? (
+      {hourOrder === 0 ? (
         <button className="cancel__order mx-auto md:ml-0 md:mr-auto border rounded p-2 text-xs flex-center h-8 w-24 md:w-30 text-error border-error mt-4">
           لغو سفارش
         </button>

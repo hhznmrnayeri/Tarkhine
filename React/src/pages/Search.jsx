@@ -69,7 +69,7 @@ export default function Search() {
         </form>
         {resultArray.length ? null : (
           <img
-            src="src/assets/images/home/undefined.webp"
+            src="../src/assets/images/home/undefined.webp"
             alt="undefined"
             className="undefined__img mx-auto mt-14"
           />

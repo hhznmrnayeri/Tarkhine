@@ -83,7 +83,7 @@ export default function Nav(props) {
       name: "null",
       icon: <RiSearchLine />,
       submenu: [],
-      href: "search",
+      href: "search/-",
     },
     {
       type: "icon",

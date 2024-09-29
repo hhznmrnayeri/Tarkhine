@@ -16,9 +16,7 @@ export default function ListSection({ children, btn, title }) {
               <MdOutlineShoppingCart className="w-4 md:w-6 h-4 md:h-6" />
               تکمیل خرید
             </NavLink>
-          ) : (
-            ""
-          )}
+          ) : null}
         </div>
         <div className="mt-3 grid grid-cols-1 xl:grid-cols-12 gap-3 md:gap-6 md:mt-6">
           {children}

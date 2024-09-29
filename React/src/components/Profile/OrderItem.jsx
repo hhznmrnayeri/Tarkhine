@@ -12,17 +12,17 @@ import "swiper/css";
 import FoodItem from "./FoodItem";
 import ConvertToPersian from "../../hooks/ConvertToPersian";
 import BaseUrl from "../share/BaseUrl";
+const week = [
+  "یکشنبه",
+  "دوشنبه",
+  "سه شنبه",
+  "چهارشنبه",
+  "پنج شنبه",
+  "جمعه",
+  "شنبه",
+];
 export default function OrderItem(props) {
   const [foodList, setFoodList] = useState([]);
-  const week = [
-    "یکشنبه",
-    "دوشنبه",
-    "سه شنبه",
-    "چهارشنبه",
-    "پنج شنبه",
-    "جمعه",
-    "شنبه",
-  ];
   const [hourOrder] = useState(
     Math.floor((Date.now() - props.time) / (1000 * 60 * 60))
   );

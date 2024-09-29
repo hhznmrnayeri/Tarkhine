@@ -19,7 +19,14 @@ export default function LocationSection() {
   const getAddress = () => {
     fetch(`${BaseUrl}/address`)
       .then((res) => res.json())
-      .then((data) => setAddressArray(data));
+      .then((data) => {
+        setAddressArray(data);
+        data.forEach((item) => {
+          if (item.active) {
+            dispatch({ type: "setAddressActive", payload: item.caption });
+          }
+        });
+      });
   };
   const openEditModal = (id) => {
     fetch(`${BaseUrl}/address/${id}`)
@@ -88,19 +95,13 @@ export default function LocationSection() {
       method: "DELETE",
     })
       .then((res) => res.json())
-      .then((data) => getAddress());
+      .then(() => getAddress());
   };
   const closeLocationModal = () => {
     setShowLocationModal(false);
   };
   const openLocationModal = () => {
     setShowLocationModal(true);
-  };
-  const closeDeleteModal = () => {
-    setShowDeleteModal(false);
-  };
-  const openDeleteModal = () => {
-    setShowDeleteModal(true);
   };
   const closeEditModal = () => {
     setShowEditModal(false);
@@ -115,19 +116,42 @@ export default function LocationSection() {
     setShowAddressModal(true);
   };
   const addAddressItem = () => {
+    addressArray.forEach((item) => {
+      const newItem = { active: false };
+      fetch(`${BaseUrl}/address/${item.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newItem),
+      })
+        .then((res) => res.json())
+        .then(() => {});
+    });
     const newAddressObj = {
+      id: String(addressArray.length + 1),
       caption: captionAddress,
       name: nameAddress,
       user: "test",
       phone: phoneAddress,
       active: true,
     };
-    setAddressArray((prev) => [...prev, newAddressObj]);
-    setShowAddressModal(false);
-    setShowLocationModal(false);
-    setNameAddress("");
-    setPhoneAddress("");
-    setCaptionAddress("");
+    fetch(`${BaseUrl}/address`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newAddressObj),
+    })
+      .then((res) => res.json())
+      .then(() => {
+        getAddress();
+        setShowAddressModal(false);
+        setShowLocationModal(false);
+        setNameAddress("");
+        setPhoneAddress("");
+        setCaptionAddress("");
+      });
   };
   useEffect(() => {
     getAddress();

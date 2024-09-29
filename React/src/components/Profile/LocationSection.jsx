@@ -6,6 +6,7 @@ import { IoLocationOutline } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { PiGpsFix } from "react-icons/pi";
 import BaseUrl from "../share/BaseUrl";
+import { useBasket } from "../../context/BasketContext";
 export default function LocationSection() {
   const [addressArray, setAddressArray] = useState([]);
   const [showEditModal, setShowEditModal] = useState(false);
@@ -16,6 +17,7 @@ export default function LocationSection() {
   const [nameAddress, setNameAddress] = useState("");
   const [phoneAddress, setPhoneAddress] = useState("");
   const [captionAddress, setCaptionAddress] = useState("");
+  const { dispatch } = useBasket();
   const getAddress = () => {
     fetch(`${BaseUrl}/address`)
       .then((res) => res.json())

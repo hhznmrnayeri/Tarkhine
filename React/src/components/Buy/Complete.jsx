@@ -9,7 +9,7 @@ import Empty from "../share/Empty";
 import AddressItem from "../share/AddressItem";
 import Overlay from "../share/Overlay";
 import BaseUrl from "../share/BaseUrl";
-import ConvertToPersian from "../../hooks/ConvertToPersian";
+import { useBasket } from "../../context/BasketContext";
 export default function Complete() {
   const [stateDelivery, setStateDelivery] = useState("courier");
   const [addressArray, setAddressArray] = useState([]);
@@ -20,54 +20,8 @@ export default function Complete() {
   const [phoneAddress, setPhoneAddress] = useState("");
   const [captionAddress, setCaptionAddress] = useState("");
   const [mainId, setMainId] = useState(null);
-  const [sumPrices, setSumPrices] = useState(0);
-  const [offPrices, setOffPrices] = useState(0);
-  const [shippingPrice, setShippingPrice] = useState(30000);
-  const [basketCountItem, setBasketCountItem] = useState(0);
-  const [basketArray, setBasketArray] = useState([]);
-  const [sendState, setSendState] = useState("ارسال توسط پیک");
-  const [addressActive, setAddressActive] = useState("");
   const [captionOrder, setCaptionOrder] = useState("");
-  const makeOrderItem = () => {
-    const newOrder = {
-      id: "1",
-      list: basketArray,
-      send: sendState,
-      address: addressActive,
-      caption: captionOrder,
-    };
-    fetch(`${BaseUrl}/complete`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newOrder),
-    }).then((res) => res.json());
-  };
-  const getPrice = async () => {
-    setSumPrices(0);
-    setOffPrices(0);
-    await fetch(`${BaseUrl}/basket`)
-      .then((res) => res.json())
-      .then((data) => {
-        setBasketCountItem(data.length);
-        setBasketArray(data);
-        data.forEach((item) => {
-          fetch(`${BaseUrl}/foods/${item.foodId}`)
-            .then((res) => res.json())
-            .then((data) => {
-              setSumPrices((prev) => prev + item.count * data.priceValue);
-              if (data.offerPrice) {
-                setOffPrices(
-                  (prev) =>
-                    prev + item.count * (data.offerPrice - data.priceValue)
-                );
-              }
-            });
-        });
-      });
-    setSumPrices((prev) => prev + shippingPrice);
-  };
+  const { dispatch } = useBasket();
   const getAddress = () => {
     fetch(`${BaseUrl}/address`)
       .then((res) => res.json())
@@ -75,7 +29,7 @@ export default function Complete() {
         setAddressArray(data);
         data.forEach((item) => {
           if (item.active) {
-            setAddressActive(item.caption);
+            dispatch({ type: "setAddressActive", payload: item.caption });
           }
         });
       });
@@ -168,26 +122,46 @@ export default function Complete() {
     setShowAddressModal(true);
   };
   const addAddressItem = () => {
+    addressArray.forEach((item) => {
+      const newItem = { active: false };
+      fetch(`${BaseUrl}/address/${item.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newItem),
+      })
+        .then((res) => res.json())
+        .then(() => {});
+    });
     const newAddressObj = {
+      id: String(addressArray.length + 1),
       caption: captionAddress,
       name: nameAddress,
       user: "test",
       phone: phoneAddress,
       active: true,
     };
-    setAddressArray((prev) => [...prev, newAddressObj]);
-    setShowAddressModal(false);
-    setShowLocationModal(false);
-    setNameAddress("");
-    setPhoneAddress("");
-    setCaptionAddress("");
+    fetch(`${BaseUrl}/address`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newAddressObj),
+    })
+      .then((res) => res.json())
+      .then(() => {
+        getAddress();
+        setShowAddressModal(false);
+        setShowLocationModal(false);
+        setNameAddress("");
+        setPhoneAddress("");
+        setCaptionAddress("");
+      });
   };
   useEffect(() => {
     getAddress();
   }, []);
-  useEffect(() => {
-    getPrice();
-  }, [shippingPrice]);
   return (
     <>
       <div className="col-span-1 lg:col-span-7 flex flex-col overflow-hidden">
@@ -202,8 +176,7 @@ export default function Complete() {
           <button
             onClick={() => {
               setStateDelivery("courier");
-              setShippingPrice(30000);
-              setSendState("ارسال توسط پیک");
+              dispatch({ type: "sendCourier" });
             }}
             className={`${
               stateDelivery === "courier" ? "state__delivery--active" : ""
@@ -219,8 +192,7 @@ export default function Complete() {
           <button
             onClick={() => {
               setStateDelivery("person");
-              setShippingPrice(0);
-              setSendState("تحویل حضوری");
+              dispatch({ type: "sendPerson" });
             }}
             className={`${
               stateDelivery === "person" ? "state__delivery--active" : ""
@@ -320,7 +292,13 @@ export default function Complete() {
           name="address"
           className="border border-gray-400 outline-none text-gray-700 mt-3 md:mt-6 rounded-lg p-4 text-sm"
           value={captionOrder}
-          onChange={(e) => setCaptionOrder(e.target.value)}
+          onChange={(e) => {
+            setCaptionOrder(e.target.value);
+            dispatch({
+              type: "addCaption",
+              payload: { caption: e.target.value },
+            });
+          }}
           rows="4"
           placeholder="توضیحات سفارش"
         ></textarea>
@@ -394,7 +372,10 @@ export default function Complete() {
               className="md:hidden h-60"
             />
             {/* form address */}
-            <form className="flex flex-col mt-3 md:mt-6 text-xs md:text-sm px-6">
+            <form
+              className="flex flex-col mt-3 md:mt-6 text-xs md:text-sm px-6"
+              onSubmit={(e) => e.preventDefault()}
+            >
               {/* address name */}
               <input
                 type="text"

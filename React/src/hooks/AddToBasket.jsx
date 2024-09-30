@@ -1,7 +1,5 @@
 import React from "react";
-import BaseUrl from "../components/share/BaseUrl";
 import Swal from "sweetalert2";
-
 const showToast = (message) => {
   const Toast = Swal.mixin({
     toast: true,
@@ -14,55 +12,46 @@ const showToast = (message) => {
       toast.onmouseleave = Swal.resumeTimer;
     },
   });
-
   Toast.fire({
     icon: "success",
     title: message,
   });
 };
-
-const updateBasketItem = async (id, count) => {
-  const response = await fetch(`${BaseUrl}/basket/${id}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ count }),
-  });
-  return response.json();
+const getBasket = () => {
+  const basket = localStorage.getItem("tarkhine-basket");
+  return basket ? JSON.parse(basket) : [];
 };
-
-const addNewItemToBasket = async (id) => {
+const saveBasket = (basket) => {
+  localStorage.setItem("tarkhine-basket", JSON.stringify(basket));
+};
+const updateBasketItem = (id, count) => {
+  const basket = getBasket();
+  const itemIndex = basket.findIndex((item) => item.id === id);
+  if (itemIndex !== -1) {
+    basket[itemIndex].count = count;
+  }
+  saveBasket(basket);
+};
+const addNewItemToBasket = (id) => {
   const newItem = {
-    id: String(Date.now()), // Using Date.now() for unique ID
+    id: String(Date.now()),
     foodId: id,
     count: 1,
   };
-
-  const response = await fetch(`${BaseUrl}/basket`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(newItem),
-  });
-
-  return response.json();
+  const basket = getBasket();
+  basket.push(newItem);
+  saveBasket(basket);
 };
-
 export default async function AddToBasket(id) {
   try {
-    const res = await fetch(`${BaseUrl}/basket`);
-    const basketArray = await res.json();
-
-    const basketItem = basketArray.find((item) => item.foodId === id);
-
+    const basket = getBasket();
+    const basketItem = basket.find((item) => item.foodId === id);
     if (basketItem) {
       const newCount = basketItem.count + 1;
-      await updateBasketItem(basketItem.id, newCount);
+      updateBasketItem(basketItem.id, newCount);
       showToast("1 عدد به تعداد غذای انتخابی شما در سبد خرید اضافه شد.");
     } else {
-      await addNewItemToBasket(id);
+      addNewItemToBasket(id);
       Swal.fire({
         title: "غذای انتخابی شما به سبد خرید اضافه شد",
         icon: "success",

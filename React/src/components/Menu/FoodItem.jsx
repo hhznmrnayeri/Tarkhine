@@ -47,11 +47,11 @@ export default function FoodItem(props) {
             {/* right box */}
             <div className="flex flex-col items-start gap-2">
               {/* item title */}
-              <h4 className="text-xs md:font-estedadSemiBold md:text-xl">
+              <h4 className="text-xs md:font-estedadSemiBold md:text-xl line-clamp-1">
                 {props.title}
               </h4>
               {/* item resepi */}
-              <p className="text-2xs md:text-sm">{props.resepi}</p>
+              <p className="text-2xs md:text-sm line-clamp-2">{props.resepi}</p>
             </div>
             {/* left box */}
             <div className="flex flex-col items-end gap-2 md:gap-0">

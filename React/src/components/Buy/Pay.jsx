@@ -1,59 +1,23 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import { CiDiscount1 } from "react-icons/ci";
 import { CiWallet } from "react-icons/ci";
 import { TbWallet } from "react-icons/tb";
 import { CiCreditCard1 } from "react-icons/ci";
 import { CiCreditCard2 } from "react-icons/ci";
 import { TbAlertHexagon } from "react-icons/tb";
-import BaseUrl from "../share/BaseUrl";
-import ConvertToPersian from "../../hooks/ConvertToPersian";
 import Swal from "sweetalert2";
+import { useBasket } from "../../context/BasketContext";
 export default function Pay() {
-  const [useCode, setUseCode] = useState(true);
-  const [statePay, setStatePay] = useState("online");
+  const [statusPay, setStatusPay] = useState("online");
   const [bankActive, setBankActive] = useState(1);
   const [offerCode, setOfferCode] = useState("");
-  const [sumPrices, setSumPrices] = useState(0);
-  const [offPrices, setOffPrices] = useState(0);
-  const [shippingPrice, setShippingPrice] = useState(30000);
-  const [basketCountItem, setBasketCountItem] = useState(0);
-  const [sendState, setSendState] = useState("ارسال توسط پیک");
-  const [addressActive, setAddressActive] = useState("");
-  const [captionOrder, setCaptionOrder] = useState("");
-  const [basketArray, setBasketArray] = useState([]);
-  const navigate = useNavigate();
-  const getPrice = async () => {
-    setSumPrices(0);
-    setOffPrices(0);
-    await fetch(`${BaseUrl}/basket`)
-      .then((res) => res.json())
-      .then((data) => {
-        setBasketCountItem(data.length);
-        data.forEach((item) => {
-          fetch(`${BaseUrl}/foods/${item.foodId}`)
-            .then((res) => res.json())
-            .then((data) => {
-              setSumPrices((prev) => prev + item.count * data.priceValue);
-              if (data.offerPrice) {
-                setOffPrices(
-                  (prev) =>
-                    prev + item.count * (data.offerPrice - data.priceValue)
-                );
-              }
-            });
-        });
-      });
-    setSumPrices((prev) => prev + shippingPrice);
-  };
+  const { useCode, dispatch } = useBasket();
   const checkCode = (e) => {
     e.preventDefault();
     if (useCode) {
       if (offerCode === "Nayeri60") {
-        setOffPrices((prev) => prev + 60000);
-        setSumPrices((prev) => prev - 60000);
+        dispatch({ type: "checkCode" });
         setOfferCode("");
-        setUseCode(false);
         Swal.fire({
           title: "مبلغ 60000 به تخفیفات این سفارش اضافه شد",
           icon: "success",
@@ -71,60 +35,6 @@ export default function Pay() {
       });
     }
   };
-  const registerOrderItem = () => {
-    fetch(`${BaseUrl}/complete/1`, {
-      method: "DELETE",
-    }).then((res) => res.json());
-    fetch(`${BaseUrl}/basket`)
-      .then((res) => res.json())
-      .then((data) => {
-        data.forEach((item) => {
-          fetch(`${BaseUrl}/basket/${item.id}`, { method: "DELETE" })
-            .then((res) => res.json())
-            .then(() => {});
-        });
-      });
-    fetch(`${BaseUrl}/order`)
-      .then((res) => res.json())
-      .then((data) => {
-        const newOrder = {
-          id: data.length + 1,
-          list: basketArray,
-          send: sendState,
-          address: addressActive,
-          caption: captionOrder,
-          offPrices,
-          sumPrices,
-          state: "جاری",
-          branchesId: "1",
-        };
-        fetch(`${BaseUrl}/order`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(newOrder),
-        })
-          .then((res) => res.json())
-          .then(() => navigate("/payment"));
-      });
-  };
-  useEffect(() => {
-    getPrice();
-    // fetch(`${BaseUrl}/complete/1`)
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     if (data.send === "تحویل حضوری") {
-    //       setShippingPrice(0);
-    //     } else {
-    //       setShippingPrice(30000);
-    //     }
-    //     setSendState(data.send);
-    //     setCaptionOrder(data.caption);
-    //     setAddressActive(data.address);
-    //     setBasketArray(data.list);
-    //   });
-  }, []);
   return (
     <>
       <div className="col-span-1 lg:col-span-7 flex flex-col  overflow-hidden">
@@ -164,10 +74,11 @@ export default function Pay() {
           {/* radio input */}
           <button
             onClick={() => {
-              setStatePay("online");
+              setStatusPay("online");
+              dispatch({ type: "onlinePay" });
             }}
             className={`${
-              statePay === "online" ? "state__pay--active" : ""
+              statusPay === "online" ? "state__pay--active" : ""
             }  flex items-center gap-2`}
           >
             <span className="state__radio w-4 h-4 rounded-full border border-gray-400 p-1 relative"></span>
@@ -179,10 +90,11 @@ export default function Pay() {
           {/* radio input */}
           <button
             onClick={() => {
-              setStatePay("offline");
+              setStatusPay("offline");
+              dispatch({ type: "offlinePay" });
             }}
             className={`${
-              statePay === "offline" ? "state__pay--active" : ""
+              statusPay === "offline" ? "state__pay--active" : ""
             } flex items-center gap-2`}
           >
             <span className="state__radio w-4 h-4 rounded-full border border-gray-400 p-1 relative"></span>
@@ -194,7 +106,7 @@ export default function Pay() {
         </div>
         {/* section wrapper */}
         <div className="flex flex-col mt-3 md:mt-6 overflow-hidden">
-          {statePay === "online" ? (
+          {statusPay === "online" ? (
             <div
               id="online"
               className="section__pay section__pay--active p-4 md:px-6 border border-gray-400 rounded-lg flex flex-col md:flex-row items-start gap-x-12"

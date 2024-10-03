@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Nav from "../components/share/Nav";
-import HeaderSlider from "../components/share/HeaderSlider";
-import Footer from "../components/share/Footer";
-import SearchBox from "../components/share/SearchBox";
-import Topic from "../components/Index/Topic";
-import Intro from "../components/Index/Intro";
-import Branch from "../components/Index/Branch";
-import BaseUrl from "../components/share/BaseUrl";
+import Nav from "../view/components/Nav";
+import HeaderSlider from "../view/components/HeaderSlider";
+import Footer from "../view/components/Footer";
+import SearchBox from "../view/components/SearchBox";
+import Topic from "../view/Index/Topic";
+import Intro from "../view/Index/Intro";
+import Branch from "../view/Index/Branch";
+import BaseUrl from "../view/components/BaseUrl";
 export default function Index() {
   const [topicArray, setTopicArray] = useState([]);
   const [branchArray, setBranchArray] = useState([]);

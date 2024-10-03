@@ -1,9 +1,9 @@
 import React from "react";
-import Nav from "../components/share/Nav";
-import Header from "../components/share/Header";
-import Footer from "../components/share/Footer";
-import Section from "../components/About/Section";
-import Option from "../components/About/Option";
+import Nav from "../view/components/Nav";
+import Header from "../view/components/Header";
+import Footer from "../view/components/Footer";
+import Section from "../view/About/Section";
+import Option from "../view/About/Option";
 export default function About() {
   return (
     <div>

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Nav from "../components/share/Nav";
-import HeaderSlider from "../components/share/HeaderSlider";
-import Footer from "../components/share/Footer";
-import BaseUrl from "../components/share/BaseUrl";
-import Topic from "../components/Menu/Topic";
-import Type from "../components/Menu/Type";
-import Search from "../components/Menu/Search";
-import List from "../components/Menu/List";
+import Nav from "../view/components/Nav";
+import HeaderSlider from "../view/components/HeaderSlider";
+import Footer from "../view/components/Footer";
+import BaseUrl from "../view/components/BaseUrl";
+import Topic from "../view/Menu/Topic";
+import Type from "../view/Menu/Type";
+import Search from "../view/Menu/Search";
+import List from "../view/Menu/List";
 export default function Menu() {
   const [topicArray, setTopicArray] = useState([]);
   const [typeArray, setTypeArray] = useState([]);

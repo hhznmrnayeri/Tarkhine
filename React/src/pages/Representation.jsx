@@ -1,11 +1,11 @@
 import React from "react";
-import Nav from "../components/share/Nav";
-import Footer from "../components/share/Footer";
-import Header from "../components/share/Header";
-import Option from "../components/Representation/Option";
-import Advantage from "../components/Representation/Advantage";
-import Advice from "../components/Representation/Advice";
-import Form from "../components/Representation/Form";
+import Nav from "../view/components/Nav";
+import Footer from "../view/components/Footer";
+import Header from "../view/components/Header";
+import Option from "../view/Representation/Option";
+import Advantage from "../view/Representation/Advantage";
+import Advice from "../view/Representation/Advice";
+import Form from "../view/Representation/Form";
 export default function Representation() {
   return (
     <div>

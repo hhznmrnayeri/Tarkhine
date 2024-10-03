@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Nav from "../components/share/Nav";
-import ResultItem from "../components/Search/ResultItem";
-import Footer from "../components/share/Footer";
-import BaseUrl from "../components/share/BaseUrl";
+import Nav from "../view/components/Nav";
+import ResultItem from "../view/Search/ResultItem";
+import Footer from "../view/components/Footer";
+import BaseUrl from "../view/components/BaseUrl";
 import AddToBasket from "../hooks/AddToBasket";
 import AddFavorite from "../hooks/AddFavorite";
 import RemoveFavorite from "../hooks/RemoveFavorite";
-import { RiSearchLine } from "react-icons/ri";
+import SearchIcon from "../assets/svg/SearchIcon";
 import { useParams } from "react-router-dom";
 export default function Search() {
   const [resultArray, setResultArray] = useState([]);
@@ -64,7 +64,7 @@ export default function Search() {
             onChange={(e) => setSearchValue(e.target.value)}
           />
           <button onClick={() => searchFood()}>
-            <RiSearchLine className="w-6 h-6" />
+            <SearchIcon size="w-6 h-6" />
           </button>
         </form>
         {resultArray.length ? null : (

@@ -5,7 +5,7 @@ import {
   useReducer,
   useState,
 } from "react";
-import BaseUrl from "../components/share/BaseUrl";
+import BaseUrl from "../view/components/BaseUrl";
 const BasketContext = createContext();
 const initialState = {
   list: JSON.parse(localStorage.getItem("tarkhine-basket")),

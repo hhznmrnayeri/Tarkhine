@@ -1,5 +1,5 @@
 import React from "react";
-import BaseUrl from "../components/share/BaseUrl";
+import BaseUrl from "../view/components/BaseUrl";
 import Swal from "sweetalert2";
 export default async function RemoveFavorite(id, func) {
   const newItem = { isFavorite: false };

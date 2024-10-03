@@ -1,6 +1,6 @@
 import React from "react";
-import Nav from "../components/share/Nav";
-import Footer from "../components/share/Footer";
+import Nav from "../view/components/Nav";
+import Footer from "../view/components/Footer";
 import { Outlet } from "react-router-dom";
 export default function Question() {
   return (

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Header from "../components/share/Header";
-import Accordion from "../components/Question/Accordion";
-import State from "../components/Question/State";
-import BaseUrl from "../components/share/BaseUrl";
+import Header from "../view/components/Header";
+import Accordion from "../view/Question/Accordion";
+import State from "../view/Question/State";
+import BaseUrl from "../view/components/BaseUrl";
 export default function PrivacySection() {
   const [privacyList, setPrivacyList] = useState([]);
   function getQuestions() {

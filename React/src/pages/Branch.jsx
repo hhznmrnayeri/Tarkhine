@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
-import Nav from "../components/share/Nav";
-import HeaderSlider from "../components/share/HeaderSlider";
-import Footer from "../components/share/Footer";
-import SearchBox from "../components/share/SearchBox";
-import Special from "../components/Branch/Special";
-import Popular from "../components/Branch/Popular";
-import Foreign from "../components/Branch/Foreign";
-import { LiaClipboardListSolid } from "react-icons/lia";
-import Gallery from "../components/Branch/Gallery";
-import About from "../components/Branch/About";
-import Comment from "../components/Branch/Comment";
+import Nav from "../view/components/Nav";
+import HeaderSlider from "../view/components/HeaderSlider";
+import Footer from "../view/components/Footer";
+import SearchBox from "../view/components/SearchBox";
+import Special from "../view/Branch/Special";
+import Popular from "../view/Branch/Popular";
+import Foreign from "../view/Branch/Foreign";
+import NoteIcon from "../assets/svg/NoteIcon";
+import Gallery from "../view/Branch/Gallery";
+import About from "../view/Branch/About";
+import Comment from "../view/Branch/Comment";
 import { NavLink } from "react-router-dom";
-import BaseUrl from "../components/share/BaseUrl";
+import BaseUrl from "../view/components/BaseUrl";
 export default function Branch() {
   const [listAlbum, setListAlbum] = useState([]);
   const [commentArray, setCommentArray] = useState([]);
@@ -65,7 +65,7 @@ export default function Branch() {
         to="/menu"
         className="flex-center mx-auto border mt-3 md:mt-7 border-primary text-primary gap-2 p-2 rounded md:px-4 md:font-estedadMedium text-xs md:text-base w-52"
       >
-        <LiaClipboardListSolid className="w-4 h-4 md:w-6 md:h-6" />
+        <NoteIcon size="w-4 h-4 md:w-6 md:h-6" />
         مشاهده منوی کامل
       </NavLink>
       <Gallery listAlbum={listAlbum} />

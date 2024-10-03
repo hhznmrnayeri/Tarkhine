@@ -1,7 +1,7 @@
 import React from "react";
-import Nav from "../components/share/Nav";
-import Footer from "../components/share/Footer";
-import MainSection from "../components/Buy/MainSection";
+import Nav from "../view/components/Nav";
+import Footer from "../view/components/Footer";
+import MainSection from "../view/Buy/MainSection";
 export default function Buy() {
   return (
     <div>

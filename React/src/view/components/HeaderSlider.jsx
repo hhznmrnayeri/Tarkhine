@@ -5,9 +5,9 @@ import { FreeMode } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { GoChevronRight } from "react-icons/go";
-import { GoChevronLeft } from "react-icons/go";
 import NavigationIcon from "../../assets/svg/NavigationIcon";
+import ArrowRightIcon from "../../assets/svg/ArrowRightIcon";
+import ArrowLeftIcon from "../../assets/svg/ArrowLeftIcon";
 import { NavLink } from "react-router-dom";
 export default function HeaderSlider(props) {
   return (
@@ -42,7 +42,7 @@ export default function HeaderSlider(props) {
       <div className="flex-center md:justify-between absolute top-0 bottom-0 my-auto z-10 w-full ">
         {/* prev slide btn */}
         <button className="text-white hidden md:block swiper-button-prev-custom mr-5">
-          <GoChevronRight className="w-8 h-8" />
+          <ArrowRightIcon size="w-8 h-8" />
         </button>
         {/* header title */}
         <h1 className="header__title text-tint-100 font-estedadBold text-center md:text-4xl">
@@ -50,7 +50,7 @@ export default function HeaderSlider(props) {
         </h1>
         {/* next slide btn */}
         <button className="text-white hidden md:block swiper-button-next-custom ml-5">
-          <GoChevronLeft className="w-8 h-8" />
+          <ArrowLeftIcon size="w-8 h-8" />
         </button>
       </div>
       {/* header btn */}

@@ -34,13 +34,13 @@ export default function SlideItem(props) {
             {/* top box */}
             {props.isFavorite ? (
               <button className="" onClick={() => removeFavorite(props.id)}>
-                <HeartIcon size="w-4 h-4 text-error-100" />
+                <HeartFavoriteIcon size="w-4 h-4 text-error-100" />
               </button>
             ) : (
               <div className="flex items-center gap-1">
                 {/* add favorite */}
                 <button className="" onClick={() => addFavorite(props.id)}>
-                  <HeartFavoriteIcon size="w-4 h-4" />
+                  <HeartIcon size="w-4 h-4" />
                 </button>
                 {/* text favorite */}
                 <span className="hidden md:block">افزودن به علاقمندی‌ها</span>

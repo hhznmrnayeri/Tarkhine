@@ -3,15 +3,16 @@ import Nav from "../view/components/Nav";
 import HeaderSlider from "../view/components/HeaderSlider";
 import Footer from "../view/components/Footer";
 import SearchBox from "../view/components/SearchBox";
-import Special from "../view/Branch/Special";
-import Popular from "../view/Branch/Popular";
-import Foreign from "../view/Branch/Foreign";
 import NoteIcon from "../assets/svg/NoteIcon";
 import Gallery from "../view/Branch/Gallery";
 import About from "../view/Branch/About";
 import Comment from "../view/Branch/Comment";
 import { NavLink } from "react-router-dom";
 import BaseUrl from "../view/components/BaseUrl";
+import SectionItem from "../view/Branch/SectionItem";
+import AddToBasket from "../hooks/AddToBasket";
+import AddFavorite from "../hooks/AddFavorite";
+import RemoveFavorite from "../hooks/RemoveFavorite";
 export default function Branch() {
   const [listAlbum, setListAlbum] = useState([]);
   const [commentArray, setCommentArray] = useState([]);
@@ -29,8 +30,8 @@ export default function Branch() {
       .then((data) => setCommentArray(data));
   }
   function getFoods() {
-    setSpecialArray([]);
     setForeignArray([]);
+    setSpecialArray([]);
     setPopularArray([]);
     fetch(`${BaseUrl}/foods`)
       .then((res) => res.json())
@@ -48,6 +49,15 @@ export default function Branch() {
         });
       });
   }
+  const addToBasket = (id) => {
+    AddToBasket(id);
+  };
+  const addFavorite = (id) => {
+    AddFavorite(id, getFoods);
+  };
+  const removeFavorite = (id) => {
+    RemoveFavorite(id, getFoods);
+  };
   useEffect(() => {
     getListAlbum();
     getComments();
@@ -58,9 +68,27 @@ export default function Branch() {
       <Nav title="branch" />
       <HeaderSlider title="طعم بی‌نظیر طبیعت!" />
       <SearchBox />
-      <Special specialArray={specialArray} getFoods={getFoods} />
-      <Popular popularArray={popularArray} getFoods={getFoods} />
-      <Foreign foreignArray={foreignArray} getFoods={getFoods} />
+      <SectionItem
+        array={specialArray}
+        label="special"
+        onPlus={addToBasket}
+        onLike={addFavorite}
+        onDisLike={removeFavorite}
+      />
+      <SectionItem
+        array={popularArray}
+        label="popular"
+        onPlus={addToBasket}
+        onLike={addFavorite}
+        onDisLike={removeFavorite}
+      />
+      <SectionItem
+        array={foreignArray}
+        label="foreign"
+        onPlus={addToBasket}
+        onLike={addFavorite}
+        onDisLike={removeFavorite}
+      />
       <NavLink
         to="/menu"
         className="flex-center mx-auto border mt-3 md:mt-7 border-primary text-primary gap-2 p-2 rounded md:px-4 md:font-estedadMedium text-xs md:text-base w-52"

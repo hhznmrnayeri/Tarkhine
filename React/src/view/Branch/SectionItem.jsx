@@ -5,25 +5,34 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import AddToBasket from "../../hooks/AddToBasket";
-import AddFavorite from "../../hooks/AddFavorite";
-import RemoveFavorite from "../../hooks/RemoveFavorite";
-import ArrowRightIcon from "../../assets/svg/ArrowRightIcon";
 import ArrowLeftIcon from "../../assets/svg/ArrowLeftIcon";
-export default function Special({ specialArray, getFoods }) {
+import ArrowRightIcon from "../../assets/svg/ArrowRightIcon";
+export default function SectionItem({
+  array,
+  label,
+  onPlus,
+  onLike,
+  onDisLike,
+}) {
   const addToBasket = (id) => {
-    AddToBasket(id);
+    onPlus(id);
   };
   const addFavorite = (id) => {
-    AddFavorite(id, getFoods);
+    onLike(id);
   };
   const removeFavorite = (id) => {
-    RemoveFavorite(id, getFoods);
+    onDisLike(id);
   };
   return (
-    <section className="mt-6 md:mt-12 mb-6 md:mb-12">
+    <section
+      className={`mt-6  mb-6  ${label === "popular" ? "bg-primary" : ""} py-6`}
+    >
       <div className="container">
-        <SectionTitle title="پیشنهاد ویژه" />
+        {label === "special" && <SectionTitle title="پیشنهاد ویژه" />}
+        {label === "popular" && (
+          <SectionTitle title="غذاهای محبوب" color="text-white" />
+        )}
+        {label === "foreign" && <SectionTitle title="غذاهای غیر ایرانی" />}
         {/* swiper */}
         <div className="mt-3 md:mt-6 relative">
           <Swiper
@@ -60,10 +69,10 @@ export default function Special({ specialArray, getFoods }) {
               },
             }}
             modules={[Navigation]}
-            className="special"
+            className=""
           >
-            {specialArray.map((item) => (
-              <SwiperSlide key={item.id}>
+            {array.map((item) => (
+              <SwiperSlide key={`${label}-${item.id}`}>
                 <SlideItem
                   {...item}
                   onPlus={addToBasket}

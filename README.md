@@ -1,6 +1,24 @@
 # Tarkhine
 
-The React version of this project will be deployed soon, but you can see its screenshots below:
+This project has a [newer version](https://github.com/hhznmrnayeri/tarkhine-typescript) developed with typescript.
+
+This project is developed as a fully responsive and spa-like website, and its features are implemented using Context-Api+UseReducer.
+
+## To run the project : (in React folder)
+
+1-start the server
+
+```js
+npm run server
+```
+
+2-start dev mode
+
+```js
+npm run dev
+```
+
+you can see its screenshots below:
 
 ![1](https://github.com/user-attachments/assets/ea2fae37-a6db-4b7c-ae8d-12d317aa9054)
 
